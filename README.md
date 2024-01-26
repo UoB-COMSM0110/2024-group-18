@@ -1,3 +1,3 @@
 # Our Team
 
-![alt text](https://i.imgur.com/lnxVVyN.jpeg "Our team" | width=100)
+ <img src="https://i.imgur.com/lnxVVyN.jpeg" width="100" height="100">
