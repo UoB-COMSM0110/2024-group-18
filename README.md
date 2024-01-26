@@ -14,3 +14,5 @@
 - Stardew Valley
 - Don't Starve
 - This War of Mine
+- Icey
+- For the King
