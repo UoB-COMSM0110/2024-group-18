@@ -1,3 +1,3 @@
 # Our Team
 
- <img src="https://i.imgur.com/lnxVVyN.jpeg" width="700" >
+ <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" >
