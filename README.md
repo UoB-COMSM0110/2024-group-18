@@ -10,3 +10,7 @@
 - Pacman
 - Temple Run
 - Tetris
+- Slay the Spire
+- Stardew Valley
+- Don't Starve
+- This War of Mine
