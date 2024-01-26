@@ -4,9 +4,9 @@
 
 # List of 2d / Simple Games
 
-- Bonus.com's Xtreme Snowboarding
 - Subway surfers
 - Sonic
+- Bonus.com's Xtreme Snowboarding
 - Pacman
 - Temple Run
 - Tetris
