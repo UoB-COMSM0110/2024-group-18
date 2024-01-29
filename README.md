@@ -19,13 +19,13 @@
 
 # Genre Preference Vote
 
-| Types        | Preference (6~1)        | 
-| ------------ | ----------------------- |
-| Action       |  3  |    |    |    |    |
-| Adventure    |  4  |    |    |    |    |
-| Role_playing |  5  |    |    |    |    |
-| Simulation   |  3  |    |    |    |    |
-| Strategy     |  4  |    |    |    |    |
-| Sports&Racing|  1  |    |    |    |    |
+| Types         | Yi | Ali | X | X | X |
+|---------------|----|-----|---|---|---|
+| Action        | 3  |  3  |   |   |   |
+| Adventure     | 4  |  4  |   |   |   |
+| Role_playing  | 5  |  4  |   |   |   |
+| Simulation    | 3  |  1  |   |   |   |
+| Strategy      | 4  |  3  |   |   |   |
+| Sports&Racing | 1  |  1  |   |   |   |
 
 See cetegory first.
