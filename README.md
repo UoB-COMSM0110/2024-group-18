@@ -16,3 +16,14 @@
 - This War of Mine
 - Icey
 - For the King
+
+# Genre Preference
+
+| Categories   | Preference (6~1)        | 
+| ------------ | ----------------------- |
+| Action       |  3  |    |    |    |    |
+| Adventure    |  4  |    |    |    |    |
+| Role_playing |  5  |    |    |    |    |
+| Simulation   |  3  |    |    |    |    |
+| Strategy     |  4  |    |    |    |    |
+| Sports&Racing|  1  |    |    |    |    |
