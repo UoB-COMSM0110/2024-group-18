@@ -19,7 +19,7 @@
 
 # Genre Preference Vote
 
-| Types   | Preference (6~1)        | 
+| Types        | Preference (6~1)        | 
 | ------------ | ----------------------- |
 | Action       |  3  |    |    |    |    |
 | Adventure    |  4  |    |    |    |    |
