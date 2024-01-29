@@ -17,7 +17,7 @@
 - Icey
 - For the King
 
-# Genre Preference
+# Genre Preference Vote
 
 | Categories   | Preference (6~1)        | 
 | ------------ | ----------------------- |
@@ -27,3 +27,5 @@
 | Simulation   |  3  |    |    |    |    |
 | Strategy     |  4  |    |    |    |    |
 | Sports&Racing|  1  |    |    |    |    |
+
+See cetegory first.
