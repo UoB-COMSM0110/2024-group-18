@@ -20,13 +20,13 @@
 # Genre Preference Vote
 (1-6, 6 is the best, 1 is worst).
 
-| Types           | Yi | Ali | X | X | X |
-|-----------------|----|-----|---|---|---|
-| Action          | 3  |  3  |   |   |   |
-| Adventure       | 4  |  4  |   |   |   |
-| Role_playing    | 5  |  4  |   |   |   |
-| Simulation      | 3  |  1  |   |   |   |
-| Strategy        | 4  |  3  |   |   |   |
-| Sports & Racing | 1  |  1  |   |   |   |
+| Types           | Yi | Ali | Clyde | X | X |
+|-----------------|----|-----|-------|---|---|
+| Action          | 3  |  3  |   4   |   |   |
+| Adventure       | 4  |  4  |   4   |   |   |
+| Role_playing    | 5  |  4  |   3   |   |   |
+| Simulation      | 3  |  1  |   1   |   |   |
+| Strategy        | 4  |  3  |   2   |   |   |
+| Sports & Racing | 1  |  1  |   1   |   |   |
 
 See category first.
