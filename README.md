@@ -30,3 +30,10 @@
 | Sports & Racing | 1  |  1  |   1   |   |   |
 
 See category first.
+
+# Game Ideas
+A platforming game. You have various classic power-ups like super jump and ability to destroy platforms. You also have more interesting ones, like the ability to “time travel” where you can save your state and travel back to that state, similar to Ekko in League of Legends.) These power ups come with trade offs (decreasing the amount of time in the level, making enemies stronger etc.) You lose points when you hit a platform. 
+TODO Ali to add gif.
+
+A platforming game. Each time you go through the level your previous incarnations show up - doing exactly what they did previously. They must be avoided. The level is designed to create ‘choke points’ that reward future planning (eg: waiting at certain points to give gaps.) Boss fights might require collaboration between the past and future selves (eg: attacking from both sides at once.) This is somewhat inspired by Tenet, Titanfall 2. 
+TODO Tom to add image.
