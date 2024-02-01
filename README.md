@@ -45,3 +45,6 @@ A platforming game. Each time you go through the level your previous incarnation
 - Potential difficulty scaling with how many time inversions you can successfully navigate, i.e. how many past iterations of yourself are all moving through the level at the same time, some will be moving backwards in time (relative to you) and others moving forward (relative to you)
   - Or, arguably cooler, include a boss battle where the boss is impossible to kill alone. Instead, you will need to plan and memorise attacks you make on the first run through the level and combine them with ones you make after time inverts. You will effectively have to fight the boss from both the past and the future at the same time.
       - For example, the boss has a shield which one attack will break, but then requires a follow-up attack to actually damage its HP, and by the time your attack has recharged its shield will have also recharged, forcing you to work alongside your past self
+Challenge 1 - How do we save previous iterations of the player.
+Challenge 2 - Level Design and balance (can we create a level designer to make this easier?)
+Challenge 3 - Designing a boss that requires clever use of the mechanic.
