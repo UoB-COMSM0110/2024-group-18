@@ -38,7 +38,7 @@ Challenge 1 - Time Travel Power Up
 
 Challenge 2 - Other Power Ups (super jump etc.)
 
-Challenge 3 - Balancing the power ups
+Challenge 3 - Accessibility - eg: colour blindness, alternative input methods (sound?, webcam?, eye tracking?)
 
  <img src="Assets_For_ReadMe/Ekko.gif" width="300">
  
