@@ -20,14 +20,14 @@
 # Genre Preference Vote
 (1-6, 6 is the best, 1 is worst).
 
-| Types           | Yi | Ali | Clyde | X | X |
-|-----------------|----|-----|-------|---|---|
-| Action          | 3  |  3  |   4   |   |   |
-| Adventure       | 4  |  4  |   4   |   |   |
-| Role_playing    | 5  |  4  |   3   |   |   |
-| Simulation      | 3  |  1  |   1   |   |   |
-| Strategy        | 4  |  3  |   2   |   |   |
-| Sports & Racing | 1  |  1  |   1   |   |   |
+| Types           | Yi | Ali | Clyde | Tom | X |
+|-----------------|----|-----|-------|-----|---|
+| Action          | 3  |  3  |   4   |  5  |   |
+| Adventure       | 4  |  4  |   4   |  3  |   |
+| Role_playing    | 5  |  4  |   3   |  2  |   |
+| Simulation      | 3  |  1  |   1   |  1  |   |
+| Strategy        | 4  |  3  |   2   |  5  |   |
+| Sports & Racing | 1  |  1  |   1   |  1  |   |
 
 See category first.
 
@@ -46,11 +46,14 @@ A platforming game. Each time you go through the level your previous incarnation
 - Load up the game, the objective is to get from the START to the END, simple platformer mechanics
 - Upon reaching the END, time is inverted, you must then travel back from the END to the START however your past self who first travelled from START→END is also moving through the level (drawing coming soon), they must be avoided at all costs, as interacting with your past self causes a time paradox (how could you of gotten to where you are if you disrupt the path of your former self?)
 - Potential difficulty scaling with how many time inversions you can successfully navigate, i.e. how many past iterations of yourself are all moving through the level at the same time, some will be moving backwards in time (relative to you) and others moving forward (relative to you)
-  - Or, arguably cooler, include a boss battle where the boss is impossible to kill alone. Instead, you will need to plan and memorise attacks you make on the first run through the level and combine them with ones you make after time inverts. You will effectively have to fight the boss from both the past and the future at the same time.
+  - Or, arguably cooler, include a boss battle where the boss is impossible to kill alone. Instead, you will need to plan and memorise the attacks you make on the first run through the level and combine them with ones you make after time inverts. You will effectively have to fight the boss from both the past and the future at the same time.
       - For example, the boss has a shield which one attack will break, but then requires a follow-up attack to actually damage its HP, and by the time your attack has recharged its shield will have also recharged, forcing you to work alongside your past self
    
 Challenge 1 - Saving previous iterations of the player.
 
 Challenge 2 - Level Design and balance (can we create a level designer to make this easier?)
+              - how can you design levels that create fun and engaging choke points, it must be fun to traverse on both playthroughs of the level
+              - the second time will be interesting due to the presence of your past self, however when first going through it it must present a fun and engaging challenge
 
 Challenge 3 - Designing a boss that requires clever use of the mechanic.
+        
