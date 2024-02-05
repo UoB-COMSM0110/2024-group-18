@@ -17,20 +17,6 @@
 - Icey
 - For the King
 
-# Genre Preference Vote
-(1-6, 6 is the best, 1 is worst).
-
-| Types           | Yi | Ali | Clyde | Tom | X |
-|-----------------|----|-----|-------|-----|---|
-| Action          | 3  |  3  |   4   |  5  |   |
-| Adventure       | 4  |  4  |   4   |  3  |   |
-| Role_playing    | 5  |  4  |   3   |  2  |   |
-| Simulation      | 3  |  1  |   1   |  1  |   |
-| Strategy        | 4  |  3  |   2   |  5  |   |
-| Sports & Racing | 1  |  1  |   1   |  1  |   |
-
-See category first.
-
 # Game Ideas
 A platforming game. You have various classic power-ups, like super jump and ability to destroy platforms. You also have more interesting ones, like the ability to “time travel” where you can save your state and travel back to that state, similar to Ekko in League of Legends.) These power ups come with trade offs (decreasing the amount of time in the level, making enemies stronger etc.) You lose points when your player collides with a platform. 
 
@@ -56,4 +42,9 @@ Challenge 2 - Level Design and balance (can we create a level designer to make t
               - the second time will be interesting due to the presence of your past self, however when first going through it it must present a fun and engaging challenge
 
 Challenge 3 - Designing a boss that requires clever use of the mechanic.
+
+# paper prototype
+First idea
+https://www.youtube.com/watch?v=U_D2pebtMJo
+
         
