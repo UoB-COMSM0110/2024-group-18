@@ -47,4 +47,21 @@ Challenge 3 - Designing a boss that requires clever use of the mechanic.
 First idea
 https://www.youtube.com/watch?v=U_D2pebtMJo
 
+TODO Include video of second idea
+
+# Requirements
+## User Stories:
+- As a person with mobility issues, I want to play the same game as my friends so that I can feel included. 
+- As a speedrunner, I want to prove how impressive I am.
+- As a casual gamer, I want to have fun.
+- As a puzzle enthusiast I want to play something that rewards me for planning.
+
+## Technical Requirements
+- Tutorial Screen
+- Scoring System / Clear Objective
+- User interface elements showing the movement of time (the sun?)
+- Levels - at least 2.
+- Difficulty levels.
+- Save the Previous State and reverse it. 
+
         
