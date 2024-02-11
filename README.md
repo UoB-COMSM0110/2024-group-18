@@ -57,11 +57,11 @@ TODO Include video of second idea
 - As a person with mobility issues, I want to play the same game as my friends so that I can feel included. 
 
 ## Technical Requirements
-- Tutorial Screen
-- Scoring System / Clear Objective
+- Tutorial Screen (how to move, how to trigger traps or button, how to reverse, how to win, get hint when stun in 10 seconds)
+- Scoring System / Clear Objective to get full stars
 - User interface elements showing the movement of time (the sun?)
 - Levels - at least 2.
-- Difficulty levels.
+- Difficulty levels (easy & hard).
 - Save the Previous State and reverse it. 
 
         
