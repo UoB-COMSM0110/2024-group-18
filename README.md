@@ -51,10 +51,10 @@ TODO Include video of second idea
 
 # Requirements
 ## User Stories:
-- As a person with mobility issues, I want to play the same game as my friends so that I can feel included. 
-- As a speedrunner, I want to prove how impressive I am.
 - As a casual gamer, I want to have fun.
+- As a speedrunner, I want to prove how impressive I am.
 - As a puzzle enthusiast I want to play something that rewards me for planning.
+- As a person with mobility issues, I want to play the same game as my friends so that I can feel included. 
 
 ## Technical Requirements
 - Tutorial Screen
