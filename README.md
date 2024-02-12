@@ -65,5 +65,5 @@ TODO Include video of second idea
 - Save the Previous State and reverse it. 
 
 ### Week 3: Decide on Final Idea and Collect Requirements
-
+<img src= "Assets_For_ReadMe/Software%20Engineering%20Project.jpg" width="300" height="600">
         
