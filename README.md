@@ -64,4 +64,6 @@ TODO Include video of second idea
 - Difficulty levels (easy & hard).
 - Save the Previous State and reverse it. 
 
+### Week 3: Decide on Final Idea and Collect Requirements
+
         
