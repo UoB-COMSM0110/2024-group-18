@@ -81,9 +81,12 @@ TODO Include video of second idea
 When planning how we wanted to paint a story of our final idea, we first thought that creating 3 diverse persona stories would allow for a customer-orientated game idea, that takes into consideration multiple users. Therefore, we started out with designing 3 User-stories (on Canva - to save words), and evaluate the use case to facilitate a clear use-case model. This task was discussed as a group, and split, where Ali and Mihir discussed Persona design, and Yi, Kai, and Tom would model the use-case diagram.
 
 ##### User Story 1:
-
+<img src="Assets_For_ReadMe/User Story 1.png" width="300">
 
 ##### User Story 2:
-
+<img src="Assets_For_ReadMe/User Story 2.png" width="300">
 
 ##### User Story 3:
+<img src="Assets_For_ReadMe/User Story 3.png" width="300">
+
+
