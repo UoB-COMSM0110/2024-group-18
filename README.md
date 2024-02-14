@@ -73,4 +73,8 @@ TODO Include video of second idea
 - Difficulty levels (easy & hard).
 - Save the Previous State and reverse it. 
 
+### Week 3: Decide on Final Idea and Collect Requirements
+<img src= "Assets_For_ReadMe/Software%20Engineering%20Project.jpg" width="300" height="600">
         
+### Week 4: Persona
+[Canva Link for template to Persona](https://www.canva.com/design/DAF8khbMUDs/DP547oY6qnrh7Q60TS3FoA/edit?utm_content=DAF8khbMUDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
