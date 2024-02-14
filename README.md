@@ -50,13 +50,22 @@ https://www.youtube.com/watch?v=U_D2pebtMJo
 TODO Include video of second idea
 
 # Requirements
-## User Stories:
+## Ideation, Use-Cases and User Stories
+
+### Use-Case Diagram
+<img src="Assets_For_ReadMe/User-case Diagram.png" width="300">
+
+
+### Use-Case Specifications
+
+
+### User Stories:
 - As a casual gamer, I want to have fun.
 - As a speedrunner, I want to prove how impressive I am.
 - As a puzzle enthusiast I want to play something that rewards me for planning.
 - As a person with mobility issues, I want to play the same game as my friends so that I can feel included. 
 
-## Technical Requirements
+### Technical Requirements
 - Tutorial Screen (how to move, how to trigger traps or button, how to reverse, how to win, get hint when stun in 10 seconds)
 - Scoring System / Clear Objective to get full stars
 - User interface elements showing the movement of time (the sun?)
