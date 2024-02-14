@@ -89,4 +89,10 @@ When planning how we wanted to paint a story of our final idea, we first thought
 ##### User Story 3:
 <img src="Assets_For_ReadMe/User Story 3.png" width="300">
 
+#### Challenges Encountered:
+Mihir: Found that lots of excitement and passion about game code and features within group, however had to bring group back to making sure we are completing the weekly report tasks first. This was a problem as persona became puzzle-solver gamer, competitive gamer... whereas it should tell a story. As a remedy, I organised meetings such that 1 hour meeting on Monday booked (in Library group room) in afternoon such that new concept is fresh in minds after class, and Wednesday 2-hour sessions are coding. This ensures that we stay user-orientated and don't drift from SE concepts learnt in class, as customer experience should be prioritised, then functionality, and when objective is achieved, exciting innovation comes after. Lesson learnt: Stay discipled as a group, stick to planning and becoming user-orientated, then coding excitement comes after!
 
+Mihir (Git): Merge conflict as we are all using main. Managed to resolve conflict with no issues. Told group feature (branch) command to prevent future conflicts.
+
+#### Evaluation:
+As a result of detailed persona creation using a visual passion board and gamer personality, we discovered that as we drifted off to cool features in game, Ali suggested having a disability feature to increase the potential reach of the game. Evidencing the importance of requirement engineering planning as a priority, before jumping to code.
