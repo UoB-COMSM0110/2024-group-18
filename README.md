@@ -95,4 +95,4 @@ Mihir: Found that lots of excitement and passion about game code and features wi
 Mihir (Git): Merge conflict as we are all using main. Managed to resolve conflict with no issues. Told group feature (branch) command to prevent future conflicts.
 
 #### Evaluation:
-As a result of detailed persona creation using a visual passion board and gamer personality, we discovered that as we drifted off to cool features in game, Ali suggested having a disability feature to increase the potential reach of the game. Evidencing the importance of requirement engineering planning as a priority, before jumping to code.
+As a result of detailed persona creation using a visual passion board and gamer personality, we discovered that as we drifted off to cool features in game, Ali suggested having a disability feature to increase the potential reach of the game. Evidencing the importance of requirement engineering planning as a priority, before jumping to cod.
