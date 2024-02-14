@@ -76,5 +76,14 @@ TODO Include video of second idea
 ### Week 3: Decide on Final Idea and Collect Requirements
 <img src= "Assets_For_ReadMe/Software%20Engineering%20Project.jpg" width="300" height="600">
         
-### Week 4: Persona
-[Canva Link for template to Persona](https://www.canva.com/design/DAF8khbMUDs/DP547oY6qnrh7Q60TS3FoA/edit?utm_content=DAF8khbMUDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
+## Week 4 Task: Add requirements section to report
+#### Introduction:
+When planning how we wanted to paint a story of our final idea, we first thought that creating 3 diverse persona stories would allow for a customer-orientated game idea, that takes into consideration multiple users. Therefore, we started out with designing 3 User-stories (on Canva - to save words), and evaluate the use case to facilitate a clear use-case model. This task was discussed as a group, and split, where Ali and Mihir discussed Persona design, and Yi, Kai, and Tom would model the use-case diagram.
+
+##### User Story 1:
+
+
+##### User Story 2:
+
+
+##### User Story 3:
