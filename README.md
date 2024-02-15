@@ -62,6 +62,9 @@ When planning how we wanted to paint a story of our final idea, we first thought
 <img src="Assets_For_ReadMe/User-case Diagram.png" width="600">
 
 #### Use-Case Specifications
+##### Tutorial & First Level
+
+##### Second Level
 
 ##### User Story 1:
 <img src="Assets_For_ReadMe/User Story 1.png" width="500">
