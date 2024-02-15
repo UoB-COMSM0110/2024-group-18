@@ -53,7 +53,7 @@ TODO Include video of second idea
 ## Ideation, Use-Cases and User Stories
 
 ### Use-Case Diagram
-<img src="Assets_For_ReadMe/User-case Diagram.png" width="300">
+<img src="Assets_For_ReadMe/User-case Diagram.png" width="600">
 
 
 ### Use-Case Specifications
@@ -74,20 +74,20 @@ TODO Include video of second idea
 - Save the Previous State and reverse it. 
 
 ### Week 3: Decide on Final Idea and Collect Requirements
-<img src= "Assets_For_ReadMe/Software%20Engineering%20Project.jpg" width="300" height="600">
+<img src= "Assets_For_ReadMe/Software%20Engineering%20Project.jpg" width="400" height="800">
         
 ## Week 4 Task: Add requirements section to report
 #### Introduction:
 When planning how we wanted to paint a story of our final idea, we first thought that creating 3 diverse persona stories would allow for a customer-orientated game idea, that takes into consideration multiple users. Therefore, we started out with designing 3 User-stories (on Canva - to save words), and evaluate the use case to facilitate a clear use-case model. This task was discussed as a group, and split, where Ali and Mihir discussed Persona design, and Yi, Kai, and Tom would model the use-case diagram.
 
 ##### User Story 1:
-<img src="Assets_For_ReadMe/User Story 1.png" width="300">
+<img src="Assets_For_ReadMe/User Story 1.png" width="500">
 
 ##### User Story 2:
-<img src="Assets_For_ReadMe/User Story 2.png" width="300">
+<img src="Assets_For_ReadMe/User Story 2.png" width="500">
 
 ##### User Story 3:
-<img src="Assets_For_ReadMe/User Story 3.png" width="300">
+<img src="Assets_For_ReadMe/User Story 3.png" width="500">
 
 #### Challenges Encountered:
 Mihir: Found that lots of excitement and passion about game code and features within group, however had to bring group back to making sure we are completing the weekly report tasks first. This was a problem as persona became puzzle-solver gamer, competitive gamer... whereas it should tell a story. As a remedy, I organised meetings such that 1 hour meeting on Monday booked (in Library group room) in afternoon such that new concept is fresh in minds after class, and Wednesday 2-hour sessions are coding. This ensures that we stay user-orientated and don't drift from SE concepts learnt in class, as customer experience should be prioritised, then functionality, and when objective is achieved, exciting innovation comes after. Lesson learnt: Stay discipled as a group, stick to planning and becoming user-orientated, then coding excitement comes after!
