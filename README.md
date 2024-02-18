@@ -63,6 +63,7 @@ When planning how we wanted to paint a story of our final idea, we first thought
 
 #### Use-Case Specifications
 ##### Tutorial & First Level
+<img src="Assets_For_ReadMe/User Story 1.png" width="600">
 
 ##### Second Level
 
