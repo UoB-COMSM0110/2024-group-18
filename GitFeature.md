@@ -1,6 +1,5 @@
 ## Creating Git Feature Tutorial 
-
-## Creating branches for your group
+### Creating branches for your group
 ### Step 1: Pull Latest Changes
 Switch to main branch first and pull latest changes:
 ```bash
@@ -43,5 +42,29 @@ git status
 ```
 ## Get used to these commands by lots of practice! 
 
-## Merge Request
-### Step 5: EASY FROM HERE! Switch to your Github page
+## Merge Request: 
+#### When you are ready to merge your code with others into main (recommended to do once together as a group)
+### Step 5: EASY FROM HERE! Switch to your Github team page.
+When navigating to your team Git page, you will see changes from each others branches:
+<img src="Assets_For_ReadMe/Step_5.png" width="300">
+
+Click on "Click & Pull Request"
+### Step 6: Creating a Pull Request to your team
+Create a detailed description of what you have been working on within your branch, which is then released to your team.
+
+<img src="Assets_For_ReadMe/Demonstration purposes.png" width="300">
+
+Once you are happy click "Create Pull Request."
+### Step 7: Team Review of Pull Request
+
+This details how pull requests are merged to main. Recommended in the beginning to come together to review Pull Requests, and then once comfortable can use Conversation tabs to communicate virtually to one another any disagreement.
+
+Checkout the [Linux Kernel Mailing List](https://lkml.org/)  which shows a list of pull request changes from different members of the development team.
+
+<img src="Assets_For_ReadMe/Step_7.png" width="300">
+
+Once everyone in the team is happy to merge changes onto main click "Merge Pull Request."
+There should also be an option somewhere to discard changes if unhappy with changes.
+
+### Hope this helps!
+Tutorial brought to you by @mihirgandecha :))
