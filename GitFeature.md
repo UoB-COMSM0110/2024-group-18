@@ -1,5 +1,6 @@
 ## Creating Git Feature Tutorial 
 
+## Creating branches for your group
 ### Step 1: Pull Latest Changes
 Switch to main branch first and pull latest changes:
 ```bash
@@ -40,5 +41,7 @@ git push origin feature/name/nameWork
 git status
 #Look out for that beautiful message
 ```
-### Step 5: Just get used to this first! Will discuss pull request next meeting! 
-//Test
+## Get used to these commands by lots of practice! 
+
+## Merge Request
+### Step 5: EASY FROM HERE! Switch to your Github page
