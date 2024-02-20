@@ -6,18 +6,18 @@ class PlayerController{
     this.player = player;
   }
   
-  public void updateAnimatioon(){
-    image(player.currentImage,player.location.x,player.location.y);
+  public void updateAnimation(){
+    image(player.currentImage,player.location.x,player.location.y,player.objectWidth,player.objectHeight);
   }
   
   public void movementControl(){
     boolean right = keyCode == RIGHT;
     boolean left = keyCode == LEFT;
     if(right){
-      player.velocity.set(1,0);
+      player.velocity.set(player.speed,0);
     }
     if(left){
-      player.velocity.set(-1,0);
+      player.velocity.set(-player.speed,0);
     }
     
   }

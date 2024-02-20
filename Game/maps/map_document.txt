@@ -1,0 +1,13 @@
+Platform format
+12223
+45556
+
+
+Item code
+7: Reminder
+8: magic door
+9: Win flag
+
+A: trap1
+B: trap2
+
