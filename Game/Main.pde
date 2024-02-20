@@ -1,23 +1,29 @@
 Player player;
-Controller controller;
+PlayerController playerController;
+MapController mapController;
 
 void setup(){
-      player=new Player();
-      // todo rename to playController
-      controller = new Controller(player);
-// todo add mapController.
-    size(1600,900);
-    background(255);
-    stroke(255); 
+  // todo add mapController.
+  size(1600,900);
+  player = new Player();
+  playerController = new PlayerController(player);
+  mapController = new MapController("./maps/map1.txt");
+  
+  mapController.generateMap();
 }
 
 void draw(){
-  image(player.image,player.location.x,player.location.y);
-  
-  player.velocity.add(player.accelarate);
-  player.location.add(player.velocity);
+  background(255);
+  playerDraw();
 }
 
-void keyPressed(){
-    controller.keyPressed();
+
+void playerDraw(){
+  playerController.updateLocation();
+  playerController.updateAnimatioon();
+  if(keyPressed){
+    playerController.movementControl();
+  }else{
+    playerController.movementReset();
+  }
 }
