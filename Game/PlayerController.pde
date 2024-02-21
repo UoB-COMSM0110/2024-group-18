@@ -13,6 +13,7 @@ class PlayerController{
   public void movementControl(){
     boolean right = keyCode == RIGHT;
     boolean left = keyCode == LEFT;
+    boolean up = keyCode == UP;
     if(right){
       player.velocity.set(player.speed,0);
     }

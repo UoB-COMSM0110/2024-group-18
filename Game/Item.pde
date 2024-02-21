@@ -1,3 +1,4 @@
+// Include every attributtes needed for item
 class Item extends GameObject{
   boolean ifStatic;
   boolean ifHurt;

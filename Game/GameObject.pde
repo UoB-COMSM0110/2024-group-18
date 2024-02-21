@@ -1,3 +1,4 @@
+// Including basic attributes for all things
 abstract class GameObject{
   PVector location;
   PImage currentImage;
