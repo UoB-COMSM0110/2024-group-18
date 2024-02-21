@@ -1,5 +1,3 @@
-// Include the logic for how character is controlled - intially just arrow keys
-
 class Player extends GameObject{
     
     float speed;
@@ -27,5 +25,5 @@ class Player extends GameObject{
         canJump = true;
         
     }
-        
-    }
+    
+}

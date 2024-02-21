@@ -3,5 +3,4 @@ abstract class GameObject{
     PVector velocity;
     PVector accelarate;
     PImage image;
-    
 }

@@ -1,2 +1,2 @@
-class Player extends GameObject{
+class Ground extends GameObject{
 }
