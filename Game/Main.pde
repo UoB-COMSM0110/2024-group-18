@@ -14,8 +14,7 @@ void draw() {
     background(255);
     image(player.image,player.location.x,player.location.y);
     
-    player.velocity.add(player.accelarate);
-    player.location.add(player.velocity);
+    player.changeLocation();
 }
 
 void keyPressed() {
