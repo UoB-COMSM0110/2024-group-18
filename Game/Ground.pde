@@ -1,2 +1,0 @@
-class Ground extends GameObject{
-}
