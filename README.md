@@ -100,3 +100,12 @@ Mihir (Git): Merge conflict as we are all using main. Managed to resolve conflic
 As a result of detailed persona creation using a visual passion board and gamer personality, we discovered that as we drifted off to cool features in game, Ali suggested having a disability feature to increase the potential reach of the game. Evidencing the importance of requirement engineering planning as a priority, before jumping to cod.
 
 // Mihir Change
+
+### Week 5 Task: Prototyping Game
+#### Class Diagram Representation
+<img src="Assets_For_ReadMe/classdiag.jpeg" width="500">
+
+Reflection:
+- Ali's agendas for each week: really helping team stay on track and not drift.
+- Too much time spent on Github: Mihir to reach out to Alex and check if Settings can be enabled to prevent merge conflicts
+- Started using Kanban map and assigned members to tasks - again settings would allow us to send notifications for deadline instead of also using Google dovs (importance of P.Management)
