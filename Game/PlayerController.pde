@@ -19,9 +19,11 @@ class PlayerController{
    //for collision test 
     boolean down = keyCode == DOWN;
     if(right){
+      player.facing = true;
       player.velocity.set(player.speed,0);
     }
     if(left){
+      player.facing = false;
       player.velocity.set(-player.speed,0);
     }
     //for collision test
@@ -39,29 +41,39 @@ class PlayerController{
     for(Item item : mapController.staticItems) {
       for(float i=player.location.y;i<player.location.y+player.objectHeight-8;i++) {
         if((item.itemNum==1||item.itemNum==4)
-           &&player.location.x+50>item.location.x
+           &&player.facing == true
+           &&player.location.x+60>item.location.x
            &&player.location.x+50<item.location.x+item.objectWidth
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
+          player.location.x = item.location.x - 50;
+          player.velocity.x = 0;
           collisions.add(ContactionType.RightCollision);
         }
         if((item.itemNum==3||item.itemNum==6)
+           &&player.facing == false
            &&player.location.x>item.location.x
            &&player.location.x<item.location.x+item.objectWidth-10
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
+           player.location.x = item.location.x+30;
            collisions.add( ContactionType.LeftCollision);
-           }
+           } 
       }
       for(float i=player.location.x;i<player.location.x+50;i++){
         if((item.itemNum==4||item.itemNum==5||item.itemNum==6)
-           &&player.location.y<item.location.y+item.objectHeight-10
+           &&player.velocity.y <0
+           &&player.location.y<item.location.y+item.objectHeight
            &&player.location.y>item.location.y
            &&i>=item.location.x&&i<item.location.x+item.objectWidth-10){
+          player.location.y = item.location.y+item.objectHeight-5;
           collisions.add(ContactionType.UpCollision);
         }
         if((item.itemNum==1||item.itemNum==2||item.itemNum==3)
-           &&player.location.y+player.objectHeight-8<item.location.y+item.objectHeight
-           &&player.location.y+player.objectHeight-8>item.location.y
+           &&player.velocity.y >=0
+           &&player.location.y+player.objectHeight<item.location.y+item.objectHeight
+           &&player.location.y+player.objectHeight>item.location.y
            &&i>=item.location.x&&i<item.location.x+item.objectWidth-10){
+          player.location.y = item.location.y - player.objectHeight+8;
+          player.velocity.y = 0;
           collisions.add(ContactionType.DownCollision);
         }
       }
@@ -77,18 +89,16 @@ class PlayerController{
     player.velocity.set(0,0);
   }
   
+  // Note that the new input is added to updateLocation
   public void updateLocation(MapController mapController){
     // For collision test output
     text(player.location.x,10,10);
     text(player.location.y,80,10);
     text(checkCollision(mapController).toString(),150,10);
+    text(player.facing+"",200,10);
     
-    PVector oldlocation = player.location;
     player.velocity.add(player.acceleration);
     player.location.add(player.velocity);
-    if(!checkCollision(mapController).contains(ContactionType.InAir)) {
-       player.location = oldlocation;
-    }
   }
   
 
