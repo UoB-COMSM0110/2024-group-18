@@ -31,7 +31,7 @@ void draw(){
 }
 
 void playerDraw(){
-  playerController.updateLocation();
+  playerController.updateLocation(mapController);
   playerController.updateAnimation();
   if(keyPressed){
     playerController.movementControl();

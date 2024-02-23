@@ -3,7 +3,7 @@ class Player extends GameObject{
   PVector velocity;
   PVector acceleration;
   boolean ifCanJump;
-  float speed=1.5;
+  float speed=5;
   
   public Player(){
     super(100,500,60,60);
