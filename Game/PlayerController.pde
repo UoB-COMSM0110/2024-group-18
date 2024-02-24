@@ -14,13 +14,19 @@ class PlayerController{
     boolean right = keyCode == RIGHT;
     boolean left = keyCode == LEFT;
     boolean up = keyCode == UP;
+    boolean down = keyCode == DOWN;
     if(right){
       player.velocity.set(player.speed,0);
     }
     if(left){
       player.velocity.set(-player.speed,0);
     }
-    
+    if(up){
+      player.velocity.set(0,-player.speed);
+    }
+    if(down){
+      player.velocity.set(0,player.speed);
+    }
   }
   
   public void movementReset(){
