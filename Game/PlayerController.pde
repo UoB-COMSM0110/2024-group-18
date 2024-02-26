@@ -16,7 +16,7 @@ class PlayerController{
     boolean right = keyCode == RIGHT;
     boolean left = keyCode == LEFT;
     boolean up = keyCode == UP;
-   //for collision test 
+    //for collision test 
     boolean down = keyCode == DOWN;
     if(right){
       player.facing = true;
@@ -82,7 +82,7 @@ class PlayerController{
       collisions.add(ContactType.InAir); 
     }
     
-    return collisions; 
+    return collisions;
   }
   
   public void movementReset(){
