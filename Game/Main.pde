@@ -31,7 +31,8 @@ void draw(){
 }
 
 void playerDraw(){
-  playerController.updateLocation();
+  // The Method updatelocation is changed to take mapController as an input
+  playerController.updateLocation(mapController);
   playerController.updateAnimation();
   if(keyPressed){
     playerController.movementControl();
