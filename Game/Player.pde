@@ -3,7 +3,7 @@ class Player extends GameObject{
   PVector velocity;
   PVector acceleration;
   boolean ifCanJump;
-  float speed=10;
+  float speed=5.5;
   // facing right is true, facing left is false
   boolean facing;
   

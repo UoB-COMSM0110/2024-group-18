@@ -36,8 +36,8 @@ class PlayerController{
     
   }
   
-  public Set<ContactionType> checkCollision(MapController mapController) {
-    Set<ContactionType> collisions = new HashSet<>();
+  public Set<ContactType> checkCollision(MapController mapController) {
+    Set<ContactType> collisions = new HashSet<>();
     for(Item item : mapController.staticItems) {
       for(float i=player.location.y;i<player.location.y+player.objectHeight-8;i++) {
         if((item.itemNum==1||item.itemNum==4)
@@ -47,7 +47,7 @@ class PlayerController{
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
           player.location.x = item.location.x - 50;
           player.velocity.x = 0;
-          collisions.add(ContactionType.RightCollision);
+          collisions.add(ContactType.RightCollision);
         }
         if((item.itemNum==3||item.itemNum==6)
            &&player.facing == false
@@ -55,7 +55,7 @@ class PlayerController{
            &&player.location.x<item.location.x+item.objectWidth-10
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
            player.location.x = item.location.x+30;
-           collisions.add( ContactionType.LeftCollision);
+           collisions.add( ContactType.LeftCollision);
            } 
       }
       for(float i=player.location.x;i<player.location.x+50;i++){
@@ -65,7 +65,7 @@ class PlayerController{
            &&player.location.y>item.location.y
            &&i>=item.location.x&&i<item.location.x+item.objectWidth-10){
           player.location.y = item.location.y+item.objectHeight-5;
-          collisions.add(ContactionType.UpCollision);
+          collisions.add(ContactType.UpCollision);
         }
         if((item.itemNum==1||item.itemNum==2||item.itemNum==3)
            &&player.velocity.y >=0
@@ -74,12 +74,12 @@ class PlayerController{
            &&i>=item.location.x&&i<item.location.x+item.objectWidth-10){
           player.location.y = item.location.y - player.objectHeight+8;
           player.velocity.y = 0;
-          collisions.add(ContactionType.DownCollision);
+          collisions.add(ContactType.DownCollision);
         }
       }
     }
     if(collisions.isEmpty()) {
-      collisions.add(ContactionType.InAir); 
+      collisions.add(ContactType.InAir); 
     }
     
     return collisions; 
