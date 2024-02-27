@@ -1,7 +1,7 @@
 // Include every attributtes needed for item
 class Item extends GameObject {
   boolean ifStatic;
-  boolean ifHurt; // TODO: we should clean up unused parameters. 
+  boolean ifHurt; // TODO: we should clean up unused parameters.
   boolean ifTriggered;
   boolean situation;
   int itemNum;
@@ -16,11 +16,11 @@ class Item extends GameObject {
     situation=false;
   }
 
-// for debugging
+  // for debugging
   public String toString() {
-    return " x= "+ this.location.x +  
-    " y= "+ this.location.y +  " item num= "+ this.itemNum + " height= "+
-    this.objectHeight +  " width= "+ this.objectWidth;
+    return " x= "+ this.location.x +
+      " y= "+ this.location.y +  " item num= "+ this.itemNum + " height= "+
+      this.objectHeight +  " width= "+ this.objectWidth;
   }
 
   public void setSituation(boolean f) {

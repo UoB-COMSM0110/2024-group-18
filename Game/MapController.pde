@@ -14,7 +14,7 @@ class MapController {
   public void generateMap() {
     for (int i=0; i<map.length; i++) {
       // TODO: there's a LOT of duplicative code here. Consider how to handle it.
-       // TODO: make the numbers ENUMs so this is more readable.
+      // TODO: make the numbers ENUMs so this is more readable.
       for (int j=0; j<map[i].length(); j++) {
         // platforms
         if (map[i].charAt(j)>='1'&&map[i].charAt(j)<='6') {
@@ -81,15 +81,14 @@ class MapController {
     boolean buttonIsTriggered = false;
     for (int i=0; i<staticItems.size(); i++) {
       Item item = staticItems.get(i);
-      if(item.ifTriggered == true){
+      if (item.ifTriggered == true) {
         buttonIsTriggered = true;
       }
-      if(buttonIsTriggered && item.itemNum==7){
-      PImage altDoor = loadImage("./assets/Static/Door/door5.png");
-      image(altDoor, item.location.x, item.location.y, item.objectWidth, item.objectHeight);
-      }
-      else{
-      image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.objectWidth, item.objectHeight);
+      if (buttonIsTriggered && item.itemNum==7) {
+        PImage altDoor = loadImage("./assets/Static/Door/door5.png");
+        image(altDoor, item.location.x, item.location.y, item.objectWidth, item.objectHeight);
+      } else {
+        image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.objectWidth, item.objectHeight);
       }
     }
   }
