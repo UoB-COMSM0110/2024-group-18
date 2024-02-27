@@ -5,8 +5,6 @@ Platform format
 Numbers 1-6 represent the ground.
 (They're slightly different blocks, and they change based on the level).
 
-Note that a player can jump approximately 2 lines up.
-
 Item code
 7: Door
 8: Button

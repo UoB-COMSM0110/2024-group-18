@@ -1,6 +1,6 @@
 // Created for index the type of collision
 public enum ContactType {
-  LeftCollision,
+    LeftCollision,
     RightCollision,
     UpCollision,
     DownCollision,

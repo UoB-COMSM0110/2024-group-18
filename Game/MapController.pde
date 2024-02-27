@@ -77,9 +77,20 @@ class MapController {
       bgSet[7]=loadImage("./assets/Static/Button/button1.gif");
       bgSet[8]=loadImage("./assets/Static/TimeMachine/time1.png");
     }
+    // this logic should live somewhere else.
+    boolean buttonIsTriggered = false;
     for (int i=0; i<staticItems.size(); i++) {
       Item item = staticItems.get(i);
+      if(item.ifTriggered == true){
+        buttonIsTriggered = true;
+      }
+      if(buttonIsTriggered && item.itemNum==7){
+      PImage altDoor = loadImage("./assets/Static/Door/door5.png");
+      image(altDoor, item.location.x, item.location.y, item.objectWidth, item.objectHeight);
+      }
+      else{
       image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.objectWidth, item.objectHeight);
+      }
     }
   }
 }
