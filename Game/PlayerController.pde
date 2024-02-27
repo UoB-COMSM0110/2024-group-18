@@ -58,14 +58,14 @@ private void gameBoundaryCheck(){
 }
 
 
-  public Set<ContactType> checkCollision(MapController mapController) {
+  public Set<ContactType> checkCollision(Map map) {
     Set<ContactType> collisions = new HashSet<>();
     
     // check fo collisions with the boundary of the actual game.
     this.gameBoundaryCheck();
       
     // check for collisions with other ojbects.
-    for (Item item : mapController.staticItems) {
+    for (Item item : map.staticItems) {
       // check for right and left collisions.
       for (float i=player.location.y; i<player.location.y+player.objectHeight-8; i++) {
         if ((item.itemNum==1||item.itemNum==4) // is one of two brick types (not sure why only checks for 2 blocks)
@@ -160,12 +160,12 @@ private void gameBoundaryCheck(){
   }
 
   // Note that the new input is added to updateLocation
-  public void updateLocation(MapController mapController) {
-    Set<ContactType> collision = checkCollision(mapController);
+  public void updateLocation(Map map) {
+    Set<ContactType> collision = checkCollision(map);
     // For collision test output
     text(player.location.x, 10, 10);
     text(player.location.y, 80, 10);
-    text(checkCollision(mapController).toString(), 150, 10);
+    text(checkCollision(map).toString(), 150, 10);
     text(player.facingRight+"", 200, 10);
 
     if (collision.contains(ContactType.DownCollision)) {

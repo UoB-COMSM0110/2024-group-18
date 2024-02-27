@@ -1,7 +1,7 @@
 Player player;
 PlayerController playerController;
 // Each one generate a map for one level, will need 2 more
-MapController mapController;
+Map map;
 
 int level;
 PImage background01;
@@ -14,9 +14,9 @@ void setup() {
 
   player = new Player();
   playerController = new PlayerController(player);
-  mapController = new MapController("./maps/map1.txt");
+  map = new Map("./maps/map1.txt");
   // Store map items in list from mapController
-  mapController.generateMap();
+  map.generateMap();
 }
 
 void draw() {
@@ -25,7 +25,7 @@ void draw() {
     generateBackground(background01);
   }
   // Generate map based on level
-  mapController.displayMap(level);
+  map.displayMap(level);
   // Show player animation and location
   playerDraw();
 }
@@ -33,7 +33,7 @@ void draw() {
 void playerDraw() {
 
   // The Method updatelocation is changed to take mapController as an input
-  playerController.updateLocation(mapController);
+  playerController.updateLocation(map);
   playerController.updateAnimation();
   if (keyPressed) {
     playerController.movementControl();

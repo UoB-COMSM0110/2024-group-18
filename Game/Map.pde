@@ -1,13 +1,13 @@
 // Generating the map and drawing the static items.
 import java.util.List;
 
-class MapController {
+class Map {
   String[] map;
   List<Item> staticItems = new ArrayList<>();
   List<Item> dynamicItems = new ArrayList<>();
   PImage[] bgSet = new PImage[9];
 
-  public MapController(String mapName) {
+  public Map(String mapName) {
     map = loadStrings(mapName);
   }
 
