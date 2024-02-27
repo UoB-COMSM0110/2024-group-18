@@ -13,40 +13,40 @@ class PlayerController{
     image(player.currentImage,player.location.x,player.location.y,player.objectWidth,player.objectHeight);
   }
   
-  public void movementControl() {
-    boolean right = keyCode == RIGHT;
-    boolean left = keyCode == LEFT;
-    boolean jump = keyCode == UP && player.isOnGround;
+public void movementControl() {
+  
+    player.movingRight = keyCode == RIGHT;
+    player.movingLeft = keyCode == LEFT;
+    player.canJump = keyCode == UP && player.isOnGround;
     
-    if(right){
-      player.facingRight = true;
-      if (player.isOnGround) {
-          player.velocity.set(player.speed, 20);
-      } else {
-        player.velocity.x += player.airControl;
-      }
+    if (player.canJump) {
+        player.velocity.y = player.jumpPower;
+        player.isOnGround = false;
     }
     
-    if(left) {
-      player.facingRight = false;
-      if (player.isOnGround) {
-         player.velocity.set(-player.speed, 20);
-      } else {
-        player.velocity.x -= player.airControl;
-      }
-   
-    }
-    
-    if(jump) {
-      player.velocity.set(0, player.jumpPower);
-      player.isOnGround = false;
-           if (right) {
+    if (player.movingRight) {
+        player.facingRight = true;
+        if (!player.isOnGround) {
+            player.velocity.x += player.airControl;
+        } else {
             player.velocity.x = player.speed;
-        } else if (left) {
+        }
+    } else if (player.movingLeft) {
+        player.facingRight = false;
+        if (!player.isOnGround) {
+            player.velocity.x -= player.airControl;
+        } else {
             player.velocity.x = -player.speed;
         }
+    } else {
+        if (player.isOnGround) {
+            player.velocity.x = 0;
+        }
     }
-  }
+}
+
+  
+
   
   public Set<ContactType> checkCollision(MapController mapController) {
     Set<ContactType> collisions = new HashSet<>();
