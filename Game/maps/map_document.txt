@@ -2,11 +2,15 @@ Platform format
 12223
 45556
 
+Numbers 1-6 represent the ground.
+(They're slightly different blocks, and they change based on the level).
+
+Note that a player can jump approximately 2 lines up.
 
 Item code
-7: Reminder
-8: magic door
-9: Win flag
+7: Door
+8: Button
+9: Time Machine
 
 A: trap1
 B: trap2

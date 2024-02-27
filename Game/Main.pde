@@ -6,12 +6,12 @@ MapController mapController;
 int level;
 PImage background01;
 
-void setup(){
-  size(1600,900);
+void setup() {
+  size(1600, 900);
   background01=loadImage("./assets/Background/Blue.png");
-  
+
   level=1;
-  
+
   player = new Player();
   playerController = new PlayerController(player);
   mapController = new MapController("./maps/map1.txt");
@@ -19,34 +19,34 @@ void setup(){
   mapController.generateMap();
 }
 
-void draw(){
+void draw() {
   // Generate background based on level
-  if(level==1){
+  if (level==1) {
     generateBackground(background01);
   }
-  // Show player animation and location
-  playerDraw();
   // Generate map based on level
   mapController.displayMap(level);
+  // Show player animation and location
+  playerDraw();
 }
 
-void playerDraw(){
- 
+void playerDraw() {
+
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(mapController);
   playerController.updateAnimation();
-  if(keyPressed){
+  if (keyPressed) {
     playerController.movementControl();
-  }else{
+  } else {
     playerController.movementReset();
     player.applyGravity(); //--> moved to top of method
   }
 }
 
-void generateBackground(PImage bg){
-  for(int i=0;i<15;i++){
-    for(int j=0;j<10;j++){
-      image(bg,i*128,j*128,128,128);
+void generateBackground(PImage bg) {
+  for (int i=0; i<15; i++) {
+    for (int j=0; j<10; j++) {
+      image(bg, i*128, j*128, 128, 128);
     }
   }
 }
