@@ -38,16 +38,12 @@ public void movementControl() {
         } else {
             player.velocity.x = -player.speed;
         }
-    } else {
-        if (player.isOnGround) {
-            player.velocity.x = 0;
-        }
     }
+    
 }
 
-  
 
-  
+ 
   public Set<ContactType> checkCollision(MapController mapController) {
     Set<ContactType> collisions = new HashSet<>();
     for(Item item : mapController.staticItems) {
