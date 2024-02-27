@@ -15,23 +15,18 @@ class PlayerController{
   public void movementControl(){
     boolean right = keyCode == RIGHT;
     boolean left = keyCode == LEFT;
-    boolean up = keyCode == UP;
-    //for collision test 
-    boolean down = keyCode == DOWN;
+    boolean jump = keyCode == UP && player.isOnGround;
     if(right){
-      player.facing = true;
-      player.velocity.set(player.speed,0);
+      player.facingRight = true;
+      player.velocity.set(player.speed, 20);
     }
     if(left){
-      player.facing = false;
-      player.velocity.set(-player.speed,0);
+      player.facingRight = false;
+      player.velocity.set(-player.speed, 20);
     }
-    //for collision test
-    if(up) {
-      player.velocity.set(0,-5); 
-    }
-    if(down) {
-      player.velocity.set(0,5); 
+    if(jump) {
+      player.velocity.set(0,-60);
+      player.isOnGround = false;
     }
     
   }
@@ -41,7 +36,7 @@ class PlayerController{
     for(Item item : mapController.staticItems) {
       for(float i=player.location.y;i<player.location.y+player.objectHeight-8;i++) {
         if((item.itemNum==1||item.itemNum==4)
-           &&player.facing == true
+           &&player.facingRight == true
            &&player.location.x+60>item.location.x
            &&player.location.x+50<item.location.x+item.objectWidth
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
@@ -50,7 +45,7 @@ class PlayerController{
           collisions.add(ContactType.RightCollision);
         }
         if((item.itemNum==3||item.itemNum==6)
-           &&player.facing == false
+           &&player.facingRight == false
            &&player.location.x>item.location.x
            &&player.location.x<item.location.x+item.objectWidth-10
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
@@ -91,16 +86,26 @@ class PlayerController{
   
   // Note that the new input is added to updateLocation
   public void updateLocation(MapController mapController){
+    Set<ContactType> collision = checkCollision(mapController);
     // For collision test output
     text(player.location.x,10,10);
     text(player.location.y,80,10);
     text(checkCollision(mapController).toString(),150,10);
-    text(player.facing+"",200,10);
+    text(player.facingRight+"",200,10);
+    
+    if (collision.contains(ContactType.DownCollision)) {
+      player.isOnGround = true;
+    } else if (collision.contains(ContactType.InAir)) {
+        player.isOnGround = false;
+    }
+    
+    if (!player.isOnGround) {
+      player.applyGravity();
+    }
     
     player.velocity.add(player.acceleration);
     player.location.add(player.velocity);
   }
   
-
 
 }
