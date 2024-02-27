@@ -1,6 +1,7 @@
 // Include the logic for how character is controlled - intially just arrow keys
 import java.util.Set;
 import java.util.HashSet;
+
 class PlayerController{
   Player player;
 
@@ -8,40 +9,47 @@ class PlayerController{
     this.player = player;
   }
   
-  public void updateAnimation(){
+  public void updateAnimation() {
     image(player.currentImage,player.location.x,player.location.y,player.objectWidth,player.objectHeight);
   }
   
-  public void movementControl(){
-    boolean right = keyCode == RIGHT;
-    boolean left = keyCode == LEFT;
-    boolean up = keyCode == UP;
-    //for collision test 
-    boolean down = keyCode == DOWN;
-    if(right){
-      player.facing = true;
-      player.velocity.set(player.speed,0);
-    }
-    if(left){
-      player.facing = false;
-      player.velocity.set(-player.speed,0);
-    }
-    //for collision test
-    if(up) {
-      player.velocity.set(0,-5); 
-    }
-    if(down) {
-      player.velocity.set(0,5); 
+public void movementControl() {
+  
+    player.movingRight = keyCode == RIGHT;
+    player.movingLeft = keyCode == LEFT;
+    player.canJump = keyCode == UP && player.isOnGround;
+    
+    if (player.canJump) {
+        player.velocity.y = player.jumpPower;
+        player.isOnGround = false;
     }
     
-  }
-  
+    if (player.movingRight) {
+        player.facingRight = true;
+        if (!player.isOnGround) {
+            player.velocity.x += player.airControl;
+        } else {
+            player.velocity.x = player.speed;
+        }
+    } else if (player.movingLeft) {
+        player.facingRight = false;
+        if (!player.isOnGround) {
+            player.velocity.x -= player.airControl;
+        } else {
+            player.velocity.x = -player.speed;
+        }
+    }
+    
+}
+
+
+ 
   public Set<ContactType> checkCollision(MapController mapController) {
     Set<ContactType> collisions = new HashSet<>();
     for(Item item : mapController.staticItems) {
       for(float i=player.location.y;i<player.location.y+player.objectHeight-8;i++) {
         if((item.itemNum==1||item.itemNum==4)
-           &&player.facing == true
+           &&player.facingRight == true
            &&player.location.x+60>item.location.x
            &&player.location.x+50<item.location.x+item.objectWidth
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
@@ -50,7 +58,7 @@ class PlayerController{
           collisions.add(ContactType.RightCollision);
         }
         if((item.itemNum==3||item.itemNum==6)
-           &&player.facing == false
+           &&player.facingRight == false
            &&player.location.x>item.location.x
            &&player.location.x<item.location.x+item.objectWidth-10
            &&i>=item.location.y&&i<item.location.y+item.objectHeight-10){
@@ -91,16 +99,26 @@ class PlayerController{
   
   // Note that the new input is added to updateLocation
   public void updateLocation(MapController mapController){
+    Set<ContactType> collision = checkCollision(mapController);
     // For collision test output
     text(player.location.x,10,10);
     text(player.location.y,80,10);
     text(checkCollision(mapController).toString(),150,10);
-    text(player.facing+"",200,10);
+    text(player.facingRight+"",200,10);
+    
+    if (collision.contains(ContactType.DownCollision)) {
+      player.isOnGround = true;
+    } else if (collision.contains(ContactType.InAir)) {
+        player.isOnGround = false;
+    }
+    
+    if (!player.isOnGround) {
+      player.applyGravity();
+    }
     
     player.velocity.add(player.acceleration);
     player.location.add(player.velocity);
   }
   
-
 
 }

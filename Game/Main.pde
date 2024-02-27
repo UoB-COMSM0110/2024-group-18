@@ -31,6 +31,7 @@ void draw(){
 }
 
 void playerDraw(){
+ 
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(mapController);
   playerController.updateAnimation();
@@ -38,6 +39,7 @@ void playerDraw(){
     playerController.movementControl();
   }else{
     playerController.movementReset();
+    player.applyGravity(); //--> moved to top of method
   }
 }
 
