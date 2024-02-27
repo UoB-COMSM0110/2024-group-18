@@ -38,6 +38,7 @@ void playerDraw(){
     playerController.movementControl();
   }else{
     playerController.movementReset();
+    player.applyGravity(); //--> this now effects collisions for some reason
   }
 }
 

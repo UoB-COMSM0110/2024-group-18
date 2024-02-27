@@ -7,9 +7,9 @@ class Player extends GameObject{
   // facing right is true, facing left is false
   boolean facingRight;
   float gravity = 7.5;
-  float jumpPower = -15;
-  float jumpDirectionalSpeed;
-  float airControl = 0.4;
+  float jumpPower = -45;
+  float jumpDirectionalSpeed = 10.0;
+  float airControl = 5.0;
   
   public Player(){
     super(100,500,60,60);

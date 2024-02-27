@@ -1,6 +1,7 @@
 // Include the logic for how character is controlled - intially just arrow keys
 import java.util.Set;
 import java.util.HashSet;
+
 class PlayerController{
   Player player;
 
@@ -8,27 +9,43 @@ class PlayerController{
     this.player = player;
   }
   
-  public void updateAnimation(){
+  public void updateAnimation() {
     image(player.currentImage,player.location.x,player.location.y,player.objectWidth,player.objectHeight);
   }
   
-  public void movementControl(){
+  public void movementControl() {
     boolean right = keyCode == RIGHT;
     boolean left = keyCode == LEFT;
     boolean jump = keyCode == UP && player.isOnGround;
+    
     if(right){
       player.facingRight = true;
-      player.velocity.set(player.speed, 20);
-    }
-    if(left){
-      player.facingRight = false;
-      player.velocity.set(-player.speed, 20);
-    }
-    if(jump) {
-      player.velocity.set(0,-60);
-      player.isOnGround = false;
+      if (player.isOnGround) {
+          player.velocity.set(player.speed, 20);
+      } else {
+        player.velocity.x += player.airControl;
+      }
     }
     
+    if(left) {
+      player.facingRight = false;
+      if (player.isOnGround) {
+         player.velocity.set(-player.speed, 20);
+      } else {
+        player.velocity.x -= player.airControl;
+      }
+   
+    }
+    
+    if(jump) {
+      player.velocity.set(0, player.jumpPower);
+      player.isOnGround = false;
+           if (right) {
+            player.velocity.x = player.speed;
+        } else if (left) {
+            player.velocity.x = -player.speed;
+        }
+    }
   }
   
   public Set<ContactType> checkCollision(MapController mapController) {
