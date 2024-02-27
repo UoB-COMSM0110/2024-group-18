@@ -17,7 +17,7 @@ class PlayerController {
 
     player.movingRight = keyCode == RIGHT;
     player.movingLeft = keyCode == LEFT;
-    player.isJumping = keyCode == UP && player.isOnGround;
+    player.isJumping = (keyCode == UP || key == 32) && player.isOnGround;
 
     if (player.isJumping) {
       player.velocity.y = player.jumpPower;
@@ -41,10 +41,30 @@ class PlayerController {
     }
   }
 
+private void gameBoundaryCheck(){
+  
+      // todo what is the underlying logic behind these numbers, and how can we encode it into GameObject ITSELF.
+      if(player.location.x<player.objectWidth/4){
+        player.location.x=player.objectWidth/4;
+      }
+      if(player.location.x>width-player.objectWidth){
+        player.location.x=width-player.objectWidth;
+      }
+      if(player.location.y>height-player.objectWidth/4){
+        player.location.y=height/2; // this resets the player into the screen middle. IT's for testing while we fix this bug.
+      } 
+      // I've deliberately not added a check for going out of bounds at the top.
+
+}
 
 
   public Set<ContactType> checkCollision(MapController mapController) {
     Set<ContactType> collisions = new HashSet<>();
+    
+    // check fo collisions with the boundary of the actual game.
+    this.gameBoundaryCheck();
+      
+    // check for collisions with other ojbects.
     for (Item item : mapController.staticItems) {
       // check for right and left collisions.
       for (float i=player.location.y; i<player.location.y+player.objectHeight-8; i++) {
