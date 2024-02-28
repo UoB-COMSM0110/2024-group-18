@@ -14,7 +14,7 @@ class PlayerController {
   }
 
   public void movementControl() {
-
+  
     player.movingRight = keyCode == RIGHT;
     player.movingLeft = keyCode == LEFT;
     player.isJumping = (keyCode == UP || key == 32) && player.isOnGround;
