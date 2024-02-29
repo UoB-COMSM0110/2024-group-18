@@ -6,8 +6,12 @@ Map map;
 int level;
 PImage background01;
 
+PFont font;
 void setup() {
   size(1600, 900);
+  font=createFont("./assets/PressStart2P-Regular.ttf",20);
+  textFont(font);
+  fill(0);
   background01=loadImage("./assets/Background/Blue.png");
 
   level=1;
@@ -31,16 +35,21 @@ void draw() {
 }
 
 void playerDraw() {
-
+  
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(map);
   playerController.updateAnimation();
-  if (keyPressed) {
-    playerController.movementControl();
-  } else {
-    playerController.movementReset();
-    player.applyGravity(); //--> moved to top of method
-  }
+  player.updateAnimation();
+  player.applyGravity(); //--> moved to top of method
+  
+}
+
+void keyPressed(){
+  playerController.movementControl();
+}
+
+void keyReleased(){
+  playerController.movementReset();
 }
 
 void generateBackground(PImage bg) {
