@@ -20,7 +20,10 @@ class PlayerController {
   public void updateAnimation() {
     image(player.currentImage, player.location.x, player.location.y, 60, 60);
   }
+  
+  
 
+ 
   public void movementControl() {
     // add wasd as control just for feel better when do testing :)
     movingRight = keyCode == RIGHT || key == 'd';
@@ -45,6 +48,7 @@ class PlayerController {
       }
     }
   }
+
 
   public boolean checkCollision(GameObject obj) {
     if (player.location.x-player.objectWidth/2<obj.location.x+obj.objectWidth/2&&
@@ -87,6 +91,7 @@ class PlayerController {
     //  player.platformTouched=false;
     //}
   }
+  
   public void movementReset() {
     player.velocity.set(0, player.velocity.y);
   }
@@ -97,6 +102,18 @@ class PlayerController {
       if (checkCollision(item)) {
         setPlayerLocation(item);
       }
+    }
+    // ScreenLeft limit
+    if (player.location.x-player.objectWidth/2<0) {
+      //text("left", 100, 200);
+      player.location.set(player.objectWidth/2, player.location.y);
+      player.velocity.set(0, player.velocity.y);
+    }
+    // ScreenRight limit
+    if (player.location.x+player.objectWidth/2>width) {
+      //text("right", 100, 200);
+      player.location.set(width-player.objectWidth/2, player.location.y);
+      player.velocity.set(0, player.velocity.y);
     }
   }
   
