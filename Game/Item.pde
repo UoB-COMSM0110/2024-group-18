@@ -6,13 +6,16 @@ class Item extends GameObject {
   boolean situation;
   int itemNum;
   
+  float imageWidth;
+  float imageHeight;
+  
   int index=0;
   int frame=0;
   PImage[] onAnimation;
   PImage[] offAnimation;
   PImage[] currentAnimation;
 
-  public Item(int itemNum, float x, float y, float objectWidth, float objectHeight,
+  public Item(int itemNum, float x, float y, float objectWidth, float objectHeight,float imageWidth,float imageHeight,
     boolean ifStatic, boolean ifHurt, boolean ifTriggered) {
     super(x, y, objectWidth, objectHeight);
     this.itemNum = itemNum;
@@ -20,6 +23,8 @@ class Item extends GameObject {
     this.ifHurt = ifHurt;
     this.ifTriggered = ifTriggered;
     situation=false;
+    this.imageWidth=imageWidth;
+    this.imageHeight=imageHeight;
     
     if(itemNum==8){
       // add button animation

@@ -23,18 +23,18 @@ class Map {
         if (map[i].charAt(j)>='1'&&map[i].charAt(j)<='6') {
           float w=40;
           float h=40;
-          Item item = new Item(map[i].charAt(j)-'0', j*w, i*h, w, h, true, false, false);
+          Item item = new Item(map[i].charAt(j)-'0', j*w+w/2, i*h+h/2,w,h, w, h, true, false, false);
           staticItems.add(item);
           // doors
         } else if (map[i].charAt(j)=='7') {
-          float w=120;
-          float h=120;
+          float w=240;
+          float h=240;
           float cellWidth = 40;
-          float cellHeight = 39.1; // for some reason 40 here resulted in the object being placed too low... Not sure why.
+          float cellHeight = 43.5; // for some reason 40 here resulted in the object being placed too low... Not sure why.
           // these offsets exist because when you scale an object above the 40x40 size, the co-ordinates start to get messed up.
           float offsetX = (w - cellWidth) / 2;
           float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, w, h, true, false, false);
+          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY,w,h, w, h, true, false, false);
           item.setCurrentImage("./assets/Static/Door/door1.png");
           //staticItems.add(item);
           dynamicItems.add(item);
@@ -44,10 +44,10 @@ class Map {
           float w=80;
           float h=80;
           float cellWidth = 40;
-          float cellHeight = 40.3; //  weirdly 40 works perfectly here...
+          float cellHeight = 42.5; //  weirdly 40 works perfectly here...
           float offsetX = (w - cellWidth) / 2;
           float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, w, h, true, false, false);
+          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, w,h,w, h, true, false, false);
           item.setCurrentImage("./assets/Static/Button/button1.gif");
           //staticItems.add(item);
           dynamicItems.add(item);
@@ -55,13 +55,13 @@ class Map {
         }
         // time machine
         else if (map[i].charAt(j)=='9') {
-          float w=160;
-          float h=160;
+          float w=200;
+          float h=200;
           int cellWidth = 40;
-          int cellHeight = 39; // for some reason 40 here resulted in the object being placed too low... Not sure why.
+          int cellHeight = 43; // for some reason 40 here resulted in the object being placed too low... Not sure why.
           float offsetX = (w - cellWidth) / 2;
           float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, w, h, true, false, false);
+          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY,80,h, w, h, true, false, false);
           item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
           //staticItems.add(item);
           dynamicItems.add(item);
@@ -100,7 +100,7 @@ class Map {
       //  PImage altDoor = loadImage("./assets/Static/Door/door5.png");
       //  image(altDoor, item.location.x, item.location.y, item.objectWidth, item.objectHeight);
       //} else {
-        image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.objectWidth, item.objectHeight);
+        image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.imageWidth, item.imageHeight);
       //}
     }
   }
@@ -111,7 +111,7 @@ class Map {
     for(int i=0;i<dynamicItems.size();i++){
       Item item = dynamicItems.get(i);
       item.checkTriggerAnimation();
-      image(item.currentImage,item.location.x,item.location.y,item.objectWidth,item.objectHeight);
+      image(item.currentImage,item.location.x,item.location.y,item.imageWidth,item.imageHeight);
       
   }
 }
