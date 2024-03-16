@@ -79,7 +79,9 @@ class PlayerController {
     if(player.location.y-player.objectHeight/2>obj.location.y+obj.objectHeight/2&&player.platformTouched){
       player.platformTouched=false;
     }
+    
   }
+  
   public void movementReset() {
     player.velocity.set(0, player.velocity.y);
   }
@@ -90,6 +92,18 @@ class PlayerController {
       if (checkCollision(item)) {
         setPlayerLocation(item);
       }
+    }
+    // ScreenLeft limit
+    if (player.location.x-player.objectWidth/2<0) {
+      //text("left", 100, 200);
+      player.location.set(player.objectWidth/2, player.location.y);
+      player.velocity.set(0, player.velocity.y);
+    }
+    // ScreenRight limit
+    if (player.location.x+player.objectWidth/2>width) {
+      //text("right", 100, 200);
+      player.location.set(width-player.objectWidth/2, player.location.y);
+      player.velocity.set(0, player.velocity.y);
     }
   }
   
