@@ -156,9 +156,14 @@ void showStory(){
   }
 }
 
+
 void keyReleased() {
+  if (keyCode == UP) {
+    return;
+  }
   playerController.movementReset();
 }
+
 
 void mousePressed(){
   if(mouseX>1300&&mouseX<1400
