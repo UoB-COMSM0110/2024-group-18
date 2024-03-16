@@ -107,13 +107,11 @@ class PlayerController {
     if (player.location.x-player.objectWidth/2<0) {
       //text("left", 100, 200);
       player.location.set(player.objectWidth/2, player.location.y);
-      player.velocity.set(0, player.velocity.y);
     }
     // ScreenRight limit
     if (player.location.x+player.objectWidth/2>width) {
       //text("right", 100, 200);
       player.location.set(width-player.objectWidth/2, player.location.y);
-      player.velocity.set(0, player.velocity.y);
     }
   }
   
