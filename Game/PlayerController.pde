@@ -20,7 +20,10 @@ class PlayerController {
   public void updateAnimation() {
     image(player.currentImage, player.location.x, player.location.y, 60, 60);
   }
+  
+  
 
+ 
   public void movementControl() {
     // add wasd as control just for feel better when do testing :)
     movingRight = keyCode == RIGHT || key == 'd';
@@ -45,6 +48,7 @@ class PlayerController {
       }
     }
   }
+
 
   public boolean checkCollision(GameObject obj) {
     if (player.location.x-player.objectWidth/2<obj.location.x+obj.objectWidth/2&&
