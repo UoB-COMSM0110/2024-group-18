@@ -3,7 +3,7 @@ PlayerController playerController;
 // Each one generate a map for one level, will need 2 more
 Map map;
 String story1="In 2100s, You are a astronaut but dropped into an unknown space.\n You found you can't contact outside anymore.";
-String stroy2="There's only a button, a door and a mystery machine in front of your sight.\n You started thinking if this could help u get way out...";
+String story2="There's only a button, a door and a mystery machine in front of your sight.\n You started thinking if this could help you get way out...";
 
 float lag=0;
 int level;
@@ -47,7 +47,7 @@ void setup() {
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
 
-  level=-1;
+  level=-2;
 
   player = new Player();
   playerController = new PlayerController(player);
@@ -58,12 +58,15 @@ void setup() {
 
 void draw() {
   imageMode(CENTER);
-  if(level==-1){
+  if(level==-2){
     showTitle();
+  }
+  else if(level==-1){
+    generateStartUI();
   }
   // Generate background based on level
   else if (level==0) {
-    generateStartUI();
+    generateStory();
   } else {
     if (level==1) {
       generateBackground(background01);
@@ -75,10 +78,19 @@ void draw() {
     // Show player animation and location
     playerDraw();
   }
-  if(level!=-1){
+  if(level!=-2){
     generateNormalUI();
-
   }
+}
+
+void generateStory(){
+  fill(0);
+  rect(0,0,1600,900);
+  fill(255);
+  text(story1,200,450);
+  text(story2,50,650);
+  text("Press any key to continue...",200,800);
+  
 }
 
 void showTitle(){
@@ -87,7 +99,7 @@ void showTitle(){
   rect(0,0,1600,900);
   image(title,800,450-lag*10,1000,500);
   if(lag==25){
-    level=0;
+    level=-1;
   }
   lag++;
 }
@@ -142,19 +154,15 @@ void playerDraw() {
 }
 
 void keyPressed() {
-  if(level==0){
-    showStory();
+  if(level==-1){
+    level=0;
+  }
+  else if(level==0){
     level=1;
   }
   playerController.movementControl();
 }
 
-void showStory(){
-  for(int i=0;i<1000;i++){
-    background(0);
-    text(story1,300,300);
-  }
-}
 
 
 void keyReleased() {

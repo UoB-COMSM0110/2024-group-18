@@ -62,24 +62,34 @@ class PlayerController {
     return false; // no collision
   }
   
+    public boolean checkShadowCollision(GameObject obj) {
+    if (shadow.location.x-shadow.objectWidth/2<obj.location.x+obj.objectWidth/2&&
+      shadow.location.x+shadow.objectWidth/2>obj.location.x-obj.objectWidth/2&&
+      shadow.location.y-shadow.objectHeight/2<obj.location.y+obj.objectHeight/2&&
+      shadow.location.y+shadow.objectHeight/2>obj.location.y-obj.objectHeight/2) {
+      // colliding
+      return true;
+    }
+    return false; // no collision
+  }
+  
   public void setPlayerLocation(GameObject obj) {
-    // stand
+    // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
       player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;
     }
-    // reach top
-    if (player.location.y-player.objectHeight/2<=obj.location.y+obj.objectHeight/2&&!player.platformTouched&&
-      player.velocity.y<0) {
-      player.location.set(player.location.x, obj.location.y+obj.objectHeight/2+player.objectHeight/2);
-      player.velocity.set(player.velocity.x, 0);
-      player.platformTouched=true;
-    }
-    if(player.location.y-player.objectHeight/2>obj.location.y+obj.objectHeight/2&&player.platformTouched){
-      player.platformTouched=false;
-    }
-    
+    // we may consider if we have collision with platform on buttom side
+    //if (player.location.y-player.objectHeight/2<=obj.location.y+obj.objectHeight/2&&!player.platformTouched&&
+    //  player.velocity.y<0) {
+    //  player.location.set(player.location.x, obj.location.y+obj.objectHeight/2+player.objectHeight/2);
+    //  player.velocity.set(player.velocity.x, 0);
+    //  player.platformTouched=true;
+    //}
+    //if(player.location.y-player.objectHeight/2>obj.location.y+obj.objectHeight/2&&player.platformTouched){
+    //  player.platformTouched=false;
+    //}
   }
   
   public void movementReset() {
@@ -97,13 +107,11 @@ class PlayerController {
     if (player.location.x-player.objectWidth/2<0) {
       //text("left", 100, 200);
       player.location.set(player.objectWidth/2, player.location.y);
-      player.velocity.set(0, player.velocity.y);
     }
     // ScreenRight limit
     if (player.location.x+player.objectWidth/2>width) {
       //text("right", 100, 200);
       player.location.set(width-player.objectWidth/2, player.location.y);
-      player.velocity.set(0, player.velocity.y);
     }
   }
   
@@ -116,16 +124,33 @@ class PlayerController {
           
         }else if(item.itemNum==8){
           // buttons
-          
+          map.openDoor();
         }else if(item.itemNum==9){
           // time machine
-          text("collision test", 100, 100);
           if(!ifShadowGenerated){
             ifShadowGenerated=true;
             shadow.location.set(item.location.x,item.location.y+40);
           }
         }
       }
+
+      // all interatctions between past player and items      
+      if(checkShadowCollision(item)){
+        if(item.itemNum==8){
+          // buttons
+          text("collision test", 100, 100);
+          map.openDoor();
+          
+        }
+      }
+      
+      if(!checkCollision(item)&&!checkShadowCollision(item)){
+        if(item.itemNum==8){
+          map.closeDoor();
+        }
+      }
+      
+      
     }
   }
   
@@ -136,7 +161,7 @@ class PlayerController {
     
     if(ifShadowGenerated){
       shadow.releaseLocation();
-      image(shadow.currentImage,shadow.location.x,shadow.location.y,60,60);
+      image(shadow.currentImage,shadow.location.x,shadow.location.y+5,60,60);
     }
     
     
