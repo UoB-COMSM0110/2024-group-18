@@ -13,14 +13,14 @@ class PastPlayer extends GameObject {
   }
 
   public void storeLocation(PVector location) {
-    if (listFrame%5==0) {
+    if (listFrame%2==0) {
       locationCollection.push(new PVector(location.x,location.y));
     }
     listFrame++;
   }
 
   public void releaseLocation() {
-    if (listFrame%5==0&&locationCollection.size()>0) {
+    if (listFrame%2==0&&locationCollection.size()>0) {
       PVector location = locationCollection.pop();
       this.location.set(location);
     }
