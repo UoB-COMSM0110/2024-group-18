@@ -39,7 +39,7 @@ class Map {
           // these offsets exist because when you scale an object above the 40x40 size, the co-ordinates start to get messed up.
           float offsetX = (w - cellWidth) / 2;
           float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, w, h, w, h, true, false, false);
+          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
           item.setCurrentImage("./assets/Static/Door/door1.png");
           //staticItems.add(item);
           dynamicItems.add(item);
@@ -87,6 +87,7 @@ class Map {
     loadDoorAnimation();
     for (Item item : dynamicItems) {
       if (item.itemNum==7) {
+        item.situation=true;
           item.setCurrentImage(currentAnimation[index]);
           index++;
           if (index>4) {
@@ -101,6 +102,7 @@ class Map {
     loadDoorAnimation();
     for (Item item : dynamicItems) {
       if (item.itemNum==7) {
+        item.situation=false;
           item.setCurrentImage(currentAnimation[index]);
           index--;
           if (index<0) {

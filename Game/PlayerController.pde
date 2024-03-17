@@ -7,6 +7,7 @@ class PlayerController {
   PastPlayer shadow;
   
   boolean ifShadowGenerated=false;
+  boolean ifGameWin=false;
 
   boolean movingRight=false;;
   boolean movingLeft=false;
@@ -121,7 +122,11 @@ class PlayerController {
         // all dynamic things including button, doors
         if(item.itemNum==7){
           // door
-          
+          if(item.situation){
+            ifGameWin=true;
+          }else{
+            ifGameWin=false;
+          }
         }else if(item.itemNum==8){
           // buttons
           map.openDoor();
@@ -138,7 +143,6 @@ class PlayerController {
       if(checkShadowCollision(item)){
         if(item.itemNum==8){
           // buttons
-          text("collision test", 100, 100);
           map.openDoor();
           
         }
@@ -149,9 +153,14 @@ class PlayerController {
           map.closeDoor();
         }
       }
-      
-      
     }
+  }
+  
+  public boolean checkGameOver(){
+    if(ifShadowGenerated&&shadow.locationCollection.size()==0){
+      return true;
+    }
+    return false;
   }
   
   public void displayShadow(){
@@ -163,8 +172,6 @@ class PlayerController {
       shadow.releaseLocation();
       image(shadow.currentImage,shadow.location.x,shadow.location.y+5,60,60);
     }
-    
-    
-    
   }
+  
 }
