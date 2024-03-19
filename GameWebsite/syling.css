@@ -1,5 +1,27 @@
 /* This is a CSS comment */
-div#Title {
-    font-family: "-apple-system";
-    background-color: aqua;
+div#title {
+    border: solid 3px;
+    padding: 1em;
+    max-width: 75%;
+}
+
+.menu {
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+
+body {
+    font-family: "URW Gothic", fantasy;
+    margin: 0 auto;
+    max-width: 40em;
+    line-height: 125%;
+    /*TODO Ask about:
+    background-image: url("baseline.png");*/
+}
+
+ul {
+    padding-left: 2em; /* the bullets appear in the padding */
+    list-style-type: disc;
+    list-style-position: outside;
 }

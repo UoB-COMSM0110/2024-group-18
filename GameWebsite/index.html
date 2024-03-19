@@ -5,13 +5,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Game Project</title>
-    <link rel="stylesheet" href="syling.css">
+<!--    <link rel="stylesheet" href="syling.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class = "Menu">
-        <div id = "Title">
+
+    <div class = "container">
+        <div id = "title">
             <h1>Oiram</h1>
+            <h5>By Group 18</h5>
         </div>
+    </div>
+
+    <div class = "description">
+        <hr>
+        <h3>About the Game</h3>
+        <ul>
+        <h4>Inspiration</h4>
+        <p>
+            Drawing inspiration from Nolan's cinematic twists and the intricate time mechanics of *Braid*, our game emerges as a unique puzzle-platformer set within a visually captivating universe. Here, players navigate through meticulously designed levels, manipulating time in innovative ways to overcome challenges. Each journey from start to end unveils a layer of complexity, as previous iterations of the player's character—echoes of past actions—must be skillfully avoided to prevent time paradoxes. These echoes, executing their actions from past playthroughs, create dynamic obstacles, demanding strategic foresight and precise timing.
+        </p>
+        <h4>Time Travelling</h4>
+        <p>
+            The game's essence is encapsulated in its time inversion mechanic: upon reaching a level's end, players must traverse back to the start, this time accompanied by their past selves. Each iteration adds depth to the gameplay, as the levels fill with versions of the player moving through time in both directions, each one a ghost of actions taken, a testament to decisions made.
+        </p>
+        <h4>Challenges</h4>
+        <p>
+            The crescendo of this temporal symphony is the innovative boss battles, where victory is unattainable through lone efforts. Instead, players must engage in a dance with their past and future selves, coordinating attacks across time to dismantle defenses and strike decisively. The game not only challenges players to navigate through physical spaces but to think temporally, planning actions in one timeline that complement and enable success in another.
+        </p>
+        <h4>Conclusion</h4>
+        <p>
+            Addressing the game's development challenges—such as preserving the integrity of past iterations, designing levels that are compelling in forward and reverse, and crafting boss fights that meaningfully employ the time mechanics—will be paramount in realizing a game that is as thought-provoking as it is entertaining. Through this blend of time-travel intrigue, platforming precision, and narrative depth, our game invites players into a world where time is both a puzzle and a playground, offering an experience that echoes the complexities and wonders of our own temporal existence.
+        </p>
+        </ul>
+    </div>
+
+    <div class = "registration">
+        <section>
+            <h2>Registration Form</h2>
+            <form method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required />
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" name="email" required />
+                <input type="submit" value="Register" />
+            </form>
+        </section>
     </div>
 
 </body>
