@@ -2,6 +2,8 @@ Player player;
 PlayerController playerController;
 // Each one generate a map for one level, will need 2 more
 Map map;
+Map map2;
+Map map3;
 String story1="In 2100s, You are a astronaut but dropped into an unknown space.\n You found you can't contact outside anymore.";
 String story2="There's only a button, a door and a mystery machine in front of your sight.\n You started thinking if this could help you get way out...";
 
@@ -25,6 +27,7 @@ float time_y;
 int controlMode=1;  // 1:WASD  2:arrow keys
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
+boolean ifMapGenerated=false;
 
 float xPos, ypos;
 float xSpeed=0.8, ySpeed=0.8;
@@ -71,6 +74,18 @@ void draw() {
   } else {
     if (level==1) {
       //generateBackground(background01);
+      image(background01,800,450,1600,900);
+    }else if(level==2){
+      if(!ifMapGenerated){
+        map=new Map("./maps/map2.txt");
+        ifMapGenerated=true;
+        map.generateMap();
+      }
+      
+      image(background01,800,450,1600,900);
+    }else if(level==3){
+      // should do same with level2
+      map=new Map("./maps/map3.txt");
       image(background01,800,450,1600,900);
     }
     placeClock();
@@ -217,6 +232,12 @@ void mousePressed() {
 
   if (ifGameOver) {
     restartLevel();
+  }
+  
+  if(ifLevelPass){
+    level++;
+    println(level);
+    ifLevelPass=false;
   }
 }
 
