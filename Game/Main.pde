@@ -162,7 +162,6 @@ void generateStartUI() {
 
   textSize(40);
   fill(0);
-  //text("Game Name",550,200);
   image(title, 800, 200, 1000, 500);
   textSize(20);
   noStroke();
@@ -236,8 +235,8 @@ void mousePressed() {
   
   if(ifLevelPass){
     level++;
-    println(level);
     ifLevelPass=false;
+    playerController.refresh();
   }
 }
 
@@ -249,14 +248,6 @@ public void restartLevel() {
   player.velocity.set(0, 0);
   ifGameOver=false;
 }
-
-//void generateBackground(PImage bg) {
-//  for (int i=0; i<15; i++) {
-//    for (int j=0; j<10; j++) {
-//      image(bg, i*128, j*128, 128, 128);
-//    }
-//  }
-//}
 
 public void placeClock() {
   image(clock, 100, 100, 300, 300);
