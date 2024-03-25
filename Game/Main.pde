@@ -56,7 +56,7 @@ void setup() {
 
   player = new Player();
   playerController = new PlayerController(player);
-  map = new Map("./maps/map1.txt");
+  map = new Map("./maps/map2.txt");
   // Store map items in list from mapController
   map.generateMap();
 }
