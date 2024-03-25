@@ -10,6 +10,7 @@ class Player extends GameObject {
   float jumpPower = -30;
   float jumpDirectionalSpeed = 10.0;
   float airControl = 5.0;
+  boolean platformTouched=false;
 
   int index=0;
   int frame=0;
@@ -25,11 +26,11 @@ class Player extends GameObject {
   PImage[] current_animation;
 
   public Player() {
-    super(120, 500, 60, 60);
+    super(120, 500, 20, 60);
     currentImage = loadImage("./assets/Player/run/Run_0.gif");
     velocity = new PVector(0, 0);
-    acceleration = new PVector(0, 0);
-    isOnGround = true;
+    acceleration = new PVector(0, 2);
+    isOnGround = false;
     facingRight = true;
 
     idleLeft[0]=loadImage("./assets/Player/idle/idleleft_01.gif");
@@ -141,11 +142,4 @@ class Player extends GameObject {
     frame++;
   }
 
-  public void applyGravity() {
-    if (!this.isOnGround) {
-      this.acceleration.y = this.gravity;
-    } else {
-      this.acceleration.y = 0;
-    }
-  }
 }
