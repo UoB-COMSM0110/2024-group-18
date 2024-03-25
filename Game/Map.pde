@@ -73,7 +73,7 @@ class Map {
           float w=200;
           float h=200;
           int cellWidth = 40;
-          int cellHeight = 43; // for some reason 40 here resulted in the object being placed too low... Not sure why.
+          int cellHeight = 44; // for some reason 40 here resulted in the object being placed too low... Not sure why.
           float offsetX = (w - cellWidth) / 2;
           float offsetY = (h - cellHeight) / 2;
           Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
