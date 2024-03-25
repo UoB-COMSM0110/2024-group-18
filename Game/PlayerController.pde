@@ -160,6 +160,9 @@ class PlayerController {
     if(ifShadowGenerated&&shadow.locationCollection.size()==0){
       return true;
     }
+    if(player.location.y>height){
+      return true;
+    }
     return false;
   }
   
