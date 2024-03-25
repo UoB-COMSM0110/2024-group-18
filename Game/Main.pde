@@ -4,8 +4,8 @@ PlayerController playerController;
 Map map;
 Map map2;
 Map map3;
-String story1="In 2100s, You are a astronaut but dropped into an unknown space.\n You found you can't contact outside anymore.";
-String story2="There's only a button, a door and a mystery machine in front of your sight.\n You started thinking if this could help you get way out...";
+String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
+String story2 = "Before you lie a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME TRAVEL.\n Could these be your ticket out?";
 
 float lag=0;
 int level;
