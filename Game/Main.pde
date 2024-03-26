@@ -74,19 +74,19 @@ void draw() {
   } else {
     if (level==1) {
       //generateBackground(background01);
-      image(background01,800,450,1600,900);
-    }else if(level==2){
-      if(!ifMapGenerated){
+      image(background01, 800, 450, 1600, 900);
+    } else if (level==2) {
+      if (!ifMapGenerated) {
         map=new Map("./maps/map2.txt");
         ifMapGenerated=true;
         map.generateMap();
       }
-      
-      image(background01,800,450,1600,900);
-    }else if(level==3){
+
+      image(background01, 800, 450, 1600, 900);
+    } else if (level==3) {
       // should do same with level2
       map=new Map("./maps/map3.txt");
-      image(background01,800,450,1600,900);
+      image(background01, 800, 450, 1600, 900);
     }
     placeClock();
 
@@ -228,12 +228,27 @@ void mousePressed() {
       showSettingBar=true;
     }
   }
+  // Select Tutorial
+  if (mouseX>1400&&mouseX<1650
+    &&mouseY>165&&mouseY<270&&showSettingBar) {
+    level=1;
+  }
+  // Select Easy
+  if (mouseX>1400&&mouseX<1650
+    &&mouseY>270&&mouseY<365&&showSettingBar) {
+    level=2;
+  }
+  // Select Hard
+  if (mouseX>1400&&mouseX<1650
+    &&mouseY>365&&mouseY<460&&showSettingBar) {
+    level=3;
+  }
 
   if (ifGameOver) {
     restartLevel();
   }
-  
-  if(ifLevelPass){
+
+  if (ifLevelPass) {
     level++;
     ifLevelPass=false;
     playerController.refresh();
@@ -251,7 +266,7 @@ public void restartLevel() {
 
 public void placeClock() {
   image(clock, 100, 100, 300, 300);
-  stroke(255,204,204);
+  stroke(255, 204, 204);
   strokeWeight(5);
   time_x=30*sin(time);
   time_y=30*cos(time);
