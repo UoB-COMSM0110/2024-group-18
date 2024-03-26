@@ -20,6 +20,7 @@ PImage levelOption1;
 PImage levelOption2;
 PImage levelOption3;
 PImage background01;
+PImage resetButton;
 PImage clock;
 float time=0;
 float time_x;
@@ -51,7 +52,7 @@ void setup() {
   levelOption1 = loadImage("./assets/Background/level1.png");
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
-
+  resetButton = loadImage("./assets/Background/reset.png");
   level=-2;
 
   player = new Player();
@@ -96,8 +97,11 @@ void draw() {
     playerDraw();
     checkGameStatus();
   }
-  if (level!=-2) {
-    generateNormalUI();
+  if (level!=-2 && level<0) {
+    generateMenuUI();
+  }
+  if (level > 0 && level <=3) {
+    generateInGameUI();
   }
 }
 
@@ -135,7 +139,15 @@ void showTitle() {
   lag++;
 }
 
-void generateNormalUI() {
+void generateInGameUI() {
+  image(resetButton, 1500, 100, 100, 100);
+  image(control, 1350, 100, 100, 100);
+  if (showControlBar) {
+    image(controlOption, 1300, 320, 200, 300);
+  }
+}
+
+void generateMenuUI() {
   image(setting, 1500, 100, 100, 100);
   image(control, 1350, 100, 100, 100);
   if (showControlBar) {
@@ -195,6 +207,17 @@ void keyPressed() {
   if (!ifGameOver||ifLevelPass) {
     playerController.movementControl();
   }
+  // escape key.
+  if (keyCode == 27) {
+    resetToMainMenu();
+  }
+}
+
+void resetToMainMenu() {
+  key = 0;
+  level=-1;
+  lag=25;
+  setup();
 }
 
 
@@ -206,17 +229,9 @@ void keyReleased() {
   playerController.movementReset();
 }
 
-
-void mousePressed() {
-  if (mouseX>1300&&mouseX<1400
-    &&mouseY>50&&mouseY<150) {
-    if (showControlBar) {
-      control=loadImage("./assets/Background/control.png");
-      showControlBar=false;
-    } else {
-      control=loadImage("./assets/Background/control2.png");
-      showControlBar=true;
-    }
+void settingBarClicked() {
+  if (level>0) {
+    return; // new levels cannot be launched from inside levels.
   }
   if (mouseX>1450&&mouseX<1550
     &&mouseY>50&&mouseY<150) {
@@ -228,21 +243,57 @@ void mousePressed() {
       showSettingBar=true;
     }
   }
-  // Select Tutorial
-  if (mouseX>1400&&mouseX<1650
-    &&mouseY>165&&mouseY<270&&showSettingBar) {
-    level=1;
+}
+
+void controlBarClicked() {
+  if (mouseX>1300&&mouseX<1400
+    &&mouseY>50&&mouseY<150) {
+    if (showControlBar) {
+      control=loadImage("./assets/Background/control.png");
+      showControlBar=false;
+    } else {
+      control=loadImage("./assets/Background/control2.png");
+      showControlBar=true;
+    }
   }
-  // Select Easy
-  if (mouseX>1400&&mouseX<1650
-    &&mouseY>270&&mouseY<365&&showSettingBar) {
-    level=2;
+}
+
+void resetButtonClicked() {
+  if (level<=0) {
+    return; // reset button only applies within a level.
   }
-  // Select Hard
-  if (mouseX>1400&&mouseX<1650
-    &&mouseY>365&&mouseY<460&&showSettingBar) {
-    level=3;
+  if (mouseX>1450&&mouseX<1550
+    &&mouseY>50&&mouseY<150) {
+    restartLevel();
   }
+}
+
+void settingBarOptionClicked() {
+  if (showSettingBar) {
+    // Select Tutorial
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>165&&mouseY<270) {
+      level=1;
+    }
+    // Select Easy
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>270&&mouseY<365) {
+      level=2;
+    }
+    // Select Hard
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>365&&mouseY<460) {
+      level=3;
+    }
+  }
+}
+
+
+void mousePressed() {
+  controlBarClicked();
+  settingBarClicked();
+  settingBarOptionClicked();
+  resetButtonClicked();
 
   if (ifGameOver) {
     restartLevel();
