@@ -33,7 +33,6 @@ int xDirection=1, yDirection=1;
 int hintLag = 0;
 int moveLag = 0;
 int invertLag = 0;
-boolean ifRestarted = false;
 PImage moveHint;
 PImage jumpHint;
 PImage reviewHint;
@@ -96,7 +95,7 @@ void draw() {
   if (level!=-2) {
     generateNormalUI();
   }
-  if (level == 1 && !ifRestarted) {
+  if (level == 1) {
     generateHint();
   }
 }
@@ -213,16 +212,16 @@ void generateHint() {
     }
     hintLag++;
   }
-  if (playerController.ifShadowGenerated && hintLag>0 && invertLag == 0) {
+  if (hintLag>0 && playerController.ifShadowGenerated && invertLag == 0) {
     invertLag = 1;
   }
   if (invertLag > 0 && invertLag < 100 && !ifGameOver && !ifLevelPass) {
-    if (invertLag < 15){
+    if (invertLag < 15) {
       image(loadImage("./assets/Hint/wow.png"),800,300, 167,36);
-    } else if (invertLag < 55) {
+    }else if (invertLag < 45) {
       image(loadImage("./assets/Hint/invert.png"),800,350, 890,39);
     }else {
-      image(loadImage("./assets/Hint/lookingfor.png"),800,400, 966,51);
+      image(loadImage("./assets/Hint/lookingfor.png"),800,350, 966,51);
     }
     invertLag++;
   }
@@ -299,7 +298,6 @@ public void restartLevel() {
   player.location.set(120, 500);
   player.velocity.set(0, 0);
   ifGameOver=false;
-  ifRestarted = true;
 }
 
 //void generateBackground(PImage bg) {
