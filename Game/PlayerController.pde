@@ -167,6 +167,11 @@ class PlayerController {
   
   public boolean checkGameOver(){
     if(ifShadowGenerated&&shadow.locationCollection.size()==0){
+      shadow.refresh();
+      return true;
+    }
+    if(player.location.y>height){
+      shadow.refresh();
       return true;
     }
     return false;
@@ -181,6 +186,13 @@ class PlayerController {
       shadow.releaseLocation();
       image(shadow.currentImage,shadow.location.x,shadow.location.y+5,60,60);
     }
+  }
+  
+  public void refresh(){
+    ifGameOver=false;
+    ifGameWin=false;
+    ifShadowGenerated=false;
+    shadow.refresh();
   }
   
 }

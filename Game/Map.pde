@@ -10,10 +10,21 @@ class Map {
   boolean needResetFrame=false;
   int index=0;
   int frame=0;
+  // only used for the exit door
   String[] currentAnimation;
 
   public Map(String mapName) {
     map = loadStrings(mapName);
+    //for(String s:map){
+    //  println(s);
+    //}
+  }
+  
+  public void clearMap(){
+    staticItems.clear();
+    dynamicItems.clear();
+    index=0;
+    frame=0;
   }
   /*
    I changed width and height from int to float, which would be more accurate to place in map
@@ -62,7 +73,7 @@ class Map {
           float w=200;
           float h=200;
           int cellWidth = 40;
-          int cellHeight = 43; // for some reason 40 here resulted in the object being placed too low... Not sure why.
+          int cellHeight = 44; // for some reason 40 here resulted in the object being placed too low... Not sure why.
           float offsetX = (w - cellWidth) / 2;
           float offsetY = (h - cellHeight) / 2;
           Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
@@ -129,7 +140,15 @@ class Map {
       bgSet[3]=loadImage("./assets/Static/Grass1/grass4.gif");
       bgSet[4]=loadImage("./assets/Static/Grass1/grass5.gif");
       bgSet[5]=loadImage("./assets/Static/Grass1/grass6.gif");
+    }else if(level==2){
+      bgSet[0]=loadImage("./assets/Static/Brick2/brick1.gif");
+      bgSet[1]=loadImage("./assets/Static/Brick2/brick2.gif");
+      bgSet[2]=loadImage("./assets/Static/Brick2/brick3.gif");
+      bgSet[3]=loadImage("./assets/Static/Brick2/brick4.gif");
+      bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
+      bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
     }
+    // do same with level 3
     // this logic should live somewhere else.
     //boolean buttonIsTriggered = false;
     for (int i=0; i<staticItems.size(); i++) {

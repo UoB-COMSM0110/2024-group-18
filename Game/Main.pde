@@ -2,8 +2,10 @@ Player player;
 PlayerController playerController;
 // Each one generate a map for one level, will need 2 more
 Map map;
-String story1="In 2100s, You are a astronaut but dropped into an unknown space.\n You found you can't contact outside anymore.";
-String story2="There's only a button, a door and a mystery machine in front of your sight.\n You started thinking if this could help you get way out...";
+Map map2;
+Map map3;
+String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
+String story2 = "Before you lie a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME TRAVEL.\n Could these be your ticket out?";
 
 float lag=0;
 int level;
@@ -18,6 +20,7 @@ PImage levelOption1;
 PImage levelOption2;
 PImage levelOption3;
 PImage background01;
+PImage resetButton;
 PImage clock;
 float time=0;
 float time_x;
@@ -25,6 +28,7 @@ float time_y;
 int controlMode=1;  // 1:WASD  2:arrow keys
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
+boolean ifMapGenerated=false;
 
 float xPos, ypos;
 float xSpeed=0.8, ySpeed=0.8;
@@ -56,7 +60,7 @@ void setup() {
   levelOption1 = loadImage("./assets/Background/level1.png");
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
-
+  resetButton = loadImage("./assets/Background/reset.png");
   level=-2;
   
   moveHint = loadImage("./assets/Hint/moveHint.png");
@@ -83,7 +87,19 @@ void draw() {
   } else {
     if (level==1) {
       //generateBackground(background01);
-      image(background01,800,450,1600,900);
+      image(background01, 800, 450, 1600, 900);
+    } else if (level==2) {
+      if (!ifMapGenerated) {
+        map=new Map("./maps/map2.txt");
+        ifMapGenerated=true;
+        map.generateMap();
+      }
+
+      image(background01, 800, 450, 1600, 900);
+    } else if (level==3) {
+      // should do same with level2
+      map=new Map("./maps/map3.txt");
+      image(background01, 800, 450, 1600, 900);
     }
     placeClock();
 
@@ -93,8 +109,11 @@ void draw() {
     playerDraw();
     checkGameStatus();
   }
-  if (level!=-2) {
-    generateNormalUI();
+  if (level!=-2 && level<0) {
+    generateMenuUI();
+  }
+  if (level > 0 && level <=3) {
+    generateInGameUI();
   }
   if (level == 1 && !ifRestarted) {
     generateHint();
@@ -135,7 +154,15 @@ void showTitle() {
   lag++;
 }
 
-void generateNormalUI() {
+void generateInGameUI() {
+  image(resetButton, 1500, 100, 100, 100);
+  image(control, 1350, 100, 100, 100);
+  if (showControlBar) {
+    image(controlOption, 1300, 320, 200, 300);
+  }
+}
+
+void generateMenuUI() {
   image(setting, 1500, 100, 100, 100);
   image(control, 1350, 100, 100, 100);
   if (showControlBar) {
@@ -162,7 +189,6 @@ void generateStartUI() {
 
   textSize(40);
   fill(0);
-  //text("Game Name",550,200);
   image(title, 800, 200, 1000, 500);
   textSize(20);
   noStroke();
@@ -253,6 +279,17 @@ void keyPressed() {
   if (!ifGameOver||ifLevelPass) {
     playerController.movementControl();
   }
+  // escape key.
+  if (keyCode == 27) {
+    resetToMainMenu();
+  }
+}
+
+void resetToMainMenu() {
+  key = 0;
+  level=-1;
+  lag=25;
+  setup();
 }
 
 
@@ -264,17 +301,9 @@ void keyReleased() {
   playerController.movementReset();
 }
 
-
-void mousePressed() {
-  if (mouseX>1300&&mouseX<1400
-    &&mouseY>50&&mouseY<150) {
-    if (showControlBar) {
-      control=loadImage("./assets/Background/control.png");
-      showControlBar=false;
-    } else {
-      control=loadImage("./assets/Background/control2.png");
-      showControlBar=true;
-    }
+void settingBarClicked() {
+  if (level>0) {
+    return; // new levels cannot be launched from inside levels.
   }
   if (mouseX>1450&&mouseX<1550
     &&mouseY>50&&mouseY<150) {
@@ -286,9 +315,66 @@ void mousePressed() {
       showSettingBar=true;
     }
   }
+}
+
+void controlBarClicked() {
+  if (mouseX>1300&&mouseX<1400
+    &&mouseY>50&&mouseY<150) {
+    if (showControlBar) {
+      control=loadImage("./assets/Background/control.png");
+      showControlBar=false;
+    } else {
+      control=loadImage("./assets/Background/control2.png");
+      showControlBar=true;
+    }
+  }
+}
+
+void resetButtonClicked() {
+  if (level<=0) {
+    return; // reset button only applies within a level.
+  }
+  if (mouseX>1450&&mouseX<1550
+    &&mouseY>50&&mouseY<150) {
+    restartLevel();
+  }
+}
+
+void settingBarOptionClicked() {
+  if (showSettingBar) {
+    // Select Tutorial
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>165&&mouseY<270) {
+      level=1;
+    }
+    // Select Easy
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>270&&mouseY<365) {
+      level=2;
+    }
+    // Select Hard
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>365&&mouseY<460) {
+      level=3;
+    }
+  }
+}
+
+
+void mousePressed() {
+  controlBarClicked();
+  settingBarClicked();
+  settingBarOptionClicked();
+  resetButtonClicked();
 
   if (ifGameOver) {
     restartLevel();
+  }
+
+  if (ifLevelPass) {
+    level++;
+    ifLevelPass=false;
+    playerController.refresh();
   }
 }
 
@@ -302,17 +388,9 @@ public void restartLevel() {
   ifRestarted = true;
 }
 
-//void generateBackground(PImage bg) {
-//  for (int i=0; i<15; i++) {
-//    for (int j=0; j<10; j++) {
-//      image(bg, i*128, j*128, 128, 128);
-//    }
-//  }
-//}
-
 public void placeClock() {
   image(clock, 100, 100, 300, 300);
-  stroke(255,204,204);
+  stroke(255, 204, 204);
   strokeWeight(5);
   time_x=30*sin(time);
   time_y=30*cos(time);
