@@ -12,15 +12,65 @@ class Map {
   int frame=0;
   // only used for the exit door
   String[] currentAnimation;
+  boolean ifBombInverse=false;
+
+  Bomb bomb;
+
+  HashMap bombList = new HashMap<>();
 
   public Map(String mapName) {
     map = loadStrings(mapName);
-    //for(String s:map){
-    //  println(s);
-    //}
   }
-  
-  public void clearMap(){
+
+  public void placeBomb() {
+    float x = (float)Math.random()*(width-100);
+    bomb=new Bomb(x+50);
+  }
+
+  public void displayBomb(float time) {
+    image(bomb.currentImage, bomb.location.x, bomb.location.y, bomb.objectWidth, bomb.objectHeight);
+    if (!ifBombInverse) {
+      // normal display
+      bomb.location.add(bomb.velocity);
+      // falling down when touched ground
+      for (Item item : staticItems) {
+        if (bomb.checkCollision(item)) {
+          bomb.setBombLocation(item);
+        }
+      }
+      if (bomb.isOnGround) {
+        // start explode process
+        boolean f = bomb.explode();
+        if (f) {
+          bombList.put(time, new PVector(bomb.location.x, bomb.location.y));
+          bomb.reset();
+          bomb.isOnGround=false;
+        }
+      }
+      // boundary check
+      if (bomb.location.y>height) {
+        bombList.put(time, new PVector(bomb.location.x, bomb.location.y));
+        bomb.reset();
+      }
+    } else {
+      // inverse display
+     if(bombList.containsKey(time)){
+       PVector location = (PVector)bombList.get(time);
+       bombList.remove(time);
+       bomb.location.set(location);
+       bomb.isOnGround=true;
+     } 
+     if(bomb.isOnGround){
+       bomb.deExplode();
+     }else{
+       bomb.location.add(0,-bomb.velocity.y);
+     }
+     
+     
+    }
+  }
+
+  public void clearMap() {
     staticItems.clear();
     dynamicItems.clear();
     index=0;
@@ -99,11 +149,11 @@ class Map {
     for (Item item : dynamicItems) {
       if (item.itemNum==7) {
         item.situation=true;
-          item.setCurrentImage(currentAnimation[index]);
-          index++;
-          if (index>4) {
-            index=4;
-          }
+        item.setCurrentImage(currentAnimation[index]);
+        index++;
+        if (index>4) {
+          index=4;
+        }
       }
     }
   }
@@ -114,12 +164,12 @@ class Map {
     for (Item item : dynamicItems) {
       if (item.itemNum==7) {
         item.situation=false;
-          item.setCurrentImage(currentAnimation[index]);
-          index--;
-          if (index<0) {
-            index=0;
-            item.setCurrentImage("./assets/Static/Door/door1.png");
-          }
+        item.setCurrentImage(currentAnimation[index]);
+        index--;
+        if (index<0) {
+          index=0;
+          item.setCurrentImage("./assets/Static/Door/door1.png");
+        }
       }
     }
   }
@@ -140,7 +190,7 @@ class Map {
       bgSet[3]=loadImage("./assets/Static/Grass1/grass4.gif");
       bgSet[4]=loadImage("./assets/Static/Grass1/grass5.gif");
       bgSet[5]=loadImage("./assets/Static/Grass1/grass6.gif");
-    }else if(level==2){
+    } else if (level==2) {
       bgSet[0]=loadImage("./assets/Static/Brick2/brick1.gif");
       bgSet[1]=loadImage("./assets/Static/Brick2/brick2.gif");
       bgSet[2]=loadImage("./assets/Static/Brick2/brick3.gif");

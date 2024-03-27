@@ -81,16 +81,6 @@ class PlayerController {
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;
     }
-    // we may consider if we have collision with platform on buttom side
-    //if (player.location.y-player.objectHeight/2<=obj.location.y+obj.objectHeight/2&&!player.platformTouched&&
-    //  player.velocity.y<0) {
-    //  player.location.set(player.location.x, obj.location.y+obj.objectHeight/2+player.objectHeight/2);
-    //  player.velocity.set(player.velocity.x, 0);
-    //  player.platformTouched=true;
-    //}
-    //if(player.location.y-player.objectHeight/2>obj.location.y+obj.objectHeight/2&&player.platformTouched){
-    //  player.platformTouched=false;
-    //}
   }
   
   public void movementReset() {
@@ -100,13 +90,13 @@ class PlayerController {
   // Note that the new input is added to updateLocation
   public void updateLocation(Map map) {
     for (Item item : map.staticItems) {
+      // check collision for player
       if (checkCollision(item)) {
         setPlayerLocation(item);
       }
     }
     // ScreenLeft limit
     if (player.location.x-player.objectWidth/2<0) {
-      //text("left", 100, 200);
       player.location.set(player.objectWidth/2, player.location.y);
     }
     // ScreenRight limit
@@ -134,6 +124,7 @@ class PlayerController {
           // time machine
           if(!ifShadowGenerated){
             ifShadowGenerated=true;
+            map.ifBombInverse=true;
             shadow.location.set(item.location.x,item.location.y+40);
           }
         }
