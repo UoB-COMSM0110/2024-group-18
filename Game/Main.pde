@@ -2,8 +2,6 @@ Player player;
 PlayerController playerController;
 // Each one generate a map for one level, will need 2 more
 Map map;
-Map map2;
-Map map3;
 String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
 String story2 = "Before you lie a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME TRAVEL.\n Could these be your ticket out?";
 
@@ -93,10 +91,11 @@ void draw() {
         map=new Map("./maps/map2.txt");
         ifMapGenerated=true;
         map.generateMap();
+        map.placeBomb();
         player.location.x = 100; // ensure the player starts at the correct location for level 2.
       }
-
       image(background01, 800, 450, 1600, 900);
+      map.displayBomb(time);
     } else if (level==3) {
       // should do same with level2
       map=new Map("./maps/map3.txt");
