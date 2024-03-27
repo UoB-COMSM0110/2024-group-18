@@ -211,7 +211,7 @@ void generateHint() {
     image(jumpHint,800,450,323, 32);
   }
   if (moveLag <= 50 && playerController.hasJumped && playerController.hasMoved) {
-    image(reviewHint,800,100,440,32);
+    image(reviewHint,800,100,448,32);
     moveLag++;
   }
   // portal hint
@@ -236,7 +236,7 @@ void generateHint() {
     }else if (hintLag <= 100) {
       image(loadImage("./assets/Hint/someone.png"),800,400, 860,38);
     }else {
-      image(loadImage("./assets/Hint/telephone.png"),boothLocation.x,boothLocation.y-100, 305,69);
+      image(loadImage("./assets/Hint/booth.png"),boothLocation.x,boothLocation.y-100, 412,26);
     }
     hintLag++;
   }
@@ -247,9 +247,9 @@ void generateHint() {
     if (invertLag < 15){
       image(loadImage("./assets/Hint/wow.png"),800,300, 167,36);
     } else if (invertLag < 55) {
-      image(loadImage("./assets/Hint/invert.png"),800,350, 890,39);
+      image(loadImage("./assets/Hint/reverse-time.png"),800,350, 809,39);
     }else {
-      image(loadImage("./assets/Hint/lookingfor.png"),800,400, 966,51);
+      image(loadImage("./assets/Hint/someoneneed.png"),800,400, 797,39);
     }
     invertLag++;
   }
