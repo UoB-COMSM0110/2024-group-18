@@ -13,6 +13,11 @@ class PlayerController {
   boolean movingLeft=false;
   boolean isJumping=false;
   
+  // flag for hint in tutorial
+  boolean hasPressed = false;
+  boolean hasMoved = false;
+  boolean hasJumped = false;
+  
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0,0,20,60);
@@ -40,12 +45,15 @@ class PlayerController {
       if (isJumping) {
         player.velocity.set(player.velocity.x, player.jumpPower);
         player.isOnGround = false;
+        hasJumped = true;
       }
       if (movingRight) {
         player.velocity.set(player.speed, player.velocity.y);
+        hasMoved = true;
       }
       if (movingLeft) {
         player.velocity.set(-player.speed, player.velocity.y);
+        hasMoved = true;
       }
     }
   }
@@ -68,7 +76,7 @@ class PlayerController {
       shadow.location.x+shadow.objectWidth/2>obj.location.x-obj.objectWidth/2&&
       shadow.location.y-shadow.objectHeight/2<obj.location.y+obj.objectHeight/2&&
       shadow.location.y+shadow.objectHeight/2>obj.location.y-obj.objectHeight/2) {
-      // colliding
+      // colliding 
       return true;
     }
     return false; // no collision
@@ -120,6 +128,7 @@ class PlayerController {
         }else if(item.itemNum==8){
           // buttons
           map.openDoor();
+          hasPressed = true;
         }else if(item.itemNum==9){
           // time machine
           if(!ifShadowGenerated){

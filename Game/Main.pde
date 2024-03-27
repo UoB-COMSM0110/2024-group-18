@@ -18,6 +18,7 @@ PImage levelOption1;
 PImage levelOption2;
 PImage levelOption3;
 PImage background01;
+PImage resetButton;
 PImage clock;
 float time=0;
 float time_x;
@@ -30,6 +31,14 @@ boolean ifMapGenerated=false;
 float xPos, ypos;
 float xSpeed=0.8, ySpeed=0.8;
 int xDirection=1, yDirection=1;
+
+int hintLag = 0;
+int moveLag = 0;
+int invertLag = 0;
+boolean ifRestarted = false;
+PImage moveHint;
+PImage jumpHint;
+PImage reviewHint;
 
 PFont font;
 void setup() {
@@ -49,8 +58,12 @@ void setup() {
   levelOption1 = loadImage("./assets/Background/level1.png");
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
-
+  resetButton = loadImage("./assets/Background/reset.png");
   level=-2;
+  
+  moveHint = loadImage("./assets/Hint/moveHint.png");
+  jumpHint = loadImage("./assets/Hint/jumpHint.png");
+  reviewHint = loadImage("./assets/Hint/reviewHint.png");
 
   player = new Player();
   playerController = new PlayerController(player);
@@ -79,6 +92,7 @@ void draw() {
         ifMapGenerated=true;
         map.generateMap();
         map.placeBomb();
+        player.location.x = 100; // ensure the player starts at the correct location for level 2.
       }
       image(background01, 800, 450, 1600, 900);
       map.displayBomb(time);
@@ -95,8 +109,14 @@ void draw() {
     playerDraw();
     checkGameStatus();
   }
-  if (level!=-2) {
-    generateNormalUI();
+  if (level!=-2 && level<0) {
+    generateMenuUI();
+  }
+  if (level > 0 && level <=3) {
+    generateInGameUI();
+  }
+  if (level == 1 && !ifRestarted) {
+    generateHint();
   }
 }
 
@@ -109,7 +129,7 @@ void checkGameStatus() {
   }
 
   if (playerController.ifGameWin) {
-    text("Congratulations. You passed this level!!", 650, 400);
+    text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
     ifLevelPass=true;
   }
 }
@@ -134,7 +154,15 @@ void showTitle() {
   lag++;
 }
 
-void generateNormalUI() {
+void generateInGameUI() {
+  image(resetButton, 1500, 100, 100, 100);
+  image(control, 1350, 100, 100, 100);
+  if (showControlBar) {
+    image(controlOption, 1300, 320, 200, 300);
+  }
+}
+
+void generateMenuUI() {
   image(setting, 1500, 100, 100, 100);
   image(control, 1350, 100, 100, 100);
   if (showControlBar) {
@@ -170,6 +198,63 @@ void generateStartUI() {
   text("press any key to start", 600, 800);
 }
 
+void generateHint() {
+  if (moveLag < 5) {
+    moveLag++;
+  }
+  // move hint
+  if (moveLag >= 5 && !playerController.hasMoved) {
+    image(moveHint,800,450,385,31);
+  }
+  if (playerController.hasMoved && !playerController.hasJumped) {
+    image(jumpHint,800,450,323, 32);
+  }
+  if (moveLag <= 50 && playerController.hasJumped && playerController.hasMoved) {
+    image(reviewHint,800,100,448,32);
+    moveLag++;
+  }
+  // portal hint
+  boolean isDoorOpen = false;
+  PVector boothLocation = new PVector(0,0);
+  for (Item item : map.dynamicItems) {
+    if (item.itemNum == 7) {
+      isDoorOpen = item.situation;
+    }
+    if (item.itemNum == 9) {
+      boothLocation = item.location;
+    }
+  }
+  if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
+    hintLag = 1; 
+  }
+  if (hintLag >0 && hintLag <= 200 && !playerController.ifShadowGenerated) {
+    if (hintLag < 20) {
+      image(loadImage("./assets/Hint/oh-no.png"),800,300, 144,40);
+    }else if (hintLag < 55) {
+      image(loadImage("./assets/Hint/leave.png"),800,350, 692,32);
+    }else if (hintLag <= 100) {
+      image(loadImage("./assets/Hint/someone.png"),800,400, 860,38);
+    }else {
+      image(loadImage("./assets/Hint/booth.png"),boothLocation.x,boothLocation.y-100, 412,26);
+    }
+    hintLag++;
+  }
+  if (playerController.ifShadowGenerated && hintLag>0 && invertLag == 0) {
+    invertLag = 1;
+  }
+  if (invertLag > 0 && invertLag < 100 && !ifGameOver && !ifLevelPass) {
+    if (invertLag < 15){
+      image(loadImage("./assets/Hint/wow.png"),800,300, 167,36);
+    } else if (invertLag < 55) {
+      image(loadImage("./assets/Hint/reverse-time.png"),800,350, 809,39);
+    }else {
+      image(loadImage("./assets/Hint/someoneneed.png"),800,400, 797,39);
+    }
+    invertLag++;
+  }
+  
+}
+
 void playerDraw() {
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(map);
@@ -194,6 +279,17 @@ void keyPressed() {
   if (!ifGameOver||ifLevelPass) {
     playerController.movementControl();
   }
+  // escape key.
+  if (keyCode == 27) {
+    resetToMainMenu();
+  }
+}
+
+void resetToMainMenu() {
+  key = 0;
+  level=-1;
+  lag=25;
+  setup();
 }
 
 
@@ -205,17 +301,9 @@ void keyReleased() {
   playerController.movementReset();
 }
 
-
-void mousePressed() {
-  if (mouseX>1300&&mouseX<1400
-    &&mouseY>50&&mouseY<150) {
-    if (showControlBar) {
-      control=loadImage("./assets/Background/control.png");
-      showControlBar=false;
-    } else {
-      control=loadImage("./assets/Background/control2.png");
-      showControlBar=true;
-    }
+void settingBarClicked() {
+  if (level>0) {
+    return; // new levels cannot be launched from inside levels.
   }
   if (mouseX>1450&&mouseX<1550
     &&mouseY>50&&mouseY<150) {
@@ -227,21 +315,57 @@ void mousePressed() {
       showSettingBar=true;
     }
   }
-  // Select Tutorial
-  if (mouseX>1400&&mouseX<1650
-    &&mouseY>165&&mouseY<270&&showSettingBar) {
-    level=1;
+}
+
+void controlBarClicked() {
+  if (mouseX>1300&&mouseX<1400
+    &&mouseY>50&&mouseY<150) {
+    if (showControlBar) {
+      control=loadImage("./assets/Background/control.png");
+      showControlBar=false;
+    } else {
+      control=loadImage("./assets/Background/control2.png");
+      showControlBar=true;
+    }
   }
-  // Select Easy
-  if (mouseX>1400&&mouseX<1650
-    &&mouseY>270&&mouseY<365&&showSettingBar) {
-    level=2;
+}
+
+void resetButtonClicked() {
+  if (level<=0) {
+    return; // reset button only applies within a level.
   }
-  // Select Hard
-  if (mouseX>1400&&mouseX<1650
-    &&mouseY>365&&mouseY<460&&showSettingBar) {
-    level=3;
+  if (mouseX>1450&&mouseX<1550
+    &&mouseY>50&&mouseY<150) {
+    restartLevel();
   }
+}
+
+void settingBarOptionClicked() {
+  if (showSettingBar) {
+    // Select Tutorial
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>165&&mouseY<270) {
+      level=1;
+    }
+    // Select Easy
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>270&&mouseY<365) {
+      level=2;
+    }
+    // Select Hard
+    if (mouseX>1400&&mouseX<1650
+      &&mouseY>365&&mouseY<460) {
+      level=3;
+    }
+  }
+}
+
+
+void mousePressed() {
+  controlBarClicked();
+  settingBarClicked();
+  settingBarOptionClicked();
+  resetButtonClicked();
 
   if (ifGameOver) {
     restartLevel();
@@ -261,6 +385,7 @@ public void restartLevel() {
   player.location.set(120, 500);
   player.velocity.set(0, 0);
   ifGameOver=false;
+  ifRestarted = true;
 }
 
 public void placeClock() {
