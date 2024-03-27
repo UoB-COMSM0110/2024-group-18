@@ -21,6 +21,11 @@ class Map {
   public Map(String mapName) {
     map = loadStrings(mapName);
   }
+  
+  public void freshBomb(){
+    placeBomb();
+    bombList.clear();
+  }
 
   public void placeBomb() {
     float x = (float)Math.random()*(width-100);
@@ -63,7 +68,8 @@ class Map {
      if(bomb.isOnGround){
        bomb.deExplode();
      }else{
-       bomb.location.add(0,-bomb.velocity.y);
+       bomb.location.add(0,-bomb.speed);
+      
      }
      
      
