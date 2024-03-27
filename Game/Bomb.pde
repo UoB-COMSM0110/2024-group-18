@@ -78,7 +78,7 @@ class Bomb extends GameObject {
     // on platform
     if (location.y+objectHeight/2>obj.location.y-obj.objectHeight/2&&velocity.y>=0) {
       location.set(location.x, obj.location.y-obj.objectHeight/2-objectHeight/2);
-      velocity.set(velocity.x, 0);
+      velocity.set(0, 0);
       isOnGround=true;
     }
   }

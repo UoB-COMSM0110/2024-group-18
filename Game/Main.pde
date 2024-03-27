@@ -121,7 +121,7 @@ void draw() {
 }
 
 void checkGameStatus() {
-  if (playerController.checkGameOver()) {
+  if (playerController.checkGameOver(map,level)) {
     fill(0);
     text("Game over!", 650, 400);
     text("Click to restart", 580, 450);
@@ -259,6 +259,9 @@ void playerDraw() {
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(map);
   playerController.interactDynamicItems(map);
+  if(level==2||level==3){
+    playerController.checkBomb(map);
+  }
   playerController.updateAnimation();
   player.updateAnimation();
   if (!ifLevelPass) {
@@ -374,7 +377,7 @@ void mousePressed() {
   if (ifLevelPass) {
     level++;
     ifLevelPass=false;
-    playerController.refresh();
+    playerController.refresh(map);
   }
 }
 
@@ -386,6 +389,13 @@ public void restartLevel() {
   player.velocity.set(0, 0);
   ifGameOver=false;
   ifRestarted = true;
+  if(level==2||level==3){
+    map.ifBombInverse=false;
+    map.bombList.clear();
+    playerController.deadByBomb=false;
+    map.placeBomb();
+  }
+  
 }
 
 public void placeClock() {
