@@ -93,6 +93,7 @@ void draw() {
         map=new Map("./maps/map2.txt");
         ifMapGenerated=true;
         map.generateMap();
+        player.location.x = 100; // ensure the player starts at the correct location for level 2.
       }
 
       image(background01, 800, 450, 1600, 900);
@@ -129,7 +130,7 @@ void checkGameStatus() {
   }
 
   if (playerController.ifGameWin) {
-    text("Congratulations. You passed this level!!", 650, 400);
+    text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
     ifLevelPass=true;
   }
 }
