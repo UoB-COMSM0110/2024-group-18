@@ -30,6 +30,12 @@ float xPos, ypos;
 float xSpeed=0.8, ySpeed=0.8;
 int xDirection=1, yDirection=1;
 
+int hintLag = 0;
+int moveLag = 0;
+PImage moveHint;
+PImage jumpHint;
+PImage reviewHint;
+
 PFont font;
 void setup() {
   size(1600, 900);
@@ -50,6 +56,10 @@ void setup() {
   levelOption3 = loadImage("./assets/Background/level3.png");
 
   level=-2;
+  
+  moveHint = loadImage("./assets/Hint/moveHint.png");
+  jumpHint = loadImage("./assets/Hint/jumpHint.png");
+  reviewHint = loadImage("./assets/Hint/reviewHint.png");
 
   player = new Player();
   playerController = new PlayerController(player);
@@ -83,6 +93,9 @@ void draw() {
   }
   if (level!=-2) {
     generateNormalUI();
+  }
+  if (level == 1) {
+    generateHint();
   }
 }
 
@@ -155,6 +168,50 @@ void generateStartUI() {
   rect(300, 770, 1000, 40);
   fill(255);
   text("press any key to start", 600, 800);
+}
+
+void generateHint() {
+  if (moveLag < 5) {
+    moveLag++;
+  }
+  // move hint
+  if (moveLag >= 5 && !playerController.hasMoved) {
+    image(moveHint,800,450,385,31);
+  }
+  if (playerController.hasMoved && !playerController.hasJumped) {
+    image(jumpHint,800,450,323, 32);
+  }
+  if (moveLag <= 50 && playerController.hasJumped && playerController.hasMoved) {
+    image(reviewHint,800,100,440,32);
+    moveLag++;
+  }
+  // portal hint
+  boolean isDoorOpen = false;
+  PVector boothLocation = new PVector(0,0);
+  for (Item item : map.dynamicItems) {
+    if (item.itemNum == 7) {
+      isDoorOpen = item.situation;
+    }
+    if (item.itemNum == 9) {
+      boothLocation = item.location;
+    }
+  }
+  if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
+    hintLag = 1; 
+  }
+  if (hintLag >0 && hintLag <= 200 && !playerController.ifShadowGenerated) {
+    if (hintLag < 20) {
+      image(loadImage("./assets/Hint/oh-no.png"),800,300, 144,40);
+    }else if (hintLag < 55) {
+      image(loadImage("./assets/Hint/leave.png"),800,350, 692,32);
+    }else if (hintLag <= 100) {
+      image(loadImage("./assets/Hint/someone.png"),800,400, 860,38);
+    }else {
+      image(loadImage("./assets/Hint/telephone.png"),boothLocation.x,boothLocation.y-100, 305,69);
+    }
+    hintLag++;
+  }
+  
 }
 
 void playerDraw() {
