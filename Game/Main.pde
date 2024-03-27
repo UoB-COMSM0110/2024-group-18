@@ -393,6 +393,7 @@ public void restartLevel() {
     map.ifBombInverse=false;
     map.bombList.clear();
     playerController.deadByBomb=false;
+    map.placeBomb();
   }
   
 }
