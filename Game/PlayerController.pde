@@ -18,7 +18,6 @@ class PlayerController {
   boolean hasPressed = false;
   boolean hasMoved = false;
   boolean hasJumped = false;
-  boolean deadByBomb=false;
 
   public PlayerController(Player player) {
     this.player = player;
@@ -60,15 +59,6 @@ class PlayerController {
     }
   }
 
-  public boolean checkBomb(Map map) {
-    if (checkCollision(map.bomb)) {
-      // hurt by bomb
-
-      return true;
-    }
-    return false;
-  }
-
 
   public boolean checkCollision(GameObject obj) {
     if (player.location.x-player.objectWidth/2<obj.location.x+obj.objectWidth/2&&
@@ -100,6 +90,16 @@ class PlayerController {
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;
     }
+    // we may consider if we have collision with platform on buttom side
+    //if (player.location.y-player.objectHeight/2<=obj.location.y+obj.objectHeight/2&&!player.platformTouched&&
+    //  player.velocity.y<0) {
+    //  player.location.set(player.location.x, obj.location.y+obj.objectHeight/2+player.objectHeight/2);
+    //  player.velocity.set(player.velocity.x, 0);
+    //  player.platformTouched=true;
+    //}
+    //if(player.location.y-player.objectHeight/2>obj.location.y+obj.objectHeight/2&&player.platformTouched){
+    //  player.platformTouched=false;
+    //}
   }
 
   public void movementReset() {
@@ -109,13 +109,13 @@ class PlayerController {
   // Note that the new input is added to updateLocation
   public void updateLocation(Map map) {
     for (Item item : map.staticItems) {
-      // check collision for player
       if (checkCollision(item)) {
         setPlayerLocation(item);
       }
     }
     // ScreenLeft limit
     if (player.location.x-player.objectWidth/2<0) {
+      //text("left", 100, 200);
       player.location.set(player.objectWidth/2, player.location.y);
     }
     // ScreenRight limit
@@ -144,7 +144,6 @@ class PlayerController {
           // time machine
           if (!ifShadowGenerated) {
             ifShadowGenerated=true;
-            map.ifBombInverse=true;
             shadow.location.set(item.location.x, item.location.y+40);
           }
         }
@@ -166,7 +165,17 @@ class PlayerController {
     }
   }
 
-  public boolean checkGameOver(Map map, int level) {
+  public boolean shadowAndPlayerCollide() {
+    if (!ifShadowGenerated) {
+      return false;
+    }
+    if (checkCollision(shadow)) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean checkGameOver() {
     if (ifShadowGenerated&&shadow.locationCollection.size()==0) {
       shadow.refresh();
       return true;
@@ -175,15 +184,12 @@ class PlayerController {
       shadow.refresh();
       return true;
     }
-    if (level==2||level==3) {
-      if (checkBomb(map)||deadByBomb) {
-        deadByBomb=true;
-        return true;
-      }
+    if (shadowAndPlayerCollide()) {
+      return true;
     }
-
     return false;
   }
+
 
   public void displayShadow() {
     if (!ifShadowGenerated) {
@@ -196,12 +202,10 @@ class PlayerController {
     }
   }
 
-  public void refresh(Map map) {
+  public void refresh() {
     ifGameOver=false;
     ifGameWin=false;
     ifShadowGenerated=false;
-    deadByBomb=false;
-    map.ifBombInverse=false;
     shadow.refresh();
   }
 }
