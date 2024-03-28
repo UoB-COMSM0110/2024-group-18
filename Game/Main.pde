@@ -59,7 +59,7 @@ void setup() {
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
   resetButton = loadImage("./assets/Background/reset.png");
-  level=2; // -2
+  level=-2;
   
   moveHint = loadImage("./assets/Hint/moveHint.png");
   jumpHint = loadImage("./assets/Hint/jumpHint.png");
