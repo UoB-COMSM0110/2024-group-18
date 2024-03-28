@@ -13,16 +13,18 @@ class Map {
   // only used for the exit door
   String[] currentAnimation;
   boolean ifBombInverse=false;
+  int level;
 
   Bomb bomb;
 
   HashMap bombList = new HashMap<>();
 
-  public Map(String mapName) {
+  public Map(String mapName, int level) {
     map = loadStrings(mapName);
+    this.level = level;
   }
-  
-  public void freshBomb(){
+
+  public void freshBomb() {
     placeBomb();
     bombList.clear();
   }
@@ -59,20 +61,17 @@ class Map {
       }
     } else {
       // inverse display
-     if(bombList.containsKey(time)){
-       PVector location = (PVector)bombList.get(time);
-       bombList.remove(time);
-       bomb.location.set(location);
-       bomb.isOnGround=true;
-     } 
-     if(bomb.isOnGround){
-       bomb.deExplode();
-     }else{
-       bomb.location.add(0,-bomb.speed);
-      
-     }
-     
-     
+      if (bombList.containsKey(time)) {
+        PVector location = (PVector)bombList.get(time);
+        bombList.remove(time);
+        bomb.location.set(location);
+        bomb.isOnGround=true;
+      }
+      if (bomb.isOnGround) {
+        bomb.deExplode();
+      } else {
+        bomb.location.add(0, -bomb.speed);
+      }
     }
   }
 
@@ -82,60 +81,75 @@ class Map {
     index=0;
     frame=0;
   }
-  /*
-   I changed width and height from int to float, which would be more accurate to place in map
-   Buttons, doors should be stored in dynamic items to check trigger more efficiently
-   */
+
+  // these 4 draw methods (items platforms, buttons, Time Machine)
+  // are very similar. Potentially there's a way to improve this code to make simpler / shorter.
+  private void drawDoor(int i, int j) {
+    float w=240;
+    float h=240;
+    float cellWidth = 40;
+    float cellHeight = 43.5;
+
+    if (level==2) {
+      w=200;
+      h=200;
+      cellWidth = 32;
+      cellHeight = 47.5;
+    }
+    // these offsets exist because when you scale an object above the 40x40 size, the co-ordinates start to get messed up.
+    float offsetX = (w - cellWidth) / 2;
+    float offsetY = (h - cellHeight) / 2;
+    Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
+    item.setCurrentImage("./assets/Static/Door/door1.png");
+    dynamicItems.add(item);
+  }
+
+  private void drawPlatforms(int i, int j) {
+    float w=40;
+    float h=40;
+    Item item = new Item(map[i].charAt(j)-'0', j*w+w/2, i*h+h/2, w, h, w, h, true, false, false);
+    staticItems.add(item);
+  }
+
+  private void drawButtons(int i, int j) {
+    float w=80;
+    float h=80;
+    float cellWidth = 40.5;
+    float cellHeight = 45.5;
+    if (level == 1) {
+      cellWidth = 40;
+      cellHeight = 42.5;
+    }
+    float offsetX = (w - cellWidth) / 2;
+    float offsetY = (h - cellHeight) / 2;
+    Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 50, h, w, h, true, false, false);
+    item.setCurrentImage("./assets/Static/Button/button1.gif");
+    dynamicItems.add(item);
+  }
+
+  private void drawTimeMachine(int i, int j) {
+    float w=200;
+    float h=200;
+    int cellWidth = 40;
+    int cellHeight = 44;
+    float offsetX = (w - cellWidth) / 2;
+    float offsetY = (h - cellHeight) / 2;
+    Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
+    item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
+    dynamicItems.add(item);
+  }
+
   public void generateMap() {
     for (int i=0; i<map.length; i++) {
-      // TODO: there's a LOT of duplicative code here. Consider how to handle it.
-      // TODO: make the numbers ENUMs so this is more readable.
       for (int j=0; j<map[i].length(); j++) {
-        // platforms
         if (map[i].charAt(j)>='1'&&map[i].charAt(j)<='6') {
-          float w=40;
-          float h=40;
-          Item item = new Item(map[i].charAt(j)-'0', j*w+w/2, i*h+h/2, w, h, w, h, true, false, false);
-          staticItems.add(item);
-          // doors
+          drawPlatforms(i, j);
         } else if (map[i].charAt(j)=='7') {
-          float w=240;
-          float h=240;
-          float cellWidth = 40;
-          float cellHeight = 43.5; // for some reason 40 here resulted in the object being placed too low... Not sure why.
-          // these offsets exist because when you scale an object above the 40x40 size, the co-ordinates start to get messed up.
-          float offsetX = (w - cellWidth) / 2;
-          float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
-          item.setCurrentImage("./assets/Static/Door/door1.png");
-          //staticItems.add(item);
-          dynamicItems.add(item);
-        }
-        // buttons
-        else if (map[i].charAt(j)=='8') {
-          float w=80;
-          float h=80;
-          float cellWidth = 40;
-          float cellHeight = 42.5; //  weirdly 40 works perfectly here...
-          float offsetX = (w - cellWidth) / 2;
-          float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 50, h, w, h, true, false, false);
-          item.setCurrentImage("./assets/Static/Button/button1.gif");
-          //staticItems.add(item);
-          dynamicItems.add(item);
-        }
-        // time machine
-        else if (map[i].charAt(j)=='9') {
-          float w=200;
-          float h=200;
-          int cellWidth = 40;
-          int cellHeight = 44; // for some reason 40 here resulted in the object being placed too low... Not sure why.
-          float offsetX = (w - cellWidth) / 2;
-          float offsetY = (h - cellHeight) / 2;
-          Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
-          item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
-          //staticItems.add(item);
-          dynamicItems.add(item);
+          drawDoor(i, j);
+        } else if (map[i].charAt(j)=='8') {
+          drawButtons(i, j);
+        } else if (map[i].charAt(j)=='9') {
+          drawTimeMachine(i, j);
         }
       }
     }
@@ -180,14 +194,14 @@ class Map {
     }
   }
 
-  public void displayMap(int level) {
-    displayStaticItems(level);
+  public void displayMap() {
+    displayStaticItems();
     displayDynamicItems();
   }
   /*
   In this function only have items which can't move or trigger and will be changed based on level
    */
-  public void displayStaticItems(int level) {
+  public void displayStaticItems() {
     if (level==1) {
       // I wonder if it makes more sense for image URL to live in the currentImage bit of the GameObject?
       bgSet[0]=loadImage("./assets/Static/Grass1/grass1.gif");
