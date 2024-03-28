@@ -32,7 +32,12 @@ class PlayerController {
   }
 
   public void updateAnimation() {
-    image(player.currentImage, player.location.x, player.location.y, 60, 60);
+    if(player.current_animation==player.disappear){
+      image(player.currentImage, player.location.x, player.location.y, 120, 120);
+    }else{
+      image(player.currentImage, player.location.x, player.location.y, 60, 60);
+    }
+    
   }
 
 
