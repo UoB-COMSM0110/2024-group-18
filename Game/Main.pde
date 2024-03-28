@@ -82,7 +82,7 @@ void setup() {
   // Store map items in list from mapController
   map.generateMap();
   if(controlMode==3){
-    alternativeController = new AlternativeController(this);
+    alternativeController = new AlternativeController(this,playerController);
   }
 }
 
@@ -119,7 +119,6 @@ void draw() {
 
     // Generate map based on level
     map.displayMap();
-    alternativeController.control(); // todo this should only be active sometimes.
     // Show player animation and location
     playerDraw();
     checkGameStatus();
@@ -277,6 +276,10 @@ void generateHint() {
 }
 
 void playerDraw() {
+  if(controlMode==3){
+       alternativeController.control();
+           playerController.movementControl(); 
+  }
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(map);
   playerController.interactDynamicItems(map);

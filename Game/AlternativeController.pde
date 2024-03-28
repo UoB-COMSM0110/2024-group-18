@@ -23,7 +23,7 @@ class AlternativeController {
   float camHeight;
 
   public AlternativeController(PApplet parent, PlayerController playerController) {
-    playerController=playerController;
+    this.playerController=playerController;
     vision = new DeepVision(parent);
     threshold = 0.5;
 
@@ -42,14 +42,14 @@ class AlternativeController {
     camHeight = 90;
     camX=width-camWidth;
     camY=height-camHeight;
-}
+  }
 
   void control() {
-      imageMode(CORNER);
+    imageMode(CORNER);
     // audio stuff
     soundController();
 
-    // video stuff
+     //video stuff
     if (cam.available()) {
       cam.read();
     }
@@ -64,37 +64,43 @@ class AlternativeController {
     noFill();
     strokeWeight(2f);
     imageMode(CENTER); // return to default.
-
   }
 
   private void soundController() {
     if (amp.analyze()>0.01) {
-      keyCode = UP;
+      playerController.inputUp=true;
+      println("UP"+millis());
+    } else {
+      playerController.inputUp=false;
     }
   }
-  
-  private float cameraX(KeyPointResult point){
+
+  private float cameraX(KeyPointResult point) {
     return map(point.getX(), 0, cam.width, camX, camX + camWidth);
   }
-    
-  private float cameraY(KeyPointResult point){
+
+  private float cameraY(KeyPointResult point) {
     return map(point.getY(), 0, cam.height, camY, camY + camHeight);
   }
 
   private void drawHuman(HumanPoseResult human) {
     // todo: maybe we can set these dynamically - eg tell the user to lean left / right and set them up like that?
     if (cameraX(human.getLeftEye())<camX+(camWidth/2)-10) {
-      keyCode = LEFT;
+      playerController.inputLeft=true;
     } else if (cameraX(human.getLeftEye())>camX+(camWidth/2)+10) {
-      keyCode = RIGHT;
-    } 
+      playerController.inputRight=true;
+    } else {
+      playerController.inputRight=false;
+      playerController.inputLeft=false;
+    }
+
     int i = 0;
     fill(0);
     for (KeyPointResult point : human.getKeyPoints()) {
       if (point.getProbability() < threshold)
         continue;
 
-      // Map the keypoint's coordinates to the screen space where the camera feed is displayed  
+      // Map the keypoint's coordinates to the screen space where the camera feed is displayed
       ellipse(cameraX(point), cameraY(point), 2, 2);
       i++;
     }

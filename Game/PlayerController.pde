@@ -45,9 +45,9 @@ class PlayerController {
 
   public void movementControl() {
     // add wasd as control just for feel better when do testing :)
-    movingRight = keyCode == RIGHT || key == 'd';
-    movingLeft = keyCode == LEFT || key == 'a';
-    isJumping = (keyCode == UP || key == 'w') && player.isOnGround;
+    movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
+    movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
+    isJumping = (keyCode == UP || key == 'w' || inputUp==true) && player.isOnGround;
     if (isJumping && movingRight) {
       player.velocity.add(player.speed, player.jumpPower);
       player.isOnGround = false;
@@ -69,6 +69,7 @@ class PlayerController {
         hasMoved = true;
       }
     }
+
   }
 
   public boolean checkBomb(Map map) {
