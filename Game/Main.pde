@@ -122,6 +122,7 @@ void draw() {
 
 void checkGameStatus() {
   if (playerController.checkGameOver(map,level)) {
+    player.ifDead=true;
     fill(0);
     if(playerController.deadByHitPreviousPlayer){
             text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
@@ -390,6 +391,7 @@ public void restartLevel() {
   time=0;
   playerController.ifShadowGenerated=false;
   playerController.shadow.location.set(0, 0);
+  player.ifDead=false;
   player.location.set(120, 500);
   player.velocity.set(0, 0);
   ifGameOver=false;

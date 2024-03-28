@@ -11,6 +11,7 @@ class Player extends GameObject {
   float jumpDirectionalSpeed = 10.0;
   float airControl = 5.0;
   boolean platformTouched=false;
+  boolean ifDead=false;
 
   int index=0;
   int frame=0;
@@ -87,14 +88,32 @@ class Player extends GameObject {
     jumpRight[0]=loadImage("./assets/Player/jump&fall/JumpRight.png");
     fallLeft[0]=loadImage("./assets/Player/jump&fall/FallLeft.png");
     fallRight[0]=loadImage("./assets/Player/jump&fall/FallRight.png");
+    
+    disappear[0]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_01.gif");
+    disappear[1]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_02.gif");
+    disappear[2]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_03.gif");
+    disappear[3]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_04.gif");
+    disappear[4]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_05.gif");
+    disappear[5]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_06.gif");
+    disappear[6]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_07.gif");
+    
   }
 
   public void updateAnimation() {
     selectStatus();
-    displayImage();
+    if(ifDead){
+      displayDead();
+    }else{
+      displayImage();
+    }
+    
   }
 
   public void selectStatus() {
+    if(ifDead){
+      current_animation=disappear;
+      return;
+    }
     if (velocity.x>0) {
       facingRight=true;
       if (velocity.y>0) {
@@ -132,6 +151,18 @@ class Player extends GameObject {
         current_animation=facingRight?idleRight:idleLeft;
       }
     }
+  }
+  
+  public void displayDead(){
+    if(frame%4==0){
+      currentImage=current_animation[index];
+      index++;
+      if(index>=current_animation.length){
+        this.location.set(width,height);
+        index=current_animation.length-1;
+      }
+    }
+    frame++;
   }
 
   public void displayImage() {
