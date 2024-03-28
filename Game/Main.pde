@@ -1,5 +1,14 @@
+import ch.bildspur.vision.*;
+import ch.bildspur.vision.network.*;
+import ch.bildspur.vision.web.*;
+import ch.bildspur.vision.dependency.*;
+import ch.bildspur.vision.pipeline.*;
+import ch.bildspur.vision.util.*;
+import ch.bildspur.vision.result.*;
+
 Player player;
 PlayerController playerController;
+AlternativeController alternativeController;
 // Each one generate a map for one level, will need 2 more
 Map map;
 String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
@@ -23,7 +32,8 @@ PImage clock;
 float time=0;
 float time_x;
 float time_y;
-int controlMode=1;  // 1:WASD  2:arrow keys
+// TODO: eventually this will be set with a menu setting. For now we can set it manually for testing.
+int controlMode=3;  // 1:WASD  2:arrow keys 3: disabled mode. TODO: check if 1 and 2 are actually implemented, I don't think they are.
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
 boolean ifMapGenerated=false;
@@ -39,6 +49,7 @@ boolean ifRestarted = false;
 PImage moveHint;
 PImage jumpHint;
 PImage reviewHint;
+
 
 PFont font;
 void setup() {
@@ -59,7 +70,7 @@ void setup() {
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
   resetButton = loadImage("./assets/Background/reset.png");
-  level=-2;
+  level=1; // todo: switch to -2
   
   moveHint = loadImage("./assets/Hint/moveHint.png");
   jumpHint = loadImage("./assets/Hint/jumpHint.png");
@@ -70,6 +81,9 @@ void setup() {
   map = new Map("./maps/map1.txt",1);
   // Store map items in list from mapController
   map.generateMap();
+  if(controlMode==3){
+    alternativeController = new AlternativeController(this);
+  }
 }
 
 void draw() {
@@ -105,6 +119,7 @@ void draw() {
 
     // Generate map based on level
     map.displayMap();
+    alternativeController.control(); // todo this should only be active sometimes.
     // Show player animation and location
     playerDraw();
     checkGameStatus();

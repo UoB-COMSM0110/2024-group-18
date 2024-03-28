@@ -19,7 +19,13 @@ class PlayerController {
   boolean hasJumped = false;
   boolean deadByBomb=false;
   boolean deadByHitPreviousPlayer=false;
-
+  
+  // these are for the alternative controller.
+  boolean inputLeft = false;
+  boolean inputRight = false;
+  boolean inputUp = false;
+  
+  
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0, 0, 20, 60);
