@@ -166,6 +166,16 @@ class PlayerController {
     }
   }
 
+  public boolean shadowAndPlayerCollide() {
+    if (!ifShadowGenerated) {
+      return false;
+    }
+    if (checkCollision(shadow)) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean checkGameOver(Map map, int level) {
     if (ifShadowGenerated&&shadow.locationCollection.size()==0) {
       shadow.refresh();
@@ -173,6 +183,9 @@ class PlayerController {
     }
     if (player.location.y>height) {
       shadow.refresh();
+      return true;
+    }
+    if (shadowAndPlayerCollide()) {
       return true;
     }
     if (level==2||level==3) {
@@ -190,7 +203,7 @@ class PlayerController {
       shadow.storeLocation(player.location);
     }
 
-    if (ifShadowGenerated) {
+    if (ifShadowGenerated && !ifGameOver) {
       shadow.releaseLocation();
       image(shadow.currentImage, shadow.location.x, shadow.location.y+5, 60, 60);
     }
