@@ -67,7 +67,7 @@ void setup() {
 
   player = new Player();
   playerController = new PlayerController(player);
-  map = new Map("./maps/map1.txt");
+  map = new Map("./maps/map1.txt",1);
   // Store map items in list from mapController
   map.generateMap();
 }
@@ -88,7 +88,7 @@ void draw() {
       image(background01, 800, 450, 1600, 900);
     } else if (level==2) {
       if (!ifMapGenerated) {
-        map=new Map("./maps/map2.txt");
+        map=new Map("./maps/map2.txt",2);
         ifMapGenerated=true;
         map.generateMap();
         map.placeBomb();
@@ -98,13 +98,13 @@ void draw() {
       map.displayBomb(time);
     } else if (level==3) {
       // should do same with level2
-      map=new Map("./maps/map3.txt");
+      map=new Map("./maps/map3.txt",3);
       image(background01, 800, 450, 1600, 900);
     }
     placeClock();
 
     // Generate map based on level
-    map.displayMap(level);
+    map.displayMap();
     // Show player animation and location
     playerDraw();
     checkGameStatus();
