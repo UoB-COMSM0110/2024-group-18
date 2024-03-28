@@ -203,7 +203,7 @@ class PlayerController {
       shadow.storeLocation(player.location);
     }
 
-    if (ifShadowGenerated) {
+    if (ifShadowGenerated && !ifGameOver) {
       shadow.releaseLocation();
       image(shadow.currentImage, shadow.location.x, shadow.location.y+5, 60, 60);
     }
