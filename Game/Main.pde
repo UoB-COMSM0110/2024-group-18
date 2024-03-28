@@ -123,8 +123,13 @@ void draw() {
 void checkGameStatus() {
   if (playerController.checkGameOver(map,level)) {
     fill(0);
-    text("Game over!", 650, 400);
-    text("Click to restart", 580, 450);
+    if(playerController.deadByHitPreviousPlayer){
+            text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
+    }
+    else{
+          text("Game over!", 650, 400);
+          text("Click to restart", 580, 450);
+    }
     ifGameOver=true;
   }
 

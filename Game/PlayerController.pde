@@ -10,7 +10,6 @@ class PlayerController {
   boolean ifGameWin=false;
 
   boolean movingRight=false;
-  ;
   boolean movingLeft=false;
   boolean isJumping=false;
 
@@ -19,6 +18,7 @@ class PlayerController {
   boolean hasMoved = false;
   boolean hasJumped = false;
   boolean deadByBomb=false;
+  boolean deadByHitPreviousPlayer=false;
 
   public PlayerController(Player player) {
     this.player = player;
@@ -175,7 +175,7 @@ class PlayerController {
     }
     return false;
   }
-
+  
   public boolean checkGameOver(Map map, int level) {
     if (ifShadowGenerated&&shadow.locationCollection.size()==0) {
       shadow.refresh();
@@ -186,6 +186,7 @@ class PlayerController {
       return true;
     }
     if (shadowAndPlayerCollide()) {
+      deadByHitPreviousPlayer=true;
       return true;
     }
     if (level==2||level==3) {
