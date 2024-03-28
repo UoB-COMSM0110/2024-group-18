@@ -166,6 +166,16 @@ class PlayerController {
     }
   }
 
+  public boolean shadowAndPlayerCollide() {
+    if (!ifShadowGenerated) {
+      return false;
+    }
+    if (checkCollision(shadow)) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean checkGameOver(Map map, int level) {
     if (ifShadowGenerated&&shadow.locationCollection.size()==0) {
       shadow.refresh();
@@ -173,6 +183,9 @@ class PlayerController {
     }
     if (player.location.y>height) {
       shadow.refresh();
+      return true;
+    }
+    if (shadowAndPlayerCollide()) {
       return true;
     }
     if (level==2||level==3) {
