@@ -24,7 +24,7 @@ PImage clock;
 float time=0;
 float time_x;
 float time_y;
-// This is the setting that allows you to activate disability mode (setting 3.) 
+// This is the setting that allows you to activate disability mode (setting 3.)
 // TOOD: we need a menu setting to activate it.
 int controlMode=1;  // 1:WASD  2:arrow keys 3: disabled mode. TODO: check if 1 and 2 are actually implemented, I don't think they are.
 boolean ifGameOver=false;
@@ -63,7 +63,7 @@ void setup() {
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
   resetButton = loadImage("./assets/Background/reset.png");
-  level=2; 
+  level=-2;
 
   moveHint = loadImage("./assets/Hint/moveHint.png");
   jumpHint = loadImage("./assets/Hint/jumpHint.png");
@@ -268,7 +268,7 @@ void generateHint() {
 
 void playerDraw() {
   if (controlMode==3) {
-      alternativeController.control();
+    alternativeController.control();
     playerController.movementControl();
   }
   // The Method updatelocation is changed to take mapController as an input
@@ -403,13 +403,13 @@ public void restartLevel() {
   player.ifDead=false;
   player.location.set(120, 500);
   player.velocity.set(0, 0);
+  playerController.deadByHitPreviousPlayer=false;
   ifGameOver=false;
   ifRestarted = true;
   if (level==2||level==3) {
     map.ifBombInverse=false;
     map.bombList.clear();
     playerController.deadByBomb=false;
-    playerController.deadByHitPreviousPlayer=false;
     map.placeBomb();
   }
 }
