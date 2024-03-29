@@ -69,7 +69,6 @@ class PlayerController {
         hasMoved = true;
       }
     }
-
   }
 
   public boolean checkBomb(Map map) {

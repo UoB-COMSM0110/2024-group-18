@@ -1,8 +1,7 @@
-import ch.bildspur.vision.DeepVision;
-import ch.bildspur.vision.SingleHumanPoseNetwork;
-import ch.bildspur.vision.result.HumanPoseResult;
-import ch.bildspur.vision.result.KeyPointResult;
+import ch.bildspur.vision.*;
+import ch.bildspur.vision.result.*;
 import processing.video.Capture;
+
 import processing.sound.*;
 
 class AlternativeController {
@@ -13,10 +12,9 @@ class AlternativeController {
   AudioIn in;
   // webcam and AI libraries.
   DeepVision vision;
-  SingleHumanPoseNetwork pose;
-  HumanPoseResult result;
+  ULFGFaceDetectionNetwork network;
+  ResultList<ObjectDetectionResult> detections;
   Capture cam;
-  float threshold;
   float camX;
   float camY;
   float camWidth;
@@ -25,11 +23,10 @@ class AlternativeController {
   public AlternativeController(PApplet parent, PlayerController playerController) {
     this.playerController=playerController;
     vision = new DeepVision(parent);
-    threshold = 0.5;
 
     // video stuff
-    pose = vision.createSingleHumanPoseEstimation();
-    pose.setup();
+    network = vision.createULFGFaceDetectorRFB320();
+    network.setup();
     cam = new Capture(parent, "pipeline:autovideosrc");
     cam.start();
 
@@ -45,24 +42,32 @@ class AlternativeController {
   }
 
   void control() {
-    imageMode(CORNER);
     // audio stuff
     soundController();
 
-     //video stuff
+    //video stuff
+    imageMode(CORNER);
     if (cam.available()) {
       cam.read();
     }
-    image(cam, camX,camY, camWidth,camHeight);
-    if (cam.width == 0) {
-      return;
-    }
-    result = pose.run(cam);
-    stroke(180, 80, 100);
-    noFill();
-    drawHuman(result);
+    // todo: figure out how to flip the webcam feed so it is drawn correctly
+    image(cam, camX, camY, camWidth, camHeight);
+    detections = network.run(cam);
     noFill();
     strokeWeight(2f);
+    stroke(200, 80, 100);
+    for (ObjectDetectionResult detection : detections) {
+      rect(cameraX(detection), cameraY(detection), detection.getWidth()/2.5, detection.getHeight()/5);
+      if (cameraX(detection)<camX+(camWidth/2)-10) {
+        playerController.inputRight=true;
+      } else if (cameraX(detection)>camX+(camWidth/2)+10) {
+        playerController.inputLeft=true;
+      } else {
+        playerController.inputRight=false;
+        playerController.inputLeft=false;
+        playerController.movementReset();
+      }
+    }
     imageMode(CENTER); // return to default.
   }
 
@@ -75,34 +80,26 @@ class AlternativeController {
     }
   }
 
-  private float cameraX(KeyPointResult point) {
-    return map(point.getX(), 0, cam.width, camX, camX + camWidth);
+  private float cameraX(ObjectDetectionResult detection) {
+    return map(detection.getX(), 0, cam.width, camX, camX + camWidth);
   }
 
-  private float cameraY(KeyPointResult point) {
-    return map(point.getY(), 0, cam.height, camY, camY + camHeight);
+  private float cameraY(ObjectDetectionResult detection) {
+    return map(detection.getY(), 0, cam.height, camY, camY + camHeight);
   }
 
-  private void drawHuman(HumanPoseResult human) {
-    // todo: maybe we can set these dynamically - eg tell the user to lean left / right and set them up like that?
-    if (cameraX(human.getLeftEye())<camX+(camWidth/2)-10) {
-      playerController.inputLeft=true;
-    } else if (cameraX(human.getLeftEye())>camX+(camWidth/2)+10) {
-      playerController.inputRight=true;
-    } else {
-      playerController.inputRight=false;
-      playerController.inputLeft=false;
-    }
+  //  private void drawHuman(HumanPoseResult human) {
+  //    // todo: maybe we can set these dynamically - eg tell the user to lean left / right and set them up like that?
 
-    int i = 0;
-    fill(0);
-    for (KeyPointResult point : human.getKeyPoints()) {
-      if (point.getProbability() < threshold)
-        continue;
+  //    int i = 0;
+  //    fill(0);
+  //    for (KeyPointResult point : human.getKeyPoints()) {
+  //      if (point.getProbability() < threshold)
+  //        continue;
 
-      // Map the keypoint's coordinates to the screen space where the camera feed is displayed
-      ellipse(cameraX(point), cameraY(point), 2, 2);
-      i++;
-    }
-  }
+  //      // Map the keypoint's coordinates to the screen space where the camera feed is displayed
+  //      ellipse(cameraX(point), cameraY(point), 2, 2);
+  //      i++;
+  //    }
+  //  }
 }

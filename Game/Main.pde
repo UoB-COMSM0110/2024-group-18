@@ -1,11 +1,3 @@
-import ch.bildspur.vision.*;
-import ch.bildspur.vision.network.*;
-import ch.bildspur.vision.web.*;
-import ch.bildspur.vision.dependency.*;
-import ch.bildspur.vision.pipeline.*;
-import ch.bildspur.vision.util.*;
-import ch.bildspur.vision.result.*;
-
 Player player;
 PlayerController playerController;
 AlternativeController alternativeController;
@@ -32,8 +24,9 @@ PImage clock;
 float time=0;
 float time_x;
 float time_y;
-// TODO: eventually this will be set with a menu setting. For now we can set it manually for testing.
-int controlMode=3;  // 1:WASD  2:arrow keys 3: disabled mode. TODO: check if 1 and 2 are actually implemented, I don't think they are.
+// This is the setting that allows you to activate disability mode (setting 3.) 
+// TOOD: we need a menu setting to activate it.
+int controlMode=1;  // 1:WASD  2:arrow keys 3: disabled mode. TODO: check if 1 and 2 are actually implemented, I don't think they are.
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
 boolean ifMapGenerated=false;
@@ -70,19 +63,19 @@ void setup() {
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
   resetButton = loadImage("./assets/Background/reset.png");
-  level=1; // todo: switch to -2
-  
+  level=-2; 
+
   moveHint = loadImage("./assets/Hint/moveHint.png");
   jumpHint = loadImage("./assets/Hint/jumpHint.png");
   reviewHint = loadImage("./assets/Hint/reviewHint.png");
 
   player = new Player();
   playerController = new PlayerController(player);
-  map = new Map("./maps/map1.txt",1);
+  map = new Map("./maps/map1.txt", 1);
   // Store map items in list from mapController
   map.generateMap();
-  if(controlMode==3){
-    alternativeController = new AlternativeController(this,playerController);
+  if (controlMode==3) {
+    alternativeController = new AlternativeController(this, playerController);
   }
 }
 
@@ -102,7 +95,7 @@ void draw() {
       image(background01, 800, 450, 1600, 900);
     } else if (level==2) {
       if (!ifMapGenerated) {
-        map=new Map("./maps/map2.txt",2);
+        map=new Map("./maps/map2.txt", 2);
         ifMapGenerated=true;
         map.generateMap();
         map.placeBomb();
@@ -112,7 +105,7 @@ void draw() {
       map.displayBomb(time);
     } else if (level==3) {
       // should do same with level2
-      map=new Map("./maps/map3.txt",3);
+      map=new Map("./maps/map3.txt", 3);
       image(background01, 800, 450, 1600, 900);
     }
     placeClock();
@@ -135,15 +128,14 @@ void draw() {
 }
 
 void checkGameStatus() {
-  if (playerController.checkGameOver(map,level)) {
+  if (playerController.checkGameOver(map, level)) {
     player.ifDead=true;
     fill(0);
-    if(playerController.deadByHitPreviousPlayer){
-            text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
-    }
-    else{
-          text("Game over!", 650, 400);
-          text("Click to restart", 580, 450);
+    if (playerController.deadByHitPreviousPlayer) {
+      text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
+    } else {
+      text("Game over!", 650, 400);
+      text("Click to restart", 580, 450);
     }
     ifGameOver=true;
   }
@@ -224,18 +216,18 @@ void generateHint() {
   }
   // move hint
   if (moveLag >= 5 && !playerController.hasMoved) {
-    image(moveHint,800,450,385,31);
+    image(moveHint, 800, 450, 385, 31);
   }
   if (playerController.hasMoved && !playerController.hasJumped) {
-    image(jumpHint,800,450,323, 32);
+    image(jumpHint, 800, 450, 323, 32);
   }
   if (moveLag <= 50 && playerController.hasJumped && playerController.hasMoved) {
-    image(reviewHint,800,100,448,32);
+    image(reviewHint, 800, 100, 448, 32);
     moveLag++;
   }
   // portal hint
   boolean isDoorOpen = false;
-  PVector boothLocation = new PVector(0,0);
+  PVector boothLocation = new PVector(0, 0);
   for (Item item : map.dynamicItems) {
     if (item.itemNum == 7) {
       isDoorOpen = item.situation;
@@ -245,17 +237,17 @@ void generateHint() {
     }
   }
   if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
-    hintLag = 1; 
+    hintLag = 1;
   }
   if (hintLag >0 && hintLag <= 200 && !playerController.ifShadowGenerated) {
     if (hintLag < 20) {
-      image(loadImage("./assets/Hint/oh-no.png"),800,300, 144,40);
-    }else if (hintLag < 55) {
-      image(loadImage("./assets/Hint/leave.png"),800,350, 692,32);
-    }else if (hintLag <= 100) {
-      image(loadImage("./assets/Hint/someone.png"),800,400, 860,38);
-    }else {
-      image(loadImage("./assets/Hint/booth.png"),boothLocation.x,boothLocation.y-100, 412,26);
+      image(loadImage("./assets/Hint/oh-no.png"), 800, 300, 144, 40);
+    } else if (hintLag < 55) {
+      image(loadImage("./assets/Hint/leave.png"), 800, 350, 692, 32);
+    } else if (hintLag <= 100) {
+      image(loadImage("./assets/Hint/someone.png"), 800, 400, 860, 38);
+    } else {
+      image(loadImage("./assets/Hint/booth.png"), boothLocation.x, boothLocation.y-100, 412, 26);
     }
     hintLag++;
   }
@@ -263,27 +255,26 @@ void generateHint() {
     invertLag = 1;
   }
   if (invertLag > 0 && invertLag < 100 && !ifGameOver && !ifLevelPass) {
-    if (invertLag < 15){
-      image(loadImage("./assets/Hint/wow.png"),800,300, 167,36);
+    if (invertLag < 15) {
+      image(loadImage("./assets/Hint/wow.png"), 800, 300, 167, 36);
     } else if (invertLag < 55) {
-      image(loadImage("./assets/Hint/reverse-time.png"),800,350, 809,39);
-    }else {
-      image(loadImage("./assets/Hint/someoneneed.png"),800,400, 797,39);
+      image(loadImage("./assets/Hint/reverse-time.png"), 800, 350, 809, 39);
+    } else {
+      image(loadImage("./assets/Hint/someoneneed.png"), 800, 400, 797, 39);
     }
     invertLag++;
   }
-  
 }
 
 void playerDraw() {
-  if(controlMode==3){
-       alternativeController.control();
-           playerController.movementControl(); 
+  if (controlMode==3) {
+      alternativeController.control();
+    playerController.movementControl();
   }
   // The Method updatelocation is changed to take mapController as an input
   playerController.updateLocation(map);
   playerController.interactDynamicItems(map);
-  if(level==2||level==3){
+  if (level==2||level==3) {
     playerController.checkBomb(map);
   }
   playerController.updateAnimation();
@@ -414,13 +405,12 @@ public void restartLevel() {
   player.velocity.set(0, 0);
   ifGameOver=false;
   ifRestarted = true;
-  if(level==2||level==3){
+  if (level==2||level==3) {
     map.ifBombInverse=false;
     map.bombList.clear();
     playerController.deadByBomb=false;
     map.placeBomb();
   }
-  
 }
 
 public void placeClock() {
