@@ -19,7 +19,13 @@ class PlayerController {
   boolean hasJumped = false;
   boolean deadByBomb=false;
   boolean deadByHitPreviousPlayer=false;
-
+  
+  // these are for the alternative controller.
+  boolean inputLeft = false;
+  boolean inputRight = false;
+  boolean inputUp = false;
+  
+  
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0, 0, 20, 60);
@@ -39,9 +45,9 @@ class PlayerController {
 
   public void movementControl() {
     // add wasd as control just for feel better when do testing :)
-    movingRight = keyCode == RIGHT || key == 'd';
-    movingLeft = keyCode == LEFT || key == 'a';
-    isJumping = (keyCode == UP || key == 'w') && player.isOnGround;
+    movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
+    movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
+    isJumping = (keyCode == UP || key == 'w' || inputUp==true) && player.isOnGround;
     if (isJumping && movingRight) {
       player.velocity.add(player.speed, player.jumpPower);
       player.isOnGround = false;
