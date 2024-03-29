@@ -88,18 +88,4 @@ class AlternativeController {
     return map(detection.getY(), 0, cam.height, camY, camY + camHeight);
   }
 
-  //  private void drawHuman(HumanPoseResult human) {
-  //    // todo: maybe we can set these dynamically - eg tell the user to lean left / right and set them up like that?
-
-  //    int i = 0;
-  //    fill(0);
-  //    for (KeyPointResult point : human.getKeyPoints()) {
-  //      if (point.getProbability() < threshold)
-  //        continue;
-
-  //      // Map the keypoint's coordinates to the screen space where the camera feed is displayed
-  //      ellipse(cameraX(point), cameraY(point), 2, 2);
-  //      i++;
-  //    }
-  //  }
 }
