@@ -13,6 +13,7 @@ PImage title;
 PImage setting;
 PImage control;
 boolean showControlBar=false;
+boolean showDiabilityDetails=false;
 boolean showSettingBar=false;
 PImage controlOption;
 PImage levelOption1;
@@ -20,13 +21,12 @@ PImage levelOption2;
 PImage levelOption3;
 PImage background01;
 PImage resetButton;
+PImage disabilityButton;
 PImage clock;
 float time=0;
 float time_x;
 float time_y;
-// This is the setting that allows you to activate disability mode (setting 3.)
-// TOOD: we need a menu setting to activate it.
-int controlMode=1;  // 1:WASD  2:arrow keys 3: disabled mode. TODO: check if 1 and 2 are actually implemented, I don't think they are.
+int controlMode=1;  // 3: disabled mode.
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
 boolean ifMapGenerated=false;
@@ -62,6 +62,8 @@ void setup() {
   levelOption1 = loadImage("./assets/Background/level1.png");
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
+  disabilityButton=loadImage("./assets/Background/disabled.png");
+
   resetButton = loadImage("./assets/Background/reset.png");
   level=-2;
 
@@ -74,9 +76,7 @@ void setup() {
   map = new Map("./maps/map1.txt", 1);
   // Store map items in list from mapController
   map.generateMap();
-  if (controlMode==3) {
-    alternativeController = new AlternativeController(this, playerController);
-  }
+  alternativeController = new AlternativeController(this, playerController);
 }
 
 void draw() {
@@ -180,6 +180,7 @@ void generateMenuUI() {
   if (showControlBar) {
     image(controlOption, 1300, 320, 200, 300);
   }
+  image(disabilityButton, 1200, 100, 100, 100);
 
   if (showSettingBar) {
     image(levelOption1, 1500, 220, 180, 100);
@@ -378,10 +379,26 @@ void settingBarOptionClicked() {
   }
 }
 
+void disabilityButtonClicked() {
+  if (mouseX>1150&&mouseX<1250
+    &&mouseY>50&&mouseY<150) {
+    if (showDiabilityDetails) {
+      disabilityButton=loadImage("./assets/Background/disabled.png");
+      controlMode=1;
+      showDiabilityDetails=false;
+    } else {
+      disabilityButton=loadImage("./assets/Background/disabled2.png");
+      controlMode=3;
+      showDiabilityDetails=true;
+    }
+  }
+}
+
 
 void mousePressed() {
   controlBarClicked();
   settingBarClicked();
+  disabilityButtonClicked();
   settingBarOptionClicked();
   resetButtonClicked();
 
