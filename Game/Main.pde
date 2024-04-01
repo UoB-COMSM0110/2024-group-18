@@ -23,7 +23,7 @@ PImage clock;
 float time=0;
 float time_x;
 float time_y;
-int controlMode=1;  // 3: disabled mode.
+ControlType controlMode=ControlType.NORMAL;
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
 boolean ifMapGenerated=false;
@@ -42,9 +42,14 @@ PImage reviewHint;
 
 PFont font;
 
+
+enum ControlType {
+  NORMAL, DISABLED
+}
+
 // this function duplicates work above, but is important because
 // we need it when we reset the game.
-void initializeGlobalVariablesToStartingValues(){
+void initializeGlobalVariablesToStartingValues() {
   lag = 0;
   time = 0;
   hintLag = 0;
@@ -59,7 +64,7 @@ void initializeGlobalVariablesToStartingValues(){
   showControlBar = false;
   showDisabilityDetails = false;
   showSettingBar = false;
-  controlMode = 1;
+  controlMode = ControlType.NORMAL;
 
   xSpeed = 0.8;
   ySpeed = 0.8;
@@ -145,7 +150,7 @@ void draw() {
   if (level > 0 && level <=3) {
     generateInGameUI();
   }
-  if (level == 1 && !ifRestarted) {
+  if (level == 1) {
     generateHint();
   }
 }
@@ -300,7 +305,7 @@ void generateHint() {
 }
 
 void playerDraw() {
-  if (controlMode==3) {
+  if (controlMode==ControlType.DISABLED) {
     alternativeController.control();
     playerController.movementControl();
   }
@@ -315,8 +320,6 @@ void playerDraw() {
   if (!ifLevelPass) {
     playerController.displayShadow();
   }
-
-
   player.velocity.add(player.acceleration);
   player.location.add(player.velocity);
 }
@@ -333,6 +336,9 @@ void keyPressed() {
   // escape key.
   if (keyCode == 27) {
     resetToMainMenu();
+  }
+  if (ifGameOver) {
+    restartLevel();
   }
 }
 
@@ -416,11 +422,11 @@ void disabilityButtonClicked() {
     &&mouseY>50&&mouseY<150) {
     if (showDisabilityDetails) {
       disabilityButton=loadImage("./assets/Background/disabled.png");
-      controlMode=1;
+      controlMode=ControlType.NORMAL;
       showDisabilityDetails=false;
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
-      controlMode=3;
+      controlMode=ControlType.DISABLED;
       showDisabilityDetails=true;
     }
   }
@@ -446,9 +452,11 @@ void mousePressed() {
 }
 
 public void restartLevel() {
+  hintLag = 0;
+  moveLag = 0;
+  invertLag = 0;
   time=0;
-  playerController.ifShadowGenerated=false;
-  playerController.shadow.location.set(0, 0);
+  playerController = new PlayerController(player);
   player.ifDead=false;
   player.index=0;
   player.location.set(120, 500);
@@ -459,7 +467,6 @@ public void restartLevel() {
   if (level==2||level==3) {
     map.ifBombInverse=false;
     map.bombList.clear();
-    playerController.deadByBomb=false;
     map.placeBomb();
   }
 }
