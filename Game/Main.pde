@@ -10,7 +10,7 @@ PImage title;
 PImage setting;
 PImage control;
 boolean showControlBar=false;
-boolean showDiabilityDetails=false;
+boolean showDisabilityDetails=false;
 boolean showSettingBar=false;
 PImage controlOption;
 PImage levelOption1;
@@ -57,7 +57,7 @@ void initializeGlobalVariablesToStartingValues(){
   ifRestarted = false;
 
   showControlBar = false;
-  showDiabilityDetails = false;
+  showDisabilityDetails = false;
   showSettingBar = false;
   controlMode = 1;
 
@@ -338,9 +338,9 @@ void keyPressed() {
 
 void resetToMainMenu() {
   key = 0;
-  level=-1;
   lag=25;
   setup();
+  level=-1; // this skips past the opening animation.
 }
 
 
@@ -414,14 +414,14 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
-    if (showDiabilityDetails) {
+    if (showDisabilityDetails) {
       disabilityButton=loadImage("./assets/Background/disabled.png");
       controlMode=1;
-      showDiabilityDetails=false;
+      showDisabilityDetails=false;
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
       controlMode=3;
-      showDiabilityDetails=true;
+      showDisabilityDetails=true;
     }
   }
 }
