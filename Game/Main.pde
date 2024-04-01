@@ -1,10 +1,7 @@
 Player player;
 PlayerController playerController;
 AlternativeController alternativeController;
-// Each one generate a map for one level, will need 2 more
 Map map;
-String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
-String story2 = "Before you is a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME REVERSAL.\n Could these be your ticket out?";
 
 float lag=0;
 int level;
@@ -43,9 +40,38 @@ PImage moveHint;
 PImage jumpHint;
 PImage reviewHint;
 
-
 PFont font;
+
+// this function duplicates work above, but is important because
+// we need it when we reset the game.
+void initializeGlobalVariablesToStartingValues(){
+  lag = 0;
+  time = 0;
+  hintLag = 0;
+  moveLag = 0;
+  invertLag = 0;
+
+  ifGameOver = false;
+  ifLevelPass = false;
+  ifMapGenerated = false;
+  ifRestarted = false;
+
+  showControlBar = false;
+  showDiabilityDetails = false;
+  showSettingBar = false;
+  controlMode = 1;
+
+  xSpeed = 0.8;
+  ySpeed = 0.8;
+  xDirection = 1;
+  yDirection = 1;
+
+  time_x = 0;
+  time_y = 0;
+}
+
 void setup() {
+  initializeGlobalVariablesToStartingValues();
   size(1600, 900);
   xPos=width/2;
   ypos=height/2+20;
@@ -91,8 +117,7 @@ void draw() {
     generateStory();
   } else {
     if (level==1) {
-      //generateBackground(background01);
-      image(background01, 800, 450, 1600, 900);
+      showBackground();
     } else if (level==2) {
       if (!ifMapGenerated) {
         map=new Map("./maps/map2.txt", 2);
@@ -101,12 +126,10 @@ void draw() {
         map.placeBomb();
         player.location.x = 100; // ensure the player starts at the correct location for level 2.
       }
-      image(background01, 800, 450, 1600, 900);
+      showBackground();
       map.displayBomb(time);
     } else if (level==3) {
-      // should do same with level2
       map=new Map("./maps/map3.txt", 3);
-      image(background01, 800, 450, 1600, 900);
     }
     placeClock();
 
@@ -127,13 +150,19 @@ void draw() {
   }
 }
 
+void showBackground() {
+  image(background01, 800, 450, 1600, 900);
+}
+
 void checkGameStatus() {
   if (playerController.checkGameOver(map, level)) {
     player.ifDead=true;
     fill(0);
     if (playerController.deadByHitPreviousPlayer) {
+      fill(255);
       text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
     } else {
+      fill(255);
       text("Game over!", 650, 400);
       text("Click to restart", 580, 450);
     }
@@ -141,6 +170,7 @@ void checkGameStatus() {
   }
 
   if (playerController.ifGameWin) {
+    fill(255);
     text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
     ifLevelPass=true;
   }
@@ -150,6 +180,8 @@ void generateStory() {
   fill(0);
   rect(0, 0, 1600, 900);
   fill(255);
+  String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
+  String story2 = "Before you is a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME REVERSAL.\n Could these be your ticket out?";
   text(story1, 200, 450);
   text(story2, 50, 650);
   text("Press any key to continue...", 200, 800);
@@ -418,6 +450,7 @@ public void restartLevel() {
   playerController.ifShadowGenerated=false;
   playerController.shadow.location.set(0, 0);
   player.ifDead=false;
+  player.index=0;
   player.location.set(120, 500);
   player.velocity.set(0, 0);
   playerController.deadByHitPreviousPlayer=false;
