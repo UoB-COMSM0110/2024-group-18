@@ -74,7 +74,6 @@ class AlternativeController {
   private void soundController() {
     if (amp.analyze()>0.01) {
       playerController.inputUp=true;
-      println("UP"+millis());
     } else {
       playerController.inputUp=false;
     }

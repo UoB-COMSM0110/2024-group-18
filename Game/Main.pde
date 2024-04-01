@@ -4,7 +4,7 @@ AlternativeController alternativeController;
 // Each one generate a map for one level, will need 2 more
 Map map;
 String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
-String story2 = "Before you lie a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME TRAVEL.\n Could these be your ticket out?";
+String story2 = "Before you is a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME REVERSAL.\n Could these be your ticket out?";
 
 float lag=0;
 int level;
