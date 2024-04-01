@@ -27,7 +27,8 @@ class AlternativeController {
     // video stuff
     network = vision.createULFGFaceDetectorRFB320();
     network.setup();
-    cam = new Capture(parent, "pipeline:autovideosrc");
+      cam = new Capture(parent, "pipeline:avfvideosrc");
+    
     cam.start();
 
     // audio stuff
@@ -74,7 +75,6 @@ class AlternativeController {
   private void soundController() {
     if (amp.analyze()>0.01) {
       playerController.inputUp=true;
-      println("UP"+millis());
     } else {
       playerController.inputUp=false;
     }

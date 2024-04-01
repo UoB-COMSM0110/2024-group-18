@@ -1,10 +1,7 @@
 Player player;
 PlayerController playerController;
 AlternativeController alternativeController;
-// Each one generate a map for one level, will need 2 more
 Map map;
-String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
-String story2 = "Before you lie a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME TRAVEL.\n Could these be your ticket out?";
 
 float lag=0;
 int level;
@@ -13,7 +10,7 @@ PImage title;
 PImage setting;
 PImage control;
 boolean showControlBar=false;
-boolean showDiabilityDetails=false;
+boolean showDisabilityDetails=false;
 boolean showSettingBar=false;
 PImage controlOption;
 PImage levelOption1;
@@ -26,10 +23,11 @@ PImage clock;
 float time=0;
 float time_x;
 float time_y;
-int controlMode=1;  // 3: disabled mode.
+ControlType controlMode=ControlType.NORMAL;
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
 boolean ifMapGenerated=false;
+int ESCAPE_KEYCODE=27;
 
 float xPos, ypos;
 float xSpeed=0.8, ySpeed=0.8;
@@ -43,9 +41,43 @@ PImage moveHint;
 PImage jumpHint;
 PImage reviewHint;
 
-
 PFont font;
+
+
+enum ControlType {
+  NORMAL, DISABLED
+}
+
+// this function duplicates work above, but is important because
+// we need it when we reset the game.
+void initializeGlobalVariablesToStartingValues() {
+  lag = 0;
+  time = 0;
+  hintLag = 0;
+  moveLag = 0;
+  invertLag = 0;
+
+  ifGameOver = false;
+  ifLevelPass = false;
+  ifMapGenerated = false;
+  ifRestarted = false;
+
+  showControlBar = false;
+  showDisabilityDetails = false;
+  showSettingBar = false;
+  controlMode = ControlType.NORMAL;
+
+  xSpeed = 0.8;
+  ySpeed = 0.8;
+  xDirection = 1;
+  yDirection = 1;
+
+  time_x = 0;
+  time_y = 0;
+}
+
 void setup() {
+  initializeGlobalVariablesToStartingValues();
   size(1600, 900);
   xPos=width/2;
   ypos=height/2+20;
@@ -91,8 +123,7 @@ void draw() {
     generateStory();
   } else {
     if (level==1) {
-      //generateBackground(background01);
-      image(background01, 800, 450, 1600, 900);
+      showBackground();
     } else if (level==2) {
       if (!ifMapGenerated) {
         map=new Map("./maps/map2.txt", 2);
@@ -101,12 +132,10 @@ void draw() {
         map.placeBomb();
         player.location.x = 100; // ensure the player starts at the correct location for level 2.
       }
-      image(background01, 800, 450, 1600, 900);
+      showBackground();
       map.displayBomb(time);
     } else if (level==3) {
-      // should do same with level2
       map=new Map("./maps/map3.txt", 3);
-      image(background01, 800, 450, 1600, 900);
     }
     placeClock();
 
@@ -122,9 +151,13 @@ void draw() {
   if (level > 0 && level <=3) {
     generateInGameUI();
   }
-  if (level == 1 && !ifRestarted) {
+  if (level == 1) {
     generateHint();
   }
+}
+
+void showBackground() {
+  image(background01, 800, 450, 1600, 900);
 }
 
 void checkGameStatus() {
@@ -132,8 +165,10 @@ void checkGameStatus() {
     player.ifDead=true;
     fill(0);
     if (playerController.deadByHitPreviousPlayer) {
+      fill(255);
       text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
     } else {
+      fill(255);
       text("Game over!", 650, 400);
       text("Click to restart", 580, 450);
     }
@@ -141,6 +176,7 @@ void checkGameStatus() {
   }
 
   if (playerController.ifGameWin) {
+    fill(255);
     text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
     ifLevelPass=true;
   }
@@ -150,6 +186,8 @@ void generateStory() {
   fill(0);
   rect(0, 0, 1600, 900);
   fill(255);
+  String story1 = "You are an astronaut, stuck in unknown space, \n unable to get home.";
+  String story2 = "Before you is a button, a door, \n and a mysterious machine that seems to have something to do with \n TIME REVERSAL.\n Could these be your ticket out?";
   text(story1, 200, 450);
   text(story2, 50, 650);
   text("Press any key to continue...", 200, 800);
@@ -268,7 +306,7 @@ void generateHint() {
 }
 
 void playerDraw() {
-  if (controlMode==3) {
+  if (controlMode==ControlType.DISABLED) {
     alternativeController.control();
     playerController.movementControl();
   }
@@ -283,8 +321,6 @@ void playerDraw() {
   if (!ifLevelPass) {
     playerController.displayShadow();
   }
-
-
   player.velocity.add(player.acceleration);
   player.location.add(player.velocity);
 }
@@ -298,17 +334,19 @@ void keyPressed() {
   if (!ifGameOver||ifLevelPass) {
     playerController.movementControl();
   }
-  // escape key.
-  if (keyCode == 27) {
+  if (keyCode == ESCAPE_KEYCODE) {
     resetToMainMenu();
+  }
+  if (ifGameOver) {
+    restartLevel();
   }
 }
 
 void resetToMainMenu() {
   key = 0;
-  level=-1;
   lag=25;
   setup();
+  level=-1; // this skips past the opening animation.
 }
 
 
@@ -382,14 +420,14 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
-    if (showDiabilityDetails) {
+    if (showDisabilityDetails) {
       disabilityButton=loadImage("./assets/Background/disabled.png");
-      controlMode=1;
-      showDiabilityDetails=false;
+      controlMode=ControlType.NORMAL;
+      showDisabilityDetails=false;
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
-      controlMode=3;
-      showDiabilityDetails=true;
+      controlMode=ControlType.DISABLED;
+      showDisabilityDetails=true;
     }
   }
 }
@@ -414,10 +452,14 @@ void mousePressed() {
 }
 
 public void restartLevel() {
+  hintLag = 0;
+  moveLag = 0;
+  invertLag = 0;
   time=0;
-  playerController.ifShadowGenerated=false;
-  playerController.shadow.location.set(0, 0);
+  playerController = new PlayerController(player);
+  alternativeController= new AlternativeController(this, playerController);
   player.ifDead=false;
+  player.index=0;
   player.location.set(120, 500);
   player.velocity.set(0, 0);
   playerController.deadByHitPreviousPlayer=false;
@@ -426,7 +468,6 @@ public void restartLevel() {
   if (level==2||level==3) {
     map.ifBombInverse=false;
     map.bombList.clear();
-    playerController.deadByBomb=false;
     map.placeBomb();
   }
 }
