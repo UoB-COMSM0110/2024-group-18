@@ -27,7 +27,8 @@ class AlternativeController {
     // video stuff
     network = vision.createULFGFaceDetectorRFB320();
     network.setup();
-    cam = new Capture(parent, "pipeline:autovideosrc");
+      cam = new Capture(parent, "pipeline:avfvideosrc");
+    
     cam.start();
 
     // audio stuff

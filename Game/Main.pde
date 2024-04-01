@@ -27,6 +27,7 @@ ControlType controlMode=ControlType.NORMAL;
 boolean ifGameOver=false;
 boolean ifLevelPass=false;
 boolean ifMapGenerated=false;
+int ESCAPE_KEYCODE=27;
 
 float xPos, ypos;
 float xSpeed=0.8, ySpeed=0.8;
@@ -333,8 +334,7 @@ void keyPressed() {
   if (!ifGameOver||ifLevelPass) {
     playerController.movementControl();
   }
-  // escape key.
-  if (keyCode == 27) {
+  if (keyCode == ESCAPE_KEYCODE) {
     resetToMainMenu();
   }
   if (ifGameOver) {
@@ -457,6 +457,7 @@ public void restartLevel() {
   invertLag = 0;
   time=0;
   playerController = new PlayerController(player);
+  alternativeController= new AlternativeController(this, playerController);
   player.ifDead=false;
   player.index=0;
   player.location.set(120, 500);
