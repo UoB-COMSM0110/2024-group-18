@@ -163,6 +163,7 @@ class Player extends GameObject {
       }
     }
     frame++;
+    index = 0;
   }
 
   public void displayImage() {
