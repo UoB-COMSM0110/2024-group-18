@@ -2,11 +2,11 @@
 
 - [ ] **Who’s in your team + team photo.**
     - Include the names and roles of team members.
-    - Add a team photo.
+  
+ <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" >
+
 - [ ] **Team breakdown + team role (import from prev branch).**
     - Detail each team member's role.
-- [ ] **Team photo.**
-    - Ensure the team photo is updated and reflects the current team composition.
 
 # 2. Introduction (5% ~250 words) (Mihir)
 
