@@ -28,7 +28,6 @@ class PlayerController {
   // these are for enhanced collision check
   float staticItemHeight = 0;
   float staticItemWidth = 0;
-  float tempX;
   boolean ifTopCollide = false;
   boolean ifLeftCollide = false;
   boolean ifRightCollide = false;
@@ -37,7 +36,6 @@ class PlayerController {
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0, 0, 20, 60);
-    tempX = player.location.x;
   }
 
   public void updateAnimation() {
@@ -153,12 +151,15 @@ class PlayerController {
     if (ifTopCollide) {
       // keep droping when not through the platform
       return;
-    } else if (ifLeftCollide || ifRightCollide) {
-      player.location.set(tempX,player.location.y);
+    } else if (ifLeftCollide) {
+      player.location.set(obj.location.x+obj.objectWidth/2+player.objectWidth/2,player.location.y);
+      resetCollisionStatus();
+      return;
+    } else if (ifRightCollide) {
+      player.location.set(obj.location.x-obj.objectWidth/2-player.objectWidth/2,player.location.y);
       resetCollisionStatus();
       return;
     }
-    tempX = player.location.x;
     // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
       player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
@@ -183,7 +184,6 @@ class PlayerController {
       }
     }
     if (!ifCollide) {
-      tempX = player.location.x;
       resetCollisionStatus();
     }
     // ScreenLeft limit
