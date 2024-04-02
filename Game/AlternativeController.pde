@@ -27,8 +27,17 @@ class AlternativeController {
     // video stuff
     network = vision.createULFGFaceDetectorRFB320();
     network.setup();
-      cam = new Capture(parent, "pipeline:avfvideosrc");
-    
+    String[] cameras = Capture.list();
+    cam = new Capture(parent, cameras[0]);
+    if (cameras.length == 0) {
+      println("There are no cameras available for capture.");
+      exit();
+    } else {
+      println("Available cameras:");
+      for (int i = 0; i < cameras.length; i++) {
+        println(cameras[i]);
+      }
+    }
     cam.start();
 
     // audio stuff
@@ -87,5 +96,4 @@ class AlternativeController {
   private float cameraY(ObjectDetectionResult detection) {
     return map(detection.getY(), 0, cam.height, camY, camY + camHeight);
   }
-
 }
