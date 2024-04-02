@@ -29,17 +29,15 @@ class PlayerController {
   float staticItemHeight = 0;
   float staticItemWidth = 0;
   float tempX;
-  float tempY;
   boolean ifTopCollide = false;
-  boolean ifBottomeCollide = false;
-  boolean ifSideCollide = false;
+  boolean ifLeftCollide = false;
+  boolean ifRightCollide = false;
   
   
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0, 0, 20, 60);
     tempX = player.location.x;
-    tempY = player.location.y;
   }
 
   public void updateAnimation() {
@@ -105,6 +103,8 @@ class PlayerController {
   }
   
   public void getCollisionStatus(Item obj) {
+    movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
+    movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
     staticItemHeight = obj.objectHeight;
     staticItemWidth = obj.objectWidth;
     float playerLeft = player.location.x - player.objectWidth / 2;
@@ -123,11 +123,10 @@ class PlayerController {
     float overlapBottom = playerBottom - objTop;
 
     float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
-    if (
-      ((obj.itemNum == 3 || obj.itemNum == 6) && minOverlap == overlapLeft) ||
-      ((obj.itemNum == 1 || obj.itemNum == 4) && minOverlap == overlapRight)
-    ) {
-      ifSideCollide = true;
+    if ((obj.itemNum == 3 || obj.itemNum == 6) && minOverlap == overlapLeft && movingLeft) {
+      ifLeftCollide = true;
+    } else if ((obj.itemNum == 1 || obj.itemNum == 4) && minOverlap == overlapRight && movingRight) {
+      ifRightCollide = true;
     } else if (minOverlap == overlapTop) {
       ifTopCollide = true;
     }
@@ -146,20 +145,20 @@ class PlayerController {
   
   public void resetCollisionStatus() {
     ifTopCollide = false;
-    ifSideCollide = false;
+    ifLeftCollide = false;
+    ifRightCollide = false;
   }
 
   public void setPlayerLocation(GameObject obj) {
     if (ifTopCollide) {
       // keep droping when not through the platform
       return;
-    } else if (ifSideCollide) {
+    } else if (ifLeftCollide || ifRightCollide) {
       player.location.set(tempX,player.location.y);
       resetCollisionStatus();
       return;
     }
     tempX = player.location.x;
-    tempY = player.location.y;
     // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
       player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
@@ -185,7 +184,6 @@ class PlayerController {
     }
     if (!ifCollide) {
       tempX = player.location.x;
-      tempY = player.location.y;
       resetCollisionStatus();
     }
     // ScreenLeft limit
