@@ -135,7 +135,15 @@ void draw() {
       showBackground();
       map.displayBomb(time);
     } else if (level==3) {
-      map=new Map("./maps/map3.txt", 3);
+      if (!ifMapGenerated) {
+        map=new Map("./maps/map3.txt", 3);
+        ifMapGenerated=true;
+        map.generateMap();
+        map.placeBomb();
+        player.location.x = 100; // ensure the player starts at the correct location for level 2.
+      }
+      showBackground();
+      map.displayBomb(time);
     }
     placeClock();
 

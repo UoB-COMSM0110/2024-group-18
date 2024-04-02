@@ -217,6 +217,13 @@ class Map {
       bgSet[3]=loadImage("./assets/Static/Brick2/brick4.gif");
       bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
       bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
+    } else if (level==3) {
+      bgSet[0]=loadImage("./assets/Static/Brick2/brick1.gif");
+      bgSet[1]=loadImage("./assets/Static/Brick2/brick2.gif");
+      bgSet[2]=loadImage("./assets/Static/Brick2/brick3.gif");
+      bgSet[3]=loadImage("./assets/Static/Brick2/brick4.gif");
+      bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
+      bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
     }
     // do same with level 3
     // this logic should live somewhere else.
