@@ -25,10 +25,19 @@ class PlayerController {
   boolean inputRight = false;
   boolean inputUp = false;
   
+  // these are for enhanced collision check
+  float staticItemHeight = 0;
+  float staticItemWidth = 0;
+  float tempX;
+  boolean ifTopCollide = false;
+  boolean ifLeftCollide = false;
+  boolean ifRightCollide = false;
+  
   
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0, 0, 20, 60);
+    tempX = player.location.x;
   }
 
   public void updateAnimation() {
@@ -92,6 +101,36 @@ class PlayerController {
     }
     return false; // no collision
   }
+  
+  public void getCollisionStatus(Item obj) {
+    movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
+    movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
+    staticItemHeight = obj.objectHeight;
+    staticItemWidth = obj.objectWidth;
+    float playerLeft = player.location.x - player.objectWidth / 2;
+    float playerRight = player.location.x + player.objectWidth / 2;
+    float playerTop = player.location.y - player.objectHeight / 2;
+    float playerBottom = player.location.y + player.objectHeight / 2;
+
+    float objLeft = obj.location.x - obj.objectWidth / 2;
+    float objRight = obj.location.x + obj.objectWidth / 2;
+    float objTop = obj.location.y - obj.objectHeight / 2;
+    float objBottom = obj.location.y + obj.objectHeight / 2;
+
+    float overlapLeft = objRight - playerLeft;
+    float overlapRight = playerRight - objLeft;
+    float overlapTop = objBottom - playerTop;
+    float overlapBottom = playerBottom - objTop;
+
+    float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
+    if ((obj.itemNum == 3 || obj.itemNum == 6) && minOverlap == overlapLeft && movingLeft) {
+      ifLeftCollide = true;
+    } else if ((obj.itemNum == 1 || obj.itemNum == 4) && minOverlap == overlapRight && movingRight) {
+      ifRightCollide = true;
+    } else if (minOverlap == overlapTop) {
+      ifTopCollide = true;
+    }
+  }
 
   public boolean checkShadowCollision(GameObject obj) {
     if (shadow.location.x-shadow.objectWidth/2<obj.location.x+obj.objectWidth/2&&
@@ -103,8 +142,23 @@ class PlayerController {
     }
     return false; // no collision
   }
+  
+  public void resetCollisionStatus() {
+    ifTopCollide = false;
+    ifLeftCollide = false;
+    ifRightCollide = false;
+  }
 
   public void setPlayerLocation(GameObject obj) {
+    if (ifTopCollide) {
+      // keep droping when not through the platform
+      return;
+    } else if (ifLeftCollide || ifRightCollide) {
+      player.location.set(tempX,player.location.y);
+      resetCollisionStatus();
+      return;
+    }
+    tempX = player.location.x;
     // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
       player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
@@ -119,11 +173,18 @@ class PlayerController {
 
   // Note that the new input is added to updateLocation
   public void updateLocation(Map map) {
+    boolean ifCollide = false;
     for (Item item : map.staticItems) {
       // check collision for player
       if (checkCollision(item)) {
+        ifCollide = true;
+        getCollisionStatus(item);
         setPlayerLocation(item);
       }
+    }
+    if (!ifCollide) {
+      tempX = player.location.x;
+      resetCollisionStatus();
     }
     // ScreenLeft limit
     if (player.location.x-player.objectWidth/2<0) {
