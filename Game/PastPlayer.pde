@@ -26,4 +26,8 @@ class PastPlayer extends GameObject {
     }
     listFrame++;
   }
+  
+  public void refresh(){
+    locationCollection.clear();
+  }
 }
