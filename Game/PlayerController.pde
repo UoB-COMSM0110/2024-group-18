@@ -121,9 +121,9 @@ class PlayerController {
     float overlapBottom = playerBottom - objTop;
 
     float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
-    if ((obj.itemNum == 3 || obj.itemNum == 6) && minOverlap == overlapLeft && movingLeft) {
+    if (minOverlap == overlapLeft && movingLeft) {
       ifLeftCollide = true;
-    } else if ((obj.itemNum == 1 || obj.itemNum == 4) && minOverlap == overlapRight && movingRight) {
+    } else if (minOverlap == overlapRight && movingRight) {
       ifRightCollide = true;
     } else if (minOverlap == overlapTop) {
       ifTopCollide = true;
