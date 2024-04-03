@@ -20,7 +20,7 @@ class Map {
 
   HashMap bombList = new HashMap<>();
   
-  float mpSpeed = 5;
+  float mpSpeed = -5;
 
   public Map(String mapName, int level) {
     map = loadStrings(mapName);
@@ -278,48 +278,65 @@ class Map {
   }
   
   public void setMPlocation() {
+    boolean ifSpeedChanged = false;
     for (Item item : staticItems) {
       if (item.itemNum >= 11 && item.itemNum <= 13) {
+        if (ifMpCollide(item) && !ifSpeedChanged) {
+          mpSpeed = -mpSpeed;
+          ifSpeedChanged = true;
+        }
         int index = staticItems.indexOf(item);
         Item updated = item;
         updated.location.x += mpSpeed;
         staticItems.set(index,updated);
       }
     }
-    //for (Item item : staticItems) {
-    //  if (item.itemNum == 11) {
-    //    float mpLeft = item.location.x-item.objectWidth/2;
-    //    if (mpLeft < 0) {
-    //      mpSpeed = -mpSpeed;
-    //      mpLeftCollide(item);
-    //    } else {
-    //      for (Item platform : staticItems) {
-    //        if (item.location.y == platform.location.y) {
-    //          float pRight = platform.location.x+platform.objectWidth/2;
-    //            if (mpLeft < pRight) {
-    //              mpSpeed = -mpSpeed;
-    //              mpLeftCollide(item);
-    //            }
-    //         }
-    //       }
-    //    }
-        
-    //  }
-    //}
   }
   
-  public void mpLeftCollide(Item item) {
-    int lIndex = staticItems.indexOf(item);
-    Item curMP = staticItems.get(lIndex);
-    Item updatedMP = null;
-    while (curMP.itemNum>=11 && curMP.itemNum<=13) {
-      curMP = staticItems.get(lIndex);
-      updatedMP = curMP;
-      updatedMP.location.x = updatedMP.location.x+mpSpeed;
-      staticItems.set(lIndex, updatedMP);
-      lIndex++;
+  public boolean ifMpCollide(Item item) {
+    float left = item.location.x-item.objectWidth/2;
+    float right = item.location.x+item.objectWidth/2;
+    float top = item.location.y-item.objectHeight/2;
+    float bottom = item.location.y+item.objectHeight/2;
+    if (left < 0 || right > width) {
+      return true;
     }
+    for (Item platform : staticItems) {
+      if (platform.itemNum<=6) {
+        float pLeft = platform.location.x-platform.objectWidth/2;
+        float pRight = platform.location.x+platform.objectWidth/2;
+        float pTop = platform.location.y-platform.objectHeight/2;
+        float pBottom = platform.location.y+platform.objectHeight/2;
+        
+        float overlapLeft = pRight - left;
+        float overlapRight = right - pLeft;
+        float overlapTop = pBottom - top;
+        float overlapBottom = bottom - pTop;
+        if (overlapLeft>0&&overlapRight>0&&overlapTop>0&&overlapBottom>0) {
+          float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
+          if (minOverlap == overlapLeft&&mpSpeed<0) {
+            return true;
+          } else if (minOverlap == overlapRight&&mpSpeed>0) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
   }
+  
+  //public void mpLeftCollide(Item item) {
+  //  int lIndex = staticItems.indexOf(item);
+  //  Item curMP = staticItems.get(lIndex);
+  //  Item updatedMP = null;
+  //  while (curMP.itemNum>=11 && curMP.itemNum<=13) {
+  //    curMP = staticItems.get(lIndex);
+  //    updatedMP = curMP;
+  //    updatedMP.location.x = updatedMP.location.x+mpSpeed;
+  //    staticItems.set(lIndex, updatedMP);
+  //    lIndex++;
+  //  }
+  //}
   /*
   This function has items won't change with levels, and has animation and special effect
    */

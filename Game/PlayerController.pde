@@ -32,6 +32,9 @@ class PlayerController {
   boolean ifLeftCollide = false;
   boolean ifRightCollide = false;
   
+  boolean ifMovingPlatformReverse = false;
+  boolean isOnMovingPlatform = false;
+  
   
   public PlayerController(Player player) {
     this.player = player;
@@ -147,7 +150,7 @@ class PlayerController {
     ifRightCollide = false;
   }
 
-  public void setPlayerLocation(GameObject obj) {
+  public void setPlayerLocation(Item obj) {
     if (ifTopCollide) {
       // keep droping when not through the platform
       return;
@@ -163,6 +166,10 @@ class PlayerController {
     // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
       player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
+      //if(obj.itemNum>=11&&obj.itemNum<=13&&!isOnMovingPlatform) {
+      //  player.velocity.set(map.mpSpeed, 0);
+      //  isOnMovingPlatform = true;
+      //}
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;
     }
@@ -218,6 +225,10 @@ class PlayerController {
             ifShadowGenerated=true;
             map.ifBombInverse=true;
             shadow.location.set(item.location.x, item.location.y+40);
+            if (!ifMovingPlatformReverse) {
+              map.mpSpeed = -map.mpSpeed;
+              ifMovingPlatformReverse = true;
+            }
           }
         }
       }
