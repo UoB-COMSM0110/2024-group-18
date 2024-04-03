@@ -18,6 +18,8 @@ class Map {
   Bomb bomb;
 
   HashMap bombList = new HashMap<>();
+  
+  float mpSpeed = 5;
 
   public Map(String mapName, int level) {
     map = loadStrings(mapName);
@@ -137,6 +139,10 @@ class Map {
     Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
     item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
     dynamicItems.add(item);
+  }
+  
+  private void drawMovingPlatform(int i, int j) {
+    
   }
 
   public void generateMap() {
