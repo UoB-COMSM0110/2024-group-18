@@ -165,11 +165,17 @@ class PlayerController {
     }
     // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
-      player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
-      //if(obj.itemNum>=11&&obj.itemNum<=13&&!isOnMovingPlatform) {
-      //  player.velocity.set(map.mpSpeed, 0);
-      //  isOnMovingPlatform = true;
-      //}
+      if (!(obj.itemNum>=11&&obj.itemNum<=13)) {
+        isOnMovingPlatform = false;
+      }
+      if (!isOnMovingPlatform) {
+        player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
+        if (obj.itemNum>=11&&obj.itemNum<=13) {
+          isOnMovingPlatform = true;
+        }
+      } else if(isOnMovingPlatform) {
+        player.location.set(player.location.x+map.mpSpeed, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
+      }
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;
     }
