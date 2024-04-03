@@ -6,6 +6,7 @@ class Map {
   List<Item> staticItems = new ArrayList<>();
   List<Item> dynamicItems = new ArrayList<>();
   PImage[] bgSet = new PImage[6];
+  PImage[] mpSet = new PImage[3];
 
   boolean needResetFrame=false;
   int index=0;
@@ -142,7 +143,18 @@ class Map {
   }
   
   private void drawMovingPlatform(int i, int j) {
-    
+    float w=40;
+    float h=40;
+    int mpNum = 0;
+    if (map[i].charAt(j) == 'l') {
+      mpNum = 11;
+    } else if (map[i].charAt(j) == 'm') {
+      mpNum = 12;
+    } else if (map[i].charAt(j) == 'r') {
+      mpNum = 13;
+    }
+    Item item = new Item(mpNum, j*w+w/2, i*h+h/2, w, h, w, h, true, false, false);
+    staticItems.add(item);
   }
 
   public void generateMap() {
@@ -156,6 +168,8 @@ class Map {
           drawButtons(i, j);
         } else if (map[i].charAt(j)=='9') {
           drawTimeMachine(i, j);
+        } else if (map[i].charAt(j)=='l' || map[i].charAt(j)=='m' || map[i].charAt(j)=='r') {
+          drawMovingPlatform(i,j);
         }
       }
     }
@@ -230,6 +244,9 @@ class Map {
       bgSet[3]=loadImage("./assets/Static/Brick2/brick4.gif");
       bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
       bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
+      mpSet[0]=loadImage("./assets/Static/MovingPlatform/mp1.gif");
+      mpSet[1]=loadImage("./assets/Static/MovingPlatform/mp2.gif");
+      mpSet[2]=loadImage("./assets/Static/MovingPlatform/mp3.gif");
     }
     // do same with level 3
     // this logic should live somewhere else.
@@ -244,8 +261,63 @@ class Map {
       //  PImage altDoor = loadImage("./assets/Static/Door/door5.png");
       //  image(altDoor, item.location.x, item.location.y, item.objectWidth, item.objectHeight);
       //} else {
-      image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.imageWidth, item.imageHeight);
+      if (item.itemNum<=6) {
+        image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.imageWidth, item.imageHeight);
       //}
+      } else {
+        displayMovingPlatform(item);
+      }
+      
+    }
+    setMPlocation();
+  }
+  
+  public void displayMovingPlatform(Item item) {
+    int mpNum = item.itemNum - 11;
+    image(mpSet[mpNum], item.location.x, item.location.y, item.imageWidth, item.imageHeight);
+  }
+  
+  public void setMPlocation() {
+    for (Item item : staticItems) {
+      if (item.itemNum >= 11 && item.itemNum <= 13) {
+        int index = staticItems.indexOf(item);
+        Item updated = item;
+        updated.location.x += mpSpeed;
+        staticItems.set(index,updated);
+      }
+    }
+    //for (Item item : staticItems) {
+    //  if (item.itemNum == 11) {
+    //    float mpLeft = item.location.x-item.objectWidth/2;
+    //    if (mpLeft < 0) {
+    //      mpSpeed = -mpSpeed;
+    //      mpLeftCollide(item);
+    //    } else {
+    //      for (Item platform : staticItems) {
+    //        if (item.location.y == platform.location.y) {
+    //          float pRight = platform.location.x+platform.objectWidth/2;
+    //            if (mpLeft < pRight) {
+    //              mpSpeed = -mpSpeed;
+    //              mpLeftCollide(item);
+    //            }
+    //         }
+    //       }
+    //    }
+        
+    //  }
+    //}
+  }
+  
+  public void mpLeftCollide(Item item) {
+    int lIndex = staticItems.indexOf(item);
+    Item curMP = staticItems.get(lIndex);
+    Item updatedMP = null;
+    while (curMP.itemNum>=11 && curMP.itemNum<=13) {
+      curMP = staticItems.get(lIndex);
+      updatedMP = curMP;
+      updatedMP.location.x = updatedMP.location.x+mpSpeed;
+      staticItems.set(lIndex, updatedMP);
+      lIndex++;
     }
   }
   /*
