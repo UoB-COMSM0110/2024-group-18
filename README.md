@@ -1,6 +1,10 @@
 # How To Install And Set Up
 For our game you need Processing, as well as the "Video", "Deep Vision" and "Sound" libraries. They can be installed by going through the Library Manager. Select “Add Library...” from the “Import Library...” submenu within the Sketch menu. Then search for each of the three libraries by name and install it. See this tutorial for more information. https://processing.org/tutorials/video
 
+# Video
+Script:
+https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/edit
+
 # 1. Development Team
 
 - [ ] **Who’s in your team + team photo.**
