@@ -28,16 +28,17 @@ class PlayerController {
   // these are for enhanced collision check
   float staticItemHeight = 0;
   float staticItemWidth = 0;
-  float tempX;
   boolean ifTopCollide = false;
   boolean ifLeftCollide = false;
   boolean ifRightCollide = false;
+  
+  boolean ifMovingPlatformReverse = false;
+  boolean isOnMovingPlatform = false;
   
   
   public PlayerController(Player player) {
     this.player = player;
     shadow= new PastPlayer(0, 0, 20, 60);
-    tempX = player.location.x;
   }
 
   public void updateAnimation() {
@@ -123,9 +124,9 @@ class PlayerController {
     float overlapBottom = playerBottom - objTop;
 
     float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
-    if ((obj.itemNum == 3 || obj.itemNum == 6) && minOverlap == overlapLeft && movingLeft) {
+    if (minOverlap == overlapLeft && movingLeft) {
       ifLeftCollide = true;
-    } else if ((obj.itemNum == 1 || obj.itemNum == 4) && minOverlap == overlapRight && movingRight) {
+    } else if (minOverlap == overlapRight && movingRight) {
       ifRightCollide = true;
     } else if (minOverlap == overlapTop) {
       ifTopCollide = true;
@@ -149,19 +150,26 @@ class PlayerController {
     ifRightCollide = false;
   }
 
-  public void setPlayerLocation(GameObject obj) {
+  public void setPlayerLocation(Item obj) {
     if (ifTopCollide) {
       // keep droping when not through the platform
       return;
-    } else if (ifLeftCollide || ifRightCollide) {
-      player.location.set(tempX,player.location.y);
+    } else if (ifLeftCollide) {
+      player.location.set(obj.location.x+obj.objectWidth/2+player.objectWidth/2,player.location.y);
+      resetCollisionStatus();
+      return;
+    } else if (ifRightCollide) {
+      player.location.set(obj.location.x-obj.objectWidth/2-player.objectWidth/2,player.location.y);
       resetCollisionStatus();
       return;
     }
-    tempX = player.location.x;
     // stand on platform
     if (player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2&&player.velocity.y>=0) {
       player.location.set(player.location.x, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
+      //if(obj.itemNum>=11&&obj.itemNum<=13&&!isOnMovingPlatform) {
+      //  player.velocity.set(map.mpSpeed, 0);
+      //  isOnMovingPlatform = true;
+      //}
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;
     }
@@ -183,7 +191,6 @@ class PlayerController {
       }
     }
     if (!ifCollide) {
-      tempX = player.location.x;
       resetCollisionStatus();
     }
     // ScreenLeft limit
@@ -218,6 +225,10 @@ class PlayerController {
             ifShadowGenerated=true;
             map.ifBombInverse=true;
             shadow.location.set(item.location.x, item.location.y+40);
+            if (!ifMovingPlatformReverse) {
+              map.mpSpeed = -map.mpSpeed;
+              ifMovingPlatformReverse = true;
+            }
           }
         }
       }
