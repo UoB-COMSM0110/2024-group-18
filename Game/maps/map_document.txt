@@ -10,12 +10,8 @@ Item code
 8: Button
 9: Time Machine
 
-A: trap1
-B: trap2
-
 Moving platform format
 lmmr
-
 
 Please make sure there has a three lines empty room beteewn the platforms if the upon one has projection on the other one
 eg:

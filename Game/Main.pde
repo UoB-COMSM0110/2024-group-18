@@ -233,6 +233,10 @@ void generateMenuUI() {
     image(levelOption2, 1500, 320, 180, 100);
     image(levelOption3, 1500, 420, 180, 100);
   }
+  if(showDisabilityDetails){
+      fill(0);
+      text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.",100,500);
+  }
 }
 
 void generateStartUI() {
