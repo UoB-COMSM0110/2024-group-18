@@ -86,16 +86,34 @@ While not one of our official challenges, we found that programming collisions a
 
 # 7. Process (15% ~750 words) - (Ali)
 
-- [ ] **Teamwork.**
-    - Describe how the team collaborated throughout the project.
-- [ ] **How did you work together,**
-    - Explain the dynamics and interactions within the team.
-- [ ] **What tools did you use.**
-    - List the tools and technologies used for collaboration and development.
-- [ ] **Did you have team roles?**
-    - Discuss if any specific roles were assigned to team members.
-- [ ] **Reflection on how you worked together.**
-    - Reflect on the teamwork and collaboration process.
+ Teamwork.
+###Roles###
+    We never defined official roles, but looking back, some specialities appeared. 
+    - Yi, developer who built out large parts of the game, whilst also acting as a subject matter expert, teaching all of us how to be better game developers.
+    - Kaiyan, developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
+    - Ali, scrum master, tended to be the one to encourage communication through team members through meetings and write requirements and tasks in the Google doc. 
+    - Tom, lead designer, regularly created interactive iPad demos of what a level could look like and provided expert analysis when playtesting levels.
+    - Mihir, Dev Ops lead, built out our tooling and was our in-house GitHub expert, providing support and pioneering our crucial PR based workflow that meant we had few git related issues!
+    
+###Collaboration###
+    Our first few meetings were conducted in person. This allowed maximal flexibility as we discussed various design ideas and got to know each other. In fact, our first meeting ever was done at a restaurant, and focused exclusively on getting to know each other and our gaming histories. We connected in person at the end of each Monday morning lab, and divided up that week’s tasks using a variant of planning poker. (We noticed that development tasks would take different people different amounts of time, so we attempted to give harder tasks to faster coders even out how much time people spent on the game.)
+        <img src="https://i.imgur.com/eQKRT9U.jpeg" width="500" >
+    Over the holidays we switched to doing scrum style stand up meetings (at least 3 times a week) over Microsoft Teams. This proved very effective. In contrast to our in person meetings that could be very long, these tended to be shorter, and more agenda driven - we would focus on what work needed to be done and by whom. This allowed people to work asynchronously in a way that seemed to reduce stress, whilst still having frequent check in points to ask for help or to pair program.
+    Early on we had to make a decision of which game to build. To do this we used a ranked preferences voting tool https://www.rankedchoices.com/, allowing each of us to anonymously express our preferences. 
+    
+##Tools and Techniques##
+    For our meetings we used a google doc in reverse chronological order (a stack, not a queue!) This allowed us a space to add text, images and diagrams flexibly and ensured that the most useful content was at our fingertips.
+        <img src="https://i.imgur.com/GlRhWhe.png" width="500" >
+    We experimented with a variety of different tools during the development. We initially used the Kanban board built into GitHub, however as development became more complicated we noticed that people were misunderstanding the requirements of the task leading to wasted development time. We decided to switch to the running Google doc that we used for meetings as it allowed us to use a variety of media (text, images of paper prototypes etc) to describe the task requirements. This was significantly more flexible, and our PR workflow meant that it was still very easy to track what work had been done. It also reduced the number of places people needed to look for information - everything was centralized in one document.
+            <img src="https://i.imgur.com/cdjpaHN.png" width="500" >
+    We used Pull Requests extensively. Our process involved creating a PR and having another team member review it before it could be merged in. This helped enforce good coding standards and reduced the likelihood of committing buggy code. 
+    WhatsApp was our primary communications method, which we used to coordinate meetings, ask for feedback on PRs and ask for help. 
+                <img src="https://i.imgur.com/FUcBUNE.png" width="500" >
+    Pair programming was something that we used frequently. Since Yi had previous experience with game development, pair programming with him allowed us all to get up to speed with some of the techniques that we would later rely on. He would act as the tactician and we would be the helm. Early on we did a variant of pair programming where we used the VS Code plugin Live Share to be able to collaborate on the same code in real time. This was allowed for very fast coding development early on and meant our meetings were more “working sessions” than meetings.
+    
+##Agile Discussion##
+    We adopted an agile methodology, allowing us to build the game slowly based on user feedback. In general, this was very effective, especially since many of us had little knowledge of game development. However, we did encounter some issues. Early on, the pressure to get a feature "working" overrode the desire to create long-term, maintainable code. You can see this with the collision detections—the initial code had to be rewritten so that it was extensible. We addressed this through implementing a workflow based on pull requests and code reviews. Inspired by industry best practices, code reviews allowed each of us to see the code of others and suggest improvements before it was implemented, however, it did slow down feature development initially.
+
 
 # 8. Conclusion (10% ~500 words) (Tom)
 
