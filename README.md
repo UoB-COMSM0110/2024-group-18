@@ -113,7 +113,7 @@ For our meetings, we used a Google doc in reverse chronological order (a stack, 
 
 <img src="https://i.imgur.com/GlRhWhe.png" width="250">
 
-We initially used the Kanban board built into GitHub. However, as development became more complicated, we noticed that people were misunderstanding the requirements of the task, leading to wasted development time. We decided to switch to the running Google doc that we used for meetings as it allowed us to use a variety of media (text, images of paper prototypes etc) to describe the task requirements. This was significantly more flexible, and our PR workflow meant it was still very easy to track what work had been done. It also reduced the number of places people needed to look for information - everything was centralized in one document.
+We initially used the Kanban board built into GitHub. However, as development became more complicated, we noticed that people were misunderstanding the requirements of the task, leading to wasted development time. We decided to switch to the running Google doc that we used for meetings as it allowed us to use a variety of media (text, images of paper prototypes etc) to describe the task requirements. This was significantly more flexible, and our PR workflow meant it was still very easy to track what work had been done for analysis purposes. It also reduced the number of places people needed to look for information - everything was centralized in one document.
 
 <img src="https://i.imgur.com/cdjpaHN.png" width="250">
 
