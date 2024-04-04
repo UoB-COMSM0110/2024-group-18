@@ -6,14 +6,15 @@ Script:
 https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/edit
 
 # 1. Development Team
-
-- [ ] **Who’s in your team + team photo.**
-    - Include the names and roles of team members.
-  
  <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" >
+ 
+From left to right:
+- **Mihir:** Dev Ops lead, built out our tooling and was our in-house GitHub expert, providing support and pioneering our crucial PR based workflow that meant we had only a few Git related issues!
+- **Tom:** Lead designer, regularly created interactive iPad demos of what a level could look like and provided expert analysis when playtesting levels.
+- **Ali:** Scrum master, tended to be the one to encourage communication through team members through meetings and evaluate which tasks should be prioritized for the next sprint.
+- **Yi:** Developer who built out large parts of the game, whilst also acting as a subject matter expert, teaching all of us how to be better game developers.
+- **Kaiyan:** Developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
 
-- [ ] **Team breakdown + team role (import from prev branch).**
-    - Detail each team member's role.
 
 # 2. Introduction (5% ~250 words) (Mihir)
 
@@ -58,7 +59,7 @@ While not one of our official challenges, we found that programming collisions a
 
 1. **Implementing the reverse time mechanic**
 
-   This was by far the hardest task. We wanted to store not just the locations of the previous player, but also have that player interact with the environment (for example, opening doors.) We created a `PastPlayer` class containing a Linked List of the players previous locations. We used a frame variable to keep track of time within the object.
+   This was by far the hardest task. We wanted to store not just the locations of the previous player, but also have that player interact with the environment (for example, opening doors.) We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object.
 
    The bomb was even more complex. We created explode and unexplode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
@@ -86,18 +87,9 @@ While not one of our official challenges, we found that programming collisions a
 - [ ] **One quantitative evaluation (of your choice).**
     - Conduct and describe a quantitative evaluation of the game.
 - [ ] **Description of how code was tested.**
-    - Explain the methods used for testing the code.
+    - Explain the methods used to test the code.
 
 # 7. Process (15% ~750 words) - (Ali)
-
-## Roles
-
-We never defined official roles, but looking back, some specialties appeared. 
-- **Yi:** Developer who built out large parts of the game, whilst also acting as a subject matter expert, teaching all of us how to be better game developers.
-- **Kaiyan:** Developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
-- **Ali:** Scrum master, tended to be the one to encourage communication through team members through meetings and evaluate which tasks should be prioritized for the next sprint.
-- **Tom:** Lead designer, regularly created interactive iPad demos of what a level could look like and provided expert analysis when playtesting levels.
-- **Mihir:** Dev Ops lead, built out our tooling and was our in-house GitHub expert, providing support and pioneering our crucial PR based workflow that meant we had only a few Git related issues!
 
 ## Collaboration
 
@@ -108,6 +100,10 @@ Our first few meetings were conducted in person. This allowed maximal flexibilit
 Over the holidays, we switched to doing scrum-style stand-up meetings (at least 3 times a week) over Microsoft Teams. This proved very effective. In contrast to our in-person meetings, which could be very long, these tended to be shorter and more agenda-driven - we would focus on what work needed to be done and by whom. This allowed people to work asynchronously in a way that seemed to reduce stress whilst still having frequent check-in points to ask for help or to pair program.
 
 Early on, we had to decide which game to build. To do this, we used a [ranked preferences voting tool](https://www.rankedchoices.com/), which allowed each of us to express our preferences anonymously. 
+
+Analyzing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
+<img src="https://i.imgur.com/6JbR5n4.png" width="500">
+
 
 ## Tools and Techniques
 
@@ -131,7 +127,7 @@ Pair programming was something that we used frequently. Since Yi had previous ex
 
 ## Agile Discussion
 
-We adopted an agile methodology, allowing us to build the game slowly based on user feedback. This was very effective, especially since many of us had little knowledge of game development. However, we did encounter some issues. Early on, the pressure to get a feature "working" overrode the desire to create long-term, maintainable code. You can see this with the collision detections, the initial code had to be rewritten to be extensible. We addressed this by implementing a workflow based on pull requests and code reviews. Inspired by industry best practices, code reviews allowed each of us to uplevel our skills and write significantly better code.
+We adopted an agile methodology, allowing us to build the game slowly based on user feedback. This was very effective, especially since many of us had little knowledge of game development. However, we did encounter some issues. Early on, the pressure to get a feature "working" overrode the desire to create long-term, maintainable code. You can see this with the collision detections, the initial code had to be rewritten to be extensible. We addressed this by implementing a workflow based on pull requests and code reviews. Inspired by industry best practices, code reviews allowed each of us to uplevel our skills and write significantly better code as measured by cyclomatic complexity (which decreased by 79% between the 3rd week of the project and the 7th.)
 
 
 # 8. Conclusion (10% ~500 words) (Tom)
