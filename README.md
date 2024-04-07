@@ -7,14 +7,16 @@ https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/
 
 # 1. Development Team
  <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" >
- 
-From left to right:
-- **`Mihir`:** Dev Ops lead, built out our tooling and was our in-house GitHub expert, providing support and pioneering our crucial PR based workflow that meant we had only a few Git related issues!
-- **`Tom`:** Lead designer, regularly created interactive iPad demos of what a level could look like and provided expert analysis when playtesting levels.
-- **`Ali`:** Scrum master, tended to be the one to encourage communication through team members through meetings and evaluate which tasks should be prioritized for the next sprint.
-- **`Yi`:** Developer who built out large parts of the game, whilst also acting as a subject matter expert, teaching all of us how to be better game developers.
-- **`Kaiyan`:** Developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
 
+#### From left to right:
+
+| Name    | Role          | Contributions |
+|---------|---------------|---------------|
+| `Mihir` | Dev Ops Lead  | Built out our tooling and served as our in-house GitHub expert, pioneering our crucial PR-based workflow to minimize Git related issues. |
+| `Tom`   | Lead Designer | Created interactive iPad demos for potential levels and provided expert analysis during playtesting. |
+| `Ali`   | Scrum Master  | Encouraged team communication and evaluated tasks for sprint prioritization, ensuring smooth workflow. |
+| `Yi`    | Developer     | Contributed significantly to game development and shared expertise, enhancing the team's development skills. |
+| `Kaiyan`| Developer     | Focused on dynamic tooltips in the tutorial level, improving player comprehension and engagement. |
 
 # 2. Introduction 
 
