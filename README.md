@@ -20,7 +20,7 @@ https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/
 
 # 2. Introduction 
 
-### About Oiram:
+### About Oiram: <img src="Assets_For_ReadMe/oriamforreport.gif" width="50">
 Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman, similar to Super Mario, must navigate obstacles such as explosives and determine the most efficient path to the game. However, drawing inspiration from the notorious Nolan film Tenet and similar works, the Tardis object induces a retracement of the spaceman's steps when they interact with it, thereby generating missions that are exceedingly intricate and problem-oriented.
 ### How to Play:
 <p align="center">
