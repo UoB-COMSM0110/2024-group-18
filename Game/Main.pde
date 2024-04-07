@@ -135,7 +135,15 @@ void draw() {
       showBackground();
       map.displayBomb(time);
     } else if (level==3) {
-      map=new Map("./maps/map3.txt", 3);
+      if (!ifMapGenerated) {
+        map=new Map("./maps/map3.txt", 3);
+        ifMapGenerated=true;
+        map.generateMap();
+        map.placeBomb();
+        player.location.x = 100; // ensure the player starts at the correct location for level 2.
+      }
+      showBackground();
+      map.displayBomb(time);
     }
     placeClock();
 
@@ -224,6 +232,10 @@ void generateMenuUI() {
     image(levelOption1, 1500, 220, 180, 100);
     image(levelOption2, 1500, 320, 180, 100);
     image(levelOption3, 1500, 420, 180, 100);
+  }
+  if(showDisabilityDetails){
+      fill(0);
+      text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.",100,500);
   }
 }
 
