@@ -6,17 +6,21 @@ Script:
 https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/edit
 
 # 1. Development Team
- <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" >
+<p align="center">
+  <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
+  <br>
+  <em>Team picture from Week 1 at Wagamamas, to discuss project/team expectations early</em>
+</p>
 
-#### From left to right:
+### Team Role (from left to right of image):
 
 | Name    | Role          | Contributions |
 |---------|---------------|---------------|
-| `Mihir` | Dev Ops Lead  | Built out our tooling and served as our in-house GitHub expert, pioneering our crucial PR-based workflow to minimize Git related issues. |
-| `Tom`   | Lead Designer | Created interactive iPad demos for potential levels and provided expert analysis during playtesting. |
-| `Ali`   | Scrum Master  | Encouraged team communication and evaluated tasks for sprint prioritization, ensuring smooth workflow. |
-| `Yi`    | Developer     | Contributed significantly to game development and shared expertise, enhancing the team's development skills. |
-| `Kaiyan`| Developer     | Focused on dynamic tooltips in the tutorial level, improving player comprehension and engagement. |
+| `Mihir` | `Dev Ops Lead`  | Built out our tooling and served as our in-house GitHub expert, pioneering our crucial PR-based workflow to minimize Git related issues. |
+| `Tom`   | `Lead Designer` | Created interactive iPad demos for potential levels and provided expert analysis during playtesting. |
+| `Ali`   | `Scrum Master`  | Encouraged team communication and evaluated tasks for sprint prioritization, ensuring smooth workflow. |
+| `Yi`    | `Developer`     | Contributed significantly to game development and shared expertise, enhancing the team's development skills. |
+| `Kaiyan`| `Developer`     | Focused on dynamic tooltips in the tutorial level, improving player comprehension and engagement. |
 
 # 2. Introduction 
 ### About Oiram:
