@@ -9,11 +9,11 @@ https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/
  <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" >
  
 From left to right:
-- **Mihir:** Dev Ops lead, built out our tooling and was our in-house GitHub expert, providing support and pioneering our crucial PR based workflow that meant we had only a few Git related issues!
-- **Tom:** Lead designer, regularly created interactive iPad demos of what a level could look like and provided expert analysis when playtesting levels.
-- **Ali:** Scrum master, tended to be the one to encourage communication through team members through meetings and evaluate which tasks should be prioritized for the next sprint.
-- **Yi:** Developer who built out large parts of the game, whilst also acting as a subject matter expert, teaching all of us how to be better game developers.
-- **Kaiyan:** Developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
+- **`Mihir`:** Dev Ops lead, built out our tooling and was our in-house GitHub expert, providing support and pioneering our crucial PR based workflow that meant we had only a few Git related issues!
+- **`Tom`:** Lead designer, regularly created interactive iPad demos of what a level could look like and provided expert analysis when playtesting levels.
+- **`Ali`:** Scrum master, tended to be the one to encourage communication through team members through meetings and evaluate which tasks should be prioritized for the next sprint.
+- **`Yi`:** Developer who built out large parts of the game, whilst also acting as a subject matter expert, teaching all of us how to be better game developers.
+- **`Kaiyan`:** Developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
 
 
 # 2. Introduction 
@@ -21,6 +21,10 @@ From left to right:
 ### About Oiram:
 Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman, similar to Super Mario, must navigate obstacles such as explosives and determine the most efficient path to the game. However, drawing inspiration from the notorious Nolan film Tenet and similar works, the Tardis object induces a retracement of the spaceman's steps when they interact with it, thereby generating missions that are exceedingly intricate and problem-oriented.
 ### How to Play:
+<p align="center">
+  <img src="Assets_For_ReadMe/wasd.jpg">
+</p>
+
 Use the arrow keys or WASD to direct your spaceman: D/A, or right/left, for movement, and W, or up, to ascend into the atmosphere. In order to complete your mission, you must deftly traverse levels while dodging physical obstacles and reverberations of your previous actions. In order to activate mechanisms and portals, one must interact with environment objects such as gates, switches, and the tardis. Prevent fatal errors by keeping explosives out of reach to ensure survival. Achieving success is contingent upon your capacity to deftly reconcile the forces of gravitation with dexterity and quickness, skillfully manoeuvre past obstacles, and capitalise on past deeds to forge a course to triumph.
 ### Oiram Inspiration:
 Oiram finds inspiration in the intricate narrative structures of Tenet, the timeless platforming of Super Mario, and the temporal puzzles presented in Braid. These components combine time manipulation and traditional platforming challenges to create a game that presents a novel and captivating gameplay encounter.
