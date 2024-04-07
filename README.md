@@ -19,19 +19,54 @@ https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/
 | `Kaiyan`| Developer     | Focused on dynamic tooltips in the tutorial level, improving player comprehension and engagement. |
 
 # 2. Introduction 
-
-### About Oiram: <img src="Assets_For_ReadMe/oriamforreport.gif" width="50">
-Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman, similar to Super Mario, must navigate obstacles such as explosives and determine the most efficient path to the game. However, drawing inspiration from the notorious Nolan film Tenet and similar works, the Tardis object induces a retracement of the spaceman's steps when they interact with it, thereby generating missions that are exceedingly intricate and problem-oriented.
-### How to Play:
-<p align="center">
-  <img src="Assets_For_ReadMe/wasd.jpg">
+### About Oiram:
+<div style="text-align: center;">
+  <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
+</div>
+<p>
+Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. Drawing inspiration from Nolan's Tenet, the Tardis object allows for time retracement, creating intricately designed, problem-oriented missions.
 </p>
 
-Use the arrow keys or WASD to direct your spaceman: D/A, or right/left, for movement, and W, or up, to ascend into the atmosphere. In order to complete your mission, you must deftly traverse levels while dodging physical obstacles and reverberations of your previous actions. In order to activate mechanisms and portals, one must interact with environment objects such as gates, switches, and the tardis. Prevent fatal errors by keeping explosives out of reach to ensure survival. Achieving success is contingent upon your capacity to deftly reconcile the forces of gravitation with dexterity and quickness, skillfully manoeuvre past obstacles, and capitalise on past deeds to forge a course to triumph.
-### Oiram Inspiration:
-Oiram finds inspiration in the intricate narrative structures of Tenet, the timeless platforming of Super Mario, and the temporal puzzles presented in Braid. These components combine time manipulation and traditional platforming challenges to create a game that presents a novel and captivating gameplay encounter.
-### Why Oiram?
-Oiram distinguishes itself not only by fusing traditional platforming with cutting-edge time manipulation, but also by emphasising accessibility. The game is inclusive and engaging for all players by incorporating customisable controls, visual prompts for auditory elements, and adjustable difficulty levels, all of which are designed to accommodate a variety of disability requirements.
+### How to Play:
+<div style="display: flex; align-items: center; justify-content: center;">
+  <p style="margin-right: 20px;">
+    <b><i>Use the arrow keys or WASD to direct your spaceman: D/A for lateral movement, W or Up to ascend.</i></b>
+  </p>
+  <img src="Assets_For_ReadMe/wasd.jpg" alt="WASD Controls">
+</div>
+
+**The Mission:**
+Navigate levels, dodge obstacles, and interact with objects like gates, switches, and the Tardis to activate mechanisms and portals.
+
+<div style="display: flex; justify-content: space-around; text-align: center;">
+  <div style="padding: 10px;">
+    <h3>Gates</h3>
+    <img src="Game/assets/Static/Door/door1.png" alt="Gates" style="width: auto; height: 100px;">
+    <p><i>Act as barriers that can be opened or closed to control player movement.</i></p>
+  </div>
+  <div style="padding: 10px;">
+    <h3>Switches</h3>
+    <img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="width: auto; height: 100px;">
+    <p><i>Toggle to control various game mechanisms.</i></p>
+  </div>
+  <div style="padding: 10px;">
+    <h3>Tardis</h3>
+    <img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="width: auto; height: 100px;">
+    <p><i>Teleportation device that changes the state of the game by altering timelines.</i></p>
+  </div>
+</div>
+
+**Obstructions:**
+Avoid explosives to ensure survival.
+
+**How to Win:**
+Master gravity and momentum to navigate past challenges and utilize your past actions for success.
+
+### Oiram Game Inspiration:
+Oiram's narrative complexity is inspired by Tenet, the timeless platforming of Super Mario, and the temporal challenges of Braid, offering a unique gameplay experience.
+
+### Why Play Oiram?
+Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
 
 # 3. Requirements (15% ~750 words) (Mihir)
 
