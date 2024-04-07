@@ -18,12 +18,15 @@ From left to right:
 
 # 2. Introduction (5% ~250 words) (Mihir)
 
-- [ ] **Describe your game, what is based on, what makes it novel?**
-    - Briefly introduce the game.
+### About Oiram:
+Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman, similar to Super Mario, must navigate obstacles such as explosives and determine the most efficient path to the game. However, drawing inspiration from the notorious Nolan film Tenet and similar works, the Tardis object induces a retracement of the spaceman's steps when they interact with it, thereby generating missions that are exceedingly intricate and problem-oriented.
+### How to Play:
 - [ ] **Describe Game.**
     - Provide a detailed description of the game mechanics and objectives.
+### Oiram Inspiration:
 - [ ] **Based on (Braid, Tenet…).**
     - Explain the inspiration behind the game.
+### Why Oiram?
 - [ ] **Stand out.**
     - Highlight what makes your game unique.
 
