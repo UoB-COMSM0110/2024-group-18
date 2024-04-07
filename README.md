@@ -16,19 +16,16 @@ From left to right:
 - **Kaiyan:** Developer, especially focused on the dynamic tooltips in the tutorial level that resulted in far more players being able to understand the game.
 
 
-# 2. Introduction (5% ~250 words) (Mihir)
+# 2. Introduction 
 
 ### About Oiram:
 Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman, similar to Super Mario, must navigate obstacles such as explosives and determine the most efficient path to the game. However, drawing inspiration from the notorious Nolan film Tenet and similar works, the Tardis object induces a retracement of the spaceman's steps when they interact with it, thereby generating missions that are exceedingly intricate and problem-oriented.
 ### How to Play:
-- [ ] **Describe Game.**
-    - Provide a detailed description of the game mechanics and objectives.
+Use the arrow keys or WASD to direct your spaceman: D/A, or right/left, for movement, and W, or up, to ascend into the atmosphere. In order to complete your mission, you must deftly traverse levels while dodging physical obstacles and reverberations of your previous actions. In order to activate mechanisms and portals, one must interact with environment objects such as gates, switches, and the tardis. Prevent fatal errors by keeping explosives out of reach to ensure survival. Achieving success is contingent upon your capacity to deftly reconcile the forces of gravitation with dexterity and quickness, skillfully manoeuvre past obstacles, and capitalise on past deeds to forge a course to triumph.
 ### Oiram Inspiration:
-- [ ] **Based on (Braid, Tenet…).**
-    - Explain the inspiration behind the game.
+Oiram finds inspiration in the intricate narrative structures of Tenet, the timeless platforming of Super Mario, and the temporal puzzles presented in Braid. These components combine time manipulation and traditional platforming challenges to create a game that presents a novel and captivating gameplay encounter.
 ### Why Oiram?
-- [ ] **Stand out.**
-    - Highlight what makes your game unique.
+Oiram distinguishes itself not only by fusing traditional platforming with cutting-edge time manipulation, but also by emphasising accessibility. The game is inclusive and engaging for all players by incorporating customisable controls, visual prompts for auditory elements, and adjustable difficulty levels, all of which are designed to accommodate a variety of disability requirements.
 
 # 3. Requirements (15% ~750 words) (Mihir)
 
