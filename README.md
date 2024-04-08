@@ -172,24 +172,24 @@ While not one of our official challenges, we found that programming collisions a
     Figure X
     NASA TLX Scores
 
-    Participant	Level One	Level Two
+    Participant	 Level One  Level Two
     ---------------------------------
-    |   1	  |     14	  |     58  |
-    |   2	  |     18    | 	60  |
-    |   3     | 	47    | 	78  |
-    |   4	  |     5	  |     17  |
-    |   5	  |     12    | 	32  |
-    |   6     | 	20    | 	58  |
-    |   7	  |     30    | 	54  |
-    |   8	  |     18    | 	60  |
-    |   9	  |     25    | 	65  |
-    |   10    | 	30    | 	56  |
-    |   11    | 	25    | 	65  |
-    ----------------------------------
+    |   1	  |     14	  |    58  |
+    |   2	  |     18    |    60  |
+    |   3     | 	47    |    78  |
+    |   4	  |     5	  |    17  |
+    |   5	  |     12    |    32  |
+    |   6     | 	20    |    58  |
+    |   7	  |     30    |    54  |
+    |   8	  |     18    |    60  |
+    |   9	  |     25    |    65  |
+    |   10    | 	30    |    56  |
+    |   11    | 	25    |    65  |
+    --------------------------------
 
     The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased workload on Level 3 compared to Level 2. A Wilcoxon Signed Rank test was conducted to assess changes in perceived workload between the two levels.  The results of this indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two compared to Level One, indicating an increase in difficulty (see Figure X).
 
-    
+
 
 - [ ] **One qualitative evaluation (your choice).**
     - Conduct and describe a qualitative evaluation of the game.
