@@ -163,6 +163,7 @@ While not one of our official challenges, we found that programming collisions a
 
 
 # 6. Evaluation (15% ~750 words) (Tom)
+    During the development process it was essential to understand whether the fundamental mechanics of the game, namely the movement physics and the time inversion mechanic, offered gameplay which was both fun and presented a satisfying challenge. To do this we utilised a mixed-methods approach using inferential statistics which were also enriched by qualitative interview transcripts. 
 
 - [ ] **One qualitative evaluation (your choice).**
     - Conduct and describe a qualitative evaluation of the game.
