@@ -446,6 +446,8 @@ void disabilityButtonClicked() {
       controlMode=ControlType.DISABLED;
       if (alternativeController==null) {
         try {
+          // todo make this an on screen dynamic graphic so viwers know it hasn't crashed.
+          print("LOADING DISABILITY MODE PLEASE WAIT.");
           alternativeController = new AlternativeController(this, playerController);
         }
         catch(Exception e) {
@@ -483,7 +485,7 @@ public void restartLevel() {
   invertLag = 0;
   time=0;
   playerController = new PlayerController(player);
-  if (alternativeController==null && controlMode==ControlType.DISABLED) {
+  if (controlMode==ControlType.DISABLED) {
     try {
       alternativeController= new AlternativeController(this, playerController);
     }
@@ -491,32 +493,32 @@ public void restartLevel() {
       showDisabilityError=true;
     }
   }
-    player.ifDead=false;
-    player.index=0;
-    player.location.set(120, 500);
-    player.velocity.set(0, 0);
-    playerController.deadByHitPreviousPlayer=false;
-    ifGameOver=false;
-    ifRestarted = true;
-    if (level==2||level==3) {
-      map.ifBombInverse=false;
-      map.bombList.clear();
-      map.placeBomb();
-    }
+  player.ifDead=false;
+  player.index=0;
+  player.location.set(120, 500);
+  player.velocity.set(0, 0);
+  playerController.deadByHitPreviousPlayer=false;
+  ifGameOver=false;
+  ifRestarted = true;
+  if (level==2||level==3) {
+    map.ifBombInverse=false;
+    map.bombList.clear();
+    map.placeBomb();
   }
+}
 
-  public void placeClock() {
-    image(clock, 100, 100, 300, 300);
-    stroke(255, 204, 204);
-    strokeWeight(5);
-    time_x=30*sin(time);
-    time_y=30*cos(time);
-    line(100, 100, 100+time_x, 100-time_y);
-    if (!ifLevelPass) {
-      if (playerController.ifShadowGenerated) {
-        time-=0.008;
-      } else {
-        time+=0.008;
-      }
+public void placeClock() {
+  image(clock, 100, 100, 300, 300);
+  stroke(255, 204, 204);
+  strokeWeight(5);
+  time_x=30*sin(time);
+  time_y=30*cos(time);
+  line(100, 100, 100+time_x, 100-time_y);
+  if (!ifLevelPass) {
+    if (playerController.ifShadowGenerated) {
+      time-=0.008;
+    } else {
+      time+=0.008;
     }
   }
+}
