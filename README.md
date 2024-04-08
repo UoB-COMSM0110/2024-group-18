@@ -166,8 +166,27 @@ While not one of our official challenges, we found that programming collisions a
     During the development process it was essential to understand whether the fundamental mechanics of the game, namely the movement physics and the time inversion mechanic, offered gameplay which was both fun and presented a satisfying challenge. To do this we utilised a mixed-methods approach using inferential statistics which were also enriched by qualitative interview transcripts. 
 
     Because we aimed for the game to reward future planning and puzzle solving, we needed each level to be considerably more difficult than the previous. To assess whether two of our levels differentiated in complexity use statistical methods to try and objectively measure each difficulty level. Studies have shown that game difficulty can improve overall enjoyment when it is not overly frustrating, whilst also providing a satisfying challenge to overcome (Alexander et al., 2013), therefore it was important we accurately assessed this. To gather data, the NASA Task Load Index (TLX) was used (Hart & Staveland, 1988). This questionnaire asks participants to record their perceived physical and cognitive workload when completing a task and has been shown to be highly reliable in many areas of HCI including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
-    
+
     Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After filling it out then then repeated the same process for Level Two, giving us two data points for each participant (see Figure X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity (Said et al., 2020; Virtanen et al., 2021).
+
+    Figure X
+    NASA TLX Scores
+
+    Participant	Level One	Level Two
+    ---------------------------------
+    |   1	  |     14	  |     58  |
+    |   2	  |     18    | 	60  |
+    |   3     | 	47    | 	78  |
+    |   4	  |     5	  |     17  |
+    |   5	  |     12    | 	32  |
+    |   6     | 	20    | 	58  |
+    |   7	  |     30    | 	54  |
+    |   8	  |     18    | 	60  |
+    |   9	  |     25    | 	65  |
+    |   10    | 	30    | 	56  |
+    |   11    | 	25    | 	65  |
+    ----------------------------------
+
 
 
 - [ ] **One qualitative evaluation (your choice).**
