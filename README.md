@@ -187,7 +187,9 @@ While not one of our official challenges, we found that programming collisions a
     |   11    | 	25    | 	65  |
     ----------------------------------
 
+    The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased workload on Level 3 compared to Level 2. A Wilcoxon Signed Rank test was conducted to assess changes in perceived workload between the two levels.  The results of this indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two compared to Level One, indicating an increase in difficulty (see Figure X).
 
+    
 
 - [ ] **One qualitative evaluation (your choice).**
     - Conduct and describe a qualitative evaluation of the game.
