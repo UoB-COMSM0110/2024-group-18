@@ -437,6 +437,10 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
+      if(platformNames[platform]=="linux"){
+        print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+        return;
+      }
     if (showDisabilityDetails) {
       disabilityButton=loadImage("./assets/Background/disabled.png");
       controlMode=ControlType.NORMAL;
