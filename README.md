@@ -163,11 +163,94 @@ While not one of our official challenges, we found that programming collisions a
 
 
 # 6. Evaluation (15% ~750 words) (Tom)
+    During the development process it was essential to understand whether the fundamental mechanics of the game, namely the movement physics and the time inversion mechanic, offered gameplay which was both fun whilst also presenting a satisfying challenge. To do this we utilised a mixed-methods approach using inferential statistics which were enriched by qualitative interview transcripts. 
 
-- [ ] **One qualitative evaluation (your choice).**
-    - Conduct and describe a qualitative evaluation of the game.
-- [ ] **One quantitative evaluation (of your choice).**
-    - Conduct and describe a quantitative evaluation of the game.
+    Because we aimed for the game to reward future planning and puzzle solving, we needed each level to be considerably more difficult than the previous. To assess whether two of our levels differentiated in complexity statistical analysis was used to measure each difficulty level and compare the two. Studies have shown that game difficulty can improve overall enjoyment when it is not overly frustrating, whilst also providing a satisfying challenge to overcome (Alexander et al., 2013), therefore it was important we accurately assessed this. To gather data, the NASA Task Load Index (TLX) was used (Hart & Staveland, 1988). This questionnaire asks participants to record their perceived physical and cognitive workload when completing a task and has been shown to be highly reliable in many areas of HCI including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+
+    Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After completing it they repeated the same process for Level Two, giving us two TLX scores for each participant (see Figure X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
+
+    Figure X
+    NASA TLX Scores
+
+    Participant	 Level One  Level Two
+    ---------------------------------
+    |   1	  |     14	  |    58  |
+    |   2	  |     18    |    60  |
+    |   3     | 	47    |    78  |
+    |   4	  |     5	  |    17  |
+    |   5	  |     12    |    32  |
+    |   6     | 	20    |    58  |
+    |   7	  |     30    |    54  |
+    |   8	  |     18    |    60  |
+    |   9	  |     25    |    65  |
+    |   10    | 	30    |    56  |
+    |   11    | 	25    |    65  |
+    --------------------------------
+
+    The data was analysed using R*Studio (RStudio Team, 2020) and expected each participant to report significantly increased workload on Level 3 compared to Level 2. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results of this indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
+  <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
+</p>
+
+To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Joe et al., 2015).  It asks  participants to verbally express their thoughts, feelings, and emotions whilst playing the game (Nielsen et al., 2002). We utilised this evaluation technique to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
+
+Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Thematic Map of Think Aloud Data</i><br>
+  <img src="Assets_For_ReadMe/thematicmap.png" width="512" height="384">
+</p>
+
+
+This data was instrumental in our development approach and much of the qualitative data we gathered directly influenced design choices. We will address each theme in turn.
+
+Player Movement
+During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish”  and gave them “floaty feeling” , with another describing it feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure X.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Different Game Backgrounds</i><br>
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="512" height="384">
+</p>
+
+
+Difficulty 
+We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
+
+“That [Level Two] was definitely harder … it was pretty rewarding”.
+
+“Okay now that was satisfying”.
+
+However other players commented on how they felt like the second level especially was too challenging, with one participant asking, “is there any way to skip this level” and another stating “damn that is so hard”. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
+
+Instructions
+We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was again highlighted in the TA data.
+
+“I liked figuring out what to do, that is really rewarding”.
+“Once it clicked … it became so much clear”.
+
+However, others claimed they would prefer slightly more instructions for both how to progress through the level, as well as how to view the controls again.
+
+“How do I see the controls again”.
+“I think it would be good if you could maybe give some hints whilst you are playing”.
+“It would be nice to have a bit more direction”.
+
+We took some of this feedback and then included some visual hints on screen which offered some clues as to how to beat the level yet remaining vague enough to still offer rewarding gameplay (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Example Hints</i><br>
+  <img src="Assets_For_ReadMe/hintexamples.png" width="512" height="384">
+</p>
+
+
+
+
+-
 - [ ] **Description of how code was tested.**
     - Explain the methods used to test the code.
 
