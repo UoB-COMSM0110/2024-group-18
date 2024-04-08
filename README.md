@@ -75,17 +75,22 @@ Oiram's narrative complexity is inspired by Tenet, the timeless platforming of S
 Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
 
 # 3. Requirements (15% ~750 words) (Mihir)
+### Introduction to Requirement Engineering (RE)
+“The two most important parts of a computing system are the users
+and their data, in that order.” Neville Holmes. (Alexander & Beus-Dukic, 2009, p. 27).
 
-- [ ] **Use case diagram.**
-    - Include use case diagrams to represent the system functionalities.
-- [ ] **User Stories.**
-    - List down the user stories.
-- [ ] **Early stages design.**
-    - Discuss the initial design stages of your game.
-- [ ] **Ideation processing.**
-    - Explain how the ideation process was conducted.
-- [ ] **Reflections for future development.**
-    - Share any reflections or insights that could influence future development.
+Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported unrealistic or ambivalent
+scope and feature creep as the most common issues.
+
+<img src="Assets_For_ReadMe/RE-GameStudySignificance.png">
+<p><i>Figure 1. Petrillo's (2009) study mapping problems found in Game Development to its occurances</i></p>
+
+We later reflect on experiencing similar issues, where we found and experiences that an overcomplicated game, leading to time management inconsistency (Rasheed et al., 2021, p. 6), and overall causing poor client satisfaction potentially creating a breach in contract (Davis, 1993, p. 15). Thus, we knew that the success of Oiram depended on high quality RE. The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
+
+<img src="Assets_For_ReadMe/RERoadMapReq.png">
+<p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report</i></p>
+
+### 
 
 # 4. Design (15% ~750 words) (Kai/Mihir/Tom)
 
@@ -194,3 +199,13 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
     - Reflect on the challenges faced and how they were overcome.
 - [ ] **Future work.**
     - Discuss any plans or ideas for future work on the project.
+
+# Bibliography
+### Mihir:
+Alexander, I. F., & Beus-Dukic, L. (2009). Discovering Requirements: How to Specify Products and Services. Wiley. https://books.google.co.uk/books?id=KMZYFzgbXSwC
+
+Davis, A. M. (Alan M. (1993). Software requirements: Objects, functions, and states. Englewood Cliffs, N.J. : PTR Prentice Hall. http://archive.org/details/softwarerequirem0000davi
+
+Petrillo, F., Pimenta, M., Trindade, F., & Dietrich, C. (2009). What went wrong? A survey of problems in game development. Computers in Entertainment, 7(1), 1–22. https://doi.org/10.1145/1486508.1486521
+
+Rasheed, A., Zafar, B., Shehryar, T., Aslam, N. A., Sajid, M., Ali, N., Dar, S. H., & Khalid, S. (2021). Requirement Engineering Challenges in Agile Software Development. Mathematical Problems in Engineering, 2021, 1–15. https://doi.org/10.1155/2021/6696695
