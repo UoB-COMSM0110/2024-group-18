@@ -167,25 +167,14 @@ While not one of our official challenges, we found that programming collisions a
 
     Because we aimed for the game to reward future planning and puzzle solving, we needed each level to be considerably more difficult than the previous. To assess whether two of our levels differentiated in complexity statistical analysis was used to measure each difficulty level and compare the two. Studies have shown that game difficulty can improve overall enjoyment when it is not overly frustrating, whilst also providing a satisfying challenge to overcome (Alexander et al., 2013), therefore it was important we accurately assessed this. To gather data, the NASA Task Load Index (TLX) was used (Hart & Staveland, 1988). This questionnaire asks participants to record their perceived physical and cognitive workload when completing a task and has been shown to be highly reliable in many areas of HCI including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
 
-    Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After completing it they repeated the same process for Level Two, giving us two TLX scores for each participant (see Figure X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
+    Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After completing it they repeated the same process for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
 
-    Figure X
-    NASA TLX Scores
-
-    Participant	 Level One  Level Two
-    ---------------------------------
-    |   1	  |     14	  |    58  |
-    |   2	  |     18    |    60  |
-    |   3     | 	47    |    78  |
-    |   4	  |     5	  |    17  |
-    |   5	  |     12    |    32  |
-    |   6     | 	20    |    58  |
-    |   7	  |     30    |    54  |
-    |   8	  |     18    |    60  |
-    |   9	  |     25    |    65  |
-    |   10    | 	30    |    56  |
-    |   11    | 	25    |    65  |
-    --------------------------------
+<p align="center">
+  <b>Table X</b><br>
+  <i>Participant NASA TLX Scores</i><br>
+  <img src="Assets_For_ReadMe/pscoretable.png" width="512" height="384">
+</p>
+    
 
     The data was analysed using R*Studio (RStudio Team, 2020) and expected each participant to report significantly increased workload on Level 3 compared to Level 2. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results of this indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
 
@@ -202,7 +191,7 @@ Seventeen participants were collected again through convenience sampling. Due to
 <p align="center">
   <b>Figure X</b><br>
   <i>Thematic Map of Think Aloud Data</i><br>
-  <img src="Assets_For_ReadMe/thematicmap.png" width="512" height="384">
+  <img src="Assets_For_ReadMe/thematicmap.png">
 </p>
 
 
@@ -214,39 +203,41 @@ During early playtesting, when the aesthetic of the game hadn’t yet been  deci
 <p align="center">
   <b>Figure X</b><br>
   <i>Different Game Backgrounds</i><br>
-  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="512" height="384">
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
 </p>
 
 
 Difficulty 
 We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
 
-“That [Level Two] was definitely harder … it was pretty rewarding”.
+“That [Level Two] was definitely harder … it was pretty rewarding”
 
-“Okay now that was satisfying”.
+“Okay now that was satisfying”
 
 However other players commented on how they felt like the second level especially was too challenging, with one participant asking, “is there any way to skip this level” and another stating “damn that is so hard”. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
 
 Instructions
 We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was again highlighted in the TA data.
 
-“I liked figuring out what to do, that is really rewarding”.
-“Once it clicked … it became so much clear”.
+“I liked figuring out what to do, that is really rewarding”
+
+“Once it clicked … it became so much clear”
 
 However, others claimed they would prefer slightly more instructions for both how to progress through the level, as well as how to view the controls again.
 
-“How do I see the controls again”.
-“I think it would be good if you could maybe give some hints whilst you are playing”.
-“It would be nice to have a bit more direction”.
+“How do I see the controls again”
+
+“I think it would be good if you could maybe give some hints whilst you are playing”
+
+“It would be nice to have a bit more direction”
 
 We took some of this feedback and then included some visual hints on screen which offered some clues as to how to beat the level yet remaining vague enough to still offer rewarding gameplay (see Figure X).
 
 <p align="center">
   <b>Figure X</b><br>
   <i>Example Hints</i><br>
-  <img src="Assets_For_ReadMe/hintexamples.png" width="512" height="384">
+  <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
 </p>
-
 
 
 
