@@ -93,6 +93,23 @@ We later reflect on experiencing similar issues, where we found and experiences 
 ### Identifying Stakeholders (Onion Model)
 
 ### Identifying Top Level Needs (User Stories)
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
+  <br>
+  <i>Figure 3: User Story 1</i>
+</p>
+
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
+  <br>
+  <i>Figure 4: User Story 2</i>
+</p>
+
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
+  <br>
+  <i>Figure 5: User Story 3</i>
+</p>
 
 ### Stories To Use-Cases Breakdown (Use-Case Diagram)
 
