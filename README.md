@@ -206,13 +206,20 @@ Seventeen participants were collected again through convenience sampling. Due to
 </p>
 
 
+This data was instrumental in our development approach and much of the qualitative data we gathered directly influenced design choices. We will address each theme in turn.
+
+Player Movement
+During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish”  and gave them “floaty feeling” , with another describing it feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure X.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Different Game Backgrounds</i><br>
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="512" height="384">
+</p>
 
 
 
-- [ ] **One qualitative evaluation (your choice).**
-    - Conduct and describe a qualitative evaluation of the game.
-- [ ] **One quantitative evaluation (of your choice).**
-    - Conduct and describe a quantitative evaluation of the game.
+-
 - [ ] **Description of how code was tested.**
     - Explain the methods used to test the code.
 
