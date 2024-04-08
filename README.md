@@ -165,14 +165,14 @@ While not one of our official challenges, we found that programming collisions a
 # 6. Evaluation (15% ~750 words) (Tom)
   During the development process it was essential to understand whether the fundamental mechanics of the game, namely the movement physics and the time inversion mechanic, offered gameplay which was both fun whilst also presenting a satisfying challenge. To do this we utilised a mixed-methods approach using inferential statistics which were enriched by questionnaire data. 
 
-  Because we aimed for the game to reward future planning and puzzle solving, we needed each level to be considerably more difficult than the previous. To assess whether two of our levels differentiated in complexity statistical analysis was used to measure each difficulty level and compare the two. Studies have shown that game difficulty can improve overall enjoyment when it is not overly frustrating, whilst also providing a satisfying challenge to overcome (Alexander et al., 2013), therefore it was important we accurately assessed this. To gather data, the NASA Task Load Index (TLX) was used (Hart & Staveland, 1988). This questionnaire asks participants to record their perceived physical and cognitive workload when completing a task and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+  Because we aimed for the game to reward future planning and puzzle solving, coupled with studies showing that game difficulty can improve overall enjoyment when it is not overly frustrating and also provides a satisfying challenge to overcome (Alexander et al., 2013). It was therefore important that we accurately assessed this. To examione whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
 
   Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After completing it they repeated the same process for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
 
 <p align="center">
   <b>Table X</b><br>
   <i>Participant NASA TLX Scores</i><br>
-  <img src="Assets_For_ReadMe/pscoretable.png" width="512" height="384">
+  <img src="Assets_For_ReadMe/pscoretable.png">
 </p>
     
 
@@ -184,7 +184,7 @@ While not one of our official challenges, we found that programming collisions a
   <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
 </p>
 
-To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of HCI (Joe et al., 2015).  It asks  participants to verbally express their thoughts, feelings, and emotions whilst playing the game (Nielsen et al., 2002). We utilised this evaluation technique to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
+To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of HCI (Joe et al., 2015).  It asks  participants to verbally express their thoughts, feelings, and emotions whilst performing a given task (Nielsen et al., 2002). We utilised this evaluation technique to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
 
 Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure X).
 
@@ -198,6 +198,7 @@ Seventeen participants were collected again through convenience sampling. Due to
 This data was instrumental in our development approach and much of the qualitative data we gathered directly influenced design choices. We will address each theme in turn.
 
 Player Movement
+
 During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish”  and gave them “floaty feeling” , with another describing it feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure X.
 
 <p align="center">
@@ -208,6 +209,7 @@ During early playtesting, when the aesthetic of the game hadn’t yet been  deci
 
 
 Difficulty 
+
 We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
 
 “That [Level Two] was definitely harder … it was pretty rewarding”
@@ -216,12 +218,14 @@ We found mixed responses to the difficulty levels with many players enjoying the
 
 However other players commented on how they felt like the second level especially was too challenging, with one participant asking, “is there any way to skip this level” and another stating “damn that is so hard”. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
 
+
 Instructions
+
 We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was again highlighted in the TA data.
 
 “I liked figuring out what to do, that is really rewarding”
 
-“Once it clicked … it became so much clear”
+“Once it clicked … it became so much clearer”
 
 However, others claimed they would prefer slightly more instructions for both how to progress through the level, as well as how to view the controls again.
 
@@ -324,7 +328,7 @@ Said, S., Gozdzik, M., Roche, T. R., Braun, J., Rössler, J., Kaserer, A., Spahn
 
 Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessing game-task difficulty through real-time measures of performance and cognitive load. Simulation &amp; Gaming, 104687812311699. https://doi.org/10.1177/10468781231169910 
 
-Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
+Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
 
 
