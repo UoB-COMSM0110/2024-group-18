@@ -167,7 +167,7 @@ While not one of our official challenges, we found that programming collisions a
 
     Because we aimed for the game to reward future planning and puzzle solving, we needed each level to be considerably more difficult than the previous. To assess whether two of our levels differentiated in complexity use statistical methods to try and objectively measure each difficulty level. Studies have shown that game difficulty can improve overall enjoyment when it is not overly frustrating, whilst also providing a satisfying challenge to overcome (Alexander et al., 2013), therefore it was important we accurately assessed this. To gather data, the NASA Task Load Index (TLX) was used (Hart & Staveland, 1988). This questionnaire asks participants to record their perceived physical and cognitive workload when completing a task and has been shown to be highly reliable in many areas of HCI including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
 
-    Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After filling it out then then repeated the same process for Level Two, giving us two data points for each participant (see Figure X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity (Said et al., 2020; Virtanen et al., 2021).
+    Eleven participants (N = 11) consisting of six males and five females were collected via convenience sampling. Each participant completed Level One first which was designed to be the easier of the two. Upon completion they were administered with the TLX. After filling it out then then repeated the same process for Level Two, giving us two data points for each participant (see Figure X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
 
     Figure X
     NASA TLX Scores
@@ -187,7 +187,12 @@ While not one of our official challenges, we found that programming collisions a
     |   11    | 	25    |    65  |
     --------------------------------
 
-    The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased workload on Level 3 compared to Level 2. A Wilcoxon Signed Rank test was conducted to assess changes in perceived workload between the two levels.  The results of this indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two compared to Level One, indicating an increase in difficulty (see Figure X).
+    The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased workload on Level 3 compared to Level 2. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results of this indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
+
+    Figure X
+    Box Plot Depicting Raw NASA TLX Scores
+
+
 
 
 
