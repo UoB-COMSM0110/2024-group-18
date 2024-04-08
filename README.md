@@ -90,7 +90,13 @@ We later reflect on experiencing similar issues, where we found and experiences 
 <img src="Assets_For_ReadMe/RERoadMapReq.png">
 <p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report</i></p>
 
-### 
+### Identifying Stakeholders (Onion Model)
+
+### Identifying Top Level Needs (User Stories)
+
+### Stories To Use-Cases Breakdown (Use-Case Diagram)
+
+### Specifying Atomic Requirements (Quality and Verifiability of RE)
 
 # 4. Design (15% ~750 words) (Kai/Mihir/Tom)
 
