@@ -11,6 +11,7 @@ PImage setting;
 PImage control;
 boolean showControlBar=false;
 boolean showDisabilityDetails=false;
+boolean showDisabilityError=false;
 boolean showSettingBar=false;
 PImage controlOption;
 PImage levelOption1;
@@ -64,6 +65,7 @@ void initializeGlobalVariablesToStartingValues() {
 
   showControlBar = false;
   showDisabilityDetails = false;
+  showDisabilityError = false;
   showSettingBar = false;
   controlMode = ControlType.NORMAL;
 
@@ -108,7 +110,6 @@ void setup() {
   map = new Map("./maps/map1.txt", 1);
   // Store map items in list from mapController
   map.generateMap();
-  alternativeController = new AlternativeController(this, playerController);
 }
 
 void draw() {
@@ -233,9 +234,13 @@ void generateMenuUI() {
     image(levelOption2, 1500, 320, 180, 100);
     image(levelOption3, 1500, 420, 180, 100);
   }
-  if(showDisabilityDetails){
-      fill(0);
-      text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.",100,500);
+  if (showDisabilityDetails) {
+    fill(0);
+    text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
+  }
+  if (showDisabilityError) {
+    fill(0);
+    text("Something went wrong, your computer may not support disability mode, check the README page.", 100, 500);
   }
 }
 
@@ -439,6 +444,15 @@ void disabilityButtonClicked() {
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
       controlMode=ControlType.DISABLED;
+      if (alternativeController==null) {
+        try {
+          alternativeController = new AlternativeController(this, playerController);
+        }
+        catch(Exception e) {
+          showDisabilityError=true;
+          return;
+        }
+      }
       showDisabilityDetails=true;
     }
   }
@@ -469,33 +483,40 @@ public void restartLevel() {
   invertLag = 0;
   time=0;
   playerController = new PlayerController(player);
-  alternativeController= new AlternativeController(this, playerController);
-  player.ifDead=false;
-  player.index=0;
-  player.location.set(120, 500);
-  player.velocity.set(0, 0);
-  playerController.deadByHitPreviousPlayer=false;
-  ifGameOver=false;
-  ifRestarted = true;
-  if (level==2||level==3) {
-    map.ifBombInverse=false;
-    map.bombList.clear();
-    map.placeBomb();
-  }
-}
-
-public void placeClock() {
-  image(clock, 100, 100, 300, 300);
-  stroke(255, 204, 204);
-  strokeWeight(5);
-  time_x=30*sin(time);
-  time_y=30*cos(time);
-  line(100, 100, 100+time_x, 100-time_y);
-  if (!ifLevelPass) {
-    if (playerController.ifShadowGenerated) {
-      time-=0.008;
-    } else {
-      time+=0.008;
+  if (alternativeController==null && controlMode==ControlType.DISABLED) {
+    try {
+      alternativeController= new AlternativeController(this, playerController);
+    }
+    catch(Exception e) {
+      showDisabilityError=true;
     }
   }
-}
+    player.ifDead=false;
+    player.index=0;
+    player.location.set(120, 500);
+    player.velocity.set(0, 0);
+    playerController.deadByHitPreviousPlayer=false;
+    ifGameOver=false;
+    ifRestarted = true;
+    if (level==2||level==3) {
+      map.ifBombInverse=false;
+      map.bombList.clear();
+      map.placeBomb();
+    }
+  }
+
+  public void placeClock() {
+    image(clock, 100, 100, 300, 300);
+    stroke(255, 204, 204);
+    strokeWeight(5);
+    time_x=30*sin(time);
+    time_y=30*cos(time);
+    line(100, 100, 100+time_x, 100-time_y);
+    if (!ifLevelPass) {
+      if (playerController.ifShadowGenerated) {
+        time-=0.008;
+      } else {
+        time+=0.008;
+      }
+    }
+  }
