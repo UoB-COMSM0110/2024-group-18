@@ -218,6 +218,37 @@ During early playtesting, when the aesthetic of the game hadn’t yet been  deci
 </p>
 
 
+Difficulty 
+We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
+
+“That [Level Two] was definitely harder … it was pretty rewarding”.
+
+“Okay now that was satisfying”.
+
+However other players commented on how they felt like the second level especially was too challenging, with one participant asking, “is there any way to skip this level” and another stating “damn that is so hard”. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
+
+Instructions
+We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was again highlighted in the TA data.
+
+“I liked figuring out what to do, that is really rewarding”.
+“Once it clicked … it became so much clear”.
+
+However, others claimed they would prefer slightly more instructions for both how to progress through the level, as well as how to view the controls again.
+
+“How do I see the controls again”.
+“I think it would be good if you could maybe give some hints whilst you are playing”.
+“It would be nice to have a bit more direction”.
+
+We took some of this feedback and then included some visual hints on screen which offered some clues as to how to beat the level yet remaining vague enough to still offer rewarding gameplay (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Example Hints</i><br>
+  <img src="Assets_For_ReadMe/hintexamples.png" width="512" height="384">
+</p>
+
+
+
 
 -
 - [ ] **Description of how code was tested.**
