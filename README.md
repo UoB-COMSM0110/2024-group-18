@@ -90,6 +90,18 @@ Later in this report, we will reflect on our experience of similar issues. Users
 <img src="Assets_For_ReadMe/RERoadMapReq.png">
 <p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report</i></p>
 
+<section>
+    <h3>Ideation Processing</h3>
+    <p>
+        In our ideation phase, we collaboratively utilized 
+        <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
+        (Figure 6) and Docs to brainstorm two initial game ideas. We wanted to incorporate a 'Tenet'-inspired theme into our game, reflecting our shared interest in Nolan's cinematic exploration of time. For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the two ideas, Dr. Benette provided feedback and observed similarities between our concept and 'Braid'. This feedback propelled us towards Idea 2, as demonstrated by our 
+        <a href="link_to_your_paper_prototype" target="_blank">paper prototype</a>, 
+        which intrigued us with its potential for innovative gameplay mechanics. Thus, effective collaborative tools setup, a weekly time and place decided, and paper prototyping allowed quality ideation processes, preparing us to innovate further by looking at stakeholder planning next.
+    </p>
+</section>
+
+
 ### Identifying Stakeholders (Onion Model)
 
 ### Identifying Top-Level Needs (User Stories)
