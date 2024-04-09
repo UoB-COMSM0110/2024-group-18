@@ -1,33 +1,33 @@
 import java.util.*;
 
 class PastPlayer extends GameObject {
-  LinkedList<PVector> locationCollection;
-  boolean ifShow=false;
-
+  LinkedList<PreviousState> stateCollection;
+  boolean ifShow=false; // this is used to determine whether to show previous player iteration (i.e. when they touch time machine)
   int listFrame=0;
 
   public PastPlayer(float x, float y, float objectWidth, float objectHeight) {
     super(x, y, objectWidth, objectHeight);
-    locationCollection = new LinkedList<>();
+    stateCollection = new LinkedList<>();
     currentImage = loadImage("./assets/Player/run/Run_0.gif");
   }
 
-  public void storeLocation(PVector location) {
-    if (listFrame%2==0) {
-      locationCollection.push(new PVector(location.x,location.y));
+  public void storeState(PVector location, PImage animation) {
+    if (listFrame%  2 == 0) { // used to perform an action on every even numbered frame
+      stateCollection.push(new PreviousState(new PVector(location.x, location.y), animation));
     }
     listFrame++;
   }
 
-  public void releaseLocation() {
-    if (listFrame%2==0&&locationCollection.size()>0) {
-      PVector location = locationCollection.pop();
-      this.location.set(location);
+  public void accessPastState() {
+    if (listFrame%2==0 && stateCollection.size()>0) {
+      PreviousState pastState = stateCollection.pop();
+      this.location.set(pastState.location);
+      this.currentImage = pastState.animation;
     }
     listFrame++;
   }
   
   public void refresh(){
-    locationCollection.clear();
+    stateCollection.clear();
   }
 }
