@@ -11,6 +11,7 @@ PImage setting;
 PImage control;
 boolean showControlBar=false;
 boolean showDisabilityDetails=false;
+boolean showDisabilityError=false;
 boolean showSettingBar=false;
 PImage controlOption;
 PImage levelOption1;
@@ -64,6 +65,7 @@ void initializeGlobalVariablesToStartingValues() {
 
   showControlBar = false;
   showDisabilityDetails = false;
+  showDisabilityError = false;
   showSettingBar = false;
   controlMode = ControlType.NORMAL;
 
@@ -108,7 +110,6 @@ void setup() {
   map = new Map("./maps/map1.txt", 1);
   // Store map items in list from mapController
   map.generateMap();
-  alternativeController = new AlternativeController(this, playerController);
 }
 
 void draw() {
@@ -233,9 +234,13 @@ void generateMenuUI() {
     image(levelOption2, 1500, 320, 180, 100);
     image(levelOption3, 1500, 420, 180, 100);
   }
-  if(showDisabilityDetails){
-      fill(0);
-      text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.",100,500);
+  if (showDisabilityDetails) {
+    fill(0);
+    text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
+  }
+  if (showDisabilityError) {
+    fill(0);
+    text("Something went wrong, your computer may not support disability mode, check the README page.", 100, 500);
   }
 }
 
@@ -432,6 +437,10 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
+      if(platformNames[platform]=="linux"){
+        print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+        return;
+      }
     if (showDisabilityDetails) {
       disabilityButton=loadImage("./assets/Background/disabled.png");
       controlMode=ControlType.NORMAL;
@@ -439,6 +448,17 @@ void disabilityButtonClicked() {
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
       controlMode=ControlType.DISABLED;
+      if (alternativeController==null) {
+        try {
+          // todo make this an on screen dynamic graphic so viwers know it hasn't crashed.
+          print("LOADING DISABILITY MODE PLEASE WAIT.");
+          alternativeController = new AlternativeController(this, playerController);
+        }
+        catch(Exception e) {
+          showDisabilityError=true;
+          return;
+        }
+      }
       showDisabilityDetails=true;
     }
   }
@@ -469,7 +489,14 @@ public void restartLevel() {
   invertLag = 0;
   time=0;
   playerController = new PlayerController(player);
-  alternativeController= new AlternativeController(this, playerController);
+  if (controlMode==ControlType.DISABLED) {
+    try {
+      alternativeController= new AlternativeController(this, playerController);
+    }
+    catch(Exception e) {
+      showDisabilityError=true;
+    }
+  }
   player.ifDead=false;
   player.index=0;
   player.location.set(120, 500);
