@@ -91,7 +91,7 @@ Later in this report, we will reflect on our experience of similar issues. Users
 <p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report.</i></p>
 
 <h3>Ideation Processing</h3>
-<img src="Assets_For_ReadMe/SEBrainstorm.png">
+<img src="Assets_For_ReadMe/SEBrainstorm.png" width="500"/>
 <p><i>Figure 3. Week 2 Brainstorm for two game ideas.</i></p>
 <p>
     In our ideation phase, we collaboratively utilised 
