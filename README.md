@@ -98,8 +98,10 @@ Later in this report, we will reflect on our experience of similar issues. Users
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 3) and 
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We wanted to incorporate a 'Tenet'-inspired theme into our game, reflecting our shared interest in Nolan's cinematic exploration of time. For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the two ideas, Dr. Benette provided feedback and observed similarities between our concept and 'Braid'. This feedback propelled us towards Idea 2, as demonstrated by our 
-    <a href="link_to_your_paper_prototype" target="_blank">paper prototype</a>, 
+    to brainstorm two initial game ideas. We wanted to incorporate a 'Tenet'-inspired theme into our game, reflecting our shared interest in Nolan's cinematic exploration of time. For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the two ideas, Dr. Benette provided feedback and observed similarities between our concept and the Steam game 
+    <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
+    This feedback propelled us towards Idea 2, as demonstrated by our 
+    <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, 
     which intrigued us with its potential for innovative gameplay mechanics. Thus, effective collaborative tools setup, a weekly time and place decided, and paper prototyping allowed quality ideation processes, preparing us to innovate further by looking at stakeholder planning next.
 </p>
 
