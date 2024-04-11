@@ -4,8 +4,7 @@ For our game you need Processing, as well as the "Video", "Deep Vision" and "Sou
 Note: the Processing video library is not supported on Linux. For the full game experience (including accessibility mode), please play using a Mac or PC.
 
 # Video
-Script:
-https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/edit
+https://youtu.be/J3RTHQjeOvg
 
 # 1. Development Team
 <p align="center">
