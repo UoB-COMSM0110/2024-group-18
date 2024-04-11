@@ -44,6 +44,8 @@ PImage reviewHint;
 
 PFont font;
 
+boolean isLoadingAlternative = false;
+int alternativeLag = 0;
 
 enum ControlType {
   NORMAL, DISABLED
@@ -79,13 +81,13 @@ void initializeGlobalVariablesToStartingValues() {
 }
 
 void setup() {
-  initializeGlobalVariablesToStartingValues();
   size(1600, 900);
+  fill(0);
+  initializeGlobalVariablesToStartingValues();
   xPos=width/2;
   ypos=height/2+20;
   font=createFont("./assets/PressStart2P-Regular.ttf", 20);
   textFont(font);
-  fill(0);
   title=loadImage("./assets/Background/title.png");
   startScreen=loadImage("./assets/Background/startup.png");
   setting=loadImage("./assets/Background/setting.png");
@@ -113,6 +115,11 @@ void setup() {
 }
 
 void draw() {
+  // use || to contain other kind of loading
+  if (isLoadingAlternative) {
+    loading();
+    return;
+  }
   imageMode(CENTER);
   if (level==-2) {
     showTitle();
@@ -165,6 +172,12 @@ void draw() {
   }
 }
 
+void loading() {
+  if (isLoadingAlternative) {
+    image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+  }
+}
+
 void showBackground() {
   image(background01, 800, 450, 1600, 900);
 }
@@ -174,19 +187,22 @@ void checkGameStatus() {
     player.ifDead=true;
     fill(0);
     if (playerController.deadByHitPreviousPlayer) {
-      fill(255);
-      text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
+      //fill(255);
+      //text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
+      image(loadImage("./assets/Background/paradox.png"),width/2,height/2);
     } else {
-      fill(255);
-      text("Game over!", 650, 400);
-      text("Click to restart", 580, 450);
+      //fill(255);
+      //text("Game over!", 650, 400);
+      //text("Click to restart", 580, 450);
+      image(loadImage("./assets/Background/gameOver.png"),width/2,height/2);
     }
     ifGameOver=true;
   }
 
   if (playerController.ifGameWin) {
-    fill(255);
-    text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
+    //fill(255);
+    //text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
+    image(loadImage("./assets/Background/nextLevel.png"),width/2,height/2);
     ifLevelPass=true;
   }
 }
@@ -235,14 +251,20 @@ void generateMenuUI() {
     image(levelOption3, 1500, 420, 180, 100);
   }
   if (showDisabilityDetails) {
-    fill(0);
-    text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
+    //fill(0);
+    //text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
+    if (alternativeLag <= 100) {
+      image(loadImage("./assets/Background/disableDetail.png"),width/2,height/2);
+      alternativeLag++;
+    }
   }
   if (showDisabilityError) {
-    fill(0);
-    text("Something went wrong, your computer may not support disability mode, check the README page.", 100, 500);
+    //fill(0);
+    //text("Something went wrong, your computer may not support disability mode, check the README page.", 100, 500);
+    image(loadImage("./assets/Background/disableErr.png"),width/2,height/2);
   }
 }
+
 
 void generateStartUI() {
   xPos=xPos+(xSpeed*xDirection);
@@ -445,24 +467,40 @@ void disabilityButtonClicked() {
       disabilityButton=loadImage("./assets/Background/disabled.png");
       controlMode=ControlType.NORMAL;
       showDisabilityDetails=false;
+      alternativeLag = 0;
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
       controlMode=ControlType.DISABLED;
       if (alternativeController==null) {
-        try {
-          // todo make this an on screen dynamic graphic so viwers know it hasn't crashed.
-          print("LOADING DISABILITY MODE PLEASE WAIT.");
-          alternativeController = new AlternativeController(this, playerController);
-        }
-        catch(Exception e) {
-          showDisabilityError=true;
-          return;
-        }
+        isLoadingAlternative = true;
+        //try {
+        //  // todo make this an on screen dynamic graphic so viwers know it hasn't crashed.
+        //  print("LOADING DISABILITY MODE PLEASE WAIT.");
+        //  alternativeController = new AlternativeController(this, playerController);
+        //}
+        //catch(Exception e) {
+        //  showDisabilityError=true;
+        //  return;
+        //}
+        PApplet app = this;
+        new Thread(new Runnable() {
+          public void run() {
+            try {
+              alternativeController = new AlternativeController(app, playerController);
+            } catch (Exception e) {
+              showDisabilityError=true;
+              return;
+            }
+        isLoadingAlternative = false;
+      }
+    }).start();
       }
       showDisabilityDetails=true;
     }
   }
 }
+
+
 
 
 void mousePressed() {
