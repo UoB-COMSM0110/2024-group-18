@@ -98,6 +98,8 @@ class Player extends GameObject {
     disappear[6]=loadImage("./assets/Player/disappear/Desappearing-(96x96)_07.gif");
     
   }
+  
+  
 
   public void updateAnimation() {
     selectStatus();

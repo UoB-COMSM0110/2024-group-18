@@ -83,12 +83,28 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
 scope and feature creep.
 
 <img src="Assets_For_ReadMe/RE-GameStudySignificance.png">
-<p><i>Figure 1. Petrillo's (2009) study mapping problems found in Game Development to its occurances</i></p>
+<p><i>Figure 1. Petrillo's (2009) study mapping problems found in Game Development to its occurances.</i></p>
 
 Later in this report, we will reflect on our experience of similar issues. Users perceived our initial approach as overly complicated, which led to time management inconsistency (Rasheed et al., 2021, p. 6) and poor client satisfaction, potentially creating a breach of contract (Davis, 1993, p. 15). Thus, we knew that the success of Oiram depended on high-quality RE. The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
 
 <img src="Assets_For_ReadMe/RERoadMapReq.png">
-<p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report</i></p>
+<p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report.</i></p>
+
+<h3>Ideation Processing</h3>
+<img src="Assets_For_ReadMe/SEBrainstorm.png" width="500"/>
+<p><i>Figure 3. Week 2 Brainstorm for two game ideas.</i></p>
+<p>
+    In our ideation phase, we collaboratively utilised 
+    <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
+    (Figure 3) and 
+    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
+    to brainstorm two initial game ideas. We wanted to incorporate a 'Tenet'-inspired theme into our game, reflecting our shared interest in Nolan's cinematic exploration of time. For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the two ideas, Dr. Benette provided feedback and observed similarities between our concept and the Steam game 
+    <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
+    This feedback propelled us towards Idea 2, as demonstrated by our 
+    <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, 
+    which intrigued us with its potential for innovative gameplay mechanics. Thus, effective collaborative tools setup, a weekly time and place decided, and paper prototyping allowed quality ideation processes, preparing us to innovate further by looking at stakeholder planning next.
+</p>
+
 
 ### Identifying Stakeholders (Onion Model)
 
