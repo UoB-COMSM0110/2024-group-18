@@ -387,7 +387,7 @@ void resetToMainMenu() {
   key = 0;
   lag=25;
   setup();
-    alternativeController=null;
+  alternativeController=null;
   level=-1; // this skips past the opening animation.
 }
 
