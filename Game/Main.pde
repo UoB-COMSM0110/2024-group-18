@@ -15,6 +15,7 @@ PImage setting;
 PImage control;
 boolean showControlBar=false;
 boolean showDisabilityDetails=false;
+boolean showDisabilityError=false;
 boolean showSettingBar=false;
 PImage controlOption;
 PImage levelOption1;
@@ -47,6 +48,8 @@ PImage reviewHint;
 
 PFont font;
 
+boolean isLoadingAlternative = false;
+int alternativeLag = 0;
 
 enum ControlType {
   NORMAL, DISABLED
@@ -68,6 +71,7 @@ void initializeGlobalVariablesToStartingValues() {
 
   showControlBar = false;
   showDisabilityDetails = false;
+  showDisabilityError = false;
   showSettingBar = false;
   controlMode = ControlType.NORMAL;
 
@@ -81,14 +85,14 @@ void initializeGlobalVariablesToStartingValues() {
 }
 
 void setup() {
+  size(1600, 900);
+  fill(0);
   output=createWriter("./logs/test.log");
   initializeGlobalVariablesToStartingValues();
-  size(1600, 900);
   xPos=width/2;
   ypos=height/2+20;
   font=createFont("./assets/PressStart2P-Regular.ttf", 20);
   textFont(font);
-  fill(0);
   title=loadImage("./assets/Background/title.png");
   startScreen=loadImage("./assets/Background/startup.png");
   setting=loadImage("./assets/Background/setting.png");
@@ -113,65 +117,68 @@ void setup() {
   map = new Map("./maps/map1.txt", 1);
   // Store map items in list from mapController
   map.generateMap();
-  alternativeController = new AlternativeController(this, playerController);
 }
 
 void draw() {
-  try {
-    imageMode(CENTER);
-    if (level==-2) {
-      showTitle();
-    } else if (level==-1) {
-      generateStartUI();
-    }
-    // Generate background based on level
-    else if (level==0) {
-      generateStory();
-    } else {
-      if (level==1) {
-        showBackground();
-      } else if (level==2) {
-        if (!ifMapGenerated) {
-          map=new Map("./maps/map2.txt", 2);
-          ifMapGenerated=true;
-          map.generateMap();
-          map.placeBomb();
-          player.location.x = 100; // ensure the player starts at the correct location for level 2.
-        }
-        showBackground();
-        map.displayBomb(time);
-      } else if (level==3) {
-        if (!ifMapGenerated) {
-          map=new Map("./maps/map3.txt", 3);
-          ifMapGenerated=true;
-          map.generateMap();
-          map.placeBomb();
-          player.location.x = 100; // ensure the player starts at the correct location for level 2.
-        }
-        showBackground();
-        map.displayBomb(time);
-      }
-      placeClock();
-
-      // Generate map based on level
-      map.displayMap();
-      // Show player animation and location
-      playerDraw();
-      checkGameStatus();
-    }
-    if (level!=-2 && level<0) {
-      generateMenuUI();
-    }
-    if (level > 0 && level <=3) {
-      generateInGameUI();
-    }
-    if (level == 1) {
-      generateHint();
-    }
-    
+  try{
+  // use || to contain other kind of loading
+  if (isLoadingAlternative) {
+    loading();
+    return;
   }
-  
-  catch(Exception e) {
+  imageMode(CENTER);
+  if (level==-2) {
+    showTitle();
+  } else if (level==-1) {
+    generateStartUI();
+  }
+  // Generate background based on level
+  else if (level==0) {
+    generateStory();
+  } else {
+    if (level==1) {
+      showBackground();
+    } else if (level==2) {
+      if (!ifMapGenerated) {
+        map=new Map("./maps/map2.txt", 2);
+        ifMapGenerated=true;
+        map.generateMap();
+        map.placeBomb();
+        player.location.x = 100; // ensure the player starts at the correct location for level 2.
+      }
+    } else if (level==3) {
+      if (!ifMapGenerated) {
+        map=new Map("./maps/map3.txt", 3);
+        ifMapGenerated=true;
+        map.generateMap();
+        map.placeBomb();
+        player.location.x = 100; // ensure the player starts at the correct location for level 2.
+      }
+    }
+
+    // Generate map based on level
+    if (level==2 || level==3) {
+      showBackground();
+      map.displayMap();
+      map.displayBomb(time);
+    } else {
+      map.displayMap();
+      placeClock();
+    }
+    // Show player animation and location
+    playerDraw();
+    checkGameStatus();
+  }
+  if (level!=-2 && level<0) {
+    generateMenuUI();
+  }
+  if (level > 0 && level <=3) {
+    generateInGameUI();
+  }
+  if (level == 1) {
+    generateHint();
+  }
+  }catch(Exception e){
     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     Date date = new Date(System.currentTimeMillis());
     String time=format.format(date);
@@ -189,7 +196,12 @@ void draw() {
     output.flush();
   }
   outputFrame++;
-  
+}
+
+void loading() {
+  if (isLoadingAlternative) {
+    image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+  }
 }
 
 void showBackground() {
@@ -201,19 +213,22 @@ void checkGameStatus() {
     player.ifDead=true;
     fill(0);
     if (playerController.deadByHitPreviousPlayer) {
-      fill(255);
-      text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
+      //fill(255);
+      //text("PARADOX! \nYou collided with your past self!\nClick to restart", 450, 400);
+      image(loadImage("./assets/Background/paradox.png"), width/2, height/2);
     } else {
-      fill(255);
-      text("Game over!", 650, 400);
-      text("Click to restart", 580, 450);
+      //fill(255);
+      //text("Game over!", 650, 400);
+      //text("Click to restart", 580, 450);
+      image(loadImage("./assets/Background/gameOver.png"), width/2, height/2);
     }
     ifGameOver=true;
   }
 
   if (playerController.ifGameWin) {
-    fill(255);
-    text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
+    //fill(255);
+    //text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
+    image(loadImage("./assets/Background/nextLevel.png"), width/2, height/2);
     ifLevelPass=true;
   }
 }
@@ -262,10 +277,20 @@ void generateMenuUI() {
     image(levelOption3, 1500, 420, 180, 100);
   }
   if (showDisabilityDetails) {
-    fill(0);
-    text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
+    //fill(0);
+    //text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
+    if (alternativeLag <= 100) {
+      image(loadImage("./assets/Background/disableDetail.png"), width/2, height/2);
+      alternativeLag++;
+    }
+  }
+  if (showDisabilityError) {
+    //fill(0);
+    //text("Something went wrong, your computer may not support disability mode, check the README page.", 100, 500);
+    image(loadImage("./assets/Background/disableErr.png"), width/2, height/2);
   }
 }
+
 
 void generateStartUI() {
   xPos=xPos+(xSpeed*xDirection);
@@ -386,6 +411,7 @@ void resetToMainMenu() {
   key = 0;
   lag=25;
   setup();
+  alternativeController=null;
   level=-1; // this skips past the opening animation.
 }
 
@@ -460,17 +486,50 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
+    if (platformNames[platform]=="linux") {
+      print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+      return;
+    }
     if (showDisabilityDetails) {
       disabilityButton=loadImage("./assets/Background/disabled.png");
       controlMode=ControlType.NORMAL;
       showDisabilityDetails=false;
+      alternativeLag = 0;
     } else {
       disabilityButton=loadImage("./assets/Background/disabled2.png");
       controlMode=ControlType.DISABLED;
+      if (alternativeController==null) {
+        isLoadingAlternative = true;
+        //try {
+        //  // todo make this an on screen dynamic graphic so viwers know it hasn't crashed.
+        //  print("LOADING DISABILITY MODE PLEASE WAIT.");
+        //  alternativeController = new AlternativeController(this, playerController);
+        //}
+        //catch(Exception e) {
+        //  showDisabilityError=true;
+        //  return;
+        //}
+        PApplet app = this;
+        new Thread(new Runnable() {
+          public void run() {
+            try {
+              alternativeController = new AlternativeController(app, playerController);
+            }
+            catch (Exception e) {
+              showDisabilityError=true;
+              return;
+            }
+            isLoadingAlternative = false;
+          }
+        }
+        ).start();
+      }
       showDisabilityDetails=true;
     }
   }
 }
+
+
 
 
 void mousePressed() {
@@ -497,7 +556,14 @@ public void restartLevel() {
   invertLag = 0;
   time=0;
   playerController = new PlayerController(player);
-  alternativeController= new AlternativeController(this, playerController);
+  if (controlMode==ControlType.DISABLED) {
+    try {
+      alternativeController= new AlternativeController(this, playerController);
+    }
+    catch(Exception e) {
+      showDisabilityError=true;
+    }
+  }
   player.ifDead=false;
   player.index=0;
   player.location.set(120, 500);

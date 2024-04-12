@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 class PlayerController {
   Player player;
-  PastPlayer shadow;
+  PastPlayer pastSelf;
 
   boolean ifShadowGenerated=false;
   boolean ifGameWin=false;
@@ -38,7 +38,7 @@ class PlayerController {
   
   public PlayerController(Player player) {
     this.player = player;
-    shadow= new PastPlayer(0, 0, 20, 60);
+    pastSelf = new PastPlayer(0, 0, 20, 60);
   }
 
   public void updateAnimation() {
@@ -134,10 +134,10 @@ class PlayerController {
   }
 
   public boolean checkShadowCollision(GameObject obj) {
-    if (shadow.location.x-shadow.objectWidth/2<obj.location.x+obj.objectWidth/2&&
-      shadow.location.x+shadow.objectWidth/2>obj.location.x-obj.objectWidth/2&&
-      shadow.location.y-shadow.objectHeight/2<obj.location.y+obj.objectHeight/2&&
-      shadow.location.y+shadow.objectHeight/2>obj.location.y-obj.objectHeight/2) {
+    if (pastSelf.location.x-pastSelf.objectWidth/2<obj.location.x+obj.objectWidth/2&&
+      pastSelf.location.x+pastSelf.objectWidth/2>obj.location.x-obj.objectWidth/2&&
+      pastSelf.location.y-pastSelf.objectHeight/2<obj.location.y+obj.objectHeight/2&&
+      pastSelf.location.y+pastSelf.objectHeight/2>obj.location.y-obj.objectHeight/2) {
       // colliding
       return true;
     }
@@ -230,7 +230,7 @@ class PlayerController {
           if (!ifShadowGenerated) {
             ifShadowGenerated=true;
             map.ifBombInverse=true;
-            shadow.location.set(item.location.x, item.location.y+40);
+            pastSelf.location.set(item.location.x, item.location.y+40);
             if (!ifMovingPlatformReverse) {
               map.mpSpeed = -map.mpSpeed;
               ifMovingPlatformReverse = true;
@@ -259,19 +259,19 @@ class PlayerController {
     if (!ifShadowGenerated) {
       return false;
     }
-    if (checkCollision(shadow)) {
+    if (checkCollision(pastSelf)) {
       return true;
     }
     return false;
   }
   
   public boolean checkGameOver(Map map, int level) {
-    if (ifShadowGenerated&&shadow.locationCollection.size()==0) {
-      shadow.refresh();
+    if (ifShadowGenerated&&pastSelf.stateCollection.size()==0) {
+      pastSelf.refresh();
       return true;
     }
     if (player.location.y>height) {
-      shadow.refresh();
+      pastSelf.refresh();
       return true;
     }
     if (shadowAndPlayerCollide()) {
@@ -290,12 +290,12 @@ class PlayerController {
 
   public void displayShadow() {
     if (!ifShadowGenerated) {
-      shadow.storeLocation(player.location);
+      pastSelf.storeState(player.location, player.currentImage);
     }
 
     if (ifShadowGenerated && !ifGameOver) {
-      shadow.releaseLocation();
-      image(shadow.currentImage, shadow.location.x, shadow.location.y+5, 60, 60);
+      pastSelf.accessPastState();
+      image(pastSelf.currentImage, pastSelf.location.x, pastSelf.location.y+5, 60, 60);
     }
   }
 
@@ -305,6 +305,6 @@ class PlayerController {
     ifShadowGenerated=false;
     deadByBomb=false;
     map.ifBombInverse=false;
-    shadow.refresh();
+    pastSelf.refresh();
   }
 }

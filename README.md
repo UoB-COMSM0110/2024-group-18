@@ -4,8 +4,7 @@ For our game you need Processing, as well as the "Video", "Deep Vision" and "Sou
 Note: the Processing video library is not supported on Linux. For the full game experience (including accessibility mode), please play using a Mac or PC.
 
 # Video
-Script:
-https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/edit
+https://youtu.be/J3RTHQjeOvg
 
 # 1. Development Team
 <p align="center">
@@ -30,7 +29,7 @@ https://docs.google.com/document/d/1GE6tCZXUdcd7rGT5OHGj7A9yXX6AEfxOuVmjQmmqBSw/
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 <p>
-Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions while also incorporating a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. Drawing inspiration from Nolan's Tenet, the Tardis object allows for time retracement, creating intricately designed, problem-oriented missions.
+Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. Drawing inspiration from Nolan's Tenet, the Tardis object allows for time reversal. The missions are intricately designed and problem-oriented.
 </p>
 
 ### How to Play:
@@ -48,7 +47,7 @@ Navigate levels, dodge obstacles, and interact with objects like gates, switches
   <div style="padding: 10px;">
     <h3>Gates</h3>
     <img src="Game/assets/Static/Door/door1.png" alt="Gates" style="width: auto; height: 100px;">
-    <p><i>Act as barriers that can be opened or closed to control player movement.</i></p>
+    <p><i>Act as portals to the next level.</i></p>
   </div>
   <div style="padding: 10px;">
     <h3>Switches</h3>
@@ -58,15 +57,15 @@ Navigate levels, dodge obstacles, and interact with objects like gates, switches
   <div style="padding: 10px;">
     <h3>Tardis</h3>
     <img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="width: auto; height: 100px;">
-    <p><i>Teleportation device that changes the state of the game by altering timelines.</i></p>
+    <p><i>Device to invoke time reversal.</i></p>
   </div>
 </div>
 
 **Obstructions:**
-Avoid explosives to ensure survival.
+Avoid explosives and pits to ensure survival.
 
 **How to Win:**
-Master gravity and momentum to navigate past challenges and utilize your past actions for success.
+Master gravity and momentum to navigate through the level, taking into account the actions of your past self.
 
 ### Oiram Game Inspiration:
 Oiram's narrative complexity is inspired by Tenet, the timeless platforming of Super Mario, and the temporal challenges of Braid, offering a unique gameplay experience.
@@ -75,22 +74,69 @@ Oiram's narrative complexity is inspired by Tenet, the timeless platforming of S
 Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
 
 # 3. Requirements (15% ~750 words) (Mihir)
+### Introduction to Requirement Engineering (RE)
+“The two most important parts of a computing system are the users
+and their data, in that order.” Neville Holmes. (Alexander & Beus-Dukic, 2009, p. 27).
 
-- [ ] **Use case diagram.**
-    - Include use case diagrams to represent the system functionalities.
-- [ ] **User Stories.**
-    - List down the user stories.
-- [ ] **Early stages design.**
-    - Discuss the initial design stages of your game.
-- [ ] **Ideation processing.**
-    - Explain how the ideation process was conducted.
-- [ ] **Reflections for future development.**
-    - Share any reflections or insights that could influence future development.
+Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of the Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported the most common issues are unrealistic or ambivalent
+scope and feature creep.
+
+<img src="Assets_For_ReadMe/RE-GameStudySignificance.png">
+<p><i>Figure 1. Petrillo's (2009) study mapping problems found in Game Development to its occurances.</i></p>
+
+Later in this report, we will reflect on our experience of similar issues. Users perceived our initial approach as overly complicated, which led to time management inconsistency (Rasheed et al., 2021, p. 6) and poor client satisfaction, potentially creating a breach of contract (Davis, 1993, p. 15). Thus, we knew that the success of Oiram depended on high-quality RE. The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
+
+<img src="Assets_For_ReadMe/RERoadMapReq.png">
+<p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report.</i></p>
+
+<h3>Ideation Processing</h3>
+<img src="Assets_For_ReadMe/SEBrainstorm.png" width="500"/>
+<p><i>Figure 3. Week 2 Brainstorm for two game ideas.</i></p>
+<p>
+    In our ideation phase, we collaboratively utilised 
+    <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
+    (Figure 3) and 
+    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
+    to brainstorm two initial game ideas. We wanted to incorporate a 'Tenet'-inspired theme into our game, reflecting our shared interest in Nolan's cinematic exploration of time. For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the two ideas, Dr. Benette provided feedback and observed similarities between our concept and the Steam game 
+    <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
+    This feedback propelled us towards Idea 2, as demonstrated by our 
+    <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, 
+    which intrigued us with its potential for innovative gameplay mechanics. Thus, effective collaborative tools setup, a weekly time and place decided, and paper prototyping allowed quality ideation processes, preparing us to innovate further by looking at stakeholder planning next.
+</p>
+
+
+### Identifying Stakeholders (Onion Model)
+
+### Identifying Top-Level Needs (User Stories)
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
+  <br>
+  <i>Figure 3: User Story 1</i>
+</p>
+
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
+  <br>
+  <i>Figure 4: User Story 2</i>
+</p>
+
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
+  <br>
+  <i>Figure 5: User Story 3</i>
+</p>
+
+### Stories To Use-Cases Breakdown (Use-Case Diagram)
+
+### Specifying Atomic Requirements (Quality and Verifiability of RE)
 
 # 4. Design (15% ~750 words) (Kai/Mihir/Tom)
 
 - [ ] **System architecture (Kai/Mihir).**
     - Describe the system architecture planned and used.
+
+According to the requirements specification, a system architecture was formed. The first part of the system that users interact with is the menu. Users can start the game, choose levels, and initiate an alternate control mode. During the game, we try to match the system to the real world, using visual cues to indicate damage or the direction the player will move next. A platform-puzzle game with the novel mechanism of time inversion required several components to be designed. We created a Game Object and several sub-classes (platforms, players, and interactable items), a Player Controller, a Map, a Map Controller, and Main to run the primary game loop. Data was passed through various components: Main-Controllers, Controller-Player, Controller-Map, Controller-Items. Main contains several flags to indicate which methods are called. It creates instances of the Player Controller and Map Controller. These Controllers also hold flags to control methods and lists to store items. As an expansion of the system, from an inclusive perspective, there is an alternative controlling mode designed for people with disabilities (e.g., Carpal Tunnel), allowing them to use a webcam input through the Deep Vision Processing library.
+
 - [ ] **Class diagrams (Mihir).**
     - Provide class diagrams to represent the static structure of the system.
 - [ ] **Behavioural diagrams (Mihir - might need help on this).**
@@ -132,11 +178,89 @@ While not one of our official challenges, we found that programming collisions a
 
 
 # 6. Evaluation (15% ~750 words) (Tom)
+  During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
-- [ ] **One qualitative evaluation (your choice).**
-    - Conduct and describe a qualitative evaluation of the game.
-- [ ] **One quantitative evaluation (of your choice).**
-    - Conduct and describe a quantitative evaluation of the game.
+  Our game aims to reward future planning and puzzle-solving. After examining our own video game preferences, and a literature review which suggested that game difficulty can improve overall enjoyment when it is not overly frustrating and provides a satisfying challenge to overcome (Alexander et al., 2013). [Tom - I need to make this better] It was, therefore, important that we accurately assessed the perceived difficulty. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+
+  Eleven participants (N = 11), consisting of six males and five females, were collected via convenience sampling. Participants were randomly assigned to complete Level One or Level Two first to avoid issues of training bias (NEED REF). Level One was designed to be the easier of the two. Upon completion (determined by the participant), we administered the TLX. The process was repeated for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
+
+<p align="center">
+  <b>Table X</b><br>
+  <i>Participant NASA TLX Scores</i><br>
+  <img src="Assets_For_ReadMe/pscoretable.png">
+</p>
+    
+
+  The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
+  <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
+</p>
+
+To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA requires participants to verbally express their thoughts, feelings, and emotions whilst performing a given task, and has been shown to be an effective evaluation method in many areas of HCI (Nielsen et al., 2002; Joe et al., 2015). We utilised TA to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
+
+Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Thematic Map of Think Aloud Data</i><br>
+  <img src="Assets_For_ReadMe/thematicmap.png">
+</p>
+
+
+This data was instrumental in our development approach, and much of the qualitative data we gathered directly influenced our design choices. We will address each theme in turn.
+
+Player Movement
+
+During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received was instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish” and gave them a “floaty feeling” , with another describing it as feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure X.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Different Game Backgrounds</i><br>
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
+</p>
+
+
+Difficulty 
+
+We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
+
+“That [Level Two] was definitely harder … it was pretty rewarding”
+
+“Okay now that was satisfying”
+
+However, other players commented on how they felt like the second level especially was too challenging, with one participant asking, “Is there any way to skip this level” and another stating, “damn, that is so hard”. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
+
+
+Instructions
+
+We deliberately opted not to give much information about what the player is required to do, as we felt it was better to let players figure it out for themselves, which was again highlighted in the TA data.
+
+“I liked figuring out what to do, that is really rewarding”
+
+“Once it clicked … it became so much clearer”
+
+However, others claimed they would prefer slightly more instructions on how to progress through the level and how to view the controls again.
+
+“How do I see the controls again”
+
+“I think it would be good if you could maybe give some hints whilst you are playing”
+
+“It would be nice to have a bit more direction”
+
+We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We carefully calibrated these hints to provide the minimal information possible for users to complete the level while maintaining the positive feelings users got on completion of the unhinted level - the "aha" moment. (see Figure X).
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Example Hints</i><br>
+  <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
+</p>
+
+
+
+-
 - [ ] **Description of how code was tested.**
     - Explain the methods used to test the code.
 
@@ -148,7 +272,7 @@ Our first few meetings were conducted in person. This allowed maximal flexibilit
 
 <img src="https://i.imgur.com/eQKRT9U.jpeg" width="250">
 
-Over the holidays, we switched to doing scrum-style stand-up meetings (at least 3 times a week) over Microsoft Teams. This proved very effective. In contrast to our in-person meetings, which could be very long, these tended to be shorter and more agenda-driven - we would focus on what work needed to be done and by whom. This allowed people to work asynchronously in a way that seemed to reduce stress whilst still having frequent check-in points to ask for help or to pair program.
+Over the holidays, we switched to doing scrum-style stand-up meetings (at least 3 times a week) over Microsoft Teams. These have been shown to be effective in a remote context (Cucolaş and Russo, 2023), and this was also true for us. In contrast to our in-person meetings, which could be very long, these tended to be shorter and more agenda-driven - we would focus on what work needed to be done and by whom. This allowed people to work asynchronously in a way that seemed to reduce stress whilst still having frequent check-in points to ask for help or to pair program.
 
 Early on, we had to decide which game to build. To do this, we used a [ranked preferences voting tool](https://www.rankedchoices.com/), which allowed each of us to express our preferences anonymously. 
 
@@ -191,3 +315,38 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
     - Reflect on the challenges faced and how they were overcome.
 - [ ] **Future work.**
     - Discuss any plans or ideas for future work on the project.
+
+# Bibliography -- can we have it APA style??? 
+### Mihir:
+
+Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
+
+Alexander, I. F., & Beus-Dukic, L. (2009). Discovering Requirements: How to Specify Products and Services. Wiley. https://books.google.co.uk/books?id=KMZYFzgbXSwC
+
+Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. Qualitative Research in Psychology, 3(2), 77–101. https://doi.org/10.1191/1478088706qp063oa 
+
+Cucolaş, A.-A., & Russo, D. (2023). The impact of working from home on the success of Scrum projects: A multi-method study. Journal of Systems and Software, 197, 111562. https://doi.org/10.1016/j.jss.2022.111562
+
+Davis, A. M. Alan M. (1993). Software requirements: Objects, functions, and states. Englewood Cliffs, N.J. : PTR Prentice Hall. http://archive.org/details/softwarerequirem0000davi
+
+Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research. Advances in Psychology, 139–183. https://doi.org/10.1016/s0166-4115(08)62386-9 
+
+Joe, J., Chaudhuri, S., Le, T., Thompson, H., & Demiris, G. (2015). The use of think-aloud and Instant Data Analysis in evaluation research: Exemplar and lessons learned. Journal of Biomedical Informatics, 56, 284–291. https://doi.org/10.1016/j.jbi.2015.06.001 
+
+Nielsen, J., Clemmensen, T., & Yssing, C. (2002). Getting access to what goes on in people’s heads? Proceedings of the Second Nordic Conference on Human-Computer Interaction. https://doi.org/10.1145/572020.572033 
+
+Petrillo, F., Pimenta, M., Trindade, F., & Dietrich, C. (2009). What went wrong? A survey of problems in game development. Computers in Entertainment, 7(1), 1–22. https://doi.org/10.1145/1486508.1486521
+
+Ramkumar, A., Stappers, P. J., Niessen, W. J., Adebahr, S., Schimek-Jasch, T., Nestle, U., & Song, Y. (2016). Using GOMS and NASA-TLX to evaluate human–computer interaction process in interactive segmentation. International Journal of Human–Computer Interaction, 33(2), 123–134. https://doi.org/10.1080/10447318.2016.1220729 
+
+Rasheed, A., Zafar, B., Shehryar, T., Aslam, N. A., Sajid, M., Ali, N., Dar, S. H., & Khalid, S. (2021). Requirement Engineering Challenges in Agile Software Development. Mathematical Problems in Engineering, 2021, 1–15. https://doi.org/10.1155/2021/6696695
+
+Said, S., Gozdzik, M., Roche, T. R., Braun, J., Rössler, J., Kaserer, A., Spahn, D. R., Nöthiger, C. B., & Tscholl, D. W. (2020). Validation of the Raw National Aeronautics and Space Administration Task Load Index (NASA-TLX) questionnaire to assess perceived workload in patient monitoring tasks: Pooled analysis study using mixed models. Journal of Medical Internet Research, 22(9). https://doi.org/10.2196/19472 
+
+Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessing game-task difficulty through real-time measures of performance and cognitive load. Simulation &amp; Gaming, 104687812311699. https://doi.org/10.1177/10468781231169910 
+
+Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
+ 
+
+
+
