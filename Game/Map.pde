@@ -121,7 +121,7 @@ class Map {
     float cellHeight = 45.5;
     if (level == 1) {
       cellWidth = 40;
-      cellHeight = 50.5;
+      cellHeight = 42.5;
     }
     if (level==2) {
       cellHeight = 48;
