@@ -1,7 +1,11 @@
+import java.text.*;
+
 Player player;
 PlayerController playerController;
 AlternativeController alternativeController;
 Map map;
+PrintWriter output;
+int outputFrame=0;
 
 float lag=0;
 int level;
@@ -77,6 +81,7 @@ void initializeGlobalVariablesToStartingValues() {
 }
 
 void setup() {
+  output=createWriter("./logs/test.log");
   initializeGlobalVariablesToStartingValues();
   size(1600, 900);
   xPos=width/2;
@@ -112,56 +117,79 @@ void setup() {
 }
 
 void draw() {
-  imageMode(CENTER);
-  if (level==-2) {
-    showTitle();
-  } else if (level==-1) {
-    generateStartUI();
-  }
-  // Generate background based on level
-  else if (level==0) {
-    generateStory();
-  } else {
-    if (level==1) {
-      showBackground();
-    } else if (level==2) {
-      if (!ifMapGenerated) {
-        map=new Map("./maps/map2.txt", 2);
-        ifMapGenerated=true;
-        map.generateMap();
-        map.placeBomb();
-        player.location.x = 100; // ensure the player starts at the correct location for level 2.
-      }
-      showBackground();
-      map.displayBomb(time);
-    } else if (level==3) {
-      if (!ifMapGenerated) {
-        map=new Map("./maps/map3.txt", 3);
-        ifMapGenerated=true;
-        map.generateMap();
-        map.placeBomb();
-        player.location.x = 100; // ensure the player starts at the correct location for level 2.
-      }
-      showBackground();
-      map.displayBomb(time);
+  try {
+    imageMode(CENTER);
+    if (level==-2) {
+      showTitle();
+    } else if (level==-1) {
+      generateStartUI();
     }
-    placeClock();
+    // Generate background based on level
+    else if (level==0) {
+      generateStory();
+    } else {
+      if (level==1) {
+        showBackground();
+      } else if (level==2) {
+        if (!ifMapGenerated) {
+          map=new Map("./maps/map2.txt", 2);
+          ifMapGenerated=true;
+          map.generateMap();
+          map.placeBomb();
+          player.location.x = 100; // ensure the player starts at the correct location for level 2.
+        }
+        showBackground();
+        map.displayBomb(time);
+      } else if (level==3) {
+        if (!ifMapGenerated) {
+          map=new Map("./maps/map3.txt", 3);
+          ifMapGenerated=true;
+          map.generateMap();
+          map.placeBomb();
+          player.location.x = 100; // ensure the player starts at the correct location for level 2.
+        }
+        showBackground();
+        map.displayBomb(time);
+      }
+      placeClock();
 
-    // Generate map based on level
-    map.displayMap();
-    // Show player animation and location
-    playerDraw();
-    checkGameStatus();
+      // Generate map based on level
+      map.displayMap();
+      // Show player animation and location
+      playerDraw();
+      checkGameStatus();
+    }
+    if (level!=-2 && level<0) {
+      generateMenuUI();
+    }
+    if (level > 0 && level <=3) {
+      generateInGameUI();
+    }
+    if (level == 1) {
+      generateHint();
+    }
+    
   }
-  if (level!=-2 && level<0) {
-    generateMenuUI();
+  
+  catch(Exception e) {
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    Date date = new Date(System.currentTimeMillis());
+    String time=format.format(date);
+    StackTraceElement[] info = e.getStackTrace();
+    output.println(time+": Bug occurred ---> "+e.getMessage());
+    for(int i=0;i<info.length;i++){
+      output.println("At line "+info[i].getLineNumber()+" in function "+info[i].getMethodName());
+    }
   }
-  if (level > 0 && level <=3) {
-    generateInGameUI();
+  if(outputFrame%100==0){
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    Date date = new Date(System.currentTimeMillis());
+    String time=format.format(date);
+    output.println(time+": program running");
+    output.flush();
   }
-  if (level == 1) {
-    generateHint();
-  }
+  outputFrame++;
+  
 }
 
 void showBackground() {
@@ -233,9 +261,9 @@ void generateMenuUI() {
     image(levelOption2, 1500, 320, 180, 100);
     image(levelOption3, 1500, 420, 180, 100);
   }
-  if(showDisabilityDetails){
-      fill(0);
-      text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.",100,500);
+  if (showDisabilityDetails) {
+    fill(0);
+    text("Accessibility mode activated: \n You may now control the character without a keyboard, \n by leaning your body left and right, and making a noise to jump.", 100, 500);
   }
 }
 
