@@ -140,8 +140,11 @@ class Map {
     int cellHeight = 44;
     float offsetX = (w - cellWidth) / 2;
     float offsetY = (h - cellHeight) / 2;
-    if(level==2){
-          cellHeight = 52;
+    if (level==2) {
+      cellHeight = 52;
+    }
+    if (level==3) {
+      cellHeight = 43;
     }
     Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
     item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
