@@ -19,7 +19,7 @@ class Map {
   Bomb bomb;
 
   HashMap bombList = new HashMap<>();
-  
+
   float mpSpeed = -5;
 
   public Map(String mapName, int level) {
@@ -97,7 +97,7 @@ class Map {
       w=200;
       h=200;
       cellWidth = 32;
-      cellHeight = 47.5;
+      cellHeight = 53;
     }
     // these offsets exist because when you scale an object above the 40x40 size, the co-ordinates start to get messed up.
     float offsetX = (w - cellWidth) / 2;
@@ -121,7 +121,10 @@ class Map {
     float cellHeight = 45.5;
     if (level == 1) {
       cellWidth = 40;
-      cellHeight = 42.5;
+      cellHeight = 50.5;
+    }
+    if (level==2) {
+      cellHeight = 48;
     }
     float offsetX = (w - cellWidth) / 2;
     float offsetY = (h - cellHeight) / 2;
@@ -137,11 +140,14 @@ class Map {
     int cellHeight = 44;
     float offsetX = (w - cellWidth) / 2;
     float offsetY = (h - cellHeight) / 2;
+    if(level==2){
+          cellHeight = 52;
+    }
     Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
     item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
     dynamicItems.add(item);
   }
-  
+
   private void drawMovingPlatform(int i, int j) {
     float w=40;
     float h=40;
@@ -169,7 +175,7 @@ class Map {
         } else if (map[i].charAt(j)=='9') {
           drawTimeMachine(i, j);
         } else if (map[i].charAt(j)=='l' || map[i].charAt(j)=='m' || map[i].charAt(j)=='r') {
-          drawMovingPlatform(i,j);
+          drawMovingPlatform(i, j);
         }
       }
     }
@@ -263,20 +269,19 @@ class Map {
       //} else {
       if (item.itemNum<=6) {
         image(bgSet[item.itemNum-1], item.location.x, item.location.y, item.imageWidth, item.imageHeight);
-      //}
+        //}
       } else {
         displayMovingPlatform(item);
       }
-      
     }
     setMPlocation();
   }
-  
+
   public void displayMovingPlatform(Item item) {
     int mpNum = item.itemNum - 11;
     image(mpSet[mpNum], item.location.x, item.location.y, item.imageWidth, item.imageHeight);
   }
-  
+
   public void setMPlocation() {
     boolean ifSpeedChanged = false;
     for (Item item : staticItems) {
@@ -288,11 +293,11 @@ class Map {
         int index = staticItems.indexOf(item);
         Item updated = item;
         updated.location.x += mpSpeed;
-        staticItems.set(index,updated);
+        staticItems.set(index, updated);
       }
     }
   }
-  
+
   public boolean ifMpCollide(Item item) {
     float left = item.location.x-item.objectWidth/2;
     float right = item.location.x+item.objectWidth/2;
@@ -307,13 +312,13 @@ class Map {
         float pRight = platform.location.x+platform.objectWidth/2;
         float pTop = platform.location.y-platform.objectHeight/2;
         float pBottom = platform.location.y+platform.objectHeight/2;
-        
+
         float overlapLeft = pRight - left;
         float overlapRight = right - pLeft;
         float overlapTop = pBottom - top;
         float overlapBottom = bottom - pTop;
         if (overlapLeft>0&&overlapRight>0&&overlapTop>0&&overlapBottom>0) {
-          float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
+          float minOverlap = min(overlapLeft, overlapRight, min(overlapTop, overlapBottom));
           if (minOverlap == overlapLeft&&mpSpeed<0) {
             return true;
           } else if (minOverlap == overlapRight&&mpSpeed>0) {
@@ -324,7 +329,7 @@ class Map {
     }
     return false;
   }
-  
+
   //public void mpLeftCollide(Item item) {
   //  int lIndex = staticItems.indexOf(item);
   //  Item curMP = staticItems.get(lIndex);
