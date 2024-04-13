@@ -284,6 +284,10 @@ class Map {
         if (ifMpCollide(item)) {
           updateMPSpeed(item);
         }
+      }
+    }
+    for (Item item : staticItems) {
+      if (item.itemNum >= 11 && item.itemNum <= 13) {
         int index = staticItems.indexOf(item);
         Item updated = item;
         updated.location.x += item.movingPace;
