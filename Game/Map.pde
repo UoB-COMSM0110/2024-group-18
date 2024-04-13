@@ -163,6 +163,7 @@ class Map {
       mpNum = 13;
     }
     Item item = new Item(mpNum, j*w+w/2, i*h+h/2, w, h, w, h, true, false, false);
+    item.movingPace = mpSpeed;
     staticItems.add(item);
   }
 
@@ -286,21 +287,47 @@ class Map {
   }
 
   public void setMPlocation() {
-    boolean ifSpeedChanged = false;
     for (Item item : staticItems) {
       if (item.itemNum >= 11 && item.itemNum <= 13) {
-        if (ifMpCollide(item) && !ifSpeedChanged) {
-          mpSpeed = -mpSpeed;
-          ifSpeedChanged = true;
+        if (ifMpCollide(item)) {
+          updateMPSpeed(item);
         }
+      }
+    }
+    for (Item item : staticItems) {
+      if (item.itemNum >= 11 && item.itemNum <= 13) {
         int index = staticItems.indexOf(item);
         Item updated = item;
-        updated.location.x += mpSpeed;
-        staticItems.set(index, updated);
+        updated.location.x += item.movingPace;
+        staticItems.set(index,updated);
       }
     }
   }
-
+  
+  public void updateMPSpeed(Item item) {
+    int index = staticItems.indexOf(item);
+    Item temp = item;
+    if (item.itemNum == 11) {
+      while (temp.itemNum <= 13) {
+        temp.movingPace = -temp.movingPace;
+        //temp.location.x += item.movingPace;
+        staticItems.set(index,temp);
+        index++;
+        if (index > staticItems.size()-1 || staticItems.get(index).itemNum == 11) {
+          return;
+        }
+        temp = staticItems.get(index);
+      }
+    } else if (item.itemNum == 13) {
+      while (temp.itemNum >= 11) {
+        temp.movingPace = -temp.movingPace;
+        staticItems.set(index,temp);
+        index--;
+        temp = staticItems.get(index);
+      }
+    }
+  }
+  
   public boolean ifMpCollide(Item item) {
     float left = item.location.x-item.objectWidth/2;
     float right = item.location.x+item.objectWidth/2;
@@ -321,10 +348,10 @@ class Map {
         float overlapTop = pBottom - top;
         float overlapBottom = bottom - pTop;
         if (overlapLeft>0&&overlapRight>0&&overlapTop>0&&overlapBottom>0) {
-          float minOverlap = min(overlapLeft, overlapRight, min(overlapTop, overlapBottom));
-          if (minOverlap == overlapLeft&&mpSpeed<0) {
+          float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
+          if (minOverlap == overlapLeft&&item.movingPace<0) {
             return true;
-          } else if (minOverlap == overlapRight&&mpSpeed>0) {
+          } else if (minOverlap == overlapRight&&item.movingPace>0) {
             return true;
           }
         }
@@ -332,19 +359,7 @@ class Map {
     }
     return false;
   }
-
-  //public void mpLeftCollide(Item item) {
-  //  int lIndex = staticItems.indexOf(item);
-  //  Item curMP = staticItems.get(lIndex);
-  //  Item updatedMP = null;
-  //  while (curMP.itemNum>=11 && curMP.itemNum<=13) {
-  //    curMP = staticItems.get(lIndex);
-  //    updatedMP = curMP;
-  //    updatedMP.location.x = updatedMP.location.x+mpSpeed;
-  //    staticItems.set(lIndex, updatedMP);
-  //    lIndex++;
-  //  }
-  //}
+  
   /*
   This function has items won't change with levels, and has animation and special effect
    */
