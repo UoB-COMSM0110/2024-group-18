@@ -25,7 +25,9 @@ class Bomb extends GameObject {
 
   public void reset() {
     currentImage=loadImage("./assets/Dynamic/bomb.png");
-    float x = (float)Math.random()*(width-100);
+    float left_edge = 150;
+    float right_edge = 200;
+    float x = left_edge+((float)Math.random()*(width-100-right_edge));
     location.set(x+50, 0);
     velocity.y=speed;
   }

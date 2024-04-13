@@ -140,8 +140,6 @@ void draw() {
     } else {
       if (level==1) {
         showBackground();
-        placeClock();
-        map.displayMap();
       } else if (level==2) {
         if (!ifMapGenerated) {
           map=new Map("./maps/map2.txt", 2);
@@ -151,9 +149,8 @@ void draw() {
           player.location.x = 100; // ensure the player starts at the correct location for level 2.
         }
         showBackground();
-        map.displayMap();
         map.displayBomb(time);
-  } else if (level==3) {
+      } else if (level==3) {
         if (!ifMapGenerated) {
           map=new Map("./maps/map3.txt", 3);
           ifMapGenerated=true;
@@ -162,9 +159,11 @@ void draw() {
           player.location.x = 100; // ensure the player starts at the correct location for level 2.
         }
         showBackground();
-        map.displayMap();
         map.displayBomb(time);
-    }
+      }
+      placeClock();
+
+      map.displayMap();
       playerDraw();
       checkGameStatus();
     }

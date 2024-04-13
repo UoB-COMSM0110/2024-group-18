@@ -33,7 +33,9 @@ class Map {
   }
 
   public void placeBomb() {
-    float x = (float)Math.random()*(width-100);
+    float left_edge = 150;
+    float right_edge = 200;
+    float x = left_edge+((float)Math.random()*(width-100-right_edge));
     bomb=new Bomb(x+50);
   }
 
