@@ -122,73 +122,70 @@ void setup() {
 }
 
 void draw() {
-  try{
-  // use || to contain other kind of loading
-  if (isLoadingAlternative) {
-    loading();
-    return;
-  }
-  imageMode(CENTER);
-  if (level==-2) {
-    showTitle();
-  } else if (level==-1) {
-    generateStartUI();
-  }
-  // Generate background based on level
-  else if (level==0) {
-    generateStory();
-  } else {
-    if (level==1) {
-      showBackground();
-    } else if (level==2) {
-      if (!ifMapGenerated) {
-        map=new Map("./maps/map2.txt", 2);
-        ifMapGenerated=true;
-        map.generateMap();
-        map.placeBomb();
-        player.location.x = 100; // ensure the player starts at the correct location for level 2.
-      }
-    } else if (level==3) {
-      if (!ifMapGenerated) {
-        map=new Map("./maps/map3.txt", 3);
-        ifMapGenerated=true;
-        map.generateMap();
-        map.placeBomb();
-        player.location.x = 100; // ensure the player starts at the correct location for level 2.
-      }
+  try {
+    // use || to contain other kind of loading
+    if (isLoadingAlternative) {
+      loading();
+      return;
     }
-
-    // Generate map based on level
-    if (level==2 || level==3) {
-      showBackground();
-      map.displayMap();
-      map.displayBomb(time);
+    imageMode(CENTER);
+    if (level==-2) {
+      showTitle();
+    } else if (level==-1) {
+      generateStartUI();
+    }
+    // Generate background based on level
+    else if (level==0) {
+      generateStory();
     } else {
-      map.displayMap();
+      if (level==1) {
+        showBackground();
+      } else if (level==2) {
+        if (!ifMapGenerated) {
+          map=new Map("./maps/map2.txt", 2);
+          ifMapGenerated=true;
+          map.generateMap();
+          map.placeBomb();
+          player.location.x = 100; // ensure the player starts at the correct location for level 2.
+        }
+        showBackground();
+        map.displayBomb(time);
+      } else if (level==3) {
+        if (!ifMapGenerated) {
+          map=new Map("./maps/map3.txt", 3);
+          ifMapGenerated=true;
+          map.generateMap();
+          map.placeBomb();
+          player.location.x = 100; // ensure the player starts at the correct location for level 2.
+        }
+        showBackground();
+        map.displayBomb(time);
+      }
       placeClock();
+
+      map.displayMap();
+      playerDraw();
+      checkGameStatus();
     }
-    // Show player animation and location
-    playerDraw();
-    checkGameStatus();
+    if (level!=-2 && level<0) {
+      generateMenuUI();
+    }
+    if (level > 0 && level <=3) {
+      generateInGameUI();
+    }
+    if (level == 1) {
+      generateHint();
+    }
   }
-  if (level!=-2 && level<0) {
-    generateMenuUI();
-  }
-  if (level > 0 && level <=3) {
-    generateInGameUI();
-  }
-  if (level == 1) {
-    generateHint();
-  }
-  }catch(Exception e){
+  catch(Exception e) {
     String time=getTime();
     StackTraceElement[] info = e.getStackTrace();
     output.println(time+": BUG occurred ---> "+e.getMessage());
-    for(int i=0;i<info.length;i++){
+    for (int i=0; i<info.length; i++) {
       output.println("At line "+info[i].getLineNumber()+" in function "+info[i].getMethodName());
     }
   }
-  if(outputFrame%100==0){
+  if (outputFrame%100==0) {
     String time=getTime();
     output.println(time+" INFO: program running");
     // TODO: test everyting in draw, output results for testing
@@ -197,7 +194,7 @@ void draw() {
   outputFrame++;
 }
 
-public String getTime(){
+public String getTime() {
   SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
   Date date = new Date(System.currentTimeMillis());
   return format.format(date);
@@ -265,6 +262,10 @@ void generateInGameUI() {
   image(control, 1350, 100, 100, 100);
   if (showControlBar) {
     image(controlOption, 1300, 320, 200, 300);
+  }
+  if (showDisabilityError) {
+    text("true", 500, 500);
+    image(loadImage("./assets/Background/disableErr.png"), width/2, height/2);
   }
 }
 
@@ -377,7 +378,13 @@ void generateHint() {
 
 void playerDraw() {
   if (controlMode==ControlType.DISABLED) {
-    alternativeController.control();
+    //alternativeController.control();
+    try {
+      alternativeController.control();
+    }
+    catch (Exception e) {
+      showDisabilityError=true;
+    }
     playerController.movementControl();
   }
   // The Method updatelocation is changed to take mapController as an input
@@ -493,6 +500,7 @@ void disabilityButtonClicked() {
     &&mouseY>50&&mouseY<150) {
     if (platformNames[platform]=="linux") {
       print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+      image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
       return;
     }
     if (showDisabilityDetails) {

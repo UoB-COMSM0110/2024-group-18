@@ -106,6 +106,11 @@ Later in this report, we will reflect on our experience of similar issues. Users
 
 
 ### Identifying Stakeholders (Onion Model)
+Following the ideation phase, stakeholder analysis would help us design a customer-oriented game and understand boundary management, ensuring that we remain <u>focused on placing the <b>user first</b></u> and <u>not engineering an overly complex game</u>. The Onion Model, a structured approach to stakeholder research, helped us identify and prioritise our game's stakeholders based on their proximity to the project and level of impact. We placed **Puzzle Enthusiasts** at the model's core, mainly based on our primary stakeholders, our CS professors, who determine the projects' final grades. As these professors have a CS background, we wanted to create the experience that the game levels are more challenging than expected, as professors have seen many student game projects, so we wanted to stand out.
+
+In the middle layers, we placed **Casual Gamers** and **Competitive Gamers**. Whilst the game is easy to use for anyone, and so can be pitched to a large group, we knew we needed to consider its accessibility and ease of use. Thus, we discovered we would need a clear tutorial and modern game UX. At the same time, competitive gamers encouraged the development of difficult aspects and score systems to foster a competitive environment.
+
+External layers include considering regulatory agencies and gaming communities, as we wanted to put the project on our portfolios after completion. Both of these require compliance and community involvement norms. These externalities serve as a reminder to keep our designs flexible to accommodate greater user feedback and regulatory needs, maintaining broad appeal and compliance. The Onion Model thus not only drove the construction of our user stories but also inspired our strategic focus on stakeholder interests throughout the game's development process.
 
 ### Identifying Top-Level Needs (User Stories)
 <p align="center">

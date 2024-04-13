@@ -48,7 +48,6 @@ class AlternativeController {
   void control() {
     // audio stuff
     soundController();
-
     //video stuff
     imageMode(CORNER);
     if (cam.available()) {
