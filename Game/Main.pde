@@ -502,6 +502,7 @@ void disabilityButtonClicked() {
     &&mouseY>50&&mouseY<150) {
     if (platformNames[platform]=="linux") {
       print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+      image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
       return;
     }
     if (showDisabilityDetails) {
