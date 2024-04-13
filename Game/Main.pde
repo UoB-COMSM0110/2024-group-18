@@ -235,6 +235,10 @@ void generateInGameUI() {
   if (showControlBar) {
     image(controlOption, 1300, 320, 200, 300);
   }
+  if (showDisabilityError) {
+    text("true",500,500);
+    image(loadImage("./assets/Background/disableErr.png"),width/2,height/2);
+  }
 }
 
 void generateMenuUI() {
@@ -346,7 +350,12 @@ void generateHint() {
 
 void playerDraw() {
   if (controlMode==ControlType.DISABLED) {
-    alternativeController.control();
+    //alternativeController.control();
+    try {
+      alternativeController.control();
+    } catch (Exception e) {
+      showDisabilityError=true;
+    }
     playerController.movementControl();
   }
   // The Method updatelocation is changed to take mapController as an input

@@ -174,7 +174,7 @@ class PlayerController {
           isOnMovingPlatform = true;
         }
       } else if(isOnMovingPlatform) {
-        player.location.set(player.location.x+map.mpSpeed, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
+        player.location.set(player.location.x+obj.movingPace, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
       }
       player.velocity.set(player.velocity.x, 0);
       player.isOnGround=true;

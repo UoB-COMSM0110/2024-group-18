@@ -14,6 +14,8 @@ class Item extends GameObject {
   PImage[] onAnimation;
   PImage[] offAnimation;
   PImage[] currentAnimation;
+  
+  float movingPace = 0;
 
   public Item(int itemNum, float x, float y, float objectWidth, float objectHeight,float imageWidth,float imageHeight,
     boolean ifStatic, boolean ifHurt, boolean ifTriggered) {
