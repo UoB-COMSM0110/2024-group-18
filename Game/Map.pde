@@ -250,12 +250,12 @@ class Map {
       bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
       bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
     } else if (level==3) {
-      bgSet[0]=loadImage("./assets/Static/Brick2/brick1.gif");
-      bgSet[1]=loadImage("./assets/Static/Brick2/brick2.gif");
-      bgSet[2]=loadImage("./assets/Static/Brick2/brick3.gif");
-      bgSet[3]=loadImage("./assets/Static/Brick2/brick4.gif");
-      bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
-      bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
+      bgSet[0]=loadImage("./assets/Static/Stone3/stone1.gif");
+      bgSet[1]=loadImage("./assets/Static/Stone3/stone2.gif");
+      bgSet[2]=loadImage("./assets/Static/Stone3/stone3.gif");
+      bgSet[3]=loadImage("./assets/Static/Stone3/stone4.gif");
+      bgSet[4]=loadImage("./assets/Static/Stone3/stone5.gif");
+      bgSet[5]=loadImage("./assets/Static/Stone3/stone6.gif");
       mpSet[0]=loadImage("./assets/Static/MovingPlatform/mp1.gif");
       mpSet[1]=loadImage("./assets/Static/MovingPlatform/mp2.gif");
       mpSet[2]=loadImage("./assets/Static/MovingPlatform/mp3.gif");

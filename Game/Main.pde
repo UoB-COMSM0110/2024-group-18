@@ -87,7 +87,7 @@ void initializeGlobalVariablesToStartingValues() {
 void setup() {
   size(1600, 900);
   fill(0);
-  output=createWriter("./logs/test.log");
+  output=createWriter("./logs/test"+getTime()+".log");
   initializeGlobalVariablesToStartingValues();
   xPos=width/2;
   ypos=height/2+20;
