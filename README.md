@@ -132,6 +132,9 @@ External layers include considering regulatory agencies and gaming communities, 
 </p>
 
 ### Use-Cases Breakdown 
+Having established a 'Casual Gamer' focus, we understood early on in the game development process the difficulties when making a game to a large group of customers. Therefore, we used the Use-Case Diagram and Specification model as a guide to create a dual mode gameplay system that includes an accessibility mode in order to increase our reach and provide additional features. While the game uses standard keyboard controls in Non-Accessibility Mode, it makes use of **Camera Detection technology** in Accesibility Mode to let players with disadvantages to control the game with head motions. This innovation is in line with our commitment to diversity and improves accessibility for those with limited mobility.
+
+Both modes, which have different interaction methods but comparable goals and obstacles, are demonstrated below:
 <p align="center">
   <img src="Assets_For_ReadMe/newucdiag.png">
   <br>
