@@ -131,9 +131,14 @@ External layers include considering regulatory agencies and gaming communities, 
   <i>Figure 5: User Story 3</i>
 </p>
 
-### Stories To Use-Cases Breakdown (Use-Case Diagram)
+### Use-Cases Breakdown 
+<p align="center">
+  <img src="Assets_For_ReadMe/newucdiag.png">
+  <br>
+  <i>Figure 5: Use Case Diagram</i>
+</p>
 
-### Specifying Atomic Requirements (Quality and Verifiability of RE)
+
 
 # 4. Design (15% ~750 words) (Kai/Mihir/Tom)
 
