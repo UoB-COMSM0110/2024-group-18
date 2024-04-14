@@ -51,6 +51,7 @@ PFont font;
 boolean isLoadingAlternative = false;
 int alternativeLag = 0;
 
+int alphaValue = 0;
 
 enum ControlType {
   NORMAL, DISABLED
@@ -130,8 +131,7 @@ void draw() {
     return;
   }
   if (playerController.ifGameWin && level == 3) {
-    background(0);
-    text("Finish all level",width/2,height/2);
+    showEnd();
     return;
   }
   imageMode(CENTER);
@@ -201,6 +201,18 @@ void draw() {
     output.flush();
   }
   outputFrame++;
+}
+
+public void showEnd() {
+  fill(0, alphaValue);
+  rect(0,0,width,height);
+  if (alphaValue < 255) {
+    alphaValue++;
+  } else {
+    fill(255);
+    text("Finish all level",width/2,height/2);
+  }
+  
 }
 
 public String getTime(){
