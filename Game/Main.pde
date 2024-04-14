@@ -51,6 +51,7 @@ PFont font;
 boolean isLoadingAlternative = false;
 int alternativeLag = 0;
 
+
 enum ControlType {
   NORMAL, DISABLED
 }
@@ -126,6 +127,11 @@ void draw() {
   // use || to contain other kind of loading
   if (isLoadingAlternative) {
     loading();
+    return;
+  }
+  if (playerController.ifGameWin && level == 3) {
+    background(0);
+    text("Finish all level",width/2,height/2);
     return;
   }
   imageMode(CENTER);
@@ -230,7 +236,7 @@ void checkGameStatus() {
     ifGameOver=true;
   }
 
-  if (playerController.ifGameWin) {
+  if (playerController.ifGameWin&&level<3) {
     //fill(255);
     //text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
     image(loadImage("./assets/Background/nextLevel.png"), width/2, height/2);
@@ -501,7 +507,7 @@ void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
     if (platformNames[platform]=="linux") {
-      print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+      // print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
       image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
       return;
     }
