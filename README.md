@@ -155,7 +155,19 @@ Both modes, which have different interaction methods but comparable goals and ob
 According to the requirements specification, a system architecture was formed. The first part of the system that users interact with is the menu. Users can start the game, choose levels, and initiate an alternate control mode. During the game, we try to match the system to the real world, using visual cues to indicate damage or the direction the player will move next. A platform-puzzle game with the novel mechanism of time inversion required several components to be designed. We created a Game Object and several sub-classes (platforms, players, and interactable items), a Player Controller, a Map, a Map Controller, and Main to run the primary game loop. Data was passed through various components: Main-Controllers, Controller-Player, Controller-Map, Controller-Items. Main contains several flags to indicate which methods are called. It creates instances of the Player Controller and Map Controller. These Controllers also hold flags to control methods and lists to store items. As an expansion of the system, from an inclusive perspective, there is an alternative controlling mode designed for people with disabilities (e.g., Carpal Tunnel), allowing them to use a webcam input through the Deep Vision Processing library.
 
 ### Class diagrams 
+
+<p align="center">
+  <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
+  <br>
+  <i>Figure 7: Class Diagram</i>
+</p>
+
 ### Behavioural diagrams 
+<p align="center">
+  <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
+  <br>
+  <i>Figure 8: Sequence Diagram</i>
+</p>
 
 # 5. Implementation
 
