@@ -136,11 +136,16 @@ Having established a 'Casual Gamer' focus, we understood early on in the game de
 
 Both modes, which have different interaction methods but comparable goals and obstacles, are demonstrated below:
 <p align="center">
-  <img src="Assets_For_ReadMe/newucdiag.png">
+  <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
   <i>Figure 5: Use Case Diagram</i>
 </p>
 
+<p align="center">
+  <img src="Assets_For_ReadMe/specdraft.png" width="75%">
+  <br>
+  <i>Figure 6: Use Case Specification</i>
+</p>
 
 
 # 4. Design (15% ~750 words) (Kai/Mihir/Tom)
