@@ -204,7 +204,7 @@ While not one of our official challenges, we found that programming collisions a
 
 
 
-# 6. Evaluation (15% ~750 words) (Tom)
+# 6. Evaluation 
   During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
   Our game aims to reward future planning and puzzle-solving. After examining our own video game preferences, and a literature review which suggested that game difficulty can improve overall enjoyment when it is not overly frustrating and provides a satisfying challenge to overcome (Alexander et al., 2013). [Tom - I need to make this better] It was, therefore, important that we accurately assessed the perceived difficulty. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
@@ -286,12 +286,7 @@ We took some of this feedback and then included some visual hints on the screen,
 </p>
 
 
-
--
-- [ ] **Description of how code was tested.**
-    - Explain the methods used to test the code.
-
-# 7. Process (15% ~750 words) - (Ali)
+# 7. Process 
 
 ## Collaboration
 
@@ -332,19 +327,9 @@ Pair programming was something that we used frequently. Since Yi had previous ex
 We adopted an agile methodology, allowing us to build the game slowly based on user feedback. This was very effective, especially since many of us had little knowledge of game development. However, we did encounter some issues. Early on, the pressure to get a feature "working" overrode the desire to create long-term, maintainable code. You can see this with the collision detections, the initial code had to be rewritten to be extensible. We addressed this by implementing a workflow based on pull requests and code reviews. Inspired by industry best practices, code reviews allowed each of us to uplevel our skills and write significantly better code as measured by cyclomatic complexity (which decreased by 79% between the 3rd week of the project and the 7th.)
 
 
-# 8. Conclusion (10% ~500 words) (Tom)
+# 8. Conclusion 
 
-- [ ] **Reflect on project as a whole.**
-    - Provide an overview reflection of the entire project.
-- [ ] **Lessons learned.**
-    - Share key lessons learned throughout the project.
-- [ ] **Reflect on challenges.**
-    - Reflect on the challenges faced and how they were overcome.
-- [ ] **Future work.**
-    - Discuss any plans or ideas for future work on the project.
-
-# Bibliography -- can we have it APA style??? 
-### Mihir:
+# 9. Bibliography 
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
