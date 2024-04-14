@@ -8,9 +8,9 @@ https://youtu.be/J3RTHQjeOvg
 
 # 1. Development Team
 <p align="center">
+  <b>Figure 1</b><br>
+  <i>Team Picture Week 1 with team role</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
-  <br>
-  <em>Team picture from Week 1 at Wagamamas, to discuss project/team expectations early</em>
 </p>
 
 ### Team Role (from left to right of image):
