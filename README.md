@@ -149,7 +149,14 @@ Both modes, which have different interaction methods but comparable goals and ob
 
 
 # 4. Design 
+Having evaluated our potential stakeholders and evaluated a diverse range of User Stories, we now had a sense of the features we wanted to incorporate into out Game design, as well as the Use-Case Diagram/Specification providing us how we can specialise into accessibility features.
 
+A **Class Diagram** would provide a systematic view of of our Game System, allowing us to plan ahead and template the relationship between objects, which would serve as planning for good **Object-Orientated Design (OOD)** within our source code. To do so, we first wrote down a plan for System Architecture by callaborating in-person through Whiteboard sessions (see Section 7). This allowed for the Class Diagram formation to be a seemless process. 
+
+Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where having evaluated many classes in our system, the sequence would allow for ease in debugging, especially where the Processing IDE has poor debugging facilities. 
+
+
+Find below how we evaluated Design for Oiram, later following an evaluation and reflection: 
 ### System architecture 
 
 According to the requirements specification, a system architecture was formed. The first part of the system that users interact with is the menu. Users can start the game, choose levels, and initiate an alternate control mode. During the game, we try to match the system to the real world, using visual cues to indicate damage or the direction the player will move next. A platform-puzzle game with the novel mechanism of time inversion required several components to be designed. We created a Game Object and several sub-classes (platforms, players, and interactable items), a Player Controller, a Map, a Map Controller, and Main to run the primary game loop. Data was passed through various components: Main-Controllers, Controller-Player, Controller-Map, Controller-Items. Main contains several flags to indicate which methods are called. It creates instances of the Player Controller and Map Controller. These Controllers also hold flags to control methods and lists to store items. As an expansion of the system, from an inclusive perspective, there is an alternative controlling mode designed for people with disabilities (e.g., Carpal Tunnel), allowing them to use a webcam input through the Deep Vision Processing library.
