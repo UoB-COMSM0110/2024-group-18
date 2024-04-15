@@ -166,8 +166,18 @@ According to the requirements specification, a system architecture was formed. T
 <p align="center">
   <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
   <br>
-  <i>Figure 7: Class Diagram</i>
+  <i>Figure 7: Class Diagram Generated W5 Labs.</i>
 </p>
+
+<p align="center">
+  <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
+  <br>
+  <i>Figure 8: Updated Class Diagram to date.</i>
+</p>
+
+Figure 7 and 8 indicates how our Class Diagram changed over time. In particular, when first trying out player movement, we found that collisions was particularly difficult to program, due to...
+
+Therefore, once collision became easier to program, more classes were incorporated into the diagram, such as the Bomb class.
 
 ### Behavioural diagrams 
 <p align="center">
@@ -175,7 +185,9 @@ According to the requirements specification, a system architecture was formed. T
   <br>
   <i>Figure 8: Sequence Diagram</i>
 </p>
+When creating the Oiram game, we embraced OOD and Agile methodologies to evolve our game's design continuously. This approach required frequent updates to our system architecture, class, and sequence diagrams, essential tools for visualising and understanding the game's structure and interactions. However, the fast pace of Agile development meant that these foundational documents often needed to catch up to the latest game adjustments, showcasing a key challenge of Agile: maintaining up-to-date design documentation amidst rapid changes.
 
+Looking ahead, to better balance the need for quick adaptations with the necessity of thorough planning, we propose integrating periodic reviews into version control and consider continuously pushing to our report and source code. Although this comes as a challenge because this is our first game project, we experimented late into the project tools such as  [Intelij's Diagram Plugin](https://www.jetbrains.com/help/idea/class-diagram.html) by rewriting .pde to .java, which would have saved time and provided consistency within minimal effort. Additionally, although we stayed consistent with lab work, and ensuring that we incorporated it into the report, we ended up using that content as a plan. Whereas a more effective strategy would have been building on what we already had, and seeking feedback by the end of next week. Overall the importance of consistency is highlighted during Game Design. 
 # 5. Implementation
 
 Before starting any of our challenges, we needed to create a basic platformer. First, we created a `GameObject` from which all physical items in the game inherit, as well as a `Player` (which includes specific player behaviour) and a `PlayerController` (which includes the logic for how the player is controlled).
