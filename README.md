@@ -158,9 +158,26 @@ Following the Class Diagram, we worked on forming a **Sequence Diagram**, which 
 
 Find below how we evaluated Design for Oiram, later following an evaluation and reflection: 
 ### System architecture 
+# Project Overview
 
-According to the requirements specification, a system architecture was formed. The first part of the system that users interact with is the menu. Users can start the game, choose levels, and initiate an alternate control mode. During the game, we try to match the system to the real world, using visual cues to indicate damage or the direction the player will move next. A platform-puzzle game with the novel mechanism of time inversion required several components to be designed. We created a Game Object and several sub-classes (platforms, players, and interactable items), a Player Controller, a Map, a Map Controller, and Main to run the primary game loop. Data was passed through various components: Main-Controllers, Controller-Player, Controller-Map, Controller-Items. Main contains several flags to indicate which methods are called. It creates instances of the Player Controller and Map Controller. These Controllers also hold flags to control methods and lists to store items. As an expansion of the system, from an inclusive perspective, there is an alternative controlling mode designed for people with disabilities (e.g., Carpal Tunnel), allowing them to use a webcam input through the Deep Vision Processing library.
+Based on the requirements specification, we developed a system architecture that begins with a user-interface menu. Here, players can start the game, select levels, or activate an alternative control mode tailored for users with disabilities, such as Carpal Tunnel Syndrome. We achieved this by utilizing webcam inputs via the Deep Vision and Video Processing library. The system employs visual cues to indicate player damage and potential movements in-game.
 
+## Game Mechanics
+
+The complex mechanics of time inversion in our platform-puzzle game necessitated the design of multiple components:
+
+- **Game Object**: Includes several subclasses such as platforms, players, and interactable items.
+- **Player Controller**: Manages player interactions and states.
+- **Map and Map Controller**: Handle the layout and logic of game levels.
+- **Main Class**: Manages the game loop, flags for method calls, and oversees the creation of Player Controller and Map Controller instances. These controllers maintain method control flags and item lists.
+
+## Cross-Platform Library Challenges
+
+A challenge we faced included figuring out how to get the libraries to work cross-platform, across MacOS, Linux, and Windows. These issues came due to outdated packages within Processing Libraries across OS platforms. For instance, particularly for the Video library, whilst working on macOS, Linux would give the error:
+
+```bash
+(Processing core video:295602): GStreamer-WARNING **: 17:27:43.028: Failed to load plugin '/home/mihirgany/IdeaProjects/2024-group-18/libraries/libraries/video/library/linux-amd64/gstreamer-1.0/libgsthls.so': libcrypto.so.1.1: cannot open shared object file: No such file or directory
+```
 ### Class diagrams 
 
 <p align="center">
