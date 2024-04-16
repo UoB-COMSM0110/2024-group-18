@@ -33,7 +33,9 @@ class Map {
   }
 
   public void placeBomb() {
-    float x = (float)Math.random()*(width-100);
+    float left_edge = 150;
+    float right_edge = 200;
+    float x = left_edge+((float)Math.random()*(width-100-right_edge));
     bomb=new Bomb(x+50);
   }
 
@@ -248,12 +250,12 @@ class Map {
       bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
       bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
     } else if (level==3) {
-      bgSet[0]=loadImage("./assets/Static/Brick2/brick1.gif");
-      bgSet[1]=loadImage("./assets/Static/Brick2/brick2.gif");
-      bgSet[2]=loadImage("./assets/Static/Brick2/brick3.gif");
-      bgSet[3]=loadImage("./assets/Static/Brick2/brick4.gif");
-      bgSet[4]=loadImage("./assets/Static/Brick2/brick5.gif");
-      bgSet[5]=loadImage("./assets/Static/Brick2/brick6.gif");
+      bgSet[0]=loadImage("./assets/Static/Stone3/stone1.gif");
+      bgSet[1]=loadImage("./assets/Static/Stone3/stone2.gif");
+      bgSet[2]=loadImage("./assets/Static/Stone3/stone3.gif");
+      bgSet[3]=loadImage("./assets/Static/Stone3/stone4.gif");
+      bgSet[4]=loadImage("./assets/Static/Stone3/stone5.gif");
+      bgSet[5]=loadImage("./assets/Static/Stone3/stone6.gif");
       mpSet[0]=loadImage("./assets/Static/MovingPlatform/mp1.gif");
       mpSet[1]=loadImage("./assets/Static/MovingPlatform/mp2.gif");
       mpSet[2]=loadImage("./assets/Static/MovingPlatform/mp3.gif");

@@ -89,7 +89,7 @@ void initializeGlobalVariablesToStartingValues() {
 void setup() {
   size(1600, 900);
   fill(0);
-  output=createWriter("./logs/test.log");
+  output=createWriter("./logs/test"+getTime()+".log");
   initializeGlobalVariablesToStartingValues();
   xPos=width/2;
   ypos=height/2+20;
@@ -124,77 +124,74 @@ void setup() {
 }
 
 void draw() {
-  try{
-  // use || to contain other kind of loading
-  if (isLoadingAlternative) {
-    loading();
-    return;
-  }
-  if (playerController.ifGameWin && level == 3) {
+  try {
+    // use || to contain other kind of loading
+    if (isLoadingAlternative) {
+      loading();
+      return;
+    }
+    if (playerController.ifGameWin && level == 3) {
     showEnd();
     return;
   }
   imageMode(CENTER);
-  if (level==-2) {
-    showTitle();
-  } else if (level==-1) {
-    generateStartUI();
-  }
-  // Generate background based on level
-  else if (level==0) {
-    generateStory();
-  } else {
-    if (level==1) {
-      showBackground();
-    } else if (level==2) {
-      if (!ifMapGenerated) {
-        map=new Map("./maps/map2.txt", 2);
-        ifMapGenerated=true;
-        map.generateMap();
-        map.placeBomb();
-        player.location.x = 100; // ensure the player starts at the correct location for level 2.
-      }
-    } else if (level==3) {
-      if (!ifMapGenerated) {
-        map=new Map("./maps/map3.txt", 3);
-        ifMapGenerated=true;
-        map.generateMap();
-        map.placeBomb();
-        player.location.x = 100; // ensure the player starts at the correct location for level 2.
-      }
+    if (level==-2) {
+      showTitle();
+    } else if (level==-1) {
+      generateStartUI();
     }
-
-    // Generate map based on level
-    if (level==2 || level==3) {
-      showBackground();
-      map.displayMap();
-      map.displayBomb(time);
+    // Generate background based on level
+    else if (level==0) {
+      generateStory();
     } else {
-      map.displayMap();
+      if (level==1) {
+        showBackground();
+      } else if (level==2) {
+        if (!ifMapGenerated) {
+          map=new Map("./maps/map2.txt", 2);
+          ifMapGenerated=true;
+          map.generateMap();
+          map.placeBomb();
+          player.location.x = 100; // ensure the player starts at the correct location for level 2.
+        }
+        showBackground();
+        map.displayBomb(time);
+      } else if (level==3) {
+        if (!ifMapGenerated) {
+          map=new Map("./maps/map3.txt", 3);
+          ifMapGenerated=true;
+          map.generateMap();
+          map.placeBomb();
+          player.location.x = 100; // ensure the player starts at the correct location for level 2.
+        }
+        showBackground();
+        map.displayBomb(time);
+      }
       placeClock();
+
+      map.displayMap();
+      playerDraw();
+      checkGameStatus();
     }
-    // Show player animation and location
-    playerDraw();
-    checkGameStatus();
+    if (level!=-2 && level<0) {
+      generateMenuUI();
+    }
+    if (level > 0 && level <=3) {
+      generateInGameUI();
+    }
+    if (level == 1) {
+      generateHint();
+    }
   }
-  if (level!=-2 && level<0) {
-    generateMenuUI();
-  }
-  if (level > 0 && level <=3) {
-    generateInGameUI();
-  }
-  if (level == 1) {
-    generateHint();
-  }
-  }catch(Exception e){
+  catch(Exception e) {
     String time=getTime();
     StackTraceElement[] info = e.getStackTrace();
     output.println(time+": BUG occurred ---> "+e.getMessage());
-    for(int i=0;i<info.length;i++){
+    for (int i=0; i<info.length; i++) {
       output.println("At line "+info[i].getLineNumber()+" in function "+info[i].getMethodName());
     }
   }
-  if(outputFrame%100==0){
+  if (outputFrame%100==0) {
     String time=getTime();
     output.println(time+" INFO: program running");
     // TODO: test everyting in draw, output results for testing
@@ -206,7 +203,7 @@ void draw() {
 public void showEnd() {
   fill(0, alphaValue);
   rect(0,0,width,height);
-  if (alphaValue < 255) {
+  if (alphaValue < 150) {
     alphaValue++;
   } else {
     fill(255);
@@ -215,8 +212,8 @@ public void showEnd() {
   
 }
 
-public String getTime(){
-  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+public String getTime() {
+  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
   Date date = new Date(System.currentTimeMillis());
   return format.format(date);
 }
@@ -285,8 +282,8 @@ void generateInGameUI() {
     image(controlOption, 1300, 320, 200, 300);
   }
   if (showDisabilityError) {
-    text("true",500,500);
-    image(loadImage("./assets/Background/disableErr.png"),width/2,height/2);
+    text("true", 500, 500);
+    image(loadImage("./assets/Background/disableErr.png"), width/2, height/2);
   }
 }
 
@@ -402,7 +399,8 @@ void playerDraw() {
     //alternativeController.control();
     try {
       alternativeController.control();
-    } catch (Exception e) {
+    }
+    catch (Exception e) {
       showDisabilityError=true;
     }
     playerController.movementControl();
@@ -609,6 +607,7 @@ public void restartLevel() {
     map.bombList.clear();
     map.placeBomb();
   }
+  alphaValue = 0;
 }
 
 public void placeClock() {

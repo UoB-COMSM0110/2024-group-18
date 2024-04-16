@@ -8,9 +8,9 @@ https://youtu.be/J3RTHQjeOvg
 
 # 1. Development Team
 <p align="center">
+  <b>Figure 1</b><br>
+  <i>Team Picture Week 1 with team role</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
-  <br>
-  <em>Team picture from Week 1 at Wagamamas, to discuss project/team expectations early</em>
 </p>
 
 ### Team Role (from left to right of image):
@@ -106,6 +106,11 @@ Later in this report, we will reflect on our experience of similar issues. Users
 
 
 ### Identifying Stakeholders (Onion Model)
+Following the ideation phase, stakeholder analysis would help us design a customer-oriented game and understand boundary management, ensuring that we remain <u>focused on placing the <b>user first</b></u> and <u>not engineering an overly complex game</u>. The Onion Model, a structured approach to stakeholder research, helped us identify and prioritise our game's stakeholders based on their proximity to the project and level of impact. We placed **Puzzle Enthusiasts** at the model's core, mainly based on our primary stakeholders, our CS professors, who determine the projects' final grades. As these professors have a CS background, we wanted to create the experience that the game levels are more challenging than expected, as professors have seen many student game projects, so we wanted to stand out.
+
+In the middle layers, we placed **Casual Gamers** and **Competitive Gamers**. Whilst the game is easy to use for anyone, and so can be pitched to a large group, we knew we needed to consider its accessibility and ease of use. Thus, we discovered we would need a clear tutorial and modern game UX. At the same time, competitive gamers encouraged the development of difficult aspects and score systems to foster a competitive environment.
+
+External layers include considering regulatory agencies and gaming communities, as we wanted to put the project on our portfolios after completion. Both of these require compliance and community involvement norms. These externalities serve as a reminder to keep our designs flexible to accommodate greater user feedback and regulatory needs, maintaining broad appeal and compliance. The Onion Model thus not only drove the construction of our user stories but also inspired our strategic focus on stakeholder interests throughout the game's development process.
 
 ### Identifying Top-Level Needs (User Stories)
 <p align="center">
@@ -126,21 +131,43 @@ Later in this report, we will reflect on our experience of similar issues. Users
   <i>Figure 5: User Story 3</i>
 </p>
 
-### Stories To Use-Cases Breakdown (Use-Case Diagram)
+### Use-Cases Breakdown 
+Having established a 'Casual Gamer' focus, we understood early on in the game development process the difficulties when making a game to a large group of customers. Therefore, we used the Use-Case Diagram and Specification model as a guide to create a dual mode gameplay system that includes an accessibility mode in order to increase our reach and provide additional features. While the game uses standard keyboard controls in Non-Accessibility Mode, it makes use of **Camera Detection technology** in Accesibility Mode to let players with disadvantages to control the game with head motions. This innovation is in line with our commitment to diversity and improves accessibility for those with limited mobility.
 
-### Specifying Atomic Requirements (Quality and Verifiability of RE)
+Both modes, which have different interaction methods but comparable goals and obstacles, are demonstrated below:
+<p align="center">
+  <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
+  <br>
+  <i>Figure 5: Use Case Diagram</i>
+</p>
 
-# 4. Design (15% ~750 words) (Kai/Mihir/Tom)
+<p align="center">
+  <img src="Assets_For_ReadMe/specdraft.png" width="75%">
+  <br>
+  <i>Figure 6: Use Case Specification</i>
+</p>
 
-- [ ] **System architecture (Kai/Mihir).**
-    - Describe the system architecture planned and used.
+
+# 4. Design 
+
+### System architecture 
 
 According to the requirements specification, a system architecture was formed. The first part of the system that users interact with is the menu. Users can start the game, choose levels, and initiate an alternate control mode. During the game, we try to match the system to the real world, using visual cues to indicate damage or the direction the player will move next. A platform-puzzle game with the novel mechanism of time inversion required several components to be designed. We created a Game Object and several sub-classes (platforms, players, and interactable items), a Player Controller, a Map, a Map Controller, and Main to run the primary game loop. Data was passed through various components: Main-Controllers, Controller-Player, Controller-Map, Controller-Items. Main contains several flags to indicate which methods are called. It creates instances of the Player Controller and Map Controller. These Controllers also hold flags to control methods and lists to store items. As an expansion of the system, from an inclusive perspective, there is an alternative controlling mode designed for people with disabilities (e.g., Carpal Tunnel), allowing them to use a webcam input through the Deep Vision Processing library.
 
-- [ ] **Class diagrams (Mihir).**
-    - Provide class diagrams to represent the static structure of the system.
-- [ ] **Behavioural diagrams (Mihir - might need help on this).**
-    - Include behavioural diagrams to showcase the dynamic aspects of the system.
+### Class diagrams 
+
+<p align="center">
+  <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
+  <br>
+  <i>Figure 7: Class Diagram</i>
+</p>
+
+### Behavioural diagrams 
+<p align="center">
+  <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
+  <br>
+  <i>Figure 8: Sequence Diagram</i>
+</p>
 
 # 5. Implementation
 
@@ -177,7 +204,7 @@ While not one of our official challenges, we found that programming collisions a
 
 
 
-# 6. Evaluation (15% ~750 words) (Tom)
+# 6. Evaluation 
   During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
   Our game aims to reward future planning and puzzle-solving. After examining our own video game preferences, and a literature review which suggested that game difficulty can improve overall enjoyment when it is not overly frustrating and provides a satisfying challenge to overcome (Alexander et al., 2013). [Tom - I need to make this better] It was, therefore, important that we accurately assessed the perceived difficulty. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
@@ -259,12 +286,7 @@ We took some of this feedback and then included some visual hints on the screen,
 </p>
 
 
-
--
-- [ ] **Description of how code was tested.**
-    - Explain the methods used to test the code.
-
-# 7. Process (15% ~750 words) - (Ali)
+# 7. Process 
 
 ## Collaboration
 
@@ -305,19 +327,9 @@ Pair programming was something that we used frequently. Since Yi had previous ex
 We adopted an agile methodology, allowing us to build the game slowly based on user feedback. This was very effective, especially since many of us had little knowledge of game development. However, we did encounter some issues. Early on, the pressure to get a feature "working" overrode the desire to create long-term, maintainable code. You can see this with the collision detections, the initial code had to be rewritten to be extensible. We addressed this by implementing a workflow based on pull requests and code reviews. Inspired by industry best practices, code reviews allowed each of us to uplevel our skills and write significantly better code as measured by cyclomatic complexity (which decreased by 79% between the 3rd week of the project and the 7th.)
 
 
-# 8. Conclusion (10% ~500 words) (Tom)
+# 8. Conclusion 
 
-- [ ] **Reflect on project as a whole.**
-    - Provide an overview reflection of the entire project.
-- [ ] **Lessons learned.**
-    - Share key lessons learned throughout the project.
-- [ ] **Reflect on challenges.**
-    - Reflect on the challenges faced and how they were overcome.
-- [ ] **Future work.**
-    - Discuss any plans or ideas for future work on the project.
-
-# Bibliography -- can we have it APA style??? 
-### Mihir:
+# 9. Bibliography 
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
