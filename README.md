@@ -397,5 +397,5 @@ Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessin
 Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
 
-
+TODO: Heuristics - noticed how players dont read tutorial and therefore incorporated into level.
 
