@@ -52,6 +52,7 @@ boolean isLoadingAlternative = false;
 int alternativeLag = 0;
 
 int alphaValue = 0;
+boolean isLinux = false;
 
 enum ControlType {
   NORMAL, DISABLED
@@ -126,7 +127,7 @@ void setup() {
 void draw() {
   try {
     // use || to contain other kind of loading
-    if (isLoadingAlternative) {
+    if (isLoadingAlternative || isLinux) {
       loading();
       return;
     }
@@ -221,6 +222,8 @@ public String getTime() {
 void loading() {
   if (isLoadingAlternative) {
     image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+  } else if (isLinux) {
+    image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
   }
 }
 
@@ -518,7 +521,12 @@ void disabilityButtonClicked() {
     &&mouseY>50&&mouseY<150) {
     if (platformNames[platform]=="linux") {
       // print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
-      image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
+      //image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
+      isLinux = true;
+      return;
+    }
+    if (isLinux == true) {
+      isLinux = false;
       return;
     }
     if (showDisabilityDetails) {
