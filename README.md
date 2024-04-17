@@ -364,12 +364,12 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 # 8. Conclusion 
 
-# 9. Individual contribution
-Mihir: 1.00
-Tom: 1.00
-Ali: 1.00
-Yi: 1.00
-Kaiyan: 1.00
+- **Mihir**: 1.00
+- **Tom**: 1.00
+- **Ali**: 1.00
+- **Yi**: 1.00
+- **Kaiyan**: 1.00
+
 
 # 10. Bibliography 
 
