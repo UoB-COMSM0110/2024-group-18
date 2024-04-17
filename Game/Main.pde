@@ -51,6 +51,9 @@ PFont font;
 boolean isLoadingAlternative = false;
 int alternativeLag = 0;
 
+int alphaValue = 0;
+boolean isLinux = false;
+
 enum ControlType {
   NORMAL, DISABLED
 }
@@ -124,11 +127,15 @@ void setup() {
 void draw() {
   try {
     // use || to contain other kind of loading
-    if (isLoadingAlternative) {
+    if (isLoadingAlternative || isLinux) {
       loading();
       return;
     }
-    imageMode(CENTER);
+    if (playerController.ifGameWin && level == 3) {
+    showEnd();
+    return;
+  }
+  imageMode(CENTER);
     if (level==-2) {
       showTitle();
     } else if (level==-1) {
@@ -194,8 +201,20 @@ void draw() {
   outputFrame++;
 }
 
+public void showEnd() {
+  fill(0, alphaValue);
+  rect(0,0,width,height);
+  if (alphaValue < 150) {
+    alphaValue++;
+  } else {
+    fill(255);
+    text("Finish all level",width/2,height/2);
+  }
+  
+}
+
 public String getTime() {
-  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
   Date date = new Date(System.currentTimeMillis());
   return format.format(date);
 }
@@ -203,6 +222,8 @@ public String getTime() {
 void loading() {
   if (isLoadingAlternative) {
     image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+  } else if (isLinux) {
+    image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
   }
 }
 
@@ -227,7 +248,7 @@ void checkGameStatus() {
     ifGameOver=true;
   }
 
-  if (playerController.ifGameWin) {
+  if (playerController.ifGameWin&&level<3) {
     //fill(255);
     //text("Congratulations. You passed this level!!\nClick to continue.", 650, 400);
     image(loadImage("./assets/Background/nextLevel.png"), width/2, height/2);
@@ -499,8 +520,13 @@ void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
     if (platformNames[platform]=="linux") {
-      print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
-      image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
+      // print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
+      //image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
+      isLinux = true;
+      return;
+    }
+    if (isLinux == true) {
+      isLinux = false;
       return;
     }
     if (showDisabilityDetails) {
@@ -589,6 +615,7 @@ public void restartLevel() {
     map.bombList.clear();
     map.placeBomb();
   }
+  alphaValue = 0;
 }
 
 public void placeClock() {

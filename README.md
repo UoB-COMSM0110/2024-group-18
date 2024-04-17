@@ -8,9 +8,9 @@ https://youtu.be/J3RTHQjeOvg
 
 # 1. Development Team
 <p align="center">
+  <b>Figure 1</b><br>
+  <i>Team Picture Week 1 with team role</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
-  <br>
-  <em>Team picture from Week 1 at Wagamamas, to discuss project/team expectations early</em>
 </p>
 
 ### Team Role (from left to right of image):
@@ -131,22 +131,80 @@ External layers include considering regulatory agencies and gaming communities, 
   <i>Figure 5: User Story 3</i>
 </p>
 
-### Stories To Use-Cases Breakdown (Use-Case Diagram)
+### Use-Cases Breakdown 
+Having established a 'Casual Gamer' focus, we understood early on in the game development process the difficulties when making a game to a large group of customers. Therefore, we used the Use-Case Diagram and Specification model as a guide to create a dual mode gameplay system that includes an accessibility mode in order to increase our reach and provide additional features. While the game uses standard keyboard controls in Non-Accessibility Mode, it makes use of **Camera Detection technology** in Accesibility Mode to let players with disadvantages to control the game with head motions. This innovation is in line with our commitment to diversity and improves accessibility for those with limited mobility.
 
-### Specifying Atomic Requirements (Quality and Verifiability of RE)
+Both modes, which have different interaction methods but comparable goals and obstacles, are demonstrated below:
+<p align="center">
+  <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
+  <br>
+  <i>Figure 5: Use Case Diagram</i>
+</p>
 
-# 4. Design (15% ~750 words) (Kai/Mihir/Tom)
+<p align="center">
+  <img src="Assets_For_ReadMe/specdraft.png" width="75%">
+  <br>
+  <i>Figure 6: Use Case Specification</i>
+</p>
 
-- [ ] **System architecture (Kai/Mihir).**
-    - Describe the system architecture planned and used.
 
-According to the requirements specification, a system architecture was formed. The first part of the system that users interact with is the menu. Users can start the game, choose levels, and initiate an alternate control mode. During the game, we try to match the system to the real world, using visual cues to indicate damage or the direction the player will move next. A platform-puzzle game with the novel mechanism of time inversion required several components to be designed. We created a Game Object and several sub-classes (platforms, players, and interactable items), a Player Controller, a Map, a Map Controller, and Main to run the primary game loop. Data was passed through various components: Main-Controllers, Controller-Player, Controller-Map, Controller-Items. Main contains several flags to indicate which methods are called. It creates instances of the Player Controller and Map Controller. These Controllers also hold flags to control methods and lists to store items. As an expansion of the system, from an inclusive perspective, there is an alternative controlling mode designed for people with disabilities (e.g., Carpal Tunnel), allowing them to use a webcam input through the Deep Vision Processing library.
+# 4. Design 
+Having evaluated our potential stakeholders and evaluated a diverse range of User Stories, we now had a sense of the features we wanted to incorporate into out Game design, as well as the Use-Case Diagram/Specification providing us how we can specialise into accessibility features.
 
-- [ ] **Class diagrams (Mihir).**
-    - Provide class diagrams to represent the static structure of the system.
-- [ ] **Behavioural diagrams (Mihir - might need help on this).**
-    - Include behavioural diagrams to showcase the dynamic aspects of the system.
+A **Class Diagram** would provide a systematic view of of our Game System, allowing us to plan ahead and template the relationship between objects, which would serve as planning for good **Object-Orientated Design (OOD)** within our source code. To do so, we first wrote down a plan for System Architecture by callaborating in-person through Whiteboard sessions (see Section 7). This allowed for the Class Diagram formation to be a seemless process. 
 
+Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where having evaluated many classes in our system, the sequence would allow for ease in debugging, especially where the Processing IDE has poor debugging facilities. 
+
+
+Find below how we evaluated Design for Oiram, later following an evaluation and reflection: 
+### System architecture 
+# Project Overview
+
+Based on the requirements specification, we developed a system architecture that begins with a user-interface menu. Here, players can start the game, select levels, or activate an alternative control mode tailored for users with disabilities, such as Carpal Tunnel Syndrome. We achieved this by utilizing webcam inputs via the Deep Vision and Video Processing library. The system employs visual cues to indicate player damage and potential movements in-game.
+
+## Game Mechanics
+
+The complex mechanics of time inversion in our platform-puzzle game necessitated the design of multiple components:
+
+- **Game Object**: Includes several subclasses such as platforms, players, and interactable items.
+- **Player Controller**: Manages player interactions and states.
+- **Map and Map Controller**: Handle the layout and logic of game levels.
+- **Main Class**: Manages the game loop, flags for method calls, and oversees the creation of Player Controller and Map Controller instances. These controllers maintain method control flags and item lists.
+
+## Cross-Platform Library Challenges
+
+A challenge we faced included figuring out how to get the libraries to work cross-platform, across MacOS, Linux, and Windows. These issues came due to outdated packages within Processing Libraries across OS platforms. For instance, particularly for the Video library, whilst working on macOS, Linux would give the error:
+
+```bash
+(Processing core video:295602): GStreamer-WARNING **: 17:27:43.028: Failed to load plugin '/home/mihirgany/IdeaProjects/2024-group-18/libraries/libraries/video/library/linux-amd64/gstreamer-1.0/libgsthls.so': libcrypto.so.1.1: cannot open shared object file: No such file or directory
+```
+### Class diagrams 
+
+<p align="center">
+  <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
+  <br>
+  <i>Figure 7: Class Diagram Generated W5 Labs.</i>
+</p>
+
+<p align="center">
+  <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
+  <br>
+  <i>Figure 8: Updated Class Diagram to date.</i>
+</p>
+
+Figure 7 and 8 indicates how our Class Diagram changed over time. In particular, when first trying out player movement, we found that collisions was particularly difficult to program, due to...
+
+Therefore, once collision became easier to program, more classes were incorporated into the diagram, such as the Bomb class.
+
+### Behavioural diagrams 
+<p align="center">
+  <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
+  <br>
+  <i>Figure 8: Sequence Diagram</i>
+</p>
+When creating the Oiram game, we embraced OOD and Agile methodologies to evolve our game's design continuously. This approach required frequent updates to our system architecture, class, and sequence diagrams, essential tools for visualising and understanding the game's structure and interactions. However, the fast pace of Agile development meant that these foundational documents often needed to catch up to the latest game adjustments, showcasing a key challenge of Agile: maintaining up-to-date design documentation amidst rapid changes.
+
+Looking ahead, to better balance the need for quick adaptations with the necessity of thorough planning, we propose integrating periodic reviews into version control and consider continuously pushing to our report and source code. Although this comes as a challenge because this is our first game project, we experimented late into the project tools such as  [Intelij's Diagram Plugin](https://www.jetbrains.com/help/idea/class-diagram.html) by rewriting .pde to .java, which would have saved time and provided consistency within minimal effort. Additionally, although we stayed consistent with lab work, and ensuring that we incorporated it into the report, we ended up using that content as a plan. Whereas a more effective strategy would have been building on what we already had, and seeking feedback by the end of next week. Overall the importance of consistency is highlighted during Game Design. 
 # 5. Implementation
 
 Before starting any of our challenges, we needed to create a basic platformer. First, we created a `GameObject` from which all physical items in the game inherit, as well as a `Player` (which includes specific player behaviour) and a `PlayerController` (which includes the logic for how the player is controlled).
@@ -157,7 +215,7 @@ While not one of our official challenges, we found that programming collisions a
 
 1. **Implementing the reverse time mechanic**
 
-   This was by far the hardest task. We wanted to store not just the previous player's locations but also have that player interact with the environment (for example, opening doors). We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object.
+   This was by far the hardest task. We wanted to store not just the previous player's locations but also have that player interact with the environment (for example, opening doors). We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object. To reduce the amount of code we had to write, we took advantage of our existing Player class. This object contained the logic for collisions with buttons and other game objects since the implementation is the same.
 
    The bomb was even more complex. We created explode and unexplode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
@@ -178,11 +236,10 @@ While not one of our official challenges, we found that programming collisions a
 
    Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
 
-   In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players.
+   In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
 
-
-# 6. Evaluation (15% ~750 words) (Tom)
+# 6. Evaluation 
   During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
   Our game aims to reward future planning and puzzle-solving. After examining our own video game preferences, and a literature review which suggested that game difficulty can improve overall enjoyment when it is not overly frustrating and provides a satisfying challenge to overcome (Alexander et al., 2013). [Tom - I need to make this better] It was, therefore, important that we accurately assessed the perceived difficulty. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
@@ -264,12 +321,7 @@ We took some of this feedback and then included some visual hints on the screen,
 </p>
 
 
-
--
-- [ ] **Description of how code was tested.**
-    - Explain the methods used to test the code.
-
-# 7. Process (15% ~750 words) - (Ali)
+# 7. Process 
 
 ## Collaboration
 
@@ -310,19 +362,9 @@ Pair programming was something that we used frequently. Since Yi had previous ex
 We adopted an agile methodology, allowing us to build the game slowly based on user feedback. This was very effective, especially since many of us had little knowledge of game development. However, we did encounter some issues. Early on, the pressure to get a feature "working" overrode the desire to create long-term, maintainable code. You can see this with the collision detections, the initial code had to be rewritten to be extensible. We addressed this by implementing a workflow based on pull requests and code reviews. Inspired by industry best practices, code reviews allowed each of us to uplevel our skills and write significantly better code as measured by cyclomatic complexity (which decreased by 79% between the 3rd week of the project and the 7th.)
 
 
-# 8. Conclusion (10% ~500 words) (Tom)
+# 8. Conclusion 
 
-- [ ] **Reflect on project as a whole.**
-    - Provide an overview reflection of the entire project.
-- [ ] **Lessons learned.**
-    - Share key lessons learned throughout the project.
-- [ ] **Reflect on challenges.**
-    - Reflect on the challenges faced and how they were overcome.
-- [ ] **Future work.**
-    - Discuss any plans or ideas for future work on the project.
-
-# Bibliography -- can we have it APA style??? 
-### Mihir:
+# 9. Bibliography 
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
@@ -335,6 +377,8 @@ Cucolaş, A.-A., & Russo, D. (2023). The impact of working from home on the succ
 Davis, A. M. Alan M. (1993). Software requirements: Objects, functions, and states. Englewood Cliffs, N.J. : PTR Prentice Hall. http://archive.org/details/softwarerequirem0000davi
 
 Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research. Advances in Psychology, 139–183. https://doi.org/10.1016/s0166-4115(08)62386-9 
+
+Heydarian, C. H. (2020). The Curb-Cut Effect and its Interplay with Video Games. Arizona State University.
 
 Joe, J., Chaudhuri, S., Le, T., Thompson, H., & Demiris, G. (2015). The use of think-aloud and Instant Data Analysis in evaluation research: Exemplar and lessons learned. Journal of Biomedical Informatics, 56, 284–291. https://doi.org/10.1016/j.jbi.2015.06.001 
 
@@ -353,5 +397,5 @@ Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessin
 Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
 
-
+TODO: Heuristics - noticed how players dont read tutorial and therefore incorporated into level.
 
