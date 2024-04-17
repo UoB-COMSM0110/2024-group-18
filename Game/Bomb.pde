@@ -9,20 +9,16 @@ class Bomb extends GameObject {
   int deIndex=explode.length-1;
   int frame=0;
 
+  /* Creates a new bomb object with an X coordinate - creates images for animation.  */
   public Bomb(float x) {
     super(x, 0, 60, 80);
     this.currentImage=loadImage("./assets/Dynamic/bomb.png");
-
-    explode[0]=loadImage("./assets/Dynamic/explode1.png");
-    explode[1]=loadImage("./assets/Dynamic/explode2.png");
-    explode[2]=loadImage("./assets/Dynamic/explode3.png");
-    explode[3]=loadImage("./assets/Dynamic/explode4.png");
-    explode[4]=loadImage("./assets/Dynamic/explode5.png");
-    explode[5]=loadImage("./assets/Dynamic/explode6.png");
-    explode[6]=loadImage("./assets/Dynamic/explode7.png");
-    explode[7]=loadImage("./assets/Dynamic/explode8.png");
+    for (int i=1; i<=8; i++) {
+      explode[i-1]=loadImage("./assets/Dynamic/explode"+i+".png");
+    }
   }
 
+  /* Resets the bomb position.  */
   public void reset() {
     currentImage=loadImage("./assets/Dynamic/bomb.png");
     float left_edge = 150;
@@ -32,6 +28,7 @@ class Bomb extends GameObject {
     velocity.y=speed;
   }
 
+  /* Triggers the de-explosion animation.*/
   public boolean deExplode() {
     if (frame%3==0) {
 
@@ -48,9 +45,9 @@ class Bomb extends GameObject {
     return false;
   }
 
+  /* Triggers the explosion animation.*/
   public boolean explode() {
     if (frame%3==0) {
-
       index++;
       if (index>=explode.length) {
         index=0;
@@ -62,10 +59,8 @@ class Bomb extends GameObject {
     return false;
   }
 
-
-
+  /* Checks if the object collides with another object.*/
   public boolean checkCollision(GameObject obj) {
-
     if (location.x-objectWidth/2<obj.location.x+obj.objectWidth/2&&
       location.x+objectWidth/2>obj.location.x-obj.objectWidth/2&&
       location.y-objectHeight/2<obj.location.y+obj.objectHeight/2&&
@@ -73,9 +68,11 @@ class Bomb extends GameObject {
       // colliding
       return true;
     }
-    return false; // no collision
+    // no collision
+    return false;
   }
 
+  /* Places the bomb in relation to the given object. */
   public void setBombLocation(GameObject obj) {
     // on platform
     if (location.y+objectHeight/2>obj.location.y-obj.objectHeight/2&&velocity.y>=0) {

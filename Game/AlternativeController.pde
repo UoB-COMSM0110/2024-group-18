@@ -28,10 +28,10 @@ class AlternativeController {
     network = vision.createULFGFaceDetectorRFB320();
     network.setup();
     String[] cameras = Capture.list();
-    cam = new Capture(parent, cameras[0]);
     if (cameras.length == 0) {
       exit();
     } 
+    cam = new Capture(parent, cameras[0]);
     cam.start();
 
     // audio stuff
