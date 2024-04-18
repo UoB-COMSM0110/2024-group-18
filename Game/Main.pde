@@ -53,6 +53,7 @@ int alternativeLag = 0;
 
 int alphaValue = 0;
 boolean isLinux = false;
+int endStart = 1200;
 
 enum ControlType {
   NORMAL, DISABLED
@@ -207,8 +208,13 @@ public void showEnd() {
   if (alphaValue < 150) {
     alphaValue++;
   } else {
-    fill(255);
-    text("Finish all level",width/2,height/2);
+    image(loadImage("./assets/End/members.png"), width/2, endStart);
+    image(loadImage("./assets/End/details.png"), width/2, endStart+height);
+    image(loadImage("./assets/End/thanks.png"), width/2, endStart+2*height);
+    image(loadImage("./assets/End/esc.png"), width/2, height-30);
+    if (endStart > - height-500) {
+      endStart -= 2;
+    }
   }
   
 }
@@ -616,6 +622,7 @@ public void restartLevel() {
     map.placeBomb();
   }
   alphaValue = 0;
+  endStart = 1200;
 }
 
 public void placeClock() {
