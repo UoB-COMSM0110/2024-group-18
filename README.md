@@ -364,7 +364,14 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 # 8. Conclusion 
 
-# 9. Bibliography 
+- **Mihir**: 1.00
+- **Tom**: 1.00
+- **Ali**: 1.00
+- **Yi**: 1.00
+- **Kaiyan**: 1.00
+
+
+# 10. Bibliography 
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
