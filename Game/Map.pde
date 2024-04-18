@@ -312,7 +312,6 @@ class Map {
     if (item.itemNum == 11) {
       while (temp.itemNum <= 13) {
         temp.movingPace = -temp.movingPace;
-        //temp.location.x += item.movingPace;
         staticItems.set(index,temp);
         index++;
         if (index > staticItems.size()-1 || staticItems.get(index).itemNum == 11) {
@@ -360,6 +359,17 @@ class Map {
       }
     }
     return false;
+  }
+  
+  public void revertMP() {
+    Item temp = null;
+    for (Item item : staticItems) {
+      if (item.itemNum>=11&&item.itemNum<=13) {
+        temp = item;
+        temp.movingPace = -temp.movingPace;
+        staticItems.set(staticItems.indexOf(item),temp);
+      }
+    }
   }
   
   /*

@@ -232,7 +232,7 @@ class PlayerController {
             map.ifBombInverse=true;
             pastSelf.location.set(item.location.x, item.location.y+40);
             if (!ifMovingPlatformReverse) {
-              map.mpSpeed = -map.mpSpeed;
+              map.revertMP();
               ifMovingPlatformReverse = true;
             }
           }
