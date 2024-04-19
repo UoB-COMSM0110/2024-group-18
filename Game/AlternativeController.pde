@@ -7,10 +7,10 @@ import processing.sound.*;
 class AlternativeController {
   PlayerController playerController;
 
-  // sound libraries
+  // The sound libraries
   Amplitude amp;
   AudioIn in;
-  // webcam and AI libraries.
+  // The webcam and AI libraries.
   DeepVision vision;
   ULFGFaceDetectionNetwork network;
   ResultList<ObjectDetectionResult> detections;
@@ -20,6 +20,8 @@ class AlternativeController {
   float camWidth;
   float camHeight;
 
+  /* Creates a new instance of the alternative controller object including importing the machine vision libraries
+  note that this takes several seconds so an appropriate loading screen should be shown to the user.  */
   public AlternativeController(PApplet parent, PlayerController playerController) {
     this.playerController=playerController;
     vision = new DeepVision(parent);
@@ -45,6 +47,8 @@ class AlternativeController {
     camY=height-camHeight;
   }
 
+  /* allows the controlling of the character with the webcam and sound input.
+  Displays the webcam on the screen to provide feedback to the user. */
   void control() {
     // audio stuff
     soundController();
