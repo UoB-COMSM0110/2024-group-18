@@ -52,9 +52,8 @@ class PlayerController {
 
 
 
-
+// maps valid keypresses to movement
   public void movementControl() {
-    // add wasd as control just for feel better when do testing :)
     movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
     movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
     isJumping = (keyCode == UP || key == 'w' || inputUp==true) && player.isOnGround;
@@ -80,24 +79,22 @@ class PlayerController {
       }
     }
   }
-
+  
+  // if there has been a collision between the player and a bomb then return true
   public boolean checkBomb(Map map) {
     if (checkCollision(map.bomb)) {
-      // hurt by bomb
-
       return true;
     }
     return false;
   }
 
-
+// returns true if the player is colliding with a stuctrue or item
   public boolean checkCollision(GameObject obj) {
     if (player.location.x-player.objectWidth/2<obj.location.x+obj.objectWidth/2&&
       player.location.x+player.objectWidth/2>obj.location.x-obj.objectWidth/2&&
       player.location.y-player.objectHeight/2<obj.location.y+obj.objectHeight/2&&
       player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2) {
       // colliding
-
       return true;
     }
     return false; // no collision
@@ -133,7 +130,7 @@ class PlayerController {
     }
   }
 
-  public boolean checkShadowCollision(GameObject obj) {
+  public boolean checkPastSelfCollision(GameObject obj) {
     if (pastSelf.location.x-pastSelf.objectWidth/2<obj.location.x+obj.objectWidth/2&&
       pastSelf.location.x+pastSelf.objectWidth/2>obj.location.x-obj.objectWidth/2&&
       pastSelf.location.y-pastSelf.objectHeight/2<obj.location.y+obj.objectHeight/2&&
@@ -240,14 +237,14 @@ class PlayerController {
       }
 
       // all interatctions between past player and items
-      if (checkShadowCollision(item)) {
+      if (checkPastSelfCollision(item)) {
         if (item.itemNum==8) {
           // buttons
           map.openDoor();
         }
       }
 
-      if (!checkCollision(item)&&!checkShadowCollision(item)) {
+      if (!checkCollision(item)&&!checkPastSelfCollision(item)) {
         if (item.itemNum==8) {
           map.closeDoor();
         }
