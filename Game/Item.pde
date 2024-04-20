@@ -17,6 +17,7 @@ class Item extends GameObject {
   
   float movingPace = 0;
 
+  // Constructor initializes the item with its properties and animations if applicable.
   public Item(int itemNum, float x, float y, float objectWidth, float objectHeight,float imageWidth,float imageHeight,
     boolean ifStatic, boolean ifHurt, boolean ifTriggered) {
     super(x, y, objectWidth, objectHeight);
@@ -28,6 +29,7 @@ class Item extends GameObject {
     this.imageWidth=imageWidth;
     this.imageHeight=imageHeight;
     
+    // load the animations for the button item
     if(itemNum==8){
       // add button animation
       onAnimation=new PImage[4];
@@ -47,6 +49,7 @@ class Item extends GameObject {
     this.currentImage=loadImage(image);
   }
   
+  // checks to see if the player has activated the button
   public void checkTriggerAnimation(){
     if(itemNum==8){
       // button
@@ -55,6 +58,7 @@ class Item extends GameObject {
     }
   }
   
+  // this controls the lighting animation for the button which opens the door
   public void selectButtonStatus(){
     if(ifTriggered){
       currentAnimation=onAnimation;
@@ -63,6 +67,7 @@ class Item extends GameObject {
     }
   }
   
+  // this loads the button image
   public void displayButtonImage(){
     if(frame%2==0){
       currentImage=currentAnimation[index];
@@ -74,7 +79,7 @@ class Item extends GameObject {
     frame++;
   }
 
-  // for debugging
+  // used for debugging, returns helpful info about the item
   public String toString() {
     return " x= "+ this.location.x +
       " y= "+ this.location.y +  " item num= "+ this.itemNum + " height= "+
