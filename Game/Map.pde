@@ -18,7 +18,7 @@ class Map {
 
   Bomb bomb;
 
-  HashMap bombList = new HashMap<>();
+  HashMap bombList = new HashMap<>(); // stores each bomb that falls in a list
 
   float mpSpeed = -5;
 
@@ -31,7 +31,8 @@ class Map {
     placeBomb();
     bombList.clear();
   }
-
+  
+  // spawns a bomb to fall from a random point at the top of the screen
   public void placeBomb() {
     float left_edge = 150;
     float right_edge = 200;
@@ -195,7 +196,8 @@ class Map {
     currentAnimation[3]="./assets/Static/Door/door4.png";
     currentAnimation[4]="./assets/Static/Door/door5.png";
   }
-
+  
+  // this is triggered when the button is pressed and loads each door animation in turn giving its opening animation
   public void openDoor() {
     loadDoorAnimation();
     for (Item item : dynamicItems) {

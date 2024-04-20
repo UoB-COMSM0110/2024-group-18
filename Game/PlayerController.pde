@@ -6,7 +6,7 @@ class PlayerController {
   Player player;
   PastPlayer pastSelf;
 
-  boolean ifShadowGenerated=false;
+  boolean ifPastSelfGenerated=false;
   boolean ifGameWin=false;
 
   boolean movingRight=false;
@@ -227,8 +227,8 @@ class PlayerController {
           hasPressed = true;
         } else if (item.itemNum==9) {
           // time machine
-          if (!ifShadowGenerated) {
-            ifShadowGenerated=true;
+          if (!ifPastSelfGenerated) {
+            ifPastSelfGenerated=true;
             map.ifBombInverse=true;
             pastSelf.location.set(item.location.x, item.location.y+40);
             if (!ifMovingPlatformReverse) {
@@ -256,7 +256,7 @@ class PlayerController {
   }
 
   public boolean shadowAndPlayerCollide() {
-    if (!ifShadowGenerated) {
+    if (!ifPastSelfGenerated) {
       return false;
     }
     if (checkCollision(pastSelf)) {
@@ -266,7 +266,7 @@ class PlayerController {
   }
   
   public boolean checkGameOver(Map map, int level) {
-    if (ifShadowGenerated&&pastSelf.stateCollection.size()==0) {
+    if (ifPastSelfGenerated&&pastSelf.stateCollection.size()==0) {
       pastSelf.refresh();
       return true;
     }
@@ -288,12 +288,12 @@ class PlayerController {
     return false;
   }
 
-  public void displayShadow() {
-    if (!ifShadowGenerated) {
+  public void displayPastSelf() {
+    if (!ifPastSelfGenerated) {
       pastSelf.storeState(player.location, player.currentImage);
     }
 
-    if (ifShadowGenerated && !ifGameOver) {
+    if (ifPastSelfGenerated && !ifGameOver) {
       pastSelf.accessPastState();
       image(pastSelf.currentImage, pastSelf.location.x, pastSelf.location.y+5, 60, 60);
     }
@@ -302,7 +302,7 @@ class PlayerController {
   public void refresh(Map map) {
     ifGameOver=false;
     ifGameWin=false;
-    ifShadowGenerated=false;
+    ifPastSelfGenerated=false;
     deadByBomb=false;
     map.ifBombInverse=false;
     pastSelf.refresh();

@@ -377,7 +377,7 @@ void generateHint() {
   if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
     hintLag = 1;
   }
-  if (hintLag >0 && hintLag <= 200 && !playerController.ifShadowGenerated) {
+  if (hintLag >0 && hintLag <= 200 && !playerController.ifPastSelfGenerated) {
     if (hintLag < 20) {
       image(loadImage("./assets/Hint/oh-no.png"), 800, 300, 144, 40);
     } else if (hintLag < 55) {
@@ -389,7 +389,7 @@ void generateHint() {
     }
     hintLag++;
   }
-  if (playerController.ifShadowGenerated && hintLag>0 && invertLag == 0) {
+  if (playerController.ifPastSelfGenerated && hintLag>0 && invertLag == 0) {
     invertLag = 1;
   }
   if (invertLag > 0 && invertLag < 100 && !ifGameOver && !ifLevelPass) {
@@ -424,7 +424,7 @@ void playerDraw() {
   playerController.updateAnimation();
   player.updateAnimation();
   if (!ifLevelPass) {
-    playerController.displayShadow();
+    playerController.displayPastSelf();
   }
   player.velocity.add(player.acceleration);
   player.location.add(player.velocity);
@@ -629,7 +629,7 @@ public void placeClock() {
   time_y=30*cos(time);
   line(100, 100, 100+time_x, 100-time_y);
   if (!ifLevelPass) {
-    if (playerController.ifShadowGenerated) {
+    if (playerController.ifPastSelfGenerated) {
       time-=0.008;
     } else {
       time+=0.008;
