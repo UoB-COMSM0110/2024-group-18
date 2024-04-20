@@ -93,7 +93,7 @@ void setup() {
   font=createFont("./assets/PressStart2P-Regular.ttf", 20);
   textFont(font);
   title=loadImage("./assets/Background/title.png");
-  startScreen=loadImage("./assets/Background/newStartup.png");
+  startScreen=loadImage("./assets/Background/titleBackground.png");
   setting=loadImage("./assets/Background/setting.png");
   control=loadImage("./assets/Background/control.png");
   controlOption=loadImage("./assets/Background/control_key.png");
