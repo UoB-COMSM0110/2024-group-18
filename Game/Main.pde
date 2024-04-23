@@ -238,7 +238,11 @@ void loading() {
 
 /* Show background during game */
 void showBackground() {
-  image(background01, 800, 450, 1600, 900);
+  if (level != 3) {
+    image(background01, 800, 450, 1600, 900);
+  } else {
+    image(background02, 800, 450, 1600, 900);
+  }
 }
 
 /* check how player died during game and present a specific death message*/
