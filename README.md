@@ -1,7 +1,27 @@
-# How To Install And Set Up
-For our game you need Processing, as well as the "Video", "Deep Vision" and "Sound" libraries. They can be installed by going through the Library Manager. Select “Add Library...” from the “Import Library...” submenu within the Sketch menu. Then search for each of the three libraries by name and install it. See this tutorial for more information. https://processing.org/tutorials/video
+<p align="center">
+  <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
+    <br>
+  </a>
+</p>
 
-Note: the Processing video library is not supported on Linux. For the full game experience (including accessibility mode), please play using a Mac or PC.
+# Game Setup Instructions
+
+To play our game, you must install Processing and the following libraries: "Video," "Deep Vision," and "Sound." Here's how to do it:
+
+1. **Open Processing**: Launch the Processing application on your computer.
+
+2. **Library Manager**: Open the Library Manager by selecting “Import Library...” from the “Sketch” menu, then choose “Add Library...”.
+
+3. **Install Libraries**:
+   - Use the search bar to find each of the following libraries:
+      - "Video"
+      - "Deep Vision"
+      - "Sound"
+   - Click "Install" for each library.
+
+4. **Learn More**: For additional guidance on installing libraries, check out [this tutorial](https://processing.org/tutorials/video).
+
+Once you've installed Processing and the required libraries, you're all set to run the game!
 
 # Video Tutorial
 [![Oiram Tutorial Video](Assets_For_ReadMe/videoBackground.gif)](https://youtu.be/J3RTHQjeOvg "Little red riding hood - Click to Watch!")
