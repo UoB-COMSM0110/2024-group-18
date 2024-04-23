@@ -6,6 +6,29 @@ Note: the Processing video library is not supported on Linux. For the full game 
 # Video
 https://youtu.be/J3RTHQjeOvg
 
+## Table of Contents
+- [1. Development Team](#1-development-team)
+- [Introduction](#2-introduction-)
+- [Requirements](#3-requirements-15-750-words-mihir)
+   - [Ideation Process](#process)
+   - [Early Stages Design](#early-stages-design)
+- [Design](#design)
+   - [System Architecture](#system-architecture)
+   - [Class Diagram](#class-diagram)
+   - [Sequence Diagram](#sequence-diagram)
+- [Implementation](#implementation)
+   - [Challenge 1: Platforming Framework](#challenge-1-platforming-framework)
+   - [Challenge 2: GamePlay Twists](#challenge-2-gameplay-twists)
+   - [Challenge 3: Integration and UI](#challenge-3-integration-and-ui)
+- [Evaluation](#evaluation)
+   - [Qualitative Evaluations](#qualitative-evaluations)
+   - [Quantitative Evaluations](#quantitative-evaluations)
+   - [How code was tested](#how-code-was-tested)
+- [Process](#process)
+- [Conclusion](#conclusion)
+- [Documentation of code](#documentation-of-code)
+- [Individual Contribution Table](#individual-contribution-table)
+- 
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
@@ -73,7 +96,7 @@ Oiram's narrative complexity is inspired by Tenet, the timeless platforming of S
 ### Why Play Oiram?
 Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
 
-# 3. Requirements (15% ~750 words) (Mihir)
+# 3. Requirements 
 ### Introduction to Requirement Engineering (RE)
 “The two most important parts of a computing system are the users
 and their data, in that order.” Neville Holmes. (Alexander & Beus-Dukic, 2009, p. 27).
