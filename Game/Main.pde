@@ -281,7 +281,7 @@ void showTitle() {
   if (lag==25) {
     level=-1;
   }
-  lag++;
+  lag+=0.5;
 }
 
 /* Generate UI botton on the right top of the screen during game*/
