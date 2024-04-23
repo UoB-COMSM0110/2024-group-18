@@ -227,6 +227,13 @@ class PlayerController {
           if (!ifPastSelfGenerated) {
             ifPastSelfGenerated=true;
             map.ifBombInverse=true;
+            if(player.location.x<item.location.x){
+              player.location.set(item.location.x+40, item.location.y+40);
+            }else{
+              player.location.set(item.location.x-40, item.location.y+40);
+            }
+            
+            
             pastSelf.location.set(item.location.x, item.location.y+40);
             if (!ifMovingPlatformReverse) {
               map.revertMP();
