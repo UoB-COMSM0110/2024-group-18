@@ -6,7 +6,7 @@ Note: the Processing video library is not supported on Linux. For the full game 
 # Video
 https://youtu.be/J3RTHQjeOvg
 
-## Table of Contents
+# Table of Contents
 - [1. Development Team](#1-development-team)
 - [2. Introduction](#2-introduction-)
 - [3. Requirements](#3-requirements-)
