@@ -3,8 +3,8 @@ For our game you need Processing, as well as the "Video", "Deep Vision" and "Sou
 
 Note: the Processing video library is not supported on Linux. For the full game experience (including accessibility mode), please play using a Mac or PC.
 
-# Video
-https://youtu.be/J3RTHQjeOvg
+# Video Tutorial
+[![Oiram Tutorial Video](Assets_For_ReadMe/videoBackground.gif)](https://youtu.be/J3RTHQjeOvg "Little red riding hood - Click to Watch!")
 
 # Table of Contents
 - [1. Development Team](#1-development-team)
