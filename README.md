@@ -15,7 +15,7 @@ https://youtu.be/J3RTHQjeOvg
 - [6. Evaluation](#6-evaluation-)
 - [7. Process](#7-process-)
 - [8. Conclusion](#8-conclusion-)
-- [9. Acknowledgements](#10-bibliography-)
+- [9. Acknowledgements](#9-acknowledgements)
  
 # 1. Development Team
 <p align="center">
@@ -333,7 +333,6 @@ We took some of this feedback and then included some visual hints on the screen,
 
 
 # 7. Process 
-
 ## Collaboration
 
 Our first few meetings were conducted in person. This allowed maximal flexibility as we discussed various design ideas and got to know each other. In fact, our first meeting ever was at a restaurant, and we focused exclusively on getting to know each other and our gaming histories. We connected in person at the end of each Monday morning lab, and divided up that week’s tasks using a variant of planning poker. (We noticed that development tasks would take different people different amounts of time, so we attempted to give harder tasks to faster coders even out how much time people spent on the game.)
@@ -382,7 +381,7 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 - **Kaiyan**: 1.00
 
 
-# 10. Bibliography 
+# 9. Acknowledgements
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
