@@ -100,7 +100,7 @@ void setup() {
   controlOption=loadImage("./assets/Background/control_key.png");
   background01=loadImage("./assets/Background/star.jpeg");
   background02=loadImage("./assets/Background/star2.jpeg"); // need to make this image correct size
-  clock = loadImage("./assets//Clock.png");
+  clock = loadImage("./assets/Background/clock-asset.png");
   levelOption1 = loadImage("./assets/Background/level1.png");
   levelOption2 = loadImage("./assets/Background/level2.png");
   levelOption3 = loadImage("./assets/Background/level3.png");
@@ -238,7 +238,11 @@ void loading() {
 
 /* Show background during game */
 void showBackground() {
-  image(background01, 800, 450, 1600, 900);
+  if (level != 3) {
+    image(background01, 800, 450, 1600, 900);
+  } else {
+    image(background02, 800, 450, 1600, 900);
+  }
 }
 
 /* check how player died during game and present a specific death message*/
@@ -251,6 +255,7 @@ void checkGameStatus() {
     } else {
       image(loadImage("./assets/Background/gameOver.png"), width/2, height/2);
     }
+    time=0;
     ifGameOver=true;
   }
   // handle when this level passed
@@ -586,6 +591,7 @@ void mousePressed() {
   }
   if (ifLevelPass) {
     level++;
+    time=0;
     ifLevelPass=false;
     playerController.refresh(map);
   }
@@ -624,12 +630,22 @@ public void restartLevel() {
 
 /* Logic for the clock on left top of the screen, as a reminder for time inverse */
 public void placeClock() {
-  image(clock, 100, 100, 300, 300);
-  stroke(255, 204, 204);
-  strokeWeight(5);
-  time_x=30*sin(time);
-  time_y=30*cos(time);
-  line(100, 100, 100+time_x, 100-time_y);
+  image(clock, width/2, 100, 300, 300);
+  fill(0);
+  int hour=getHour();
+  int minute=getMinute();
+  if(hour>10){
+    text((int)time+"",width/2-60,110);
+  }else{
+    text("0"+(int)time,width/2-60,110);
+  }
+  if(minute==0){
+    text("00",width/2+20,110);
+  }else{
+    text(minute+"",width/2+20,110);
+  }
+  
+  
   if (!ifLevelPass) {
     if (playerController.ifPastSelfGenerated) {
       time-=0.008;
@@ -637,4 +653,12 @@ public void placeClock() {
       time+=0.008;
     }
   }
+}
+
+private int getHour(){
+  return (int)time;
+}
+
+private int getMinute(){
+  return (int)((time-(int)time)*60);
 }
