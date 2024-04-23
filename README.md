@@ -8,27 +8,15 @@ https://youtu.be/J3RTHQjeOvg
 
 ## Table of Contents
 - [1. Development Team](#1-development-team)
-- [Introduction](#2-introduction-)
-- [Requirements](#3-requirements-15-750-words-mihir)
-   - [Ideation Process](#process)
-   - [Early Stages Design](#early-stages-design)
-- [Design](#design)
-   - [System Architecture](#system-architecture)
-   - [Class Diagram](#class-diagram)
-   - [Sequence Diagram](#sequence-diagram)
-- [Implementation](#implementation)
-   - [Challenge 1: Platforming Framework](#challenge-1-platforming-framework)
-   - [Challenge 2: GamePlay Twists](#challenge-2-gameplay-twists)
-   - [Challenge 3: Integration and UI](#challenge-3-integration-and-ui)
-- [Evaluation](#evaluation)
-   - [Qualitative Evaluations](#qualitative-evaluations)
-   - [Quantitative Evaluations](#quantitative-evaluations)
-   - [How code was tested](#how-code-was-tested)
-- [Process](#process)
-- [Conclusion](#conclusion)
-- [Documentation of code](#documentation-of-code)
-- [Individual Contribution Table](#individual-contribution-table)
-- 
+- [2. Introduction](#2-introduction-)
+- [3. Requirements](#3-requirements-)
+- [4. Ideation Process](#4-design-)
+- [5. Implementation](#5-implementation)
+- [6. Evaluation](#6-evaluation-)
+- [7. Process](#7-process-)
+- [8. Conclusion](#8-conclusion-)
+- [9. Acknowledgements](#10-bibliography-)
+ 
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
