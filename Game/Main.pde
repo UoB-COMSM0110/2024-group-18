@@ -450,9 +450,6 @@ void keyPressed() {
   if (keyCode == ESCAPE_KEYCODE) {
     resetToMainMenu();
   }
-  if (ifGameOver) {
-    restartLevel();
-  }
 }
 
 /* Retrun to main menu during game */
