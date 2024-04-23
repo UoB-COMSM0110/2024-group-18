@@ -76,8 +76,8 @@ void initializeGlobalVariablesToStartingValues() {
   showDisabilityError = false;
   showSettingBar = false;
   controlMode = ControlType.NORMAL;
-  xSpeed = 0.8;
-  ySpeed = 0.8;
+  xSpeed = 0.4;
+  ySpeed = 0.4;
   xDirection = 1;
   yDirection = 1;
   time_x = 0;
