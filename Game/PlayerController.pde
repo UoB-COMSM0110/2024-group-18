@@ -19,40 +19,39 @@ class PlayerController {
   boolean hasJumped = false;
   boolean deadByBomb=false;
   boolean deadByHitPreviousPlayer=false;
-  
+
   // these are for the alternative controller.
   boolean inputLeft = false;
   boolean inputRight = false;
   boolean inputUp = false;
-  
+
   // these are for enhanced collision check
   float staticItemHeight = 0;
   float staticItemWidth = 0;
   boolean ifTopCollide = false;
   boolean ifLeftCollide = false;
   boolean ifRightCollide = false;
-  
+
   boolean ifMovingPlatformReverse = false;
   boolean isOnMovingPlatform = false;
-  
-  
+
+
   public PlayerController(Player player) {
     this.player = player;
     pastSelf = new PastPlayer(0, 0, 20, 60);
   }
 
   public void updateAnimation() {
-    if(player.current_animation==player.disappear){
+    if (player.current_animation==player.disappear) {
       image(player.currentImage, player.location.x, player.location.y, 120, 120);
-    }else{
+    } else {
       image(player.currentImage, player.location.x, player.location.y, 60, 60);
     }
-    
   }
 
 
 
-// maps valid keypresses to movement
+  // maps valid keypresses to movement
   public void movementControl() {
     movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
     movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
@@ -79,7 +78,7 @@ class PlayerController {
       }
     }
   }
-  
+
   // if there has been a collision between the player and a bomb then return true
   public boolean checkBomb(Map map) {
     if (checkCollision(map.bomb)) {
@@ -88,7 +87,7 @@ class PlayerController {
     return false;
   }
 
-// returns true if the player is colliding with a stuctrue or item
+  // returns true if the player is colliding with a stuctrue or item
   public boolean checkCollision(GameObject obj) {
     if (player.location.x-player.objectWidth/2<obj.location.x+obj.objectWidth/2&&
       player.location.x+player.objectWidth/2>obj.location.x-obj.objectWidth/2&&
@@ -99,7 +98,7 @@ class PlayerController {
     }
     return false; // no collision
   }
-  
+
   public void getCollisionStatus(Item obj) {
     movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
     movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
@@ -120,7 +119,7 @@ class PlayerController {
     float overlapTop = objBottom - playerTop;
     float overlapBottom = playerBottom - objTop;
 
-    float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
+    float minOverlap = min(overlapLeft, overlapRight, min(overlapTop, overlapBottom));
     if (minOverlap == overlapLeft && movingLeft) {
       ifLeftCollide = true;
     } else if (minOverlap == overlapRight && movingRight) {
@@ -140,7 +139,7 @@ class PlayerController {
     }
     return false; // no collision
   }
-  
+
   public void resetCollisionStatus() {
     ifTopCollide = false;
     ifLeftCollide = false;
@@ -152,11 +151,11 @@ class PlayerController {
       // keep droping when not through the platform
       return;
     } else if (ifLeftCollide) {
-      player.location.set(obj.location.x+obj.objectWidth/2+player.objectWidth/2,player.location.y);
+      player.location.set(obj.location.x+obj.objectWidth/2+player.objectWidth/2, player.location.y);
       resetCollisionStatus();
       return;
     } else if (ifRightCollide) {
-      player.location.set(obj.location.x-obj.objectWidth/2-player.objectWidth/2,player.location.y);
+      player.location.set(obj.location.x-obj.objectWidth/2-player.objectWidth/2, player.location.y);
       resetCollisionStatus();
       return;
     }
@@ -170,7 +169,7 @@ class PlayerController {
         if (obj.itemNum>=11&&obj.itemNum<=13) {
           isOnMovingPlatform = true;
         }
-      } else if(isOnMovingPlatform) {
+      } else if (isOnMovingPlatform) {
         player.location.set(player.location.x+obj.movingPace, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
       }
       player.velocity.set(player.velocity.x, 0);
@@ -227,13 +226,13 @@ class PlayerController {
           if (!ifPastSelfGenerated) {
             ifPastSelfGenerated=true;
             map.ifBombInverse=true;
-            if(player.location.x<item.location.x){
+            if (player.location.x<item.location.x) {
               player.location.set(item.location.x+40, item.location.y+40);
-            }else{
+            } else {
               player.location.set(item.location.x-40, item.location.y+40);
             }
-            
-            
+
+
             pastSelf.location.set(item.location.x, item.location.y+40);
             if (!ifMovingPlatformReverse) {
               map.revertMP();
@@ -268,7 +267,7 @@ class PlayerController {
     }
     return false;
   }
-  
+
   public boolean checkGameOver(Map map, int level) {
     if (ifPastSelfGenerated&&pastSelf.stateCollection.size()==0) {
       pastSelf.refresh();

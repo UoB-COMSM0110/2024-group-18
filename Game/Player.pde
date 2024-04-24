@@ -7,7 +7,7 @@ class Player extends GameObject {
   boolean facingRight;
   boolean isJumping;
   float gravity = 2;
-  float jumpPower = -35;
+  float jumpPower = -30;
   float jumpDirectionalSpeed = 10.0;
   float airControl = 5.0;
   boolean platformTouched=false;

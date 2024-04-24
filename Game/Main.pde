@@ -416,6 +416,7 @@ void generateHint() {
 void playerDraw() {
   if (controlMode==ControlType.DISABLED) {
     try {
+      player.jumpPower = -35;
       alternativeController.control();
     }
     catch (Exception e) {
