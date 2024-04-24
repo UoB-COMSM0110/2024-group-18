@@ -136,11 +136,22 @@ Later in this report, we will reflect on our experience of similar issues. Users
 
 
 ### Identifying Stakeholders (Onion Model)
-Following the ideation phase, stakeholder analysis would help us design a customer-oriented game and understand boundary management, ensuring that we remain <u>focused on placing the <b>user first</b></u> and <u>not engineering an overly complex game</u>. The Onion Model, a structured approach to stakeholder research, helped us identify and prioritise our game's stakeholders based on their proximity to the project and level of impact. We placed **Puzzle Enthusiasts** at the model's core, mainly based on our primary stakeholders, our CS professors, who determine the projects' final grades. As these professors have a CS background, we wanted to create the experience that the game levels are more challenging than expected, as professors have seen many student game projects, so we wanted to stand out.
+<p align="center">
+  <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
+  <br>
+  <i>Figure X: Onion Model of Oiram Game (adapted from Alexander's book Figure 1)</i>
+</p>
+At first, we needed clarification about whether the Onion Model was appropriate for our university project, given that our main stakeholders were the assessors. However, we proceeded and found that as we applied the model, we uncovered insights and two criticisms of Alexander's Oni that expanded its perceived utility. 
 
-In the middle layers, we placed **Casual Gamers** and **Competitive Gamers**. Whilst the game is easy to use for anyone, and so can be pitched to a large group, we knew we needed to consider its accessibility and ease of use. Thus, we discovered we would need a clear tutorial and modern game UX. At the same time, competitive gamers encouraged the development of difficult aspects and score systems to foster a competitive environment.
+**Criticisms Towards Alexander's Model:**
+Firstly, our development team needs to fit into the standard framework of stakeholders in Alexander's 'System'. Alexander states that more complex software systems (large companies) traditionally hold Normal maintenance and Support Operators inside the system, whilst Developers operate on the broader environment. Vice versa can sometimes apply, defined as "The Development System." However, we acted as both for this small-scale project, developing the project while handling operational tasks. Although insignificant, it is undefined in this model.
 
-External layers include considering regulatory agencies and gaming communities, as we wanted to put the project on our portfolios after completion. Both of these require compliance and community involvement norms. These externalities serve as a reminder to keep our designs flexible to accommodate greater user feedback and regulatory needs, maintaining broad appeal and compliance. The Onion Model thus not only drove the construction of our user stories but also inspired our strategic focus on stakeholder interests throughout the game's development process.
+Diving deeper into this criticism, we thought that our team represented the popularised hybrid role of full-stack developers, where companies prefer hiring full-stack developers, over specialised front/back-end individuals. Thus, suggesting a new interpretation of Alexander's model. This flexibility might represent a trend toward more versatile teams that can address various project needs without strict role demarcation.
+
+**Surrogate Roles, Criticism Towards Alexander's Model, Future Areas to Improve:**
+Another key finding was our classification of professors as having "surrogate roles." Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while professors weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
+
+This became advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see Section 6), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. However, it also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. So, final feedback may not be reflective if more experts had mobility issues; thus, they can empathise with this feature. We can consider this for Summer Projects, conducting thorough qualitative interviews with stakeholders in the Containing System.
 
 ### Identifying Top-Level Needs (User Stories)
 <p align="center">
