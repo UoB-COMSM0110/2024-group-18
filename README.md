@@ -299,9 +299,12 @@ While not one of our official challenges, we found that programming collisions a
 # 6. Evaluation 
   During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
-  Our game aims to reward future planning and puzzle-solving, therefore it was important we were able to create a game that was challenging while still remaining fun. To do this, we examnined the team's own video game preferences alongside findings from previous studies suggest that game difficulty can improve a player's overall enjoyment when it is not overly frustrating, yet still manages satisfying challenge to overcome (Alexander et al., 2013). Based on these findings and our discussions, it was important that we accurately assessed the perceived difficulty of our game. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+  Our game aims to reward future planning and puzzle-solving, therefore it was important we were able to create a game that was challenging while still remaining fun. To do this, we examnined the team's own video game preferences alongside findings from previous studies suggest that game difficulty can improve a player's overall enjoyment when it is not overly frustrating, yet still manages satisfying challenge to overcome (Alexander et al., 2013). Based on this, it was important that we accurately assessed the perceived difficulty of our game. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
 
-  Eleven participants (N = 11), consisting of six males and five females, were collected via convenience sampling. Participants were randomly assigned to complete Level One or Level Two first to avoid issues of training bias (NEED REF). Level One was designed to be the easier of the two. Upon completion (determined by the participant), we administered the TLX. The process was repeated for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
+
+**Quantitative Evaluation**
+ 
+  Eleven participants (N = 11), consisting of six males and five females, were collected via convenience sampling. Participants were randomly assigned to complete Level One or Level Two first to avoid issues of training bias (NEED REF). Level One was designed to be the easier of the two. Upon completion of the level, or until consistent level failure, we administered the TLX. The process was repeated for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that the raw scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
 
 
 <p align="center">
@@ -311,7 +314,7 @@ While not one of our official challenges, we found that programming collisions a
 </p>
     
 
-  The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
+  The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly higher workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
 
 
 <p align="center">
@@ -320,6 +323,8 @@ While not one of our official challenges, we found that programming collisions a
   <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
 </p>
 
+
+**Qualitative Evaluation**
 
 To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA requires participants to verbally express their thoughts, feelings, and emotions whilst performing a given task, and has been shown to be an effective evaluation method in many areas of HCI (Nielsen et al., 2002; Joe et al., 2015). We utilised TA to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
 
@@ -333,7 +338,7 @@ Seventeen participants were collected again through convenience sampling. Due to
 </p>
 
 
-This data was instrumental in our development approach, and much of the qualitative data we gathered directly influenced our design choices. We will address each theme in turn.
+This data was instrumental in our development approach, and much of it directly influenced our design choices. We will address each theme in turn.
 
 **Player Movement**
 
@@ -374,7 +379,7 @@ However, others claimed they would prefer slightly more instructions on how to p
 
 *“It would be nice to have a bit more direction”*
 
-We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Figure X).
+We took some of this feedback and then included some visual hints on the screen (see Figure x), which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories.
 
 
 <p align="center">
