@@ -1,5 +1,5 @@
 class Bomb extends GameObject {
-  float speed=8;
+  float speed=6;
   PVector velocity= new PVector(0, speed);
   boolean isOnGround=false;
   float explodeTime=30;

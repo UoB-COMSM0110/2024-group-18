@@ -1,11 +1,42 @@
-# How To Install And Set Up
-For our game you need Processing, as well as the "Video", "Deep Vision" and "Sound" libraries. They can be installed by going through the Library Manager. Select “Add Library...” from the “Import Library...” submenu within the Sketch menu. Then search for each of the three libraries by name and install it. See this tutorial for more information. https://processing.org/tutorials/video
+<p align="center">
+  <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
+    <br>
+  </a>
+</p>
 
-Note: the Processing video library is not supported on Linux. For the full game experience (including accessibility mode), please play using a Mac or PC.
+# Game Setup Instructions
 
-# Video
-https://youtu.be/J3RTHQjeOvg
+To play our game, you must install Processing and the following libraries: "Video", "JavaFX",  "Deep Vision", and "Sound". Here's how to do it:
+1. **Open Processing**: Launch the Processing application on your computer.
 
+2. **Library Manager**: Open the Library Manager by selecting “Import Library...” from the “Sketch” menu, then choose “Add Library...”.
+
+3. **Install Libraries**:
+   - Use the search bar to find each of the following libraries:
+      - "Video"
+      - "Deep Vision"
+      - "Sound"
+      - "JavaFX"
+   - Click "Install" for each library.
+
+4. **Learn More**: For additional guidance on installing libraries, check out [this tutorial](https://processing.org/tutorials/video).
+
+Once you've installed Processing and the required libraries, you're all set to run the game!
+
+# Video Tutorial
+[![Oiram Tutorial Video](Assets_For_ReadMe/videoBackground.gif)](https://youtu.be/J3RTHQjeOvg "Little red riding hood - Click to Watch!")
+
+# Table of Contents
+- [1. Development Team](#1-development-team)
+- [2. Introduction](#2-introduction-)
+- [3. Requirements](#3-requirements-)
+- [4. Ideation Process](#4-design-)
+- [5. Implementation](#5-implementation)
+- [6. Evaluation](#6-evaluation-)
+- [7. Process](#7-process-)
+- [8. Conclusion](#8-conclusion-)
+- [9. Acknowledgements](#9-acknowledgements)
+ 
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
@@ -43,23 +74,29 @@ Oiram is a single-player, platform-oriented game that integrates Super Mario-sty
 **The Mission:**
 Navigate levels, dodge obstacles, and interact with objects like gates, switches, and the Tardis to activate mechanisms and portals.
 
-<div style="display: flex; justify-content: space-around; text-align: center;">
-  <div style="padding: 10px;">
-    <h3>Gates</h3>
-    <img src="Game/assets/Static/Door/door1.png" alt="Gates" style="width: auto; height: 100px;">
-    <p><i>Act as portals to the next level.</i></p>
-  </div>
-  <div style="padding: 10px;">
-    <h3>Switches</h3>
-    <img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="width: auto; height: 100px;">
-    <p><i>Toggle to control various game mechanisms.</i></p>
-  </div>
-  <div style="padding: 10px;">
-    <h3>Tardis</h3>
-    <img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="width: auto; height: 100px;">
-    <p><i>Device to invoke time reversal.</i></p>
-  </div>
-</div>
+
+<table style="width:100%; text-align:center;">
+  <tr>
+    <th>Category</th>
+    <th>Image</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Gates</td>
+    <td><img src="Game/assets/Static/Door/door1.png" alt="Gates" style="height: 100px;"></td>
+    <td>Act as portals to the next level.</td>
+  </tr>
+  <tr>
+    <td>Switches</td>
+    <td><img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="height: 100px;"></td>
+    <td>Toggle to control various game mechanisms.</td>
+  </tr>
+  <tr>
+    <td>Tardis</td>
+    <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
+    <td>Device to invoke time reversal.</td>
+  </tr>
+</table>
 
 **Obstructions:**
 Avoid explosives and pits to ensure survival.
@@ -73,7 +110,7 @@ Oiram's narrative complexity is inspired by Tenet, the timeless platforming of S
 ### Why Play Oiram?
 Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
 
-# 3. Requirements (15% ~750 words) (Mihir)
+# 3. Requirements 
 ### Introduction to Requirement Engineering (RE)
 “The two most important parts of a computing system are the users
 and their data, in that order.” Neville Holmes. (Alexander & Beus-Dukic, 2009, p. 27).
@@ -90,7 +127,7 @@ Later in this report, we will reflect on our experience of similar issues. Users
 <p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report.</i></p>
 
 <h3>Ideation Processing</h3>
-<img src="Assets_For_ReadMe/SEBrainstorm.png" width="500"/>
+<img src="Assets_For_ReadMe/SEBrainstorm.png" height=800px/>
 <p><i>Figure 3. Week 2 Brainstorm for two game ideas.</i></p>
 <p>
     In our ideation phase, we collaboratively utilised 
@@ -106,11 +143,24 @@ Later in this report, we will reflect on our experience of similar issues. Users
 
 
 ### Identifying Stakeholders (Onion Model)
-Following the ideation phase, stakeholder analysis would help us design a customer-oriented game and understand boundary management, ensuring that we remain <u>focused on placing the <b>user first</b></u> and <u>not engineering an overly complex game</u>. The Onion Model, a structured approach to stakeholder research, helped us identify and prioritise our game's stakeholders based on their proximity to the project and level of impact. We placed **Puzzle Enthusiasts** at the model's core, mainly based on our primary stakeholders, our CS professors, who determine the projects' final grades. As these professors have a CS background, we wanted to create the experience that the game levels are more challenging than expected, as professors have seen many student game projects, so we wanted to stand out.
+<p align="center">
+  <img src="Assets_For_ReadMe/onion.png" >
+  <br>
+  <i>Figure X: Onion Model of Oiram Game (adapted from Alexander's book Figure 1)</i>
+</p>
+At first, we needed clarification about whether the Onion Model was appropriate for our university project, given that our main stakeholders were the assessors. However, we proceeded and found that as we applied the model, we uncovered insights and two criticisms of Alexander's Oni that expanded its perceived utility. 
 
-In the middle layers, we placed **Casual Gamers** and **Competitive Gamers**. Whilst the game is easy to use for anyone, and so can be pitched to a large group, we knew we needed to consider its accessibility and ease of use. Thus, we discovered we would need a clear tutorial and modern game UX. At the same time, competitive gamers encouraged the development of difficult aspects and score systems to foster a competitive environment.
+**Criticisms Towards Alexander's Model:**
 
-External layers include considering regulatory agencies and gaming communities, as we wanted to put the project on our portfolios after completion. Both of these require compliance and community involvement norms. These externalities serve as a reminder to keep our designs flexible to accommodate greater user feedback and regulatory needs, maintaining broad appeal and compliance. The Onion Model thus not only drove the construction of our user stories but also inspired our strategic focus on stakeholder interests throughout the game's development process.
+Firstly, our development team needs to fit into the standard framework of stakeholders in Alexander's 'System'. Alexander states that more complex software systems (large companies) traditionally hold Normal maintenance and Support Operators inside the system, whilst Developers operate on the broader environment. Vice versa can sometimes apply, defined as "The Development System." However, we acted as both for this small-scale project, developing the project while handling operational tasks. Although insignificant, it is undefined in this model.
+
+Diving deeper into this criticism, we thought that our team represented the popularised hybrid role of full-stack developers, where companies prefer hiring full-stack developers, over specialised front/back-end individuals. Thus, suggesting a new interpretation of Alexander's model. This flexibility might represent a trend toward more versatile teams that can address various project needs without strict role demarcation.
+
+**Surrogate Roles, Criticism Towards Alexander's Model, Future Areas to Improve:**
+
+Another key finding was our classification of professors as having "surrogate roles." Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while professors weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
+
+This became advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see Section 6), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. However, it also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. So, final feedback may not be reflective if more experts had mobility issues; thus, they can empathise with this feature. We can consider this for Summer Projects, conducting thorough qualitative interviews with stakeholders in the Containing System.
 
 ### Identifying Top-Level Needs (User Stories)
 <p align="center">
@@ -215,11 +265,15 @@ While not one of our official challenges, we found that programming collisions a
 
 1. **Implementing the reverse time mechanic**
 
-   This was by far the hardest task. We wanted to store not just the previous player's locations but also have that player interact with the environment (for example, opening doors). We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object. To reduce the amount of code we had to write, we took advantage of our existing Player class. This object contained the logic for collisions with buttons and other game objects since the implementation is the same.
+   This was by far the hardest task. We wanted to store not just the previous player's locations but also have that player interact with the environment (for example, opening doors). We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object. To reduce the amount of code we had to write, we took advantage of our existing Player class. Since the implementation is the same, this object contained the logic for collisions with buttons and other game objects.
+
+    <img src="https://i.imgur.com/3cYjXVG.png" width="500" >
 
    The bomb was even more complex. We created explode and unexplode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
+   
+    <img src="https://i.imgur.com/PQoksw9.png" width="500" >
 
-2. **Level Design and balance**
+3. **Level Design and balance**
 
    We realized early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map. This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
    
@@ -232,9 +286,13 @@ While not one of our official challenges, we found that programming collisions a
 
    Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
 
-   One other issue we encountered whilst testing this was that the Processing video library isn't supported on Linux machines. To fix this, if the user is on Linux, we  show an error message if they attempt to load accessibility mode. Since loading the libraries takes 5-10 seconds, we needed to implement an additional loading screen to provide adequate visibility of system status.
+   TODO: Include GIF of gameplay in disability mode.
 
+   One other issue we encountered whilst testing this was that the Processing video library isn't supported on Linux machines. To fix this, if the user is on Linux, we  show an error message if they attempt to load accessibility mode. Since loading the libraries takes 5-10 seconds, we needed to implement an additional loading screen to provide adequate visibility of system status.
+   
    Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
+
+    <img src="https://i.imgur.com/LI40MPH.png" width="500" >
 
    In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
@@ -242,9 +300,10 @@ While not one of our official challenges, we found that programming collisions a
 # 6. Evaluation 
   During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
-  Our game aims to reward future planning and puzzle-solving. After examining our own video game preferences, and a literature review which suggested that game difficulty can improve overall enjoyment when it is not overly frustrating and provides a satisfying challenge to overcome (Alexander et al., 2013). [Tom - I need to make this better] It was, therefore, important that we accurately assessed the perceived difficulty. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+  Our game aims to reward future planning and puzzle-solving, therefore it was important we were able to create a game that was challenging while still remaining fun. To do this, we examnined the team's own video game preferences alongside findings from previous studies suggest that game difficulty can improve a player's overall enjoyment when it is not overly frustrating, yet still manages satisfying challenge to overcome (Alexander et al., 2013). Based on these findings and our discussions, it was important that we accurately assessed the perceived difficulty of our game. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
 
   Eleven participants (N = 11), consisting of six males and five females, were collected via convenience sampling. Participants were randomly assigned to complete Level One or Level Two first to avoid issues of training bias (NEED REF). Level One was designed to be the easier of the two. Upon completion (determined by the participant), we administered the TLX. The process was repeated for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
+
 
 <p align="center">
   <b>Table X</b><br>
@@ -255,15 +314,18 @@ While not one of our official challenges, we found that programming collisions a
 
   The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
 
+
 <p align="center">
   <b>Figure X</b><br>
   <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
 </p>
 
+
 To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA requires participants to verbally express their thoughts, feelings, and emotions whilst performing a given task, and has been shown to be an effective evaluation method in many areas of HCI (Nielsen et al., 2002; Joe et al., 2015). We utilised TA to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
 
 Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure X).
+
 
 <p align="center">
   <b>Figure X</b><br>
@@ -274,9 +336,10 @@ Seventeen participants were collected again through convenience sampling. Due to
 
 This data was instrumental in our development approach, and much of the qualitative data we gathered directly influenced our design choices. We will address each theme in turn.
 
-Player Movement
+**Player Movement**
 
 During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received was instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish” and gave them a “floaty feeling” , with another describing it as feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure X.
+
 
 <p align="center">
   <b>Figure X</b><br>
@@ -285,34 +348,35 @@ During early playtesting, when the aesthetic of the game hadn’t yet been  deci
 </p>
 
 
-Difficulty 
+**Difficulty** 
 
 We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
 
-“That [Level Two] was definitely harder … it was pretty rewarding”
+*“That [Level Two] was definitely harder … it was pretty rewarding”*
 
-“Okay now that was satisfying”
+*“Okay now that was satisfying”*
 
-However, other players commented on how they felt like the second level especially was too challenging, with one participant asking, “Is there any way to skip this level” and another stating, “damn, that is so hard”. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
+However, other players commented on how they felt like the second level especially was too challenging, with one participant asking, *“Is there any way to skip this level”* and another stating, *“damn, that is so hard”*. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
 
 
-Instructions
+**Instructions**
 
 We deliberately opted not to give much information about what the player is required to do, as we felt it was better to let players figure it out for themselves, which was again highlighted in the TA data.
 
-“I liked figuring out what to do, that is really rewarding”
+*“I liked figuring out what to do, that is really rewarding”*
 
-“Once it clicked … it became so much clearer”
+*“Once it clicked … it became so much clearer”*
 
 However, others claimed they would prefer slightly more instructions on how to progress through the level and how to view the controls again.
 
-“How do I see the controls again”
+*“How do I see the controls again”*
 
-“I think it would be good if you could maybe give some hints whilst you are playing”
+*“I think it would be good if you could maybe give some hints whilst you are playing”*
 
-“It would be nice to have a bit more direction”
+*“It would be nice to have a bit more direction”*
 
-We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We carefully calibrated these hints to provide the minimal information possible for users to complete the level while maintaining the positive feelings users got on completion of the unhinted level - the "aha" moment. (see Figure X).
+We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Figure X).
+
 
 <p align="center">
   <b>Figure X</b><br>
@@ -321,8 +385,8 @@ We took some of this feedback and then included some visual hints on the screen,
 </p>
 
 
-# 7. Process 
 
+# 7. Process 
 ## Collaboration
 
 Our first few meetings were conducted in person. This allowed maximal flexibility as we discussed various design ideas and got to know each other. In fact, our first meeting ever was at a restaurant, and we focused exclusively on getting to know each other and our gaming histories. We connected in person at the end of each Monday morning lab, and divided up that week’s tasks using a variant of planning poker. (We noticed that development tasks would take different people different amounts of time, so we attempted to give harder tasks to faster coders even out how much time people spent on the game.)
@@ -333,7 +397,7 @@ Over the holidays, we switched to doing scrum-style stand-up meetings (at least 
 
 Early on, we had to decide which game to build. To do this, we used a [ranked preferences voting tool](https://www.rankedchoices.com/), which allowed each of us to express our preferences anonymously. 
 
-Analyzing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
+Analysing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
 <img src="https://i.imgur.com/6JbR5n4.png" width="500">
 
 
@@ -364,6 +428,15 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 # 8. Conclusion 
 
+
+
+
+
+
+
+
+
+**Table of Contributions**
 - **Mihir**: 1.00
 - **Tom**: 1.00
 - **Ali**: 1.00
@@ -371,7 +444,7 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 - **Kaiyan**: 1.00
 
 
-# 10. Bibliography 
+# 9. Acknowledgements
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
@@ -403,6 +476,4 @@ Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessin
 
 Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
-
-TODO: Heuristics - noticed how players dont read tutorial and therefore incorporated into level.
 

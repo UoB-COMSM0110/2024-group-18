@@ -6,7 +6,7 @@ class PlayerController {
   Player player;
   PastPlayer pastSelf;
 
-  boolean ifShadowGenerated=false;
+  boolean ifPastSelfGenerated=false;
   boolean ifGameWin=false;
 
   boolean movingRight=false;
@@ -19,42 +19,40 @@ class PlayerController {
   boolean hasJumped = false;
   boolean deadByBomb=false;
   boolean deadByHitPreviousPlayer=false;
-  
+
   // these are for the alternative controller.
   boolean inputLeft = false;
   boolean inputRight = false;
   boolean inputUp = false;
-  
+
   // these are for enhanced collision check
   float staticItemHeight = 0;
   float staticItemWidth = 0;
   boolean ifTopCollide = false;
   boolean ifLeftCollide = false;
   boolean ifRightCollide = false;
-  
+
   boolean ifMovingPlatformReverse = false;
   boolean isOnMovingPlatform = false;
-  
-  
+
+
   public PlayerController(Player player) {
     this.player = player;
     pastSelf = new PastPlayer(0, 0, 20, 60);
   }
 
   public void updateAnimation() {
-    if(player.current_animation==player.disappear){
+    if (player.current_animation==player.disappear) {
       image(player.currentImage, player.location.x, player.location.y, 120, 120);
-    }else{
+    } else {
       image(player.currentImage, player.location.x, player.location.y, 60, 60);
     }
-    
   }
 
 
 
-
+  // maps valid keypresses to movement
   public void movementControl() {
-    // add wasd as control just for feel better when do testing :)
     movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
     movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
     isJumping = (keyCode == UP || key == 'w' || inputUp==true) && player.isOnGround;
@@ -81,28 +79,26 @@ class PlayerController {
     }
   }
 
+  // if there has been a collision between the player and a bomb then return true
   public boolean checkBomb(Map map) {
     if (checkCollision(map.bomb)) {
-      // hurt by bomb
-
       return true;
     }
     return false;
   }
 
-
+  // returns true if the player is colliding with a stuctrue or item
   public boolean checkCollision(GameObject obj) {
     if (player.location.x-player.objectWidth/2<obj.location.x+obj.objectWidth/2&&
       player.location.x+player.objectWidth/2>obj.location.x-obj.objectWidth/2&&
       player.location.y-player.objectHeight/2<obj.location.y+obj.objectHeight/2&&
       player.location.y+player.objectHeight/2>obj.location.y-obj.objectHeight/2) {
       // colliding
-
       return true;
     }
     return false; // no collision
   }
-  
+
   public void getCollisionStatus(Item obj) {
     movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
     movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
@@ -123,7 +119,7 @@ class PlayerController {
     float overlapTop = objBottom - playerTop;
     float overlapBottom = playerBottom - objTop;
 
-    float minOverlap = min(overlapLeft,overlapRight,min(overlapTop,overlapBottom));
+    float minOverlap = min(overlapLeft, overlapRight, min(overlapTop, overlapBottom));
     if (minOverlap == overlapLeft && movingLeft) {
       ifLeftCollide = true;
     } else if (minOverlap == overlapRight && movingRight) {
@@ -133,7 +129,7 @@ class PlayerController {
     }
   }
 
-  public boolean checkShadowCollision(GameObject obj) {
+  public boolean checkPastSelfCollision(GameObject obj) {
     if (pastSelf.location.x-pastSelf.objectWidth/2<obj.location.x+obj.objectWidth/2&&
       pastSelf.location.x+pastSelf.objectWidth/2>obj.location.x-obj.objectWidth/2&&
       pastSelf.location.y-pastSelf.objectHeight/2<obj.location.y+obj.objectHeight/2&&
@@ -143,7 +139,7 @@ class PlayerController {
     }
     return false; // no collision
   }
-  
+
   public void resetCollisionStatus() {
     ifTopCollide = false;
     ifLeftCollide = false;
@@ -155,11 +151,11 @@ class PlayerController {
       // keep droping when not through the platform
       return;
     } else if (ifLeftCollide) {
-      player.location.set(obj.location.x+obj.objectWidth/2+player.objectWidth/2,player.location.y);
+      player.location.set(obj.location.x+obj.objectWidth/2+player.objectWidth/2, player.location.y);
       resetCollisionStatus();
       return;
     } else if (ifRightCollide) {
-      player.location.set(obj.location.x-obj.objectWidth/2-player.objectWidth/2,player.location.y);
+      player.location.set(obj.location.x-obj.objectWidth/2-player.objectWidth/2, player.location.y);
       resetCollisionStatus();
       return;
     }
@@ -173,7 +169,7 @@ class PlayerController {
         if (obj.itemNum>=11&&obj.itemNum<=13) {
           isOnMovingPlatform = true;
         }
-      } else if(isOnMovingPlatform) {
+      } else if (isOnMovingPlatform) {
         player.location.set(player.location.x+obj.movingPace, obj.location.y-obj.objectHeight/2-player.objectHeight/2);
       }
       player.velocity.set(player.velocity.x, 0);
@@ -227,9 +223,16 @@ class PlayerController {
           hasPressed = true;
         } else if (item.itemNum==9) {
           // time machine
-          if (!ifShadowGenerated) {
-            ifShadowGenerated=true;
+          if (!ifPastSelfGenerated) {
+            ifPastSelfGenerated=true;
             map.ifBombInverse=true;
+            if (player.location.x<item.location.x) {
+              player.location.set(item.location.x+40, item.location.y+40);
+            } else {
+              player.location.set(item.location.x-40, item.location.y+40);
+            }
+
+
             pastSelf.location.set(item.location.x, item.location.y+40);
             if (!ifMovingPlatformReverse) {
               map.revertMP();
@@ -240,14 +243,14 @@ class PlayerController {
       }
 
       // all interatctions between past player and items
-      if (checkShadowCollision(item)) {
+      if (checkPastSelfCollision(item)) {
         if (item.itemNum==8) {
           // buttons
           map.openDoor();
         }
       }
 
-      if (!checkCollision(item)&&!checkShadowCollision(item)) {
+      if (!checkCollision(item)&&!checkPastSelfCollision(item)) {
         if (item.itemNum==8) {
           map.closeDoor();
         }
@@ -256,7 +259,7 @@ class PlayerController {
   }
 
   public boolean shadowAndPlayerCollide() {
-    if (!ifShadowGenerated) {
+    if (!ifPastSelfGenerated) {
       return false;
     }
     if (checkCollision(pastSelf)) {
@@ -264,9 +267,9 @@ class PlayerController {
     }
     return false;
   }
-  
+
   public boolean checkGameOver(Map map, int level) {
-    if (ifShadowGenerated&&pastSelf.stateCollection.size()==0) {
+    if (ifPastSelfGenerated&&pastSelf.stateCollection.size()==0) {
       pastSelf.refresh();
       return true;
     }
@@ -288,12 +291,12 @@ class PlayerController {
     return false;
   }
 
-  public void displayShadow() {
-    if (!ifShadowGenerated) {
+  public void displayPastSelf() {
+    if (!ifPastSelfGenerated) {
       pastSelf.storeState(player.location, player.currentImage);
     }
 
-    if (ifShadowGenerated && !ifGameOver) {
+    if (ifPastSelfGenerated && !ifGameOver) {
       pastSelf.accessPastState();
       image(pastSelf.currentImage, pastSelf.location.x, pastSelf.location.y+5, 60, 60);
     }
@@ -302,7 +305,7 @@ class PlayerController {
   public void refresh(Map map) {
     ifGameOver=false;
     ifGameWin=false;
-    ifShadowGenerated=false;
+    ifPastSelfGenerated=false;
     deadByBomb=false;
     map.ifBombInverse=false;
     pastSelf.refresh();

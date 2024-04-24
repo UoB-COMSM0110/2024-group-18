@@ -3,7 +3,7 @@ class Player extends GameObject {
   PVector velocity;
   PVector acceleration;
   boolean isOnGround;
-  float speed = 9.0;
+  float speed = 6.0;
   boolean facingRight;
   boolean isJumping;
   float gravity = 2;
@@ -169,7 +169,7 @@ class Player extends GameObject {
   }
 
   public void displayImage() {
-    if (frame%2==0) {
+    if (frame%4==0) {
       currentImage=current_animation[index];
       index=(index+1)%current_animation.length;
     }
