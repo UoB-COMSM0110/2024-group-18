@@ -374,7 +374,8 @@ However, others claimed they would prefer slightly more instructions on how to p
 
 *“It would be nice to have a bit more direction”*
 
-We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We carefully calibrated these hints to provide the minimal information possible for users to complete the level while maintaining the positive feelings users got on completion of the unhinted level - the "aha" moment. (see Figure X).
+We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Figure X).
+
 
 <p align="center">
   <b>Figure X</b><br>
@@ -395,7 +396,7 @@ Over the holidays, we switched to doing scrum-style stand-up meetings (at least 
 
 Early on, we had to decide which game to build. To do this, we used a [ranked preferences voting tool](https://www.rankedchoices.com/), which allowed each of us to express our preferences anonymously. 
 
-Analyzing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
+Analysing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
 <img src="https://i.imgur.com/6JbR5n4.png" width="500">
 
 
@@ -434,7 +435,7 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 
 
-Table of Contributions
+**Table of Contributions**
 - **Mihir**: 1.00
 - **Tom**: 1.00
 - **Ali**: 1.00
@@ -474,6 +475,4 @@ Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessin
 
 Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
-
-TODO: Heuristics - noticed how players dont read tutorial and therefore incorporated into level.
 
