@@ -1,90 +1,95 @@
+// Import vision libraries for processing images and detecting objects.
 import ch.bildspur.vision.*;
 import ch.bildspur.vision.result.*;
+// Import libraries for video capturing.
 import processing.video.Capture;
-
+// Import libraries for processing sound.
 import processing.sound.*;
 
+// Define a class called AlternativeController to manage alternative inputs like camera and sound.
 class AlternativeController {
   PlayerController playerController;
 
-  // The sound libraries
+  // Declare variables for sound processing.
   Amplitude amp;
   AudioIn in;
-  // The webcam and AI libraries.
+
+  // Declare variables for vision and camera processing.
   DeepVision vision;
   ULFGFaceDetectionNetwork network;
   ResultList<ObjectDetectionResult> detections;
   Capture cam;
-  float camX;
-  float camY;
-  float camWidth;
-  float camHeight;
+  float camX, camY, camWidth, camHeight;
 
-  /* Creates a new instance of the alternative controller object including importing the machine vision libraries
-  note that this takes several seconds so an appropriate loading screen should be shown to the user.  */
+  // Constructor initializes all components required for vision and sound processing.
   public AlternativeController(PApplet parent, PlayerController playerController) {
-    this.playerController=playerController;
+    this.playerController = playerController;
     vision = new DeepVision(parent);
 
-    // video stuff
+    // Setup the face detection network and initialize the camera.
     network = vision.createULFGFaceDetectorRFB320();
     network.setup();
     String[] cameras = Capture.list();
     if (cameras.length == 0) {
-      exit();
-    } 
+      exit(); // Exit if no cameras are found.
+    }
     cam = new Capture(parent, cameras[0]);
     cam.start();
 
-    // audio stuff
+    // Setup audio input and amplitude measurement.
     amp = new Amplitude(parent);
     in = new AudioIn(parent, 0);
     in.start();
     amp.input(in);
+
+    // Initialize camera display settings.
     camWidth = 160;
     camHeight = 90;
-    camX=width-camWidth;
-    camY=height-camHeight;
+    camX = parent.width - camWidth;
+    camY = parent.height - camHeight;
   }
 
-  /* allows the controlling of the character with the webcam and sound input.
-  Displays the webcam on the screen to provide feedback to the user. */
+  // Control method uses sound and camera inputs to control player movement.
   void control() {
-    // audio stuff
-    soundController();
-    //video stuff
-    imageMode(CORNER);
+    soundController(); // Process sound input.
+    imageMode(CORNER); // Set image mode for drawing.
     if (cam.available()) {
-      cam.read();
+      cam.read(); // Read from the camera.
     }
-    image(cam, camX, camY, camWidth, camHeight);
+    image(cam, camX, camY, camWidth, camHeight); // Display camera image.
+
+    // Run object detection and handle detected objects.
     detections = network.run(cam);
     noFill();
     strokeWeight(2f);
     stroke(200, 80, 100);
     for (ObjectDetectionResult detection : detections) {
       rect(cameraX(detection), cameraY(detection), detection.getWidth()/2.5, detection.getHeight()/5);
-      if (cameraX(detection)<camX+(camWidth/2)-20) {
-        playerController.inputRight=true;
-      } else if (cameraX(detection)>camX+(camWidth/2)+20) {
-        playerController.inputLeft=true;
+
+      // Determine player movement based on object position.
+      if (cameraX(detection) < camX + (camWidth / 2) - 20) {
+        playerController.inputRight = true;
+      } else if (cameraX(detection) > camX + (camWidth / 2) + 20) {
+        playerController.inputLeft = true;
       } else {
-        playerController.inputRight=false;
-        playerController.inputLeft=false;
+        playerController.inputRight = false;
+        playerController.inputLeft = false;
         playerController.movementReset();
       }
     }
-    imageMode(CENTER); // return to default.
+    imageMode(CENTER); // Reset image mode.
   }
 
+  // Helper method to process amplitude and trigger upward movement.
   private void soundController() {
-    if (amp.analyze()>0.01) {
-      playerController.inputUp=true;
+    if (amp.analyze() > 0.01) {
+      playerController.inputUp = true;
     } else {
-      playerController.inputUp=false;
+      playerController.inputUp = false;
     }
   }
 
+  // Map camera's detection coordinates to the display coordinates.
   private float cameraX(ObjectDetectionResult detection) {
     return map(detection.getX(), 0, cam.width, camX, camX + camWidth);
   }
