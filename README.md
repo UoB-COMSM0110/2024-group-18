@@ -16,6 +16,7 @@ To play our game, you must install Processing and the following libraries: "Vide
       - "Video"
       - "Deep Vision"
       - "Sound"
+      - "JavaFX"
    - Click "Install" for each library.
 
 4. **Learn More**: For additional guidance on installing libraries, check out [this tutorial](https://processing.org/tutorials/video).
