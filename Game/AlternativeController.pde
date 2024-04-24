@@ -57,7 +57,6 @@ class AlternativeController {
     if (cam.available()) {
       cam.read();
     }
-    // todo: figure out how to flip the webcam feed so it is drawn correctly
     image(cam, camX, camY, camWidth, camHeight);
     detections = network.run(cam);
     noFill();
