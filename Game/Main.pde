@@ -629,25 +629,29 @@ public void restartLevel() {
 public void placeClock() {
   image(clock, width/2, 100, 300, 300);
   fill(0);
-  int hour=getHour();
-  int minute=getMinute();
-  if(hour>10){
-    text((int)time+"",width/2-60,110);
-  }else{
-    text("0"+(int)time,width/2-60,110);
-  }
-  if(minute==0){
-    text("00",width/2+20,110);
-  }else{
-    text(minute+"",width/2+20,110);
+  int hour = getHour();
+  int minute = getMinute();
+  
+  // Format hour with leading zero if necessary
+  if (hour < 10) {
+    text("0" + hour, width/2 - 60, 110);
+  } else {
+    text(hour, width/2 - 60, 110);
   }
   
+  // Format minute with leading zero if necessary
+  if (minute < 10) {
+    text("0" + minute, width/2 + 20, 110);
+  } else {
+    text(minute, width/2 + 20, 110);
+  }
   
+  // Time manipulation logic
   if (!ifLevelPass) {
     if (playerController.ifPastSelfGenerated) {
-      time-=0.008;
+      time -= 0.008;
     } else {
-      time+=0.008;
+      time += 0.008;
     }
   }
 }
