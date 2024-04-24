@@ -73,23 +73,29 @@ Oiram is a single-player, platform-oriented game that integrates Super Mario-sty
 **The Mission:**
 Navigate levels, dodge obstacles, and interact with objects like gates, switches, and the Tardis to activate mechanisms and portals.
 
-<div style="display: flex; justify-content: space-around; text-align: center;">
-  <div style="padding: 10px;">
-    <h3>Gates</h3>
-    <img src="Game/assets/Static/Door/door1.png" alt="Gates" style="width: auto; height: 100px;">
-    <p><i>Act as portals to the next level.</i></p>
-  </div>
-  <div style="padding: 10px;">
-    <h3>Switches</h3>
-    <img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="width: auto; height: 100px;">
-    <p><i>Toggle to control various game mechanisms.</i></p>
-  </div>
-  <div style="padding: 10px;">
-    <h3>Tardis</h3>
-    <img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="width: auto; height: 100px;">
-    <p><i>Device to invoke time reversal.</i></p>
-  </div>
-</div>
+
+<table style="width:100%; text-align:center;">
+  <tr>
+    <th>Category</th>
+    <th>Image</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Gates</td>
+    <td><img src="Game/assets/Static/Door/door1.png" alt="Gates" style="height: 100px;"></td>
+    <td>Act as portals to the next level.</td>
+  </tr>
+  <tr>
+    <td>Switches</td>
+    <td><img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="height: 100px;"></td>
+    <td>Toggle to control various game mechanisms.</td>
+  </tr>
+  <tr>
+    <td>Tardis</td>
+    <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
+    <td>Device to invoke time reversal.</td>
+  </tr>
+</table>
 
 **Obstructions:**
 Avoid explosives and pits to ensure survival.
