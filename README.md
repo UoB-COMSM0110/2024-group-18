@@ -6,7 +6,7 @@
 
 # Game Setup Instructions
 
-To play our game, you must install Processing and the following libraries: "Video," "Deep Vision," and "Sound." Here's how to do it:
+To play our game, you must install Processing and the following libraries: "Video", "JavaFX",  "Deep Vision", and "Sound". Here's how to do it:
 1. **Open Processing**: Launch the Processing application on your computer.
 
 2. **Library Manager**: Open the Library Manager by selecting “Import Library...” from the “Sketch” menu, then choose “Add Library...”.
