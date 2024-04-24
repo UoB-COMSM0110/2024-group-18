@@ -64,9 +64,9 @@ class AlternativeController {
     stroke(200, 80, 100);
     for (ObjectDetectionResult detection : detections) {
       rect(cameraX(detection), cameraY(detection), detection.getWidth()/2.5, detection.getHeight()/5);
-      if (cameraX(detection)<camX+(camWidth/2)-10) {
+      if (cameraX(detection)<camX+(camWidth/2)-20) {
         playerController.inputRight=true;
-      } else if (cameraX(detection)>camX+(camWidth/2)+10) {
+      } else if (cameraX(detection)>camX+(camWidth/2)+20) {
         playerController.inputLeft=true;
       } else {
         playerController.inputRight=false;
