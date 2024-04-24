@@ -132,7 +132,7 @@ void draw() {
       showEnd();
       return;
     }
-    // Set main focus of all image on center, which helps location set and collision check 
+    // Set main focus of all image on center, which helps location set and collision check
     imageMode(CENTER);
     // logic for stage and level change
     if (level==-2) {
@@ -592,6 +592,19 @@ void mousePressed() {
     time=0;
     ifLevelPass=false;
     playerController.refresh(map);
+    enableAlternativeController();
+  }
+}
+
+/* Enables the alternative controller if button for that was pressed already.*/
+private void enableAlternativeController() {
+  if (controlMode==ControlType.DISABLED) {
+    try {
+      alternativeController= new AlternativeController(this, playerController);
+    }
+    catch(Exception e) {
+      showDisabilityError=true;
+    }
   }
 }
 
@@ -602,14 +615,7 @@ public void restartLevel() {
   invertLag = 0;
   time=0;
   playerController = new PlayerController(player);
-  if (controlMode==ControlType.DISABLED) {
-    try {
-      alternativeController= new AlternativeController(this, playerController);
-    }
-    catch(Exception e) {
-      showDisabilityError=true;
-    }
-  }
+  enableAlternativeController();
   player.ifDead=false;
   player.index=0;
   player.location.set(120, 500);
@@ -632,21 +638,21 @@ public void placeClock() {
   fill(0);
   int hour = getHour();
   int minute = getMinute();
-  
+
   // Format hour with leading zero if necessary
   if (hour < 10) {
     text("0" + hour, width/2 - 60, 110);
   } else {
     text(hour, width/2 - 60, 110);
   }
-  
+
   // Format minute with leading zero if necessary
   if (minute < 10) {
     text("0" + minute, width/2 + 20, 110);
   } else {
     text(minute, width/2 + 20, 110);
   }
-  
+
   // Time manipulation logic
   if (!ifLevelPass) {
     if (playerController.ifPastSelfGenerated) {
@@ -657,10 +663,10 @@ public void placeClock() {
   }
 }
 
-private int getHour(){
+private int getHour() {
   return (int)time;
 }
 
-private int getMinute(){
+private int getMinute() {
   return (int)((time-(int)time)*60);
 }
