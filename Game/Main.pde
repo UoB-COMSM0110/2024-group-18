@@ -371,8 +371,8 @@ void generateHint() {
   if (playerController.hasMoved && !playerController.hasJumped) {
     image(jumpHint, 800, 450, 323, 32);
   }
-  if (moveLag <= 50 && playerController.hasJumped && playerController.hasMoved) {
-    image(reviewHint, 800, 100, 448, 32);
+  if (moveLag <= 300 && playerController.hasJumped && playerController.hasMoved) {
+    image(reviewHint, 800, 200, 448, 32);
     moveLag++;
   }
   // portal hint
