@@ -389,12 +389,12 @@ void generateHint() {
   if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
     hintLag = 1;
   }
-  if (hintLag >0 && hintLag <= 200 && !playerController.ifPastSelfGenerated) {
-    if (hintLag < 20) {
+  if (hintLag >0 && hintLag <= 1000 && !playerController.ifPastSelfGenerated) {
+    if (hintLag < 100) {
       image(loadImage("./assets/Hint/oh-no.png"), 800, 300, 144, 40);
-    } else if (hintLag < 55) {
+    } else if (hintLag < 275) {
       image(loadImage("./assets/Hint/leave.png"), 800, 350, 692, 32);
-    } else if (hintLag <= 100) {
+    } else if (hintLag <= 500) {
       image(loadImage("./assets/Hint/someone.png"), 800, 400, 860, 38);
     } else {
       image(loadImage("./assets/Hint/booth.png"), boothLocation.x, boothLocation.y-100, 412, 26);
@@ -404,10 +404,10 @@ void generateHint() {
   if (playerController.ifPastSelfGenerated && hintLag>0 && invertLag == 0) {
     invertLag = 1;
   }
-  if (invertLag > 0 && invertLag < 100 && !ifGameOver && !ifLevelPass) {
-    if (invertLag < 15) {
+  if (invertLag > 0 && invertLag < 500 && !ifGameOver && !ifLevelPass) {
+    if (invertLag < 75) {
       image(loadImage("./assets/Hint/wow.png"), 800, 300, 167, 36);
-    } else if (invertLag < 55) {
+    } else if (invertLag < 275) {
       image(loadImage("./assets/Hint/reverse-time.png"), 800, 350, 809, 39);
     } else {
       image(loadImage("./assets/Hint/someoneneed.png"), 800, 400, 797, 39);
