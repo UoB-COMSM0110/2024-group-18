@@ -52,6 +52,7 @@ PImage reviewHint;
 PFont font;
 /* Variables for disability mode*/
 boolean isLoadingAlternative = false;
+int loadingIndex = 0;
 int alternativeLag = 0;
 /* Variables to check system type*/
 int alphaValue = 0;
@@ -232,7 +233,10 @@ public String getTime() {
 /* Show loading and inform screen when meet requirement */
 void loading() {
   if (isLoadingAlternative) {
-    image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+    //image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+    String name = "./assets/Loading/loadingDisability" + ((loadingIndex/10)%4+1) + ".png";
+    image(loadImage(name), width/2, height/2);
+    loadingIndex++;
   } else if (isLinux) {
     image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
   }
