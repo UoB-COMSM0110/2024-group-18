@@ -52,6 +52,7 @@ PImage reviewHint;
 PFont font;
 /* Variables for disability mode*/
 boolean isLoadingAlternative = false;
+int loadingIndex = 0;
 int alternativeLag = 0;
 /* Variables to check system type*/
 int alphaValue = 0;
@@ -232,7 +233,9 @@ public String getTime() {
 /* Show loading and inform screen when meet requirement */
 void loading() {
   if (isLoadingAlternative) {
-    image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
+    String name = "./assets/Loading/loadingDisability" + ((loadingIndex/10)%4+1) + ".png";
+    image(loadImage(name), width/2, height/2);
+    loadingIndex++;
   } else if (isLinux) {
     image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
   }
@@ -386,12 +389,12 @@ void generateHint() {
   if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
     hintLag = 1;
   }
-  if (hintLag >0 && hintLag <= 200 && !playerController.ifPastSelfGenerated) {
-    if (hintLag < 20) {
+  if (hintLag >0 && hintLag <= 1000 && !playerController.ifPastSelfGenerated) {
+    if (hintLag < 100) {
       image(loadImage("./assets/Hint/oh-no.png"), 800, 300, 144, 40);
-    } else if (hintLag < 55) {
+    } else if (hintLag < 275) {
       image(loadImage("./assets/Hint/leave.png"), 800, 350, 692, 32);
-    } else if (hintLag <= 100) {
+    } else if (hintLag <= 500) {
       image(loadImage("./assets/Hint/someone.png"), 800, 400, 860, 38);
     } else {
       image(loadImage("./assets/Hint/booth.png"), boothLocation.x, boothLocation.y-100, 412, 26);
@@ -401,10 +404,10 @@ void generateHint() {
   if (playerController.ifPastSelfGenerated && hintLag>0 && invertLag == 0) {
     invertLag = 1;
   }
-  if (invertLag > 0 && invertLag < 100 && !ifGameOver && !ifLevelPass) {
-    if (invertLag < 15) {
+  if (invertLag > 0 && invertLag < 500 && !ifGameOver && !ifLevelPass) {
+    if (invertLag < 75) {
       image(loadImage("./assets/Hint/wow.png"), 800, 300, 167, 36);
-    } else if (invertLag < 55) {
+    } else if (invertLag < 275) {
       image(loadImage("./assets/Hint/reverse-time.png"), 800, 350, 809, 39);
     } else {
       image(loadImage("./assets/Hint/someoneneed.png"), 800, 400, 797, 39);
@@ -539,13 +542,13 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
-    if (platformNames[platform]=="linux") {
+    if (platformNames[platform]=="linux"&&!isLinux) {
       // print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
       //image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
       isLinux = true;
       return;
     }
-    if (isLinux == true) {
+    if (isLinux) {
       isLinux = false;
       return;
     }
