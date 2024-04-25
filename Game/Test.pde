@@ -58,7 +58,7 @@ class Test {
 
   // Test placing and resetting a bomb
   void testPlaceBomb() {
-    Map gameMap = new Map("level1.txt", 1);
+    Map gameMap = new Map("maps/map1.txt", 1);
     gameMap.placeBomb();
   assert gameMap.bomb != null :
     "Bomb should be placed";

@@ -269,7 +269,7 @@ class PlayerController {
   }
 
   public boolean checkGameOver(Map map, int level) {
-    if (ifPastSelfGenerated&&pastSelf.stateCollection.size()==0) {
+    if (ifPastSelfGenerated&&pastSelf.stateCollection.size()==0) { //<>//
       pastSelf.refresh();
       return true;
     }
