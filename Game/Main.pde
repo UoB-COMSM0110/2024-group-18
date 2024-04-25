@@ -539,13 +539,13 @@ void settingBarOptionClicked() {
 void disabilityButtonClicked() {
   if (mouseX>1150&&mouseX<1250
     &&mouseY>50&&mouseY<150) {
-    if (platformNames[platform]=="linux") {
+    if (platformNames[platform]=="linux"&&!isLinux) {
       // print("DISABILITY MODE NOT SUPPORTED ON LINUX.");
       //image(loadImage("./assets/Background/LinuxErr.png"), width/2, height/2);
       isLinux = true;
       return;
     }
-    if (isLinux == true) {
+    if (isLinux) {
       isLinux = false;
       return;
     }
