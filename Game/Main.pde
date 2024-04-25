@@ -233,7 +233,6 @@ public String getTime() {
 /* Show loading and inform screen when meet requirement */
 void loading() {
   if (isLoadingAlternative) {
-    //image(loadImage("./assets/Background/loadingDisability.png"), width/2, height/2);
     String name = "./assets/Loading/loadingDisability" + ((loadingIndex/10)%4+1) + ".png";
     image(loadImage(name), width/2, height/2);
     loadingIndex++;
