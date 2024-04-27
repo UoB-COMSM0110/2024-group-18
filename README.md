@@ -1,5 +1,7 @@
 TODO: update figure numbers
+
 TODO: add GIFS
+
 TODO: search for any remaining TODOs or XXX in the readme.
 
 <p align="center">
