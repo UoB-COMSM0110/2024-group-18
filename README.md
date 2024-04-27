@@ -117,39 +117,41 @@ Oiram's narrative complexity is inspired by Tenet, the timeless platforming of S
 Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
 
 # 3. Requirements 
-### Introduction to Requirement Engineering (RE)
+### Requirement Engineering
 
 Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of the Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported the most common issues are unrealistic or ambivalent scope and feature creep.
 
 <img src="Assets_For_ReadMe/RE-GameStudySignificance.png">
 <p><i>Figure 1. Petrillo's (2009) study mapping problems found in Game Development to their occurrences.</i></p>
 
-Later in this report, we will reflect on our experience of similar issues. The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
+The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
 
 <img src="Assets_For_ReadMe/RERoadMapReq.png">
 <p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report.</i></p>
 
 <h3>Ideation Processing</h3>
 <img src="Assets_For_ReadMe/SEBrainstorm.png" height=800px/>
-<p><i>Figure 3. Week 2 Brainstorm for two game ideas.</i></p>
+<p><i>Figure 3. Week 2 Brainstorm several game ideas.</i></p>
 <p>
-    In our ideation phase, we collaboratively utilised 
+    In our ideation phase, we used 
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 3) and 
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We knew we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible.
+    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input.)
 
 TODO: include GIFs of feasibility studies.
 
-  One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
+  One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+
+TODO: insert Yi's old game
+  
+  Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
 
 TODO: include paper prototype GIF.
 
   For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
     <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
     This further fueled this idea, which intrigued us with its potential for innovative gameplay mechanics. 
-    
-  With our collaborative tools setup, a weekly time and place decided, and a paper prototype in hand, we evaluated our stakeholders.
 </p>
 
 
@@ -159,6 +161,7 @@ TODO: include paper prototype GIF.
   <br>
   <i>Figure X: Onion Model of Oiram Game (adapted from Alexander's book Figure 1)</i>
 </p>
+
 **Surrogate Roles**
 
 A key finding from our onion model was our observation that our lecturers have "surrogate roles." Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while lecturers weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
@@ -166,6 +169,18 @@ A key finding from our onion model was our observation that our lecturers have "
 This was advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see Section 6), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. However, it also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. So, final feedback may not be reflective if more experts had mobility issues; thus, they can empathise with this feature.
 
 ### Identifying Top-Level Needs (User Stories)
+
+- As a casual gamer, I want a game that is straightforward to control, allowing me to enjoy the game immediately without a steep learning curve.
+- As a puzzle enthusiast, I want a game that gives me an "aha" moment, and rewards my ability to think through a problem.
+- As a competitive gamer, I want a platformer game with complex time travel puzzles and challenges that require precise timing and strategy, offering me a satisfying depth of gameplay.
+- As a disabled gamer, I want to play games primarily using webcam-based controls, so I can enjoy the same gaming experience as others without the need for traditional input methods.
+- As a student with limited gaming time, I want a game with short levels.
+- As a commuter, I want a platformer game that provides offline playability, and can be played with one hand when I am traveling.
+- As a player seeking variety, I want a game that offers different eras and environments to explore through its time travel theme, each with unique obstacles and aesthetics.
+- As a technology enthusiast, I want a game that leverages modern technology like webcam interaction not just for accessibility, but also to create immersive, novel gameplay experiences.
+
+To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories. This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "what would Christina think"?
+
 <p align="center">
   <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
   <br>
@@ -183,15 +198,6 @@ This was advantageous, especially later when testing the Game and conducting mor
   <br>
   <i>Figure 5: User Story 3</i>
 </p>
-
-- As a casual gamer, I want a game that is straightforward to control, allowing me to enjoy the game immediately without a steep learning curve.
-- As a puzzle enthusiast, I want a game that gives me an "aha" moment, and rewards my ability to think through a problem.
-- As a competitive gamer, I want a platformer game with complex time travel puzzles and challenges that require precise timing and strategy, offering me a satisfying depth of gameplay.
-- As a disabled gamer, I want to play games primarily using webcam-based controls, so I can enjoy the same gaming experience as others without the need for traditional input methods.
-- As a student with limited gaming time, I want a game with short levels.
-- As a commuter, I want a platformer game that provides offline playability, and can be played with one hand when I am traveling.
-- As a player seeking variety, I want a game that offers different eras and environments to explore through its time travel theme, each with unique obstacles and aesthetics.
-- As a technology enthusiast, I want a game that leverages modern technology like webcam interaction not just for accessibility, but also to create immersive, novel gameplay experiences.
 
 
 ### Use-Cases Breakdown 
@@ -214,9 +220,9 @@ Below is our initial interpretation of this, where we posited the idea that the 
 # 4. Design 
 Having evaluated our potential stakeholders and evaluated a diverse range of User Stories, we now had a sense of the features we wanted to incorporate into our Game design, as well as the Use-Case Diagram/Specification guiding the development of the accessibility features.
 
-A **Class Diagram** provided a systematic view of our Game System, allowing us to plan ahead and template the relationship between objects, which would serve as planning for good **Object-Orientated Design (OOD)** within our source code. To do so, we first wrote down a plan for System Architecture by collaborating in-person through whiteboard sessions. This allowed for the Class Diagram formation to be a seemless process. 
+A **Class Diagram** provided a systematic view of our Game System, allowing us to plan ahead and template the relationship between objects, which would serve as planning for good **Object-Orientated Design (OOD)** within our source code. To do so, we first wrote down a plan for System Architecture by collaborating in-person through whiteboard sessions. This allowed for the Class Diagram formation to be a seamless process. 
 
-Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where having evaluated many classes in our system, the sequence would allow for ease in debugging, especially since the Processing IDE has poor debugging facilities. 
+Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where, after evaluating many classes in our system, the sequence would allow for easy debugging, especially since the Processing IDE has poor debugging facilities. 
 
 # Project Overview
 
@@ -263,7 +269,7 @@ Before starting any of our challenges, we needed to create a basic platformer. F
 
 While not one of our official challenges, we found that programming collisions and basic movement were initially quite tricky. For example, our initial approach to jumping caused an issue where users could jump infinitely by holding down the button. Our eventual implementation involved a variable within the `Player` set when they were on the ground. We also included velocity and acceleration variables. For collisions, initially, we had an approach involving an ENUM, several for loops, and several if statements. This approach was verbose and unreliable (occasionally players would fall through the floor!) Our final approach was much simpler and involved using the height and width of the game object, with the conditional collisions logic (for example, pressing the button opens the door) stored inside the `interactDynamicItems` method.
 
-The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to intialize.
+The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
 
 TODO insert GIF of dynmaic loading screen.
 
