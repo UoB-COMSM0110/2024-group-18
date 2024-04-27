@@ -27,15 +27,15 @@ Once you've installed Processing and the required libraries, you're all set to r
 [![Oiram Tutorial Video](Assets_For_ReadMe/videoBackground.gif)](https://youtu.be/J3RTHQjeOvg "Little red riding hood - Click to Watch!")
 
 # Table of Contents
-- [1. Development Team](#1-development-team)
-- [2. Introduction](#2-introduction-)
-- [3. Requirements](#3-requirements-)
-- [4. Ideation Process](#4-design-)
-- [5. Implementation](#5-implementation)
-- [6. Evaluation](#6-evaluation-)
-- [7. Process](#7-process-)
-- [8. Conclusion](#8-conclusion-)
-- [9. Acknowledgements](#9-acknowledgements)
+- [1. Development Team](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#1-development-team)
+- [2. Introduction](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#2-introduction)
+- [3. Requirements](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#3-requirements)
+- [4. Design](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#4-design)
+- [5. Implementation](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#5-implementation)
+- [6. Evaluation](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#6-evaluation)
+- [7. Process](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#7-process)
+- [8. Conclusion](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#8-conclusion)
+- [9. Acknowledgements](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#9-acknowledgements)
  
 # 1. Development Team
 <p align="center">
