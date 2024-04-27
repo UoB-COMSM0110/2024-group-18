@@ -48,7 +48,7 @@ Once you've installed Processing and the required libraries, you're all set to r
 
 | Name    | Role          | Contributions |
 |---------|---------------|---------------|
-| `Mihir` | `Dev Ops Lead`  | Built out our tooling and served as our in-house GitHub expert, pioneering our crucial PR-based workflow to minimize Git related issues. |
+| `Mihir` | `Dev Ops Lead`  | Built out our tooling and was our in-house GitHub expert, pioneering our crucial PR-based workflow to minimize Git related issues. |
 | `Tom`   | `Lead Designer` | Created interactive iPad demos for potential levels and provided expert analysis during playtesting. |
 | `Ali`   | `Scrum Master`  | Encouraged team communication and evaluated tasks for sprint prioritization, ensuring smooth workflow. |
 | `Yi`    | `Developer`     | Contributed significantly to game development and shared expertise, enhancing the team's development skills. |
@@ -60,7 +60,7 @@ Once you've installed Processing and the required libraries, you're all set to r
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 <p>
-Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. Drawing inspiration from Nolan's Tenet, the Tardis object allows for time reversal. The missions are intricately designed and problem-oriented.
+Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. Drawing inspiration from [Tenet](https://www.imdb.com/title/tt6723592/), the Tardis object allows for time reversal. The missions are intricately designed and problem-oriented.
 </p>
 
 ### How to Play:
