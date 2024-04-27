@@ -149,7 +149,7 @@ TODO: include paper prototype GIF.
     <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
     This further fueled this idea, which intrigued us with its potential for innovative gameplay mechanics. 
     
-    With our collaborative tools setup, a weekly time and place decided, and a paper prototype in hand, we evaluated our stakeholders.
+  With our collaborative tools setup, a weekly time and place decided, and a paper prototype in hand, we evaluated our stakeholders.
 </p>
 
 
