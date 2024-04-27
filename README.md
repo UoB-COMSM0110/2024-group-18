@@ -263,7 +263,7 @@ While not one of our official challenges, we found that programming collisions a
 
 The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to intialize.
 
-TOOO insert GIF of dynmaic loading screen.
+TODO insert GIF of dynmaic loading screen.
 
 Clicking the accessibility button on Linux causes an error message to show up.
 
