@@ -169,6 +169,7 @@ A key finding from our onion model was our observation that our lecturers have "
 This was advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see Section 6), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. However, it also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. So, final feedback may not be reflective if more experts had mobility issues; thus, they can empathise with this feature.
 
 ### Identifying Top-Level Needs (User Stories)
+To better understand what features we should prioritise, we created user stories.
 
 - As a casual gamer, I want a game that is straightforward to control, allowing me to enjoy the game immediately without a steep learning curve.
 - As a puzzle enthusiast, I want a game that gives me an "aha" moment, and rewards my ability to think through a problem.
@@ -179,7 +180,7 @@ This was advantageous, especially later when testing the Game and conducting mor
 - As a player seeking variety, I want a game that offers different eras and environments to explore through its time travel theme, each with unique obstacles and aesthetics.
 - As a technology enthusiast, I want a game that leverages modern technology like webcam interaction not just for accessibility, but also to create immersive, novel gameplay experiences.
 
-To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories. This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "what would Christina think"?
+To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories. This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "What would Christina think?"
 
 <p align="center">
   <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
@@ -201,9 +202,9 @@ To personalise and keep these user stories in mind, we created several posters w
 
 
 ### Use-Cases Breakdown 
-As our user stories include casual gamers, we understood early on in the game development process the difficulties when making a game for a large group of customers. Therefore, we used a Use-Case Diagram as a guide to inspire the creation of a dual mode gameplay system with an accessibility mode. While the game uses standard keyboard controls in Non-Accessibility Mode, it makes use of **Machine Vision** in Accesibility Mode to let players with disadvantages to control the game with head motions. This innovation is in line with our commitment to diversity and improves accessibility for those with limited mobility.
+As our user stories include casual gamers, we understood early on in the game development process the difficulties when making a game for a large group of customers. Therefore, we used a Use-Case Diagram as a guide to inspire the creation of a dual-mode gameplay system with an accessibility mode. While the game uses standard keyboard controls in Non-Accessibility Mode, it uses **Machine Vision** in Accessibility Mode to let players control the game with head motions. This innovation aligns with our commitment to diversity and improves accessibility for those with limited mobility.
 
-Below is our initial interpretation of this, where we posited the idea that the accessibility mode would be made easier on other dimensions also. Eventually we moved away from this idea, as we felt that it was important to our disabled player user story that they were able to play the same game as their friends.
+Below is our initial interpretation of this, where we posited the idea that the accessibility mode would be made easier on other dimensions. Eventually, we moved away from this idea, as we felt that it was important to our disabled player user story that they were able to play the same game as their friends.
 <p align="center">
   <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
