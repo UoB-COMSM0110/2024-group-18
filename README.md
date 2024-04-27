@@ -95,7 +95,7 @@ Navigate levels, dodge obstacles, and interact with objects like gates, switches
   <tr>
     <td>Switches</td>
     <td><img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="height: 100px;"></td>
-    <td>Toggle to control various game mechanisms.</td>
+    <td>Toggle to open doors</td>
   </tr>
   <tr>
     <td>Tardis</td>
