@@ -445,13 +445,13 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 # 8. Conclusion 
 
-Developing Oiram challenged and enhanced our software engineering capabilities. We crafted a sophisticated system architecture that included map design, a stylized interface, accessibility features, and innovative mechanics like time reversal, resulting in a game that closely matched our vision.
+Developing Oiram challenged and enhanced our software engineering capabilities. We crafted a sophisticated system architecture that included map design, a stylised interface, accessibility features, and innovative mechanics like time reversal, resulting in a game that closely matched our vision.
 
 Early in the project, we established our game's vision, though the complexity of our codebase evolved. Maintaining a supportive environment was vital, with senior developers providing guidance and using diagrams to ensure all team members, regardless of skill level, understood the system. This facilitated feature integration and allowed team members to cover for each other.
 
 Adopting an Agile development methodology was also instrumental for designing the game we envisioned, satisfying our user stories, and importantly, creating something that was fun to play. User feedback was pivotal, influencing the game’s setting and difficulty. This feedback enabled us to fine-tune levels and add hints, leading to a game that was enjoyable, challenging, and satisfying for players.
 
-During development, our team encountered a series of challenges such as the implementation of the games core mechanics, implementing accessibility mode, and successfully balancing a map design and difficulty level. These challenges were overcome by regular team meetings and the assignment of clear team roles. Despite all coming from different academic backgrounds and holding different levels of programming proficiency, we were able to capitalise on each other’s strengths, which fostered a supportive and efficient development lifecycle. 
+During development, our team encountered a series of challenges such as the implementation of the games core mechanics, implementing accessibility mode, and successfully balancing map design with difficulty level. These challenges were overcome by regular team meetings and the assignment of clear team roles. Despite all coming from different academic backgrounds and holding different levels of programming proficiency, we were able to capitalise on each other’s strengths, which fostered a supportive and efficient development lifecycle. 
 
 However, there are some areas we would have changed. Adopting a Test-Driven Development process from the project’s inception would have greatly enhanced our ability to debug. Due to our system architecture, it made the separation of the display and data very difficult, forcing us to find many bugs solely through playtesting. Shifting our design pattern to one such as the Model View Controller would likely have provided us with an easier process of error detection. These are valuable lessons that we will take forward into future projects. 
 
