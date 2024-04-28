@@ -379,22 +379,29 @@ We decided to implement visual hints on screen which offered clues as to how to 
 
 **Quantitative Analysis**
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table X).
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 1).
 
 
 <p align="center">
-  <b>Table X</b><br>
+  <b>Table 1</b><br>
   <i>Participant NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/updatedTLX.png">
 </p>
     
 
-The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Table X for means scores).
+The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Figure 17 for participant specifics and Figure 18 for mean scores).
+
 
 <p align="center">
   <b>Figure 17</b><br>
   <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
+</p>
+
+<p align="center">
+  <b>Figure 18</b><br>
+  <i>Mean NASA TLX Scores by Level</i><br>
+  <img src="Assets_For_ReadMe/meanTLX.png" width="512" height="384">
 </p>
 
 
