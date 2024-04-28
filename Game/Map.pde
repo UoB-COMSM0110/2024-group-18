@@ -51,6 +51,11 @@ class Map {
           bomb.setBombLocation(item);
         }
       }
+      for(Item item:dynamicItems){
+        if(bomb.checkCollision(item)){
+          bomb.setBombLocation(item);
+        }
+      }
       if (bomb.isOnGround) {
         // start explode process
         boolean f = bomb.explode();
@@ -129,6 +134,9 @@ class Map {
     if (level==2) {
       cellHeight = 48;
     }
+    if(level==3){
+      cellHeight=45;
+    }
     float offsetX = (w - cellWidth) / 2;
     float offsetY = (h - cellHeight) / 2;
     Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 50, h, w, h, true, false, false);
@@ -147,7 +155,8 @@ class Map {
       cellHeight = 52;
     }
     if (level==3) {
-      cellHeight = 43;
+      cellWidth=42;
+      cellHeight = 50;
     }
     Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
     item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
