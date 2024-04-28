@@ -327,6 +327,7 @@ TODO: insert picture of linux error.
 During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
 **Qualitative Evaluation**
+
 To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
 
 Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
@@ -340,6 +341,7 @@ Seventeen participants were collected through convenience sampling. Due to easy 
 
 
 **Player Movement**
+
 Much of the feedback was about the movement, and we identified:
 •	Felt sluggish
 •	Performance was too slow
@@ -355,6 +357,7 @@ Whilst not being our original setting for the game, this feedback inspired us to
 
 
 **Difficulty**
+
 We found a mix of opinions regarding the difficulty level of the game.
 •	Difficulty was rewarding but challenging
 •	Level Two was very hard to complete for most players
@@ -362,6 +365,7 @@ We found a mix of opinions regarding the difficulty level of the game.
 To address the difficulty concerns, we decided to alter some of the platforms in Level Two which allowed for easier ways to avoid obstacles.
 
 **Instructions**
+
 We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was met with mixed responses:
 •	People liked the puzzle solving aspect
 •	They found it rewarding solving the first level using past self
@@ -395,13 +399,13 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 <p align="center">
   <b>Figure 17</b><br>
   <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
-  <img src="Assets_For_ReadMe/individualTLX.png" width="512" height="384">
+  <img src="Assets_For_ReadMe/individualTLX.png">
 </p>
 
 <p align="center">
   <b>Figure 18</b><br>
   <i>Mean NASA TLX Scores by Level</i><br>
-  <img src="Assets_For_ReadMe/meanTLX.png" width="512" height="384">
+  <img src="Assets_For_ReadMe/meanTLX.png">
 </p>
 
 
