@@ -167,12 +167,12 @@ TODO: include paper prototype GIF.
 <p align="center">
   <img src="Assets_For_ReadMe/onion.png" >
   <br>
-  <i>Figure 5: Onion Model of Oiram Game (adapted from Alexander, 2014, p. 223, Figure 1)</i>
+  <i>Figure 5: Onion Model of Oiram Game (adapted from Alexander, 2004, p. 223, Figure 1)</i>
 </p>
 
 **Surrogate Roles**
 
-A key finding from our onion model was our observation that our lecturers have "surrogate roles." Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while lecturers weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
+A key finding from our onion model was our observation that our lecturers have "surrogate roles" (Alexander, 2004, p. 227). Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while lecturers weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
 
 This was advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see Section 6), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. However, it also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. So, final feedback may not be reflective if more experts had mobility issues; thus, they can empathise with this feature.
 
@@ -481,9 +481,11 @@ This project has provided each team member the chance to develop both their team
 
 # 9. References
 
-Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
+Alexander, I. (2004). A Better Fit—Characterising the Stakeholders. (p. 223-233).
 
 Alexander, I. F., & Beus-Dukic, L. (2009). Discovering Requirements: How to Specify Products and Services. Wiley. https://books.google.co.uk/books?id=KMZYFzgbXSwC
+
+Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
 Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. Qualitative Research in Psychology, 3(2), 77–101. https://doi.org/10.1191/1478088706qp063oa 
 
