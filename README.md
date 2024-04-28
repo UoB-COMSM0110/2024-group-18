@@ -48,11 +48,11 @@ Once you've installed Processing and the required libraries, you're all set to r
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
-  <i>Team Picture Week 1 with team role</i><br>
+  <i>Team Picture Week 1 with Team Role</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
 </p>
 
-### Team Role (from left to right of image):
+### Team Roles (from left to right of image):
 
 | Name    | Role          | Contributions |
 |---------|---------------|---------------|
