@@ -323,17 +323,67 @@ TODO: insert picture of linux error.
 
 
 # 6. Evaluation 
-  During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
-  Our game aims to reward future planning and puzzle-solving, therefore it was important we were able to create a game that was challenging while still remaining fun. To do this, we examnined the team's own video game preferences alongside findings from previous studies suggest that game difficulty can improve a player's overall enjoyment when it is not overly frustrating, yet still manages satisfying challenge to overcome (Alexander et al., 2013). Based on these findings and our discussions, it was important that we accurately assessed the perceived difficulty of our game. To examine whether two of our levels differentiated in complexity, data was gathered using the NASA Task Load Index (Hart & Staveland, 1988). The Task Load Index (TLX) is a questionnaire which asks participants to record their perceived physical and cognitive workload when completing a task, and has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
 
-  Eleven participants (N = 11), consisting of six males and five females, were collected via convenience sampling. Participants were randomly assigned to complete Level One or Level Two first to avoid issues of training bias (NEED REF). Level One was designed to be the easier of the two. Upon completion (determined by the participant), we administered the TLX. The process was repeated for Level Two, giving us two TLX scores for each participant (see Table X). We chose not to use the weighted TLX scores as some research has suggested that raw TLX scores have improved validity whilst also being easier to administer (Said et al., 2020; Virtanen et al., 2021).
+**Qualitative Evaluation**
+To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
+
+Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
+
+
+<p align="center">
+  <b>Figure 14</b><br>
+  <i>Thematic Map of Think Aloud Data</i><br>
+  <img src="Assets_For_ReadMe/thematicmap.png">
+</p>
+
+**Player Movement**
+Much of the feedback was about the movement, and we identified:
+•	Felt sluggish
+•	Performance was too slow
+•	“Space like” floaty feeling
+Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 15). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
+
+<p align="center">
+  <b>Figure 15</b><br>
+  <i>Different Game Backgrounds</i><br>
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
+</p>
+
+
+**Difficulty**
+We found a mix of opinions regarding the difficulty level of the game.
+•	Difficulty was rewarding but challenging
+•	Level Two was very hard to complete for most players
+
+To address the difficulty concerns, we decided to alter some of the platforms in Level Two which allowed for easier ways to avoid obstacles.
+
+**Instructions**
+We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was met with mixed responses:
+•	People liked the puzzle solving aspect
+•	They found it rewarding solving the first level using past self
+•	Some people wanted more instructions
+We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 16).
+
+
+<p align="center">
+  <b>Figure 16</b><br>
+  <i>Example Hints</i><br>
+  <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
+</p>
+
+
+
+**Quantitative Analysis**
+
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
 
 
 <p align="center">
   <b>Figure 14</b><br>
   <i>Participant NASA TLX Scores</i><br>
-  <img src="Assets_For_ReadMe/pscoretable.png">
+  <img src="Assets_For_ReadMe/updatedTLX.png">
 </p>
     
 
@@ -352,11 +402,6 @@ To enrich the data gathered through the NASA TLX, and to further guide the devel
 Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure 16).
 
 
-<p align="center">
-  <b>Figure 16</b><br>
-  <i>Thematic Map of Think Aloud Data</i><br>
-  <img src="Assets_For_ReadMe/thematicmap.png">
-</p>
 
 
 This data was instrumental in our development approach, and much of the qualitative data we gathered directly influenced our design choices. We will address each theme in turn.
@@ -366,11 +411,7 @@ This data was instrumental in our development approach, and much of the qualitat
 During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received was instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish” and gave them a “floaty feeling” , with another describing it as feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure 17.
 
 
-<p align="center">
-  <b>Figure 17</b><br>
-  <i>Different Game Backgrounds</i><br>
-  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
-</p>
+
 
 
 **Difficulty** 
@@ -403,11 +444,6 @@ However, others claimed they would prefer slightly more instructions on how to p
 We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Section 3).
 
 
-<p align="center">
-  <b>Figure 18</b><br>
-  <i>Example Hints</i><br>
-  <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
-</p>
 
 
 
