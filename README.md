@@ -4,6 +4,9 @@ TODO: add GIFS
 
 TODO: search for any remaining TODOs or XXX in the readme.
 
+DONE:
+TODO: include GIFs of feasibility studies.
+
 <p align="center">
   <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
     <br>
@@ -145,7 +148,6 @@ The following section discusses the models used to produce the RE analysis for o
   <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="375" style="transform: rotate(-90deg); border: 5px solid black;" alt="Paper Prototype">
 </p>
 
-TODO: include GIFs of feasibility studies.
 
   One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
 
@@ -165,7 +167,7 @@ TODO: include paper prototype GIF.
 <p align="center">
   <img src="Assets_For_ReadMe/onion.png" >
   <br>
-  <i>Figure 5: Onion Model of Oiram Game (adapted from Alexander's book Figure 1)</i>
+  <i>Figure 5: Onion Model of Oiram Game (adapted from Alexander, 2014, p. 223, Figure 1)</i>
 </p>
 
 **Surrogate Roles**
