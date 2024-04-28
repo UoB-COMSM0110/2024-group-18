@@ -44,6 +44,8 @@ int xDirection, yDirection;
 int hintLag;
 int moveLag;
 int invertLag;
+float tmpTime;
+boolean ifNoChance = false;
 boolean ifRestarted;
 PImage moveHint;
 PImage jumpHint;
@@ -389,6 +391,9 @@ void generateHint() {
   if (!isDoorOpen && playerController.hasPressed && hintLag == 0) {
     hintLag = 1;
   }
+  if (!playerController.hasPressed) {
+    tmpTime = time;
+  }
   if (hintLag >0 && hintLag <= 1000 && !playerController.ifPastSelfGenerated) {
     if (hintLag < 100) {
       image(loadImage("./assets/Hint/oh-no.png"), 800, 300, 144, 40);
@@ -404,7 +409,7 @@ void generateHint() {
   if (playerController.ifPastSelfGenerated && hintLag>0 && invertLag == 0) {
     invertLag = 1;
   }
-  if (invertLag > 0 && invertLag < 500 && !ifGameOver && !ifLevelPass) {
+  if (invertLag > 0 && invertLag < 500 && !ifGameOver && !ifLevelPass && !ifNoChance) {
     if (invertLag < 75) {
       image(loadImage("./assets/Hint/wow.png"), 800, 300, 167, 36);
     } else if (invertLag < 275) {
@@ -413,6 +418,16 @@ void generateHint() {
       image(loadImage("./assets/Hint/someoneneed.png"), 800, 400, 797, 39);
     }
     invertLag++;
+  }
+  if (Float.compare(tmpTime,time)==0 && invertLag > 0 && !ifGameOver && !ifLevelPass) {
+    ifNoChance = true;
+  }
+  if (ifNoChance) {
+    if (ifGameOver || ifLevelPass) {
+      ifNoChance = false;
+      return;
+    }
+    image(loadImage("./assets/Hint/failHint.png"), 800, 400);
   }
 }
 
@@ -618,6 +633,7 @@ public void restartLevel() {
   hintLag = 0;
   moveLag = 0;
   invertLag = 0;
+  ifNoChance = false;
   time=0;
   playerController = new PlayerController(player);
   enableAlternativeController();
