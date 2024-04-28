@@ -139,11 +139,10 @@ The following section discusses the models used to produce the RE analysis for o
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
     to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input.)
 
-
-<p align="center">
+<p align="center" style="margin: 0; padding: 0;">
   <b>Figure X</b><br>
   <i>Feasibility Study: Paper Prototype</i><br>
-  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol" width="500" alt="Paper Prototype" style="border: 5px solid black;">
+  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="375" style="transform: rotate(-90deg); border: 5px solid black;" alt="Paper Prototype">
 </p>
 
 TODO: include GIFs of feasibility studies.
