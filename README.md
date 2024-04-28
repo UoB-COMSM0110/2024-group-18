@@ -398,7 +398,7 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 
 <p align="center">
   <b>Figure 17</b><br>
-  <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
+  <i>Raw NASA TLX Scores by Participant</i><br>
   <img src="Assets_For_ReadMe/individualTLX.png">
 </p>
 
