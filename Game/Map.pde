@@ -135,7 +135,7 @@ class Map {
       cellHeight = 48;
     }
     if(level==3){
-      cellHeight=45;
+      cellHeight=44.6;
     }
     float offsetX = (w - cellWidth) / 2;
     float offsetY = (h - cellHeight) / 2;
@@ -156,7 +156,7 @@ class Map {
     }
     if (level==3) {
       cellWidth=42;
-      cellHeight = 50;
+      cellHeight = 49;
     }
     Item item = new Item(map[i].charAt(j)-'0', (j*cellWidth) - offsetX, (i*cellHeight) - offsetY, 80, h, w, h, true, false, false);
     item.setCurrentImage("./assets/Static/TimeMachine/time1.png");
