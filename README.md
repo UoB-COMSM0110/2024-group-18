@@ -338,12 +338,14 @@ Seventeen participants were collected through convenience sampling. Due to easy 
   <img src="Assets_For_ReadMe/thematicmap.png">
 </p>
 
+
 **Player Movement**
 Much of the feedback was about the movement, and we identified:
 •	Felt sluggish
 •	Performance was too slow
 •	“Space like” floaty feeling
 Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 15). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
+
 
 <p align="center">
   <b>Figure 15</b><br>
@@ -377,72 +379,42 @@ We decided to implement visual hints on screen which offered clues as to how to 
 
 **Quantitative Analysis**
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023).
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table X).
 
 
 <p align="center">
-  <b>Figure 14</b><br>
+  <b>Table X</b><br>
   <i>Participant NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/updatedTLX.png">
 </p>
     
 
-  The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure 15).
-
+The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Table X for means scores).
 
 <p align="center">
-  <b>Figure 15</b><br>
+  <b>Figure 17</b><br>
   <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
 </p>
 
 
-To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA requires participants to verbally express their thoughts, feelings, and emotions whilst performing a given task, and has been shown to be an effective evaluation method in many areas of HCI (Nielsen et al., 2002; Joe et al., 2015). We utilised TA to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
+**Description of how code was tested**
 
-Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure 16).
-
-
-
-
-This data was instrumental in our development approach, and much of the qualitative data we gathered directly influenced our design choices. We will address each theme in turn.
-
-**Player Movement**
-
-During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received was instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish” and gave them a “floaty feeling” , with another describing it as feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure 17.
+Our strategy for testing the code involved a series of both black box and white box methods.
+Whitebox tests were conducted by writing assertions which tested the correct initialisation of every object, and that variables held their expected states. See figure X for some examples of these. Most of the testing was done through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member. 
 
 
+-	Mention testing specification
+As the codebase grew in complexity, we drew up a testing specification 
 
 
-
-**Difficulty** 
-
-We found mixed responses to the difficulty levels with many players enjoying the reward of completing the levels.
-
-*“That [Level Two] was definitely harder … it was pretty rewarding”*
-
-*“Okay now that was satisfying”*
-
-However, other players commented on how they felt like the second level especially was too challenging, with one participant asking, *“Is there any way to skip this level”* and another stating, *“damn, that is so hard”*. Despite this mixed feedback, we chose to keep the design of the second level, as we felt it was more in line with our vision for a rewarding science fiction platformer, and the mixed responses likely reflected the differing video game abilities that our pool of participants had. 
-
-
-**Instructions**
-
-We deliberately opted not to give much information about what the player is required to do, as we felt it was better to let players figure it out for themselves, which was again highlighted in the TA data.
-
-*“I liked figuring out what to do, that is really rewarding”*
-
-*“Once it clicked … it became so much clearer”*
-
-However, others claimed they would prefer slightly more instructions on how to progress through the level and how to view the controls again.
-
-*“How do I see the controls again”*
-
-*“I think it would be good if you could maybe give some hints whilst you are playing”*
-
-*“It would be nice to have a bit more direction”*
-
-We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Section 3).
-
+o	Explain the methods used to test the code.
+o	Blackbox
+o	Whitebox
+	Ali added assertions
+	In class called test
+o	Testing harness
+o	Equivalence partitioning
 
 
 
