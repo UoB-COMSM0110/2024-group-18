@@ -83,29 +83,34 @@ Oiram is a single-player, platform-oriented game that integrates Super Mario-sty
 **The Mission:**
 Navigate levels, dodge obstacles, and interact with objects like gates, switches, and the Tardis to activate mechanisms and portals.
 
-
-<table style="width:100%; text-align:center;">
-  <tr>
-    <th>Category</th>
-    <th>Image</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>Gates</td>
-    <td><img src="Game/assets/Static/Door/door1.png" alt="Gates" style="height: 100px;"></td>
-    <td>Act as portals to the next level.</td>
-  </tr>
-  <tr>
-    <td>Switches</td>
-    <td><img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="height: 100px;"></td>
-    <td>Toggle to open doors</td>
-  </tr>
-  <tr>
-    <td>Tardis</td>
-    <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
-    <td>Device to invoke time reversal.</td>
-  </tr>
-</table>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
+    <caption>
+      <b>Figure X</b><br>
+      <i>Oiram Game Objects</i>
+    </caption>
+    <tr>
+      <th>Category</th>
+      <th>Image</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Gates</td>
+      <td><img src="Game/assets/Static/Door/door1.png" alt="Gates" style="height: 100px;"></td>
+      <td>Act as portals to the next level.</td>
+    </tr>
+    <tr>
+      <td>Switches</td>
+      <td><img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="height: 100px;"></td>
+      <td>Toggle to open doors.</td>
+    </tr>
+    <tr>
+      <td>Tardis</td>
+      <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
+      <td>Device to invoke time reversal.</td>
+    </tr>
+  </table>
+</div>
 
 **Obstructions:**
 Avoid explosives and pits to survive.
@@ -124,23 +129,27 @@ Oiram stands out by combining classic platforming with innovative time manipulat
 
 Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of the Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported the most common issues are unrealistic or ambivalent scope and feature creep.
 
-<img src="Assets_For_ReadMe/RE-GameStudySignificance.png">
-<p><i>Figure 2. Petrillo's (2009) study mapping problems found in Game Development to their occurrences.</i></p>
-
-The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
-
-<img src="Assets_For_ReadMe/RERoadMapReq.png">
-<p><i>Figure 3. RE Roadmap for Section Three of Oiram Game Report.</i></p>
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Petrillo's (2009) study mapping problems found in Game Development to their occurrences.</i><br>
+  <img src="Assets_For_ReadMe/RE-GameStudySignificance.png" >
+  <br>
+</p>
 
 <h3>Ideation Processing</h3>
-<img src="Assets_For_ReadMe/SEBrainstorm.png" height=800px/>
-<p><i>Figure 4. Week 2 Brainstorm several game ideas.</i></p>
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Week 2 Brainstorm several game ideas.</i><br>
+  <img src="Assets_For_ReadMe/SEBrainstorm.png" width="50%" >
+  <br>
+</p>
 <p>
     In our ideation phase, we used 
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 4) and 
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
     to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input.)
+</p>
 
 <p align="center" style="margin: 0; padding: 0;">
   <b>Figure X</b><br>
@@ -165,9 +174,10 @@ TODO: include paper prototype GIF.
 
 ### Identifying Stakeholders (Onion Model)
 <p align="center">
+  <b>Figure X</b><br>
+  <i>Onion Model of Oiram Game (adapted from Alexander, 2004, p. 223, Figure 1)</i><br>
   <img src="Assets_For_ReadMe/onion.png" >
   <br>
-  <i>Figure 5: Onion Model of Oiram Game (adapted from Alexander, 2004, p. 223, Figure 1)</i>
 </p>
 
 **Surrogate Roles**
@@ -191,21 +201,24 @@ To better understand what features we should prioritise, we created user stories
 To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories. This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "What would Christina think?"
 
 <p align="center">
+  <b>Figure X</b><br>
+  <i>User Story One</i><br>
   <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
   <br>
-  <i>Figure 6: User Story 1</i>
 </p>
 
 <p align="center">
+  <b>Figure X</b><br>
+  <i>User Story Two</i><br>
   <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
   <br>
-  <i>Figure 7: User Story 2</i>
 </p>
 
 <p align="center">
+  <b>Figure X</b><br>
+  <i>User Story Three</i><br>
   <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
   <br>
-  <i>Figure 8: User Story 3</i>
 </p>
 
 
@@ -214,16 +227,40 @@ As our user stories include casual gamers, we understood early on in the game de
 
 Below is our initial interpretation of this, where we posited the idea that the accessibility mode would be made easier on other dimensions. Eventually, we moved away from this idea, as we felt that it was important to our disabled player user story that they were able to play the same game as their friends.
 <p align="center">
+  <b>Figure X</b><br>
+  <i>Use Case Diagram</i><br>
   <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
-  <i>Figure 9: Use Case Diagram</i>
 </p>
 
+### Use-Case Specification
+
+
 <p align="center">
-  <img src="Assets_For_ReadMe/specdraft.png" width="75%">
-  <br>
-  <i>Figure 10: Use Case Specification</i>
+  <b>Figure X</b><br>
+  <i>Easy Mode (Tutorial) Use Case Specification</i><br>
 </p>
+
+| | Non-Accessibility Mode                                                                                                                            | Accessibility Mode                                                                                                                                                               |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Description**                | On screen run-through of the game with **tutorial**, controlled with **keyboard**.                                                                | A screen popup with **accessibility initialisation and tutorial**, controlled by head movement (swaying left or right) and noise for jumping.                                    |
+| **Basic Flow**       | **Goal: Complete the level without getting hurt and not touching previous players. If triggered, everything goes back to its previous position.** |                                                                                                                                                                                  |
+| Step One                       | User follows screen prompt for *Movement*, pressing Left/Right or A/D keys to run across platforms, later Up/W key for jump.                      | User moves their head to control character and makes a noise to jump. User can follow mini screen on bottom right corner to track if face is detected (no red box) / undetected. |
+| Step Two                       | Narration: "There's a magic stone/door on the map." User continues to use keyboard keys to trigger past-present feature, and activate gate.       | "", becoming more familiar with head movement and noice feature, finding best combination that provides best comfort, and game smoothness, for activating gate.                  |
+| **Alternative Flow** | **Challenges: Get touched by a previous self or traps, leading to game over**                                                                     |
+| Step One                       | Collision with previous self or trap leads to end of game.                                                                                        |  ""                 |
+| Step Two                       | If the player stays still for 10 seconds, a hint appears to guide them.                                                                           |  ""    |
+| Step Three                     | Interaction with traps results in game over.                                                                                                      |  ""                                                                                                                    |
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Difficult Mode Use Case Specification</i><br>
+</p>
+
+|                   | Non-Accessibility Mode                                                                                                                                | Accessibility Mode                                                                                                                                                                                                                     |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Description**   | A run-through of the game with more complex puzzles and traps, under **keyboard** control.                                                            | A run-through with more complex puzzles, using **head movement and sound** to navigate the map.                                                                                                                                        |
+| **Advanced Flow** | Try/Error with keys. Difficult mode therefore repeat attempts are expected. User will find best configuration (ie WASD/Arrow keys) to navigate level. | Increasing confidence with head movement and noise feature. At this point most players will understand what environment will produce best UX with movement (ie lighting affecting face recognition), and pitch, sound for player jump. |
 
 
 # 4. Design 
