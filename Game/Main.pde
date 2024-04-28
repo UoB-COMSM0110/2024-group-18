@@ -34,6 +34,7 @@ float time_y;
 ControlType controlMode;
 boolean ifGameOver;
 boolean ifLevelPass;
+boolean ifEnd;
 boolean ifMapGenerated;
 int ESCAPE_KEYCODE=27;
 /* Variables for startup screen*/
@@ -73,6 +74,7 @@ void initializeGlobalVariablesToStartingValues() {
   invertLag = 0;
   ifGameOver = false;
   ifLevelPass = false;
+  ifEnd = false;
   ifMapGenerated = false;
   ifRestarted = false;
   showControlBar = false;
@@ -132,7 +134,7 @@ void draw() {
       return;
     }
     // End of the whole game
-    if (playerController.ifGameWin && level == 3) {
+    if (ifEnd) {
       showEnd();
       return;
     }
@@ -174,7 +176,7 @@ void draw() {
         map.displayBomb(time);
       }
       placeClock();
-
+      
       map.displayMap();
       playerDraw();
       checkGameStatus();
@@ -269,6 +271,9 @@ void checkGameStatus() {
   if (playerController.ifGameWin&&level<3) {
     image(loadImage("./assets/Background/nextLevel.png"), width/2, height/2);
     ifLevelPass=true;
+  } else if (level==3&&playerController.ifGameWin) {
+    println("end");
+    ifEnd = true;
   }
 }
 
@@ -611,6 +616,7 @@ void mousePressed() {
     level++;
     time=0;
     ifLevelPass=false;
+    ifMapGenerated=false;
     playerController.refresh(map);
     enableAlternativeController();
   }
@@ -643,6 +649,7 @@ public void restartLevel() {
   player.velocity.set(0, 0);
   playerController.deadByHitPreviousPlayer=false;
   ifGameOver=false;
+  ifEnd=false;
   ifRestarted = true;
   if (level==2||level==3) {
     map.ifBombInverse=false;
