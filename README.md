@@ -48,11 +48,11 @@ Once you've installed Processing and the required libraries, you're all set to r
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
-  <i>Team Picture Week 1 with team role</i><br>
+  <i>Team Picture Week 1 with Team Role</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
 </p>
 
-### Team Role (from left to right of image):
+### Team Roles (from left to right of image):
 
 | Name    | Role          | Contributions |
 |---------|---------------|---------------|
@@ -122,22 +122,29 @@ Oiram stands out by combining classic platforming with innovative time manipulat
 Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of the Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported the most common issues are unrealistic or ambivalent scope and feature creep.
 
 <img src="Assets_For_ReadMe/RE-GameStudySignificance.png">
-<p><i>Figure 1. Petrillo's (2009) study mapping problems found in Game Development to their occurrences.</i></p>
+<p><i>Figure 2. Petrillo's (2009) study mapping problems found in Game Development to their occurrences.</i></p>
 
 The following section discusses the models used to produce the RE analysis for our game, reflected upon the roadmap below:
 
 <img src="Assets_For_ReadMe/RERoadMapReq.png">
-<p><i>Figure 2. RE Roadmap for Section Three of Oiram Game Report.</i></p>
+<p><i>Figure 3. RE Roadmap for Section Three of Oiram Game Report.</i></p>
 
 <h3>Ideation Processing</h3>
 <img src="Assets_For_ReadMe/SEBrainstorm.png" height=800px/>
-<p><i>Figure 3. Week 2 Brainstorm several game ideas.</i></p>
+<p><i>Figure 4. Week 2 Brainstorm several game ideas.</i></p>
 <p>
     In our ideation phase, we used 
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
-    (Figure 3) and 
+    (Figure 4) and 
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
     to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input.)
+
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Feasibility Study: Paper Prototype</i><br>
+  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol" width="500" alt="Paper Prototype" style="border: 5px solid black;">
+</p>
 
 TODO: include GIFs of feasibility studies.
 
@@ -159,7 +166,7 @@ TODO: include paper prototype GIF.
 <p align="center">
   <img src="Assets_For_ReadMe/onion.png" >
   <br>
-  <i>Figure X: Onion Model of Oiram Game (adapted from Alexander's book Figure 1)</i>
+  <i>Figure 5: Onion Model of Oiram Game (adapted from Alexander's book Figure 1)</i>
 </p>
 
 **Surrogate Roles**
@@ -185,19 +192,19 @@ To personalise and keep these user stories in mind, we created several posters w
 <p align="center">
   <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
   <br>
-  <i>Figure 3: User Story 1</i>
+  <i>Figure 6: User Story 1</i>
 </p>
 
 <p align="center">
   <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
   <br>
-  <i>Figure 4: User Story 2</i>
+  <i>Figure 7: User Story 2</i>
 </p>
 
 <p align="center">
   <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
   <br>
-  <i>Figure 5: User Story 3</i>
+  <i>Figure 8: User Story 3</i>
 </p>
 
 
@@ -208,13 +215,13 @@ Below is our initial interpretation of this, where we posited the idea that the 
 <p align="center">
   <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
-  <i>Figure 5: Use Case Diagram</i>
+  <i>Figure 9: Use Case Diagram</i>
 </p>
 
 <p align="center">
   <img src="Assets_For_ReadMe/specdraft.png" width="75%">
   <br>
-  <i>Figure 6: Use Case Specification</i>
+  <i>Figure 10: Use Case Specification</i>
 </p>
 
 
@@ -243,22 +250,22 @@ The complex mechanics of time inversion in our platform-puzzle game necessitated
 <p align="center">
   <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
   <br>
-  <i>Figure 7: Class Diagram Generated W5 Labs.</i>
+  <i>Figure 11: Class Diagram Generated W5 Labs.</i>
 </p>
 
 <p align="center">
   <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
   <br>
-  <i>Figure 8: Updated Class Diagram to date.</i>
+  <i>Figure 12: Updated Class Diagram to date.</i>
 </p>
 
-Figures 7 and 8 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
+Figures 11 and 12 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
 
 ### Behavioural diagrams 
 <p align="center">
   <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
   <br>
-  <i>Figure 8: Sequence Diagram</i>
+  <i>Figure 13: Sequence Diagram</i>
 </p>
 When creating the Oiram game, we embraced agile methods to evolve our game's design. This approach required frequent updates to our system architecture, class, and sequence diagrams, essential tools for visualising and understanding the game's structure and interactions. However, the fast pace of Agile development meant that these foundational documents often needed to catch up to the latest game adjustments, showcasing a key challenge of Agile: maintaining up-to-date design documentation amidst rapid changes.
 
@@ -323,17 +330,17 @@ TODO: insert picture of linux error.
 
 
 <p align="center">
-  <b>Table X</b><br>
+  <b>Figure 14</b><br>
   <i>Participant NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/pscoretable.png">
 </p>
     
 
-  The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure X).
+  The data was analysed using R*Studio (RStudio Team, 2020) and we expected each participant to report significantly increased workload on Level 2 compared to Level 1. A Wilcoxon Signed Rank test was conducted to assess TLX score differences between the two levels. The results indicated a statistically significant increase in the TLX scores from Level One to Level Two, V = 0, p = .00348. Participants reported a significantly increased workload for level Two (mean TLX score = 55) compared to Level One (mean score = 22), indicating an increase in difficulty (see Figure 15).
 
 
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 15</b><br>
   <i>Box Plot Depicting Raw NASA TLX Scores</i><br>
   <img src="Assets_For_ReadMe/graph.png" width="512" height="384">
 </p>
@@ -341,11 +348,11 @@ TODO: insert picture of linux error.
 
 To enrich the data gathered through the NASA TLX, and to further guide the development process, we conducted the qualitative evaluation technique of Think Aloud (TA). TA requires participants to verbally express their thoughts, feelings, and emotions whilst performing a given task, and has been shown to be an effective evaluation method in many areas of HCI (Nielsen et al., 2002; Joe et al., 2015). We utilised TA to assess whether the difficulty level was where we planned it to be, and to potentially identify any features or issues we may have overlooked.
 
-Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure X).
+Seventeen participants were collected again through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different experiences and abilities regarding video games, offering a richer set of data. Whilst each participant was playing, we noted down their thoughts, or recorded their session for later transcription. Following this, we assessed each transcript to find any thoughts which were shared between participants and organised them into underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). After sufficient themes had been identified, they were organised into a Thematic Map for easier visualisation (see Figure 16).
 
 
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 16</b><br>
   <i>Thematic Map of Think Aloud Data</i><br>
   <img src="Assets_For_ReadMe/thematicmap.png">
 </p>
@@ -355,11 +362,11 @@ This data was instrumental in our development approach, and much of the qualitat
 
 **Player Movement**
 
-During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received was instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish” and gave them a “floaty feeling” , with another describing it as feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure X.
+During early playtesting, when the aesthetic of the game hadn’t yet been  decided, much of the TA feedback we received was instrumental for guiding the style of the game itself. Multiple participants commented on how the player movement felt “sluggish” and gave them a “floaty feeling” , with another describing it as feeling “like you are in outer space”.  Whilst not being our original setting for the game, this feedback inspired us to set the game in space, whilst also negating the need to alter the physics and potentially having to redesign levels. The alpha build background and the subsequent space setting are shown in Figure 17.
 
 
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 17</b><br>
   <i>Different Game Backgrounds</i><br>
   <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
 </p>
@@ -392,11 +399,11 @@ However, others claimed they would prefer slightly more instructions on how to p
 
 *“It would be nice to have a bit more direction”*
 
-We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Figure X).
+We took some of this feedback and then included some visual hints on the screen, which offered some clues as to how to beat the level. We designed these hints to provide somewhat vague information on how to complete the level, therefore still elliciting the satisfactory feeling users got on completion of the unhinted level, in line with our user stories (see Section 3).
 
 
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 18</b><br>
   <i>Example Hints</i><br>
   <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
 </p>
@@ -445,9 +452,19 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 # 8. Conclusion 
 
+Developing Oiram challenged and enhanced our software engineering capabilities. We crafted a sophisticated system architecture that included map design, a stylised interface, accessibility features, and innovative mechanics like time reversal, resulting in a game that closely matched our vision.
 
+Early in the project, we established our game's vision, though the complexity of our codebase evolved. Maintaining a supportive environment was therefore vital, with senior developers providing guidance and using diagrams to ensure all team members, regardless of skill level, understood the system. This facilitated feature integration and allowed team members to cover for each other.
 
+Adopting an Agile development methodology was also instrumental for designing the game we envisioned, satisfying our user stories, and importantly, creating something that was fun to play. User feedback was pivotal, influencing the game’s setting and difficulty. This feedback enabled us to fine-tune levels and add hints, leading to a game that was enjoyable, challenging, and satisfying for players.
 
+During development, our team encountered a series of challenges such as the implementation of the games core mechanics, implementing accessibility mode, and successfully balancing map design with difficulty level. These challenges were overcome by regular team meetings and the assignment of clear team roles. Despite all coming from different academic backgrounds and holding different levels of programming proficiency, we were able to capitalise on each other’s strengths, which fostered a supportive and efficient development lifecycle. 
+
+However, there are some areas we would have changed. Adopting a Test-Driven Development process from the project’s inception would have greatly enhanced our ability to debug. Due to our system architecture, it made the separation of the display and data very difficult, forcing us to find many bugs solely through playtesting. Shifting our design pattern to one such as the Model View Controller would likely have provided us with an easier process of error detection. These are valuable lessons that we will take forward into future projects. 
+
+Looking forward for Oiram itself, we have numerous features we would still like to implement. A musical score could support the science fiction setting, and sound effects for various gameplay scenarios, such as explosions and player death, would help improve immersion. Given a larger development team, or an extended deadline, we would aim to have implemented more levels of increasing difficulty, such as a boss fight which would require both past and present versions of the player working together to defeat it. Concept art and conceptual level designs for some of these ideas can be found in Appendix X.
+
+This project has provided each team member the chance to develop both their team working, and software engineering abilities. Developing Oiram has been our first experience of undertaking a team-based software engineering project. Each member would agree that this project has been invaluable, and we will take what we have learned into our future careers.
 
 
 
@@ -461,7 +478,7 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 - **Kaiyan**: 1.00
 
 
-# 9. Acknowledgements
+# 9. References
 
 Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001 
 
