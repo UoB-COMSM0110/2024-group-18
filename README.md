@@ -6,6 +6,8 @@ TODO: search for any remaining TODOs or XXX in the readme.
 
 DONE:
 TODO: include GIFs of feasibility studies.
+TODO: include paper prototype GIF.
+TODO: include YiOldGame GIF.
 
 <p align="center">
   <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
@@ -148,24 +150,33 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 4) and 
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input.)
+    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input).
 </p>
 
-<p align="center" style="margin: 0; padding: 0;">
+One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing (Figure X). This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+
+<p align="center">
   <b>Figure X</b><br>
-  <i>Feasibility Study: Paper Prototype</i><br>
-  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="375" style="transform: rotate(-90deg); border: 5px solid black;" alt="Paper Prototype">
+  <i>Basic Past Player Feature Programmed Early During Project</i><br>
+  <img src="Assets_For_ReadMe/Feasability-ezgif.com-video-to-gif-converter.gif" width="50%">
+  <br>
+</p>
+Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a>, we determined that users would be better able to understand with minimal hints.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
+  <br><br>
+  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol">
 </p>
 
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Digital Paper Prototype drafted after Workshop Three</i><br>
+  <img src="Assets_For_ReadMe/Prototype-ezgif.com-resize.gif" width="50%">
+  <br>
 
-  One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
-
-TODO: insert Yi's old game
-  
-  Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
-
-TODO: include paper prototype GIF.
-
+</p>
   For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
     <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
     This further fueled this idea, which intrigued us with its potential for innovative gameplay mechanics. 
