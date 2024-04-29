@@ -561,17 +561,43 @@ Looking forward for Oiram itself, we have numerous features we would still like 
 
 This project has provided each team member the chance to develop both their team working, and software engineering abilities. Developing Oiram has been our first experience of undertaking a team-based software engineering project. Each member would agree that this project has been invaluable, and we will take what we have learned into our future careers.
 
+<div align="center">
 
+**Table 6**  
+*Table to demonstrate team contributions for Game Project.*
 
+<table>
+  <thead>
+    <tr>
+      <th>Contributor</th>
+      <th>Contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mihir</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Tom</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Ali</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Yi</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Kaiyan</td>
+      <td>1.00</td>
+    </tr>
+  </tbody>
+</table>
 
-
-**Table of Contributions**
-- **Mihir**: 1.00
-- **Tom**: 1.00
-- **Ali**: 1.00
-- **Yi**: 1.00
-- **Kaiyan**: 1.00
-
+</div>
 
 # 9. References
 
