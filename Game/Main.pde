@@ -427,7 +427,7 @@ void generateHint() {
     }
     invertLag++;
   }
-  if (Float.compare(tmpTime,time)==0 && invertLag > 0 && !ifGameOver && !ifLevelPass) {
+  if (int(tmpTime*100)==int(time*100) && invertLag > 0) {
     ifNoChance = true;
   }
   if (ifNoChance) {

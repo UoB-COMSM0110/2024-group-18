@@ -53,9 +53,9 @@ class PlayerController {
 
   // maps valid keypresses to movement
   public void movementControl() {
-    movingRight = keyCode == RIGHT || key == 'd' || inputRight==true;
-    movingLeft = keyCode == LEFT || key == 'a'|| inputLeft==true;
-    isJumping = (keyCode == UP || key == 'w' || inputUp==true) && player.isOnGround;
+    movingRight = keyCode == RIGHT || key == 'D' || inputRight==true;
+    movingLeft = keyCode == LEFT || key == 'A'|| inputLeft==true;
+    isJumping = (keyCode == UP || key == 'W' || inputUp==true) && player.isOnGround;
     if (isJumping && movingRight) {
       player.velocity.add(player.speed, player.jumpPower);
       player.isOnGround = false;
