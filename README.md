@@ -325,8 +325,8 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Console Log of Linux Error</i><br>
+  <b>Figure 14</b><br>
+  <i>Example of Error.</i><br>
 <img src="Game/assets/Background/LinuxErr.png">
 </p>
 
@@ -336,18 +336,29 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
    This was by far the hardest task. We wanted to store not just the previous player's locations but also have that player interact with the environment (for example, opening doors). We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object. To reduce the amount of code we had to write, we took advantage of our existing Player class. Since the implementation is the same, this object contained the logic for collisions with buttons and other game objects.
 
+<p align="center">
+  <b>Figure 15</b><br>
+  <i>Past Player Code Snippet.</i><br>
     <img src="https://i.imgur.com/3cYjXVG.png" width="500" >
-
+</p>
    The bomb was even more complex. We created explode and unexplode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
    
     <img src="https://i.imgur.com/PQoksw9.png" width="500" >
 
 3. **Level Design and balance**
 
-   We realized early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map. This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
-   
+   We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 16). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
+
+<p align="center">
+  <b>Figure 16</b><br>
+  <i>Snippet of Button Debugging.</i><br>
     <img src="https://i.imgur.com/0kD1yRU.png" width="500" >
+</p>
+<p align="center">
+  <b>Figure 18</b><br>
+  <i>Playtesting.</i><br>
     <img src="https://i.imgur.com/Suklhby.png" width="500" >
+</p>
     
    This level designer was very helpful when in playtesting. For example, one user found the jump in the tutorial level too challenging to complete, but with a few keystrokes, we were able to change it and immediately gather feedback that the same user found it easier.
    
@@ -356,8 +367,8 @@ Clicking the accessibility button on Linux causes an error message to show up.
    Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Thematic Map of Think Aloud Data</i><br>
+  <b>Figure 19</b><br>
+  <i>Demonstration of Accessibility Use-Case.</i><br>
   <img src="Assets_For_ReadMe/Game_Video_V5.gif">
 </p>
 
@@ -365,7 +376,6 @@ Clicking the accessibility button on Linux causes an error message to show up.
    
    Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
 
-    <img src="https://i.imgur.com/LI40MPH.png" width="500" >
 
    In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
@@ -378,11 +388,11 @@ During the development process, it was essential to understand whether the game'
 
 To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
 
-Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
+Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 20). We will address each theme in turn.
 
 <p align="center">
-  <b>Figure 14</b><br>
-  <i>Thematic Map of Think Aloud Data</i><br>
+  <b>Figure 20</b><br>
+  <i>Thematic Map of Think Aloud Data.</i><br>
   <img src="Assets_For_ReadMe/thematicmap.png">
 </p>
 
@@ -393,13 +403,13 @@ Much of the feedback was about the movement, and we identified:
 •	Felt sluggish
 •	Performance was too slow
 •	“Space like” floaty feeling
-Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 15). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
+Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 21). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
 
 
 <p align="center">
-  <b>Figure 15</b><br>
-  <i>Different Game Backgrounds</i><br>
-  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
+  <b>Figure 21</b><br>
+  <i>Different Game Backgrounds.</i><br>
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="75%" height="">
 </p>
 
 
@@ -417,42 +427,40 @@ We deliberately opted to not give much information as to what the player is requ
 •	People liked the puzzle solving aspect
 •	They found it rewarding solving the first level using past self
 •	Some people wanted more instructions
-We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 16).
+We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 22).
 
 
 <p align="center">
-  <b>Figure 16</b><br>
-  <i>Example Hints</i><br>
-  <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
+  <b>Figure 22</b><br>
+  <i>Tutorial Hints.</i><br>
+  <img src="Assets_For_ReadMe/hintexamples.png" width="75%" height="">
 </p>
 
 
 
-**Quantitative Analysis**
+#### Quantitative Analysis
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 1).
-
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 5).
 
 <p align="center">
-  <b>Table 1</b><br>
-  <i>Participant NASA TLX Scores</i><br>
-  <img src="Assets_For_ReadMe/updatedTLX.png">
+  <br><b>Table 5</b><br>
+  <i>Participant NASA TLX Scores.</i><br>
+  <img src="Assets_For_ReadMe/updatedTLX.png" width="75%">
 </p>
-    
 
-The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Figure 17 for participant specifics and Figure 18 for mean scores).
+The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Table 5 for participant specifics and Figure 24 for Mean scores).
 
 
 <p align="center">
-  <b>Figure 17</b><br>
+  <br><b>Figure 23</b><br>
   <i>Raw NASA TLX Scores by Participant</i><br>
-  <img src="Assets_For_ReadMe/individualTLX.png">
+  <img src="Assets_For_ReadMe/individualTLX.png" width="75%">
 </p>
 
 <p align="center">
-  <b>Figure 18</b><br>
+  <br><b>Figure 24</b><br>
   <i>Mean NASA TLX Scores by Level</i><br>
-  <img src="Assets_For_ReadMe/meanTLX.png">
+  <img src="Assets_For_ReadMe/meanTLX.png" width="75%">
 </p>
 
 
@@ -482,15 +490,23 @@ o	Equivalence partitioning
 
 Our first few meetings were conducted in person. This allowed maximal flexibility as we discussed various design ideas and got to know each other. In fact, our first meeting ever was at a restaurant, and we focused exclusively on getting to know each other and our gaming histories. We connected in person at the end of each Monday morning lab, and divided up that week’s tasks using a variant of planning poker. (We noticed that development tasks would take different people different amounts of time, so we attempted to give harder tasks to faster coders even out how much time people spent on the game.)
 
-<img src="https://i.imgur.com/eQKRT9U.jpeg" width="250">
+<p align="center">
+  <br><b>Figure 25</b><br>
+  <i>Team Meeting Paper Prototyping.</i><br>
+    <img src="https://i.imgur.com/eQKRT9U.jpeg" width="75%">
+</p>
 
 Over the holidays, we switched to doing scrum-style stand-up meetings (at least 3 times a week) over Microsoft Teams. These have been shown to be effective in a remote context (Cucolaş and Russo, 2023), and this was also true for us. In contrast to our in-person meetings, which could be very long, these tended to be shorter and more agenda-driven - we would focus on what work needed to be done and by whom. This allowed people to work asynchronously in a way that seemed to reduce stress whilst still having frequent check-in points to ask for help or to pair program.
 
 Early on, we had to decide which game to build. To do this, we used a [ranked preferences voting tool](https://www.rankedchoices.com/), which allowed each of us to express our preferences anonymously. 
 
 Analysing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
-<img src="https://i.imgur.com/6JbR5n4.png" width="500">
 
+<p align="center">
+  <br><b>Figure 26</b><br>
+  <i>Burn Chart of Game Project.</i><br>
+<img src="https://i.imgur.com/6JbR5n4.png" width="75%">
+</p>
 
 ## Tools and Techniques
 
@@ -498,17 +514,29 @@ We experimented with a variety of different tools during the development.
 
 For our meetings, we used a Google doc in reverse chronological order (a stack, not a queue!) This allowed us a space to add text, images, and diagrams flexibly and ensured that the most useful content was at our fingertips.
 
-<img src="https://i.imgur.com/GlRhWhe.png" width="250">
+<p align="center">
+  <br><b>Figure 27</b><br>
+  <i>Google Doc Project Management.</i><br>
+<img src="https://i.imgur.com/GlRhWhe.png" width="35%">
+</p>
 
 We initially used the Kanban board built into GitHub. However, as development became more complicated, we noticed that people were misunderstanding the requirements of the task, leading to wasted development time. We decided to switch to the running Google doc that we used for meetings as it allowed us to use a variety of media (text, images of paper prototypes etc) to describe the task requirements. This was significantly more flexible, and our PR workflow meant it was still very easy to track what work had been done for analysis purposes. It also reduced the number of places people needed to look for information - everything was centralized in one document.
 
-<img src="https://i.imgur.com/cdjpaHN.png" width="250">
+<p align="center">
+  <br><b>Figure 28</b><br>
+  <i>Kanban Board Project Management.</i><br>
+<img src="https://i.imgur.com/cdjpaHN.png" width="75%">
+</p>
 
 We used Pull Requests extensively. Our process involved creating a PR and having another team member review it before it could be merged in. This helped enforce good coding standards and reduced the likelihood of committing buggy code.
 
 WhatsApp was our primary communication method, which we used to coordinate meetings, ask for feedback on PRs, and ask for help.
 
-<img src="https://i.imgur.com/FUcBUNE.png" width="250">
+<p align="center">
+  <br><b>Figure 29</b><br>
+  <i>Whatsapp Communication.</i><br>
+<img src="https://i.imgur.com/FUcBUNE.png" width="35%">
+</p>
 
 Pair programming was something that we used frequently. Since Yi had previous experience with game development, pair programming with him allowed us all to get up to speed with some of the techniques that we would later rely on. He would act as the tactician and we would be the helm. Early on we did a variant of pair programming where we used the VS Code plugin Live Share to collaborate on the same code in real-time. This allowed for very fast coding development early on and meant our meetings were more “working sessions” than meetings.
 
