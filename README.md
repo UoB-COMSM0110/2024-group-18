@@ -79,7 +79,6 @@ Once you've installed Processing and the required libraries, you're all set to r
 </div>
 Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. But, there's a twist: the Tardis object allows for time reversal!
 
-
 <div style="display: flex; justify-content: center; align-items: center;">
   <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
     <caption>
@@ -144,6 +143,7 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
   <br>
 </p>
 
+
 <p align="center">
   <b>Figure 4</b><br>
   <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
@@ -160,6 +160,15 @@ Workshop Three allowed us to expand these ideas by developing Paper Prototypes o
   <br>
 </p>
 
+One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+
+<p align="center" style="margin: 0; padding: 0;">
+  <b>Figure X</b><br>
+  <i>Feasibility Study: Test of skipping backwards</i><br>
+  <img src="https://i.imgur.com/VjS6xbM.gif" width="375" alt="Paper Prototype">
+</p>
+
+Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
 
 ### Feasibility Studies
 As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input). One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing (Figure 6). This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
@@ -341,9 +350,8 @@ Clicking the accessibility button on Linux causes an error message to show up.
   <i>Past Player Code Snippet.</i><br>
     <img src="https://i.imgur.com/3cYjXVG.png" width="500" >
 </p>
-   The bomb was even more complex. We created explode and unexplode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
-   
-    <img src="https://i.imgur.com/PQoksw9.png" width="500" >
+
+The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
 3. **Level Design and balance**
 
@@ -388,7 +396,8 @@ During the development process, it was essential to understand whether the game'
 
 To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
 
-Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 20). We will address each theme in turn.
+Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted to do a Think Aloud over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
+
 
 <p align="center">
   <b>Figure 20</b><br>
