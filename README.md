@@ -433,7 +433,7 @@ We decided to implement visual hints on screen which offered clues as to how to 
 <p align="center">
   <b>Figure 16</b><br>
   <i>Example Hints</i><br>
-  <img src="Assets_For_ReadMe/hintexamples.png" width="700" height="384">
+  <img src="Assets_For_ReadMe/hints (1).gif" width="700" height="384">
 </p>
 
 
