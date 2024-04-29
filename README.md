@@ -177,6 +177,17 @@ Unfortunately, users found it to be "complicated" and "hard to understand what t
   <i>Digital Paper Prototype drafted after Workshop Three</i><br>
   <img src="Assets_For_ReadMe/Prototype-ezgif.com-resize.gif" width="50%">
   <br>
+ </p>
+
+One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+
+<p align="center" style="margin: 0; padding: 0;">
+  <b>Figure X</b><br>
+  <i>Feasibility Study: Test of skipping backwards</i><br>
+  <img src="https://i.imgur.com/VjS6xbM.gif" width="375" alt="Paper Prototype">
+</p>
+
+Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
 
 </p>
   For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
