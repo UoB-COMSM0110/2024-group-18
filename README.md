@@ -8,6 +8,8 @@ DONE:
 TODO: include GIFs of feasibility studies.
 TODO: include paper prototype GIF.
 TODO: include YiOldGame GIF.
+TODO: insert picture of linux error.
+TODO: Include GIF of gameplay in disability mode.
 
 <p align="center">
   <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
@@ -328,11 +330,14 @@ While not one of our official challenges, we found that programming collisions a
 
 The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
 
-TODO insert GIF of dynmaic loading screen.
-
 Clicking the accessibility button on Linux causes an error message to show up.
 
-TODO: insert picture of linux error.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Console Log of Linux Error</i><br>
+<img src="Game/assets/Background/LinuxErr.png">
+</p>
 
 ### Challenges
 
@@ -359,7 +364,11 @@ TODO: insert picture of linux error.
 
    Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
 
-   TODO: Include GIF of gameplay in disability mode.
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Thematic Map of Think Aloud Data</i><br>
+  <img src="Assets_For_ReadMe/Game_Video_V5.gif">
+</p>
 
    One other issue we encountered whilst testing this was that the Processing video library isn't supported on Linux machines. To fix this, if the user is on Linux, we  show an error message if they attempt to load accessibility mode. Since loading the libraries takes 5-10 seconds, we needed to implement an additional loading screen to provide adequate visibility of system status.
    
@@ -379,7 +388,6 @@ During the development process, it was essential to understand whether the game'
 To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
 
 Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
-
 
 <p align="center">
   <b>Figure 14</b><br>
