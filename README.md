@@ -6,6 +6,10 @@ TODO: search for any remaining TODOs or XXX in the readme.
 
 DONE:
 TODO: include GIFs of feasibility studies.
+TODO: include paper prototype GIF.
+TODO: include YiOldGame GIF.
+TODO: insert picture of linux error.
+TODO: Include GIF of gameplay in disability mode.
 
 <p align="center">
   <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
@@ -148,17 +152,34 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 4) and 
     <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input.)
+    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input).
 </p>
 
-<p align="center" style="margin: 0; padding: 0;">
+One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing (Figure X). This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+
+<p align="center">
   <b>Figure X</b><br>
-  <i>Feasibility Study: Paper Prototype</i><br>
-  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="375" style="transform: rotate(-90deg); border: 5px solid black;" alt="Paper Prototype">
+  <i>Basic Past Player Feature Programmed Early During Project</i><br>
+  <img src="Assets_For_ReadMe/Feasability-ezgif.com-video-to-gif-converter.gif" width="50%">
+  <br>
+</p>
+Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a>, we determined that users would be better able to understand with minimal hints.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
+  <br><br>
+  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol">
 </p>
 
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Digital Paper Prototype drafted after Workshop Three</i><br>
+  <img src="Assets_For_ReadMe/Prototype-ezgif.com-resize.gif" width="50%">
+  <br>
+ </p>
 
-  One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
 
 <p align="center" style="margin: 0; padding: 0;">
   <b>Figure X</b><br>
@@ -166,10 +187,9 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
   <img src="https://i.imgur.com/VjS6xbM.gif" width="375" alt="Paper Prototype">
 </p>
 
-  Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
+Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
 
-TODO: include paper prototype GIF.
-
+</p>
   For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
     <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
     This further fueled this idea, which intrigued us with its potential for innovative gameplay mechanics. 
@@ -251,8 +271,8 @@ Below is our initial interpretation of this, where we posited the idea that the 
 | **Basic Flow**       | **Goal: Complete the level without getting hurt and not touching previous players. If triggered, everything goes back to its previous position.** |                                                                                                                                                                                  |
 | Step One                       | User follows screen prompt for *Movement*, pressing Left/Right or A/D keys to run across platforms, later Up/W key for jump.                      | User moves their head to control character and makes a noise to jump. User can follow mini screen on bottom right corner to track if face is detected (no red box) / undetected. |
 | Step Two                       | Narration: "There's a magic stone/door on the map." User continues to use keyboard keys to trigger past-present feature, and activate gate.       | "", becoming more familiar with head movement and noice feature, finding best combination that provides best comfort, and game smoothness, for activating gate.                  |
-| **Alternative Flow** | **Challenges: Get touched by a previous self or traps, leading to game over**                                                                     |
-| Step One                       | Collision with previous self or trap leads to end of game.                                                                                        |  ""                 |
+| **Alternative Flow** | **Challenges: Get touched by a previous self, bombs, or bomb explosions leading to game over**                                                    |
+| Step One                       | Collision with previous self, bombs, or bomb explosions leads to end of game.                                                                     |  ""                 |
 | Step Two                       | If the player stays still for 10 seconds, a hint appears to guide them.                                                                           |  ""    |
 | Step Three                     | Interaction with traps results in game over.                                                                                                      |  ""                                                                                                                    |
 
@@ -263,7 +283,7 @@ Below is our initial interpretation of this, where we posited the idea that the 
 
 |                   | Non-Accessibility Mode                                                                                                                                | Accessibility Mode                                                                                                                                                                                                                     |
 |-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Description**   | A run-through of the game with more complex puzzles and traps, under **keyboard** control.                                                            | A run-through with more complex puzzles, using **head movement and sound** to navigate the map.                                                                                                                                        |
+| **Description**   | A run-through of the game with more complex puzzles, under **keyboard** control.                                                            | A run-through with more complex puzzles, using **head movement and sound** to navigate the map.                                                                                                                                        |
 | **Advanced Flow** | Try/Error with keys. Difficult mode therefore repeat attempts are expected. User will find best configuration (ie WASD/Arrow keys) to navigate level. | Increasing confidence with head movement and noise feature. At this point most players will understand what environment will produce best UX with movement (ie lighting affecting face recognition), and pitch, sound for player jump. |
 
 
@@ -321,11 +341,14 @@ While not one of our official challenges, we found that programming collisions a
 
 The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
 
-TODO insert GIF of dynmaic loading screen.
-
 Clicking the accessibility button on Linux causes an error message to show up.
 
-TODO: insert picture of linux error.
+
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Console Log of Linux Error</i><br>
+<img src="Game/assets/Background/LinuxErr.png">
+</p>
 
 ### Challenges
 
@@ -352,7 +375,11 @@ TODO: insert picture of linux error.
 
    Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
 
-   TODO: Include GIF of gameplay in disability mode.
+<p align="center">
+  <b>Figure X</b><br>
+  <i>Thematic Map of Think Aloud Data</i><br>
+  <img src="Assets_For_ReadMe/Game_Video_V5.gif">
+</p>
 
    One other issue we encountered whilst testing this was that the Processing video library isn't supported on Linux machines. To fix this, if the user is on Linux, we  show an error message if they attempt to load accessibility mode. Since loading the libraries takes 5-10 seconds, we needed to implement an additional loading screen to provide adequate visibility of system status.
    
@@ -372,7 +399,6 @@ During the development process, it was essential to understand whether the game'
 To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative evaluation technique of Think Aloud (TA). TA has been shown to be an effective technique in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
 
 Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
-
 
 <p align="center">
   <b>Figure 14</b><br>
