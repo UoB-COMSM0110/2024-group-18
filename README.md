@@ -33,7 +33,7 @@ To play our game, you must install Processing and the following libraries: "Vide
 Once you've installed Processing and the required libraries, you're all set to run the game!
 
 # Video
-<a href="https://youtu.be/J3RTHQjeOvg" title="Click to Watch!">
+<a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Click to Watch!">
     <img src="Assets_For_ReadMe/videoBackground.gif" alt="Oiram Tutorial Video" width="500">
 </a>
 
