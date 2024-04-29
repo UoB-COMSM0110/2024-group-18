@@ -47,7 +47,7 @@ Once you've installed Processing and the required libraries, you're all set to r
 - [3. Requirements](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#3-requirements)
 - [4. Design](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#4-design)
 - [5. Implementation](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#5-implementation)
-- [6. Evaluation](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#6-evaluation)
+- [6. Evaluation](https://github.com/uob-comsm0110/2024-group-18?tab=readme-ov-file#6-evaluation)
 - [7. Process](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#7-process)
 - [8. Conclusion](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#8-conclusion)
 - [9. Acknowledgements](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#9-acknowledgements)
@@ -55,11 +55,14 @@ Once you've installed Processing and the required libraries, you're all set to r
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
-  <i>Team Picture Week 1 with Team Role</i><br>
+  <i>Team Picture Week 1 with Team Role.</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
 </p>
 
-### Team Roles (from left to right of image):
+<p align="center">
+  <b>Table 1</b><br>
+    <i>Team Roles Description, from Left to Right of Figure 1.</i>
+</p>
 
 | Name    | Role          | Contributions |
 |---------|---------------|---------------|
@@ -79,8 +82,8 @@ Oiram is a single-player, platform-oriented game that integrates Super Mario-sty
 <div style="display: flex; justify-content: center; align-items: center;">
   <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
     <caption>
-      <b>Figure X</b><br>
-      <i>Oiram Game Objects</i>
+      <b>Table 2</b><br>
+      <i>Oiram Game Objects.</i>
     </caption>
     <tr>
       <th>Category</th>
@@ -105,9 +108,6 @@ Oiram is a single-player, platform-oriented game that integrates Super Mario-sty
   </table>
 </div>
 
-**Obstructions:**
-Avoid explosives and pits to survive.
-
 **How to Win:**
 Open and enter the door, mastering gravity and momentum to navigate through the level, taking into account the actions of your past self.
 
@@ -119,55 +119,46 @@ Oiram stands out by combining classic platforming with innovative time manipulat
 
 # 3. Requirements 
 ### Requirement Engineering
-
 Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of the Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported the most common issues are unrealistic or ambivalent scope and feature creep.
 
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 2</b><br>
   <i>Petrillo's (2009) study mapping problems found in Game Development to their occurrences.</i><br>
   <img src="Assets_For_ReadMe/RE-GameStudySignificance.png" >
   <br>
 </p>
 
-<h3>Ideation Processing</h3>
+### Ideation Processing
+<p>
+    In our ideation phase, we used 
+    <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
+    (Figure 3) and 
+    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
+    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. 
+</p>
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 3</b><br>
   <i>Week 2 Brainstorm several game ideas.</i><br>
   <img src="Assets_For_ReadMe/SEBrainstorm.png" width="50%" >
   <br>
 </p>
-<p>
-    In our ideation phase, we used 
-    <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
-    (Figure 4) and 
-    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input).
-</p>
-
-One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing (Figure X). This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
-
-<p align="center">
-  <b>Figure X</b><br>
-  <i>Basic Past Player Feature Programmed Early During Project</i><br>
-  <img src="Assets_For_ReadMe/Feasability-ezgif.com-video-to-gif-converter.gif" width="50%">
-  <br>
-</p>
-Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a>, we determined that users would be better able to understand with minimal hints.
 
 
 <p align="center">
-  <b>Figure X</b><br>
+  <b>Figure 4</b><br>
   <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
-  <br>
-  <img src="Assets_For_ReadMe/prototype.gif" alt="Paper Prototype for Group 18 CS Bristol">
+  <br><br>
+  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol" style="transform:rotate(270deg);">
 </p>
 
+Workshop Three allowed us to expand these ideas by developing Paper Prototypes of our initial ideas (Figure 4). The prototype was especially helpful due to the complexity of the game concept. Communication within the team became more transparent when Tom expanded the tool by generating Paper-Prototype style animations using his IPad (Figure 5), which became a familiar tool as we progressed through the project.
+
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Digital Paper Prototype drafted after Workshop Three</i><br>
+  <b>Figure 5</b><br>
+  <i>Digital Paper Prototype Tool.</i><br>
   <img src="Assets_For_ReadMe/Prototype-ezgif.com-resize.gif" width="50%">
   <br>
- </p>
+</p>
 
 One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
 
@@ -179,28 +170,38 @@ One of these feasibility studies evolved into a playable prototype, and we were 
 
 Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
 
+### Feasibility Studies
+As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input). One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing (Figure 6). This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
+
+<p align="center">
+  <b>Figure 6</b><br>
+  <i>Basic Past Player Feature Programmed Early During Project.</i><br>
+  <img src="Assets_For_ReadMe/Feasability-ezgif.com-video-to-gif-converter.gif" width="50%">
+  <br>
 </p>
+Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a>, we determined that users would be better able to understand with minimal hints.
+
+<p>
   For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
     <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
     This further fueled this idea, which intrigued us with its potential for innovative gameplay mechanics. 
 </p>
 
-
-### Identifying Stakeholders (Onion Model)
+### Identifying Stakeholders 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Onion Model of Oiram Game (adapted from Alexander, 2004, p. 223, Figure 1)</i><br>
-  <img src="Assets_For_ReadMe/onion.png" >
+  <b>Figure 7</b><br>
+  <i>Onion Model of Oiram Game (adapted from Alexander, 2004, p. 223, Figure 1).</i><br>
+  <img src="Assets_For_ReadMe/onion.png" width="75%">
   <br>
 </p>
 
 **Surrogate Roles**
 
-A key finding from our onion model was our observation that our lecturers have "surrogate roles" (Alexander, 2004, p. 227). Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while lecturers weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
+A key finding from our Onion Model (Figure 7) was our observation that our lecturers have "surrogate roles" (Alexander, 2004, p. 227). Surrogates represent other people or groups. For example, a lawyer represents a client, or a government official represents the public. This concept allowed us to understand that while lecturers weren't direct users of our Game, they stood in for a broader group. Therefore, they not only provided feedback and evaluated the project's success but also represented types of gamers, which gave us our four user stories, shown in the model above.
 
-This was advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see Section 6), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. It however also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. Thus, when presenting to assessors, final feedback may not be representative of accessibility feautures and users with mobility issues, due to reduced expertise and empathy with this feature. Future research can study how we can best utilise Surrogate Roles.
+This was advantageous, especially later when testing the Game and conducting more TLX tests/think-aloud, as we were able to interview anyone in labs/close friends and family (see [Section 6](https://github.com/uob-comsm0110/2024-group-18?tab=readme-ov-file#6-evaluation)), creating the implication that surrogate roles significantly affect data collection. Although mentioned by Alexander, perhaps being more explicit about Surrogate Role strategising and conducting future research in this relationship with product success. However, it also poses risks, as surrogates might misinterpret the needs of those they represent. Specifically, our main stakeholders may not have mobility issues. So, final feedback may not be reflective if more experts had mobility issues; thus, they can empathise with this feature.
 
-### Identifying Top-Level Needs (User Stories)
+### Identifying Top-Level Needs with User Stories
 To better understand what features we should prioritise, we created user stories.
 
 - As a casual gamer, I want a game that is straightforward to control, allowing me to enjoy the game immediately without a steep learning curve.
@@ -212,25 +213,25 @@ To better understand what features we should prioritise, we created user stories
 - As a player seeking variety, I want a game that offers different eras and environments to explore through its time travel theme, each with unique obstacles and aesthetics.
 - As a technology enthusiast, I want a game that leverages modern technology like webcam interaction not just for accessibility, but also to create immersive, novel gameplay experiences.
 
-To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories. This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "What would Christina think?"
+To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories (Figure 8-10). This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "What would Christina think?"
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>User Story One</i><br>
+  <b>Figure 8</b><br>
+  <i>User Story One.</i><br>
   <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
   <br>
 </p>
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>User Story Two</i><br>
+  <b>Figure 9</b><br>
+  <i>User Story Two.</i><br>
   <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
   <br>
 </p>
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>User Story Three</i><br>
+  <b>Figure 10</b><br>
+  <i>User Story Three.</i><br>
   <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
   <br>
 </p>
@@ -241,18 +242,16 @@ As our user stories include casual gamers, we understood early on in the game de
 
 Below is our initial interpretation of this, where we posited the idea that the accessibility mode would be made easier on other dimensions. Eventually, we moved away from this idea, as we felt that it was important to our disabled player user story that they were able to play the same game as their friends.
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Use Case Diagram</i><br>
+  <b>Figure 10</b><br>
+  <i>Use Case Diagram.</i><br>
   <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
 </p>
 
 ### Use-Case Specification
-
-
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Easy Mode (Tutorial) Use Case Specification</i><br>
+  <b>Table 3</b><br>
+  <i>Easy Mode (Tutorial) Use Case Specification.</i><br>
 </p>
 
 | | Non-Accessibility Mode                                                                                                                            | Accessibility Mode                                                                                                                                                               |
@@ -267,8 +266,8 @@ Below is our initial interpretation of this, where we posited the idea that the 
 | Step Three                     | Interaction with traps results in game over.                                                                                                      |  ""                                                                                                                    |
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Difficult Mode Use Case Specification</i><br>
+  <b>Table 4</b><br>
+  <i>Difficult Mode Use Case Specification.</i><br>
 </p>
 
 |                   | Non-Accessibility Mode                                                                                                                                | Accessibility Mode                                                                                                                                                                                                                     |
@@ -280,15 +279,10 @@ Below is our initial interpretation of this, where we posited the idea that the 
 # 4. Design 
 Having evaluated our potential stakeholders and evaluated a diverse range of User Stories, we now had a sense of the features we wanted to incorporate into our Game design, as well as the Use-Case Diagram/Specification guiding the development of the accessibility features.
 
+### Class Diagram
 A **Class Diagram** provided a systematic view of our Game System, allowing us to plan ahead and template the relationship between objects, which would serve as planning for good **Object-Orientated Design (OOD)** within our source code. To do so, we first wrote down a plan for System Architecture by collaborating in-person through whiteboard sessions. This allowed for the Class Diagram formation to be a seamless process. 
 
-Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where, after evaluating many classes in our system, the sequence would allow for easy debugging, especially since the Processing IDE has poor debugging facilities. 
-
-# Project Overview
-
-Based on the requirements specification, we developed a system architecture that begins with a user-interface menu. Here, players can start the game, select levels, or activate an alternative control mode tailored for users with disabilities, such as Carpal Tunnel Syndrome. The system employs visual cues to indicate player damage and potential movements in-game.
-
-## Game Mechanics
+#### Game Mechanics
 
 The complex mechanics of time inversion in our platform-puzzle game necessitated the design of multiple components:
 
@@ -297,27 +291,32 @@ The complex mechanics of time inversion in our platform-puzzle game necessitated
 - **Map and Map Controller**: Handle the layout and logic of game levels.
 - **Main Class**: Manages the game loop, flags for method calls, and oversees the creation of Player Controller and Map Controller instances. These controllers maintain method control flags and item lists.
 
-### Class diagrams 
-
 <p align="center">
+<br><b>Figure 11</b></br>
+  <i>Class Diagram Generated Workshop Five.</i>
   <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
   <br>
-  <i>Figure 11: Class Diagram Generated W5 Labs.</i>
 </p>
 
 <p align="center">
+<br><b>Figure 12</b></br>
+  <i>Updated Class Diagram to shop change from Figure 11.</i>
   <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
-  <br>
-  <i>Figure 12: Updated Class Diagram to date.</i>
 </p>
 
 Figures 11 and 12 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
 
-### Behavioural diagrams 
+### Behavioural diagrams
+Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where, after evaluating many classes in our system, the sequence would allow for easy debugging, especially since the Processing IDE has poor debugging facilities. 
+
+
+Based on the requirements specification, we developed a system architecture that begins with a user-interface menu. Here, players can start the game, select levels, or activate an alternative control mode tailored for users with disabilities, such as Carpal Tunnel Syndrome. The system employs visual cues to indicate player damage and potential movements in-game.
+
+
 <p align="center">
+<b>Figure 13</b>
+  <br><i>Sequence Diagram.</i></br>
   <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
-  <br>
-  <i>Figure 13: Sequence Diagram</i>
 </p>
 When creating the Oiram game, we embraced agile methods to evolve our game's design. This approach required frequent updates to our system architecture, class, and sequence diagrams, essential tools for visualising and understanding the game's structure and interactions. However, the fast pace of Agile development meant that these foundational documents often needed to catch up to the latest game adjustments, showcasing a key challenge of Agile: maintaining up-to-date design documentation amidst rapid changes.
 
@@ -335,8 +334,8 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Console Log of Linux Error</i><br>
+  <b>Figure 14</b><br>
+  <i>Example of Error.</i><br>
 <img src="Game/assets/Background/LinuxErr.png">
 </p>
 
@@ -346,18 +345,28 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
    This was by far the hardest task. We wanted to store not just the previous player's locations but also have that player interact with the environment (for example, opening doors). We created a `PastPlayer` class containing a Linked List of the player's previous locations. We used a frame variable to keep track of time within the object. To reduce the amount of code we had to write, we took advantage of our existing Player class. Since the implementation is the same, this object contained the logic for collisions with buttons and other game objects.
 
+<p align="center">
+  <b>Figure 15</b><br>
+  <i>Past Player Code Snippet.</i><br>
     <img src="https://i.imgur.com/3cYjXVG.png" width="500" >
+</p>
 
-   The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
-   
-    <img src="https://i.imgur.com/PQoksw9.png" width="500" >
+The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
 3. **Level Design and balance**
 
-   We realized early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map. This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
-   
+   We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 16). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
+
+<p align="center">
+  <b>Figure 16</b><br>
+  <i>Snippet of Button Debugging.</i><br>
     <img src="https://i.imgur.com/0kD1yRU.png" width="500" >
+</p>
+<p align="center">
+  <b>Figure 18</b><br>
+  <i>Playtesting.</i><br>
     <img src="https://i.imgur.com/Suklhby.png" width="500" >
+</p>
     
    This level designer was very helpful when in playtesting. For example, one user found the jump in the tutorial level too challenging to complete, but with a few keystrokes, we were able to change it and immediately gather feedback that the same user found it easier.
    
@@ -366,8 +375,8 @@ Clicking the accessibility button on Linux causes an error message to show up.
    Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
 
 <p align="center">
-  <b>Figure X</b><br>
-  <i>Thematic Map of Think Aloud Data</i><br>
+  <b>Figure 19</b><br>
+  <i>Demonstration of Accessibility Use-Case.</i><br>
   <img src="Assets_For_ReadMe/Game_Video_V5.gif">
 </p>
 
@@ -375,7 +384,6 @@ Clicking the accessibility button on Linux causes an error message to show up.
    
    Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
 
-    <img src="https://i.imgur.com/LI40MPH.png" width="500" >
 
    In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
@@ -390,9 +398,10 @@ To gather data regarding the early design of the levels, their difficulty, and t
 
 Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted to do a Think Aloud over Heuristic evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 14). We will address each theme in turn.
 
+
 <p align="center">
-  <b>Figure 14</b><br>
-  <i>Thematic Map of Think Aloud Data</i><br>
+  <b>Figure 20</b><br>
+  <i>Thematic Map of Think Aloud Data.</i><br>
   <img src="Assets_For_ReadMe/thematicmap.png">
 </p>
 
@@ -403,13 +412,13 @@ Much of the feedback was about the movement, and we identified:
 •	Felt sluggish
 •	Performance was too slow
 •	“Space like” floaty feeling
-Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 15). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
+Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 21). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
 
 
 <p align="center">
-  <b>Figure 15</b><br>
-  <i>Different Game Backgrounds</i><br>
-  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="700" height="384">
+  <b>Figure 21</b><br>
+  <i>Different Game Backgrounds.</i><br>
+  <img src="Assets_For_ReadMe/gamebackgrounds.png" width="75%" height="">
 </p>
 
 
@@ -427,42 +436,40 @@ We deliberately opted to not give much information as to what the player is requ
 •	People liked the puzzle solving aspect
 •	They found it rewarding solving the first level using past self
 •	Some people wanted more instructions
-We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 16).
+We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 22).
 
 
 <p align="center">
-  <b>Figure 16</b><br>
-  <i>Example Hints</i><br>
-  <img src="Assets_For_ReadMe/hints (1).gif" width="700" height="384">
+  <b>Figure 22</b><br>
+  <i>Tutorial Hints.</i><br>
+  <img src="Assets_For_ReadMe/hintexamples.png" width="75%" height="">
 </p>
 
 
 
-**Quantitative Analysis**
+#### Quantitative Analysis
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 1).
-
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 5).
 
 <p align="center">
-  <b>Table 1</b><br>
-  <i>Participant NASA TLX Scores</i><br>
-  <img src="Assets_For_ReadMe/updatedTLX.png">
+  <br><b>Table 5</b><br>
+  <i>Participant NASA TLX Scores.</i><br>
+  <img src="Assets_For_ReadMe/updatedTLX.png" width="75%">
 </p>
-    
 
-The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Figure 17 for participant specifics and Figure 18 for mean scores).
+The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Table 5 for participant specifics and Figure 24 for Mean scores).
 
 
 <p align="center">
-  <b>Figure 17</b><br>
+  <br><b>Figure 23</b><br>
   <i>Raw NASA TLX Scores by Participant</i><br>
-  <img src="Assets_For_ReadMe/individualTLX.png">
+  <img src="Assets_For_ReadMe/individualTLX.png" width="75%">
 </p>
 
 <p align="center">
-  <b>Figure 18</b><br>
+  <br><b>Figure 24</b><br>
   <i>Mean NASA TLX Scores by Level</i><br>
-  <img src="Assets_For_ReadMe/meanTLX.png">
+  <img src="Assets_For_ReadMe/meanTLX.png" width="75%">
 </p>
 
 
@@ -492,15 +499,23 @@ o	Equivalence partitioning
 
 Our first few meetings were conducted in person. This allowed maximal flexibility as we discussed various design ideas and got to know each other. In fact, our first meeting ever was at a restaurant, and we focused exclusively on getting to know each other and our gaming histories. We connected in person at the end of each Monday morning lab, and divided up that week’s tasks using a variant of planning poker. (We noticed that development tasks would take different people different amounts of time, so we attempted to give harder tasks to faster coders even out how much time people spent on the game.)
 
-<img src="https://i.imgur.com/eQKRT9U.jpeg" width="250">
+<p align="center">
+  <br><b>Figure 25</b><br>
+  <i>Team Meeting Paper Prototyping.</i><br>
+    <img src="https://i.imgur.com/eQKRT9U.jpeg" width="75%">
+</p>
 
 Over the holidays, we switched to doing scrum-style stand-up meetings (at least 3 times a week) over Microsoft Teams. These have been shown to be effective in a remote context (Cucolaş and Russo, 2023), and this was also true for us. In contrast to our in-person meetings, which could be very long, these tended to be shorter and more agenda-driven - we would focus on what work needed to be done and by whom. This allowed people to work asynchronously in a way that seemed to reduce stress whilst still having frequent check-in points to ask for help or to pair program.
 
 Early on, we had to decide which game to build. To do this, we used a [ranked preferences voting tool](https://www.rankedchoices.com/), which allowed each of us to express our preferences anonymously. 
 
 Analysing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
-<img src="https://i.imgur.com/6JbR5n4.png" width="500">
 
+<p align="center">
+  <br><b>Figure 26</b><br>
+  <i>Burn Chart of Game Project.</i><br>
+<img src="https://i.imgur.com/6JbR5n4.png" width="75%">
+</p>
 
 ## Tools and Techniques
 
@@ -508,17 +523,29 @@ We experimented with a variety of different tools during the development.
 
 For our meetings, we used a Google doc in reverse chronological order (a stack, not a queue!) This allowed us a space to add text, images, and diagrams flexibly and ensured that the most useful content was at our fingertips.
 
-<img src="https://i.imgur.com/GlRhWhe.png" width="250">
+<p align="center">
+  <br><b>Figure 27</b><br>
+  <i>Google Doc Project Management.</i><br>
+<img src="https://i.imgur.com/GlRhWhe.png" width="35%">
+</p>
 
 We initially used the Kanban board built into GitHub. However, as development became more complicated, we noticed that people were misunderstanding the requirements of the task, leading to wasted development time. We decided to switch to the running Google doc that we used for meetings as it allowed us to use a variety of media (text, images of paper prototypes etc) to describe the task requirements. This was significantly more flexible, and our PR workflow meant it was still very easy to track what work had been done for analysis purposes. It also reduced the number of places people needed to look for information - everything was centralized in one document.
 
-<img src="https://i.imgur.com/cdjpaHN.png" width="250">
+<p align="center">
+  <br><b>Figure 28</b><br>
+  <i>Kanban Board Project Management.</i><br>
+<img src="https://i.imgur.com/cdjpaHN.png" width="75%">
+</p>
 
 We used Pull Requests extensively. Our process involved creating a PR and having another team member review it before it could be merged in. This helped enforce good coding standards and reduced the likelihood of committing buggy code.
 
 WhatsApp was our primary communication method, which we used to coordinate meetings, ask for feedback on PRs, and ask for help.
 
-<img src="https://i.imgur.com/FUcBUNE.png" width="250">
+<p align="center">
+  <br><b>Figure 29</b><br>
+  <i>Whatsapp Communication.</i><br>
+<img src="https://i.imgur.com/FUcBUNE.png" width="35%">
+</p>
 
 Pair programming was something that we used frequently. Since Yi had previous experience with game development, pair programming with him allowed us all to get up to speed with some of the techniques that we would later rely on. He would act as the tactician and we would be the helm. Early on we did a variant of pair programming where we used the VS Code plugin Live Share to collaborate on the same code in real-time. This allowed for very fast coding development early on and meant our meetings were more “working sessions” than meetings.
 
@@ -543,17 +570,43 @@ Looking forward for Oiram itself, we have numerous features we would still like 
 
 This project has provided each team member the chance to develop both their team working, and software engineering abilities. Developing Oiram has been our first experience of undertaking a team-based software engineering project. Each member would agree that this project has been invaluable, and we will take what we have learned into our future careers.
 
+<div align="center">
 
+**Table 6**  
+*Table to demonstrate team contributions for Game Project.*
 
+<table>
+  <thead>
+    <tr>
+      <th>Contributor</th>
+      <th>Contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mihir</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Tom</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Ali</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Yi</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Kaiyan</td>
+      <td>1.00</td>
+    </tr>
+  </tbody>
+</table>
 
-
-**Table of Contributions**
-- **Mihir**: 1.00
-- **Tom**: 1.00
-- **Ali**: 1.00
-- **Yi**: 1.00
-- **Kaiyan**: 1.00
-
+</div>
 
 # 9. References
 
