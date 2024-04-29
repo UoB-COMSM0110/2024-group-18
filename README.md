@@ -55,11 +55,14 @@ Once you've installed Processing and the required libraries, you're all set to r
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
-  <i>Team Picture Week 1 with Team Role</i><br>
+  <i>Team Picture Week 1 with Team Role.</i><br>
   <img src="https://i.imgur.com/lnxVVyN.jpeg" width="500" alt="Team Picture" style="border: 5px solid black;">
 </p>
 
-### Team Roles (from left to right of image):
+<p align="center">
+  <b>Table 1</b><br>
+    <i>Team Roles Description, from Left to Right of Figure 1.</i>
+</p>
 
 | Name    | Role          | Contributions |
 |---------|---------------|---------------|
@@ -76,22 +79,12 @@ Once you've installed Processing and the required libraries, you're all set to r
 </div>
 Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. But, there's a twist: the Tardis object allows for time reversal!
 
-### How to Play:
-<div style="display: flex; align-items: center; justify-content: center;">
-  <p style="margin-right: 20px;">
-    <b><i>Use the arrow keys or WASD to direct your spaceman: D/A for lateral movement, W or Up to ascend.</i></b>
-  </p>
-  <img src="Assets_For_ReadMe/wasd.jpg" alt="WASD Controls">
-</div>
-
-**The Mission:**
-Navigate levels, dodge obstacles, and interact with objects like gates, switches, and the Tardis to activate mechanisms and portals.
 
 <div style="display: flex; justify-content: center; align-items: center;">
   <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
     <caption>
-      <b>Figure X</b><br>
-      <i>Oiram Game Objects</i>
+      <b>Table 2</b><br>
+      <i>Oiram Game Objects.</i>
     </caption>
     <tr>
       <th>Category</th>
@@ -116,9 +109,6 @@ Navigate levels, dodge obstacles, and interact with objects like gates, switches
   </table>
 </div>
 
-**Obstructions:**
-Avoid explosives and pits to survive.
-
 **How to Win:**
 Open and enter the door, mastering gravity and momentum to navigate through the level, taking into account the actions of your past self.
 
@@ -130,7 +120,6 @@ Oiram stands out by combining classic platforming with innovative time manipulat
 
 # 3. Requirements 
 ### Requirement Engineering
-
 Requirements Engineering (RE) is a communication mechanism that ensures that client needs are prioritised during early-stage design of the Software Design Life Cycle (SDLC) (Rasheed et al., 2021, pp. 1–2). RE holds particular significance in game development, where a postmortem analysis of software engineering conducted by Petrillo (2009, pp. 18–20), finds that 75% of game development case studies reported the most common issues are unrealistic or ambivalent scope and feature creep.
 
 <p align="center">
