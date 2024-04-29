@@ -76,17 +76,6 @@ Once you've installed Processing and the required libraries, you're all set to r
 </div>
 Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. But, there's a twist: the Tardis object allows for time reversal!
 
-### How to Play:
-<div style="display: flex; align-items: center; justify-content: center;">
-  <p style="margin-right: 20px;">
-    <b><i>Use the arrow keys or WASD to direct your spaceman: D/A for lateral movement, W or Up to ascend.</i></b>
-  </p>
-  <img src="Assets_For_ReadMe/wasd.jpg" alt="WASD Controls">
-</div>
-
-**The Mission:**
-Navigate levels, dodge obstacles, and interact with objects like gates, switches, and the Tardis to activate mechanisms and portals.
-
 <div style="display: flex; justify-content: center; align-items: center;">
   <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
     <caption>
