@@ -258,12 +258,13 @@ void showBackground() {
 void checkGameStatus() {
   if (playerController.checkGameOver(map, level)) {
     player.ifDead=true;
-    time=0;
     fill(0);
     if (playerController.deadByHitPreviousPlayer) {
-      player.velocity.set(0,0);
-      player.acceleration.set(0,0);
       image(loadImage("./assets/Background/paradox.png"), width/2, height/2);
+    } else if (playerController.deadByBomb == true) {
+      image(loadImage("./assets/Background/bombGameOver.png"), width/2, height/2);
+    } else if (time<0.05 && playerController.ifPastSelfGenerated==true) {
+      image(loadImage("./assets/Background/timerGameOver.png"), width/2, height/2);
     } else {
       image(loadImage("./assets/Background/gameOver.png"), width/2, height/2);
     }
@@ -279,6 +280,8 @@ void checkGameStatus() {
     ifEnd = true;
   }
 }
+
+
 
 /* Generate story when first entering the game */
 void generateStory() {
