@@ -347,7 +347,7 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
     <img src="https://i.imgur.com/3cYjXVG.png" width="500" >
 
-   The bomb was even more complex. We created explode and unexplode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
+   The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
    
     <img src="https://i.imgur.com/PQoksw9.png" width="500" >
 
