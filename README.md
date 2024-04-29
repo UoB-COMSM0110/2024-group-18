@@ -154,11 +154,12 @@ One of these feasibility studies evolved into a playable prototype, and we were 
 </p>
 Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a>, we determined that users would be better able to understand with minimal hints.
 
+
 <p align="center">
   <b>Figure X</b><br>
   <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
-  <br><br>
-  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol">
+  <br>
+  <img src="Assets_For_ReadMe/prototype.gif" alt="Paper Prototype for Group 18 CS Bristol">
 </p>
 
 <p align="center">
