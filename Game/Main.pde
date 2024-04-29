@@ -258,8 +258,11 @@ void showBackground() {
 void checkGameStatus() {
   if (playerController.checkGameOver(map, level)) {
     player.ifDead=true;
+    time=0;
     fill(0);
     if (playerController.deadByHitPreviousPlayer) {
+      player.velocity.set(0,0);
+      player.acceleration.set(0,0);
       image(loadImage("./assets/Background/paradox.png"), width/2, height/2);
     } else {
       image(loadImage("./assets/Background/gameOver.png"), width/2, height/2);
@@ -647,6 +650,7 @@ public void restartLevel() {
   player.index=0;
   player.location.set(120, 500);
   player.velocity.set(0, 0);
+  player.acceleration.set(0,player.gravity);
   playerController.deadByHitPreviousPlayer=false;
   ifGameOver=false;
   ifEnd=false;
