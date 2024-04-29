@@ -67,9 +67,9 @@ class AlternativeController {
       rect(cameraX(detection), cameraY(detection), detection.getWidth()/2.5, detection.getHeight()/5);
 
       // Determine player movement based on object position.
-      if (cameraX(detection) < camX + (camWidth / 2) - 20) {
+      if (cameraX(detection) < camX + (camWidth / 2) - 30) {
         playerController.inputRight = true;
-      } else if (cameraX(detection) > camX + (camWidth / 2) + 20) {
+      } else if (cameraX(detection) > camX + (camWidth / 2) + 30) {
         playerController.inputLeft = true;
       } else {
         playerController.inputRight = false;
@@ -82,7 +82,7 @@ class AlternativeController {
 
   // Helper method to process amplitude and trigger upward movement.
   private void soundController() {
-    if (amp.analyze() > 0.01) {
+    if (amp.analyze() > 0.02) {
       playerController.inputUp = true;
     } else {
       playerController.inputUp = false;

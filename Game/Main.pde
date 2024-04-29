@@ -155,7 +155,11 @@ void draw() {
       } else if (level==2) {
         if (!ifMapGenerated) {
           // Initiate variables for easy level
-          map=new Map("./maps/map2.txt", 2);
+          if (controlMode==ControlType.NORMAL) {
+            map=new Map("./maps/map2.txt", 2);
+          } else {
+            map=new Map("./maps/map2-disabled.txt", 2);
+          }
           ifMapGenerated=true;
           map.generateMap();
           map.placeBomb();
@@ -176,7 +180,7 @@ void draw() {
         map.displayBomb(time);
       }
       placeClock();
-      
+
       map.displayMap();
       playerDraw();
       checkGameStatus();
@@ -699,6 +703,6 @@ private int getMinute() {
   return (int)((time-(int)time)*60);
 }
 
-void test(){
+void test() {
   new Test().test();
 }
