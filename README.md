@@ -162,7 +162,7 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
 
 <p align="center" style="margin: 0; padding: 0;">
   <b>Figure X</b><br>
-  <i>Feasibility Study: Paper Prototype</i><br>
+  <i>Feasibility Study: Test of skipping backwards</i><br>
   <img src="https://i.imgur.com/VjS6xbM.gif" width="375" alt="Paper Prototype">
 </p>
 
