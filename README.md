@@ -624,17 +624,18 @@ Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessin
 Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
 
+
 # Appendices
 
 <p align="center">
-  <br><b>Figure 24</b><br>
-  <i>Mean NASA TLX Scores by Level</i><br>
+  <br><b>Appendix 1</b><br>
+  <i>Concept Art for Future Boss Designs</i><br>
   <img src="Assets_For_ReadMe/appendix-conceptart.png" width="75%">
 </p>
 
 <p align="center">
-  <br><b>Figure 24</b><br>
-  <i>Mean NASA TLX Scores by Level</i><br>
+  <br><b>Appendix 2</b><br>
+  <i>Alternative Level 2 and Boss Arena Map Concepts</i><br>
   <img src="Assets_For_ReadMe/appendix-levels.png" width="75%">
 </p>
 
