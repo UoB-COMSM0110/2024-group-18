@@ -547,7 +547,7 @@ During development, our team encountered a series of challenges such as the impl
 
 However, there are some areas we would have changed. Adopting a Test-Driven Development process from the project’s inception would have greatly enhanced our ability to debug. Due to our system architecture, it made the separation of the display and data very difficult, forcing us to find many bugs solely through playtesting. Shifting our design pattern to one such as the Model View Controller would likely have provided us with an easier process of error detection. These are valuable lessons that we will take forward into future projects. 
 
-Looking forward for Oiram itself, we have numerous features we would still like to implement. A musical score could support the science fiction setting, and sound effects for various gameplay scenarios, such as explosions and player death, would help improve immersion. Given a larger development team, or an extended deadline, we would aim to have implemented more levels of increasing difficulty, such as a boss fight which would require both past and present versions of the player working together to defeat it.
+Looking forward for Oiram itself, we have numerous features we would still like to implement. A musical score could support the science fiction setting, and sound effects for various gameplay scenarios, such as explosions and player death, would help improve immersion. Given a larger development team, or an extended deadline, we would aim to have implemented more levels of increasing difficulty, such as a boss fight which would require both past and present versions of the player working together to defeat it. Concept art, and early level designs can be found in the appendices.
 
 This project has provided each team member the chance to develop both their team working, and software engineering abilities. Developing Oiram has been our first experience of undertaking a team-based software engineering project. Each member would agree that this project has been invaluable, and we will take what we have learned into our future careers.
 
@@ -623,4 +623,20 @@ Seyderhelm, A. J. A., & Blackmore, K. L. (2023). How hard is it really? assessin
 
 Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NASA-TLX Weights revisited. Theoretical Issues in          Ergonomics Science, 23(6), 725–748. https://doi.org/10.1080/1463922x.2021.2000667 
  
+
+# Appendices
+
+<p align="center">
+  <br><b>Figure 24</b><br>
+  <i>Mean NASA TLX Scores by Level</i><br>
+  <img src="Assets_For_ReadMe/appendix-conceptart.png" width="75%">
+</p>
+
+<p align="center">
+  <br><b>Figure 24</b><br>
+  <i>Mean NASA TLX Scores by Level</i><br>
+  <img src="Assets_For_ReadMe/appendix-levels.png" width="75%">
+</p>
+
+
 
