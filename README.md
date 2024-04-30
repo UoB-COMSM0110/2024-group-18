@@ -144,7 +144,7 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
   <b>Figure 4</b><br>
   <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
   <br><br>
-  <img src="Assets_For_ReadMe/Paper_prototype_for_group_18_CS_Bristol.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol" style="transform:rotate(270deg);">
+  <img src="Assets_For_ReadMe/prototype.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol">
 </p>
 
 Workshop Three allowed us to expand these ideas by developing Paper Prototypes of our initial ideas (Figure 4). The prototype was especially helpful due to the complexity of the game concept. Communication within the team became more transparent when Tom expanded the tool by generating Paper-Prototype style animations using his IPad (Figure 5), which became a familiar tool as we progressed through the project.
