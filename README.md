@@ -73,11 +73,17 @@ Once you've installed Processing and the required libraries, you're all set to r
 | `Kaiyan`| `Developer`     | Focused on dynamic tooltips in the tutorial level, improving player comprehension and engagement. |
 
 # 2. Introduction 
-### About Oiram:
+
+When designing our game, we set out to make a simple to learn, hard to master platformer, whilst also remaining accessible to a wide variety of users, including those who struggle with fast paced keyboard and mouse controls. Having all grown up playing games such as Super Mario, we understood the importance of a game that anyone could play, yet one which provides a satisfying sense of progression as you grow in skill and progress through levels of increasing complexity. Being avid science fiction fans, we wanted to include a unique twist on the platforming genre, the twist we opted for was time reversal.
+
+
 <div style="text-align: center;">
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
-Oiram is a single-player, platform-oriented game that integrates Super Mario-style missions and a time-travel feature. Our spaceman must navigate obstacles such as explosives and determine the most efficient path through the game. But, there's a twist: the Tardis object allows for time reversal!
+
+In Oiram (the title itself being a twist on one of our inspirations) you control a spaceman, who must figure out how to escape through a gate using only a button and a mysterious machine. Players will initially be confused as they realise that the button requires you to stand on it for the door to open, indicating that another player or object is required to keep the door open. This is another twist we incorporated, a reimagining of the traditional multiplayer experience. By using the machine, it allows you to invert time, and send a past version of yourself back through the level. You must then use your past movements to press the button at the correct time, allowing the present version of yourself to exit through the door. Additionally, you must avoid your previous self to avoid a “Time Paradox”. As the levels increase in complexity there are other obstacles you must avoid and interact with, such as falling bombs, moving platforms, and deadly drops. Your past self isn’t all that is reversed when you use the time machine, thus requiring careful tracking of where bombs fell, as implosions are as deadly as explosions.
+
+
 
 <div style="display: flex; justify-content: center; align-items: center;">
   <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
@@ -108,14 +114,10 @@ Oiram is a single-player, platform-oriented game that integrates Super Mario-sty
   </table>
 </div>
 
-**How to Win:**
-Open and enter the door, mastering gravity and momentum to navigate through the level, taking into account the actions of your past self.
 
-### Oiram Game Inspiration:
-Oiram's narrative complexity is inspired by Tenet, the timeless platforming of Super Mario, and the temporal challenges of Braid, offering a unique gameplay experience.
+These gameplay elements, alongside our use of machine vision to allow for a more accessible user experience, has allowed us to design a truly innovative game. Offering a unique sci-fi twist on the Super Mario style platforming genre, and a reimagining of the traditional multiplayer experience.
 
-### Why Play Oiram?
-Oiram stands out by combining classic platforming with innovative time manipulation and prioritizing accessibility with features tailored to a range of player needs.
+
 
 # 3. Requirements 
 ### Requirement Engineering
