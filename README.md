@@ -421,8 +421,10 @@ Whilst not being our original setting for the game, this feedback inspired us to
 **Difficulty**
 
 We found a mix of opinions regarding the difficulty level of the game.
-•	Difficulty was rewarding but challenging
-•	Level Two was very hard to complete for most players
+<ul>
+ <li>Difficulty was rewarding but challenging</li>
+ <li>Level Two was very hard to complete for most players</li>
+</ul>
 
 To address the difficulty concerns, we decided to alter some of the platforms in Level Two which allowed for easier ways to avoid obstacles.
 
