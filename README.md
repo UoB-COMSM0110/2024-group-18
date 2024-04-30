@@ -4,12 +4,6 @@ TODO: add GIFS
 
 TODO: search for any remaining TODOs or XXX in the readme.
 
-DONE:
-TODO: include GIFs of feasibility studies.
-TODO: include paper prototype GIF.
-TODO: include YiOldGame GIF.
-TODO: insert picture of linux error.
-TODO: Include GIF of gameplay in disability mode.
 
 <p align="center">
   <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
@@ -81,7 +75,7 @@ When designing our game, we set out to make a simple to learn, hard to master pl
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 
-In Oiram (the title itself being a twist on one of our inspirations) you control a spaceman, who must figure out how to escape through a gate using only a button and a mysterious machine. Players will initially be confused as they realise that the button requires you to stand on it for the door to open, indicating that another player or object is required to keep the door open. This is another twist we incorporated, a reimagining of the traditional multiplayer experience. By using the machine, it allows you to invert time, and send a past version of yourself back through the level. You must then use your past movements to press the button at the correct time, allowing the present version of yourself to exit through the door. Additionally, you must avoid your previous self to avoid a “Time Paradox”. As the levels increase in complexity there are other obstacles you must avoid and interact with, such as falling bombs, moving platforms, and deadly drops. Your past self isn’t all that is reversed when you use the time machine, thus requiring careful tracking of where bombs fell, as implosions are as deadly as explosions.
+In Oiram (the title itself being a twist on one of our inspirations) you control a spaceman, who must figure out how to escape through a gate using only a button and a mysterious machine. Players will initially be confused as they realise that the button requires you to stand on it for the door to open, indicating that another player or object is required to keep the door open. This is another twist we incorporated, a reimagining of the traditional multiplayer experience. By using the machine, it allows you to invert time, and send a past version of yourself back through the level. You must then coordinate with you past movements to reach the door when you past self presses the button at the correct time. Additionally, you must avoid your previous self to avoid a “Time Paradox”. As the levels increase in complexity there are other obstacles you must avoid and interact with, such as falling bombs, moving platforms, and deadly drops. Your past self isn’t all that is reversed when you use the time machine, thus requiring careful tracking of where bombs fell, as implosions are as deadly as explosions.
 
 
 
@@ -560,7 +554,7 @@ We adopted an agile methodology, allowing us to build the game slowly based on u
 
 Developing Oiram challenged and enhanced our software engineering capabilities. We crafted a sophisticated system architecture that included map design, a stylised interface, accessibility features, and innovative mechanics like time reversal, resulting in a game that closely matched our vision.
 
-Early in the project, we established our game's vision, though the complexity of our codebase evolved. Maintaining a supportive environment was therefore vital, with senior developers providing guidance and using diagrams to ensure all team members, regardless of skill level, understood the system. This facilitated feature integration and allowed team members to cover for each other.
+As the project progressed, as did the complexity of our codebase. Maintaining a supportive environment was therefore vital, with senior developers providing guidance and using diagrams to ensure all team members, regardless of skill level, understood the system. This facilitated feature integration and allowed team members to cover for each other.
 
 Adopting an Agile development methodology was also instrumental for designing the game we envisioned, satisfying our user stories, and importantly, creating something that was fun to play. User feedback was pivotal, influencing the game’s setting and difficulty. This feedback enabled us to fine-tune levels and add hints, leading to a game that was enjoyable, challenging, and satisfying for players.
 
