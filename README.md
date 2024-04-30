@@ -74,7 +74,7 @@ Once you've installed Processing and the required libraries, you're all set to r
 
 # 2. Introduction 
 
-When designing our game, we set out to make a simple to learn, hard to master platformer, whislt also remaining accessible to a wide variety of users, including those who struggle with fast paced keyboard and mouse controls. Having all grown up playing games such as Super Mario, we understood the importance of a game that anyone could play, yet one which provides a satisfying sense of progression as you grow in skill and progress through levels of increasing complexity. Being avid science fiction fans, we wanted to include a unique twist on the platforming genre, the twist we opted for was time reversal.
+When designing our game, we set out to make a simple to learn, hard to master platformer, whilst also remaining accessible to a wide variety of users, including those who struggle with fast paced keyboard and mouse controls. Having all grown up playing games such as Super Mario, we understood the importance of a game that anyone could play, yet one which provides a satisfying sense of progression as you grow in skill and progress through levels of increasing complexity. Being avid science fiction fans, we wanted to include a unique twist on the platforming genre, the twist we opted for was time reversal.
 
 
 <div style="text-align: center;">
