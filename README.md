@@ -404,11 +404,14 @@ Seventeen participants were collected through convenience sampling. Due to easy 
 
 **Player Movement**
 
-Much of the feedback was about the movement, and we identified:
-•	Felt sluggish
-•	Performance was too slow
-•	“Space like” floaty feeling
-Whilst not being our original setting for the game, this feedback inspired us to set the game in space (see Figure 21). Additionally, we incorporated the Java FX framework (REF) which gave the game drastically improved performance allowing for more responsive movement, providing a faster paced and exciting gameplay experience. 
+Much of the data we gathered related to the movement and overall performance of the game.
+<ul>
+ <li>Movement felt sluggish</li>
+ <li>Performance was too slow and laggy</li>
+ <li>Gave a “Space like” floaty feeling</li>
+</ul>
+
+Whilst not being our original setting for the game, this feedback inspired us to set the game in space we also fit with our sci-fi twist (see Figure 21). To address performance criticism, we incorporated the Java FX framework. This drastically improved performance, allowing for more responsive movement. This provided a faster paced, and more exciting gameplay experience. 
 
 
 <p align="center">
@@ -431,9 +434,13 @@ To address the difficulty concerns, we decided to alter some of the platforms in
 **Instructions**
 
 We deliberately opted to not give much information as to what the player is required to do as we felt like it was better to let them figure it out themselves, which was met with mixed responses:
-•	People liked the puzzle solving aspect
-•	They found it rewarding solving the first level using past self
-•	Some people wanted more instructions
+
+<ul>
+ <li>People liked the puzzle solving aspect</li>
+ <li>They found it rewarding solving the first level using past self</li>
+ <li>Some people wanted more instructions</li>
+</ul>
+
 We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 22).
 
 
