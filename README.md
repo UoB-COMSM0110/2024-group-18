@@ -471,23 +471,8 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 
 **Description of how code was tested**
 
-Our strategy for testing the code involved a series of both black box and white box methods.
-Whitebox tests were conducted by writing assertions which tested the correct initialisation of every object, and that variables held their expected states. See figure X for some examples of these. Most of the testing was done through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member. 
-
-
--	Mention testing specification
-As the codebase grew in complexity, we drew up a testing specification 
-
-
-o	Explain the methods used to test the code.
-o	Blackbox
-o	Whitebox
-	Ali added assertions
-	In class called test
-o	Testing harness
-o	Equivalence partitioning
-
-
+As our game grew in complexity and scope, we adopted a multifaceted approach to testing.
+Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we wrote tests which checked for the correct initialisation of every object, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome. This document can be found HERE include link??? or put it in appendices????.
 
 
 # 7. Process 
