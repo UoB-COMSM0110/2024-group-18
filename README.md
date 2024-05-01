@@ -462,6 +462,7 @@ After examining our own video game preferences alongside findings from previous 
   <img src="Assets_For_ReadMe/updatedTLX.png" width="75%">
 </p>
 
+
 The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Figures 23 and 24).
 
 
@@ -476,6 +477,7 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
   <i>Mean NASA TLX Scores by Level</i><br>
   <img src="Assets_For_ReadMe/meanTLX.png" width="75%">
 </p>
+
 
 
 **Description of how code was tested**
