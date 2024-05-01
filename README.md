@@ -32,7 +32,7 @@ Once you've installed Processing and the required libraries, you're all set to r
 
 <div align="center">
     <p>Find a game demonstration of the <strong>Oiram</strong> game below, providing a brief overview of the gameplay mechanics and features. This video will give you a sneak peek into the exciting challenges and fun that await!</p>
-    <a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Watch the Game Demonstration">
+    <a href="https://youtu.be/737RG8N9GPc" title="Watch the Game Demonstration">
         <img src="Assets_For_ReadMe/videoBackground.gif" alt="Watch Oiram Game Tutorial" width="500">
     </a>
 </div>
