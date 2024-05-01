@@ -32,17 +32,11 @@ Our team is actively working to resolve these issues. We appreciate your patienc
 If you encounter any further issues or have suggestions, please feel free to reach out to us by opening an Issue above. Your feedback is invaluable as we continue to improve.
 
 
-# Video Demonstration
-<div align="center">
-    <a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Click to Watch!">
-        <img src="Assets_For_ReadMe/videoBackground.gif" alt="Oiram Tutorial Video" width="500">
-    </a>
-</div>
 
 # Video Demonstration
 
 <div align="center">
-    <p>Click here to watch a game demonstration of <strong>Oiram</strong>, providing a brief overview of the gameplay mechanics and features. This video will give you a sneak peek into the exciting challenges and fun that await!</p>
+    <p>Find a game demonstration of the <strong>Oiram</strong> game below, providing a brief overview of the gameplay mechanics and features. This video will give you a sneak peek into the exciting challenges and fun that await!</p>
     <a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Watch the Game Demonstration">
         <img src="Assets_For_ReadMe/videoBackground.gif" alt="Watch Oiram Game Tutorial" width="500">
     </a>
