@@ -1,8 +1,3 @@
-TODO: update figure numbers
-
-TODO: add GIFS
-
-TODO: search for any remaining TODOs or XXX in the readme.
 
 
 <p align="center">
@@ -13,27 +8,40 @@ TODO: search for any remaining TODOs or XXX in the readme.
 
 # Game Setup Instructions
 
-To play our game, you must install Processing and the following libraries: "Video", "JavaFX",  "Deep Vision", and "Sound". Here's how to do it:
-1. **Open Processing**: Launch the Processing application on your computer.
-
-2. **Library Manager**: Open the Library Manager by selecting “Import Library...” from the “Sketch” menu, then choose “Add Library...”.
-
+To play our game, you must first ensure Processing is installed and updated, and then install and load libraries. Here's how to do it:
+1. **Open Processing**: Once Processing is installed and updated to the latest version (see [here](https://processing.org/download)), launch the application.
+2. **Open Library Manager**: Select **Import Library** from the **Sketch** menu, then choose **Manage Libraries** option.
 3. **Install Libraries**:
-   - Use the search bar to find each of the following libraries:
-      - "Video"
-      - "Deep Vision"
-      - "Sound"
-      - "JavaFX"
-   - Click "Install" for each library.
-
+    - Use the **Search Bar** to find each of the following libraries and click **Install**:
+        - <code>Video</code>
+        - <code>Deep Vision</code>
+        - <code>Sound</code>
+        - <code>JavaFX</code>
+   - Click "Install" for each library. If already installed, ensure updated by navigating to **Updates** in **Library Manager**. 
 4. **Learn More**: For additional guidance on installing libraries, check out [this tutorial](https://processing.org/tutorials/video).
 
 Once you've installed Processing and the required libraries, you're all set to run the game!
+### Important Note for Linux Users
 
-# Video
-<a href="https://youtu.be/737RG8N9GPc" title="Click to Watch!">
-    <img src="Assets_For_ReadMe/videoBackground.gif" alt="Oiram Tutorial Video" width="500">
-</a>
+<div style="padding: 10px; border-left: 5px solid #a00019;">
+    <strong>Please note:</strong> Due to potential misalignments with the following packages, Linux users may experience issues with the Accessibility Feature. 
+Our team is actively working to resolve these issues. We appreciate your patience and understanding as we strive to enhance compatibility and functionality across all platforms.
+</div>
+
+
+If you encounter any further issues or have suggestions, please feel free to reach out to us by opening an Issue above. Your feedback is invaluable as we continue to improve.
+
+
+
+# Video Demonstration
+
+<div align="center">
+    <p>Find a game demonstration of the <strong>Oiram</strong> game below, providing a brief overview of the gameplay mechanics and features. This video will give you a sneak peek into the exciting challenges and fun that await!</p>
+    <a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Watch the Game Demonstration">
+        <img src="Assets_For_ReadMe/videoBackground.gif" alt="Watch Oiram Game Tutorial" width="500">
+    </a>
+</div>
+
 
 # Table of Contents
 - [1. Development Team](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#1-development-team)
@@ -133,13 +141,13 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
     In our ideation phase, we used 
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 3) and 
-    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. 
+    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing" target="_blank">Google Docs</a>
+    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element after realising a shared passion for Christopher Nolan's movies, in particular Tenet. 
 </p>
 <p align="center">
   <b>Figure 3</b><br>
   <i>Week 2 Brainstorm several game ideas.</i><br>
-  <img src="Assets_For_ReadMe/SEBrainstorm.png" width="50%" >
+  <img src="Assets_For_ReadMe/SEBrainstorm.png" width="30%" >
   <br>
 </p>
 
@@ -148,7 +156,7 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
   <b>Figure 4</b><br>
   <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
   <br><br>
-  <img src="Assets_For_ReadMe/prototype.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol">
+  <img src="Assets_For_ReadMe/prototype.gif" width="50%" alt="Paper Prototype for Group 18 CS Bristol">
 </p>
 
 Workshop Three allowed us to expand these ideas by developing Paper Prototypes of our initial ideas (Figure 4). The prototype was especially helpful due to the complexity of the game concept. Communication within the team became more transparent when Tom expanded the tool by generating Paper-Prototype style animations using his IPad (Figure 5), which became a familiar tool as we progressed through the project.
@@ -231,7 +239,7 @@ As our user stories include casual gamers, we understood early on in the game de
 
 Below is our initial interpretation of this, where we posited the idea that the accessibility mode would be made easier on other dimensions. Eventually, we moved away from this idea, as we felt that it was important to our disabled player user story that they were able to play the same game as their friends.
 <p align="center">
-  <b>Figure 10</b><br>
+  <b>Figure 11</b><br>
   <i>Use Case Diagram.</i><br>
   <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
@@ -281,19 +289,19 @@ The complex mechanics of time inversion in our platform-puzzle game necessitated
 - **Main Class**: Manages the game loop, flags for method calls, and oversees the creation of Player Controller and Map Controller instances. These controllers maintain method control flags and item lists.
 
 <p align="center">
-<br><b>Figure 11</b></br>
+<br><b>Figure 12</b></br>
   <i>Class Diagram Generated Workshop Five.</i>
   <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
   <br>
 </p>
 
 <p align="center">
-<br><b>Figure 12</b></br>
+<br><b>Figure 13</b></br>
   <i>Updated Class Diagram to shop change from Figure 11.</i>
   <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
 </p>
 
-Figures 11 and 12 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
+Figures 12 and 13 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
 
 ### Behavioural diagrams
 Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where, after evaluating many classes in our system, the sequence would allow for easy debugging, especially since the Processing IDE has poor debugging facilities. 
@@ -303,7 +311,7 @@ Based on the requirements specification, we developed a system architecture that
 
 
 <p align="center">
-<b>Figure 13</b>
+<b>Figure 14</b>
   <br><i>Sequence Diagram.</i></br>
   <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
 </p>
@@ -317,16 +325,10 @@ Before starting any of our challenges, we needed to create a basic platformer. F
 
 While not one of our official challenges, we found that programming collisions and basic movement were initially quite tricky. For example, our initial approach to jumping caused an issue where users could jump infinitely by holding down the button. Our eventual implementation involved a variable within the `Player` set when they were on the ground. We also included velocity and acceleration variables. For collisions, initially, we had an approach involving an ENUM, several for loops, and several if statements. This approach was verbose and unreliable (occasionally players would fall through the floor!) Our final approach was much simpler and involved using the height and width of the game object, with the conditional collisions logic (for example, pressing the button opens the door) stored inside the `interactDynamicItems` method.
 
-The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
-
-Clicking the accessibility button on Linux causes an error message to show up.
+Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
 
 
-<p align="center">
-  <b>Figure 14</b><br>
-  <i>Example of Error.</i><br>
-<img src="Game/assets/Background/LinuxErr.png">
-</p>
+In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
 ### Challenges
 
@@ -342,7 +344,7 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
 The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
-3. **Level Design and balance**
+2. **Level Design and balance**
 
    We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 16). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
 
@@ -352,29 +354,36 @@ The bomb was even more complex. We created explode and implode animations, and w
     <img src="https://i.imgur.com/0kD1yRU.png" width="500" >
 </p>
 <p align="center">
-  <b>Figure 18</b><br>
+  <b>Figure 17</b><br>
   <i>Playtesting.</i><br>
     <img src="https://i.imgur.com/Suklhby.png" width="500" >
 </p>
     
    This level designer was very helpful when in playtesting. For example, one user found the jump in the tutorial level too challenging to complete, but with a few keystrokes, we were able to change it and immediately gather feedback that the same user found it easier.
    
-4. **Accessibility**
-
-   Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
+3.1 **Accessibility:** *Performance Challenges*
 
 <p align="center">
-  <b>Figure 19</b><br>
+  <b>Figure 18</b><br>
   <i>Demonstration of Accessibility Use-Case.</i><br>
   <img src="Assets_For_ReadMe/Game_Video_V5.gif">
 </p>
+   Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input (Figure 18). When planning this feature, we researched that this can be achieved where users with accessibility needs could lean left and right for player movement, and make a noise for the player to jump. To program this, we used the `Machine Vision` and `Audio` libraries, where input from the webcam is taken, and if the user's head is detected on one side of the screen, the character moves that way. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character. We found that the main challenge of this was efficiency affecting game performance, as the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. 
 
-   One other issue we encountered whilst testing this was that the Processing video library isn't supported on Linux machines. To fix this, if the user is on Linux, we  show an error message if they attempt to load accessibility mode. Since loading the libraries takes 5-10 seconds, we needed to implement an additional loading screen to provide adequate visibility of system status.
+
+3.2 **Accessibility:** *Linux Issues*
+
+The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing `Video` library experiences issues on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
+
+Clicking the accessibility button on Linux causes an error message to show up (Figure 19).
+
+
+<p align="center">
+  <b>Figure 19</b><br>
+  <i>Example of Error.</i><br>
+<img src="Game/assets/Background/LinuxErr.png" width="75%">
+</p>
    
-   Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
-
-
-   In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
 
 # 6. Evaluation 
@@ -391,7 +400,7 @@ Seventeen participants were collected through convenience sampling. Due to easy 
 <p align="center">
   <b>Figure 20</b><br>
   <i>Thematic Map of Think Aloud Data.</i><br>
-  <img src="Assets_For_ReadMe/thematicmap.png">
+  <img src="Assets_For_ReadMe/thematicmap.png" width="75%">
 </p>
 
 
