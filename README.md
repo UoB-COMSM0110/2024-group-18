@@ -386,7 +386,7 @@ The bomb was even more complex. We created explode and implode animations, and w
 
 # 6. Evaluation 
 
-During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by questionnaire data. 
+During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by qualitative data. 
 
 **Qualitative Evaluation**
 
