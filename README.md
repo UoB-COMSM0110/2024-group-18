@@ -340,23 +340,23 @@ In playtesting, some non-disabled players preferred controlling the character th
 The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
 <p align="center">
-  <b>Figure XXXX</b><br>
+  <b>Figure 16</b><br>
   <i>Bombs and moving platforms</i><br>
   <img src="Assets_For_ReadMe/level3.gif">
 </p>
 
 2. **Level Design and balance**
 
-   We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 16). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
+   We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 17). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
 
 <p align="center">
-  <b>Figure 16</b><br>
+  <b>Figure 17</b><br>
   <i>The level designer</i><br>
     <img src="https://i.imgur.com/0kD1yRU.png" width="500" >
 </p>
 <p align="center">
-  <b>Figure 17</b><br>
-  <i>The level, as designed in Figure 16.</i><br>
+  <b>Figure 18</b><br>
+  <i>The level, as designed in Figure 17.</i><br>
     <img src="https://i.imgur.com/Suklhby.png" width="500" >
 </p>
     
@@ -365,7 +365,7 @@ The bomb was even more complex. We created explode and implode animations, and w
 3.1 **Accessibility:** *Performance Challenges*
 
 <p align="center">
-  <b>Figure 18</b><br>
+  <b>Figure 19</b><br>
   <i>Demonstration of Accessibility Use-Case.</i><br>
   <img src="Assets_For_ReadMe/Game_Video_V5.gif">
 </p>
@@ -376,11 +376,11 @@ The bomb was even more complex. We created explode and implode animations, and w
 
 The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing `Video` library experiences issues on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
 
-Clicking the accessibility button on Linux causes an error message to show up (Figure 19).
+Clicking the accessibility button on Linux causes an error message to show up (Figure 20).
 
 
 <p align="center">
-  <b>Figure 19</b><br>
+  <b>Figure 20</b><br>
   <i>Example of Error.</i><br>
 <img src="Game/assets/Background/LinuxErr.png" width="75%">
 </p>
@@ -395,11 +395,11 @@ During the development process, it was essential to understand whether the game'
 
 To gather data regarding the early design of the levels, their difficulty, and the concept of the game itself, we conducted the qualitative technique of Think Aloud (TA), as it has been shown to be effective in other areas of Human Computer Interaction (Nielsen et al., 2002; Joe et al., 2015). 
 
-Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this method over Heuristic Evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 20). We will address each theme in turn.
+Seventeen participants were collected through convenience sampling. Due to easy access to a large pool of other students, we opted for this method over Heuristic Evaluation. This also gave us a wider variety of different abilities regarding video games, offering a richer set of data. We asked participants to play the first two levels (level three was still being designed) and recorded their thoughts whilst playing. Following data collection, we identified a series of underlying themes utilising techniques found in Thematic Analysis (Braun & Clarke, 2006). These were then organised into a Thematic Map to aid visualisation (see Figure 21). We will address each theme in turn.
 
 
 <p align="center">
-  <b>Figure 20</b><br>
+  <b>Figure 21</b><br>
   <i>Thematic Map of Think Aloud Data.</i><br>
   <img src="Assets_For_ReadMe/thematicmap.png" width="75%">
 </p>
@@ -414,11 +414,11 @@ Much of the data we gathered related to the movement and overall performance of 
  <li>Gave a “Space like” floaty feeling</li>
 </ul>
 
-Whilst not being our original setting, this feedback inspired us to set the game in space which fit with our sci-fi twist (see Figure 21). To address performance criticism, we incorporated the Java FX framework. This drastically improved performance, allowing for more responsive movement. This provided a faster paced, and more exciting gameplay experience. 
+Whilst not being our original setting, this feedback inspired us to set the game in space which fit with our sci-fi twist (see Figure 22). To address performance criticism, we incorporated the Java FX framework. This drastically improved performance, allowing for more responsive movement. This provided a faster paced, and more exciting gameplay experience. 
 
 
 <p align="center">
-  <b>Figure 21</b><br>
+  <b>Figure 22</b><br>
   <i>Different Game Backgrounds.</i><br>
   <img src="Assets_For_ReadMe/gamebackgrounds.png" width="75%" height="">
 </p>
@@ -444,11 +444,11 @@ We deliberately opted to not give much information as to what the player is requ
  <li>Some people wanted more instructions</li>
 </ul>
 
-We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 22).
+We decided to implement visual hints on screen which offered clues as to how to beat the first level yet remaining vague enough to still offer rewarding gameplay (see Figure 23).
 
 
 <p align="center">
-  <b>Figure 22</b><br>
+  <b>Figure 23</b><br>
   <i>Tutorial Hints.</i><br>
   <img src="Assets_For_ReadMe/hints (1).gif" width="75%" height="">
 </p>
@@ -466,17 +466,17 @@ After examining our own video game preferences alongside findings from previous 
 </p>
 
 
-The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Figures 23 and 24).
+The data was analysed using R*Studio (RStudio Team, 2020). We expected each participant to report significantly increased on the workload on the following level compared to the previous. Wilcoxon Signed Rank tests were conducted to assess changes in perceived workload between the three levels.  The results of these indicated that there was a statistically significant increase in the TLX scores from Level One to Level Two, W = 0, p = .0035, and from Level Two to Level Three (W = 0, p = 0.0038). Every participant reported an increased workload for the following level compared to the previous, as per our design (see Figures 24 and 25).
 
 
 <p align="center">
-  <br><b>Figure 23</b><br>
+  <br><b>Figure 24</b><br>
   <i>Raw NASA TLX Scores by Participant</i><br>
   <img src="Assets_For_ReadMe/individualTLX.png" width="75%">
 </p>
 
 <p align="center">
-  <br><b>Figure 24</b><br>
+  <br><b>Figure 25</b><br>
   <i>Mean NASA TLX Scores by Level</i><br>
   <img src="Assets_For_ReadMe/meanTLX.png" width="75%">
 </p>
@@ -486,7 +486,7 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 **Description of how code was tested**
 
 As our game grew in complexity and scope, we adopted a multifaceted approach to testing.
-Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification (see Appendix 3) which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome.
+Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification (see Appendix 1) which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome.
 
 # 7. Process 
 ## Collaboration
@@ -494,7 +494,7 @@ Whitebox tests were conducted by writing a series of assertions kept inside a cl
 Our first few meetings were conducted in person. This allowed maximal flexibility as we discussed various design ideas and got to know each other. In fact, our first meeting ever was at a restaurant, and we focused exclusively on getting to know each other and our gaming histories. We connected in person at the end of each Monday morning lab, and divided up that week’s tasks using a variant of planning poker. (We noticed that development tasks would take different people different amounts of time, so we attempted to give harder tasks to faster coders even out how much time people spent on the game.)
 
 <p align="center">
-  <br><b>Figure 25</b><br>
+  <br><b>Figure 26</b><br>
   <i>Team Meeting Paper Prototyping.</i><br>
     <img src="https://i.imgur.com/eQKRT9U.jpeg" width="75%">
 </p>
@@ -506,7 +506,7 @@ Early on, we had to decide which game to build. To do this, we used a [ranked pr
 Analysing our process, we noticed an interesting trend in the burndown report. For our three holiday sprints we set deadlines for the end of the week. This led to a few "heroic efforts" as people implemented their work before the deadline. (Note that there is some reporting bias in this, as we credited work done over the weekend to the previous Friday.) We mitigated this slightly in the final week of the holiday sprints, where we further decomposed the tasks (average story points per task went from 7 to 2.)
 
 <p align="center">
-  <br><b>Figure 26</b><br>
+  <br><b>Figure 27</b><br>
   <i>Burn Chart of Game Project.</i><br>
 <img src="https://i.imgur.com/6JbR5n4.png" width="75%">
 </p>
@@ -518,7 +518,7 @@ We experimented with a variety of different tools during the development.
 For our meetings, we used a Google doc in reverse chronological order (a stack, not a queue!) This allowed us a space to add text, images, and diagrams flexibly and ensured that the most useful content was at our fingertips.
 
 <p align="center">
-  <br><b>Figure 27</b><br>
+  <br><b>Figure 28</b><br>
   <i>Google Doc Project Management.</i><br>
 <img src="https://i.imgur.com/GlRhWhe.png" width="35%">
 </p>
@@ -526,7 +526,7 @@ For our meetings, we used a Google doc in reverse chronological order (a stack, 
 We initially used the Kanban board built into GitHub. However, as development became more complicated, we noticed that people were misunderstanding the requirements of the task, leading to wasted development time. We decided to switch to the running Google doc that we used for meetings as it allowed us to use a variety of media (text, images of paper prototypes etc) to describe the task requirements. This was significantly more flexible, and our PR workflow meant it was still very easy to track what work had been done for analysis purposes. It also reduced the number of places people needed to look for information - everything was centralized in one document.
 
 <p align="center">
-  <br><b>Figure 28</b><br>
+  <br><b>Figure 29</b><br>
   <i>Kanban Board Project Management.</i><br>
 <img src="https://i.imgur.com/cdjpaHN.png" width="75%">
 </p>
@@ -536,7 +536,7 @@ We used Pull Requests extensively. Our process involved creating a PR and having
 WhatsApp was our primary communication method, which we used to coordinate meetings, ask for feedback on PRs, and ask for help.
 
 <p align="center">
-  <br><b>Figure 29</b><br>
+  <br><b>Figure 30</b><br>
   <i>Whatsapp Communication.</i><br>
 <img src="https://i.imgur.com/FUcBUNE.png" width="35%">
 </p>
@@ -642,20 +642,21 @@ Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NA
 
 <p align="center">
   <br><b>Appendix 1</b><br>
+  <i>Testing Specification Depicting Actions, Outcomes, and Expected Visual Display</i><br>
+  <img src="Assets_For_ReadMe/testSpec.png" width="75%">
+</p>
+
+
+<p align="center">
+  <br><b>Appendix 2</b><br>
   <i>Concept Art for Future Boss Designs</i><br>
   <img src="Assets_For_ReadMe/appendix-conceptart.png" width="75%">
 </p>
 
 <p align="center">
-  <br><b>Appendix 2</b><br>
+  <br><b>Appendix 3</b><br>
   <i>Alternative Level 2 and Boss Arena Map Concepts</i><br>
   <img src="Assets_For_ReadMe/appendix-levels.png" width="75%">
-</p>
-
-<p align="center">
-  <br><b>Appendix 3</b><br>
-  <i>Testing Specification Depicting Actions, Outocmes, and Expected Visual Display</i><br>
-  <img src="Assets_For_ReadMe/testSpec.png" width="75%">
 </p>
 
 
