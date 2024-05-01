@@ -27,10 +27,12 @@ To play our game, you must first ensure Processing is installed and updated, and
 
 Once you've installed Processing and the required libraries, you're all set to run the game!
 
-# Video
-<a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Click to Watch!">
-    <img src="Assets_For_ReadMe/videoBackground.gif" alt="Oiram Tutorial Video" width="500">
-</a>
+# Video Demonstration
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Click to Watch!">
+        <img src="Assets_For_ReadMe/videoBackground.gif" alt="Oiram Tutorial Video" width="500">
+    </a>
+</div>
 
 # Table of Contents
 - [1. Development Team](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#1-development-team)
