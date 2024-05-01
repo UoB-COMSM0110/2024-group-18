@@ -48,7 +48,7 @@ Once you've installed Processing and the required libraries, you're all set to r
 - [7. Process](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#7-process)
 - [8. Conclusion](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#8-conclusion)
 - [9. References](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#9-references)
- 
+- [Appendices](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#9-appendices)
 # 1. Development Team
 <p align="center">
   <b>Figure 1</b><br>
