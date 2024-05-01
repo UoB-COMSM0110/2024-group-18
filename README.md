@@ -380,7 +380,7 @@ The bomb was even more complex. We created explode and implode animations, and w
 
 # 6. Evaluation 
 
-During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by qualitative data. 
+During the development process, it was essential to understand whether the game's fundamental mechanics and map design, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by qualitative data. 
 
 **Qualitative Evaluation**
 
@@ -448,7 +448,7 @@ We decided to implement visual hints on screen which offered clues as to how to 
 
 #### Quantitative Analysis
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 5).
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each participant filled out a TLX upon completion of each level (see Table 5).
 
 <p align="center">
   <br><b>Table 5</b><br>
@@ -477,7 +477,7 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 **Description of how code was tested**
 
 As our game grew in complexity and scope, we adopted a multifaceted approach to testing.
-Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome. This document can be found HERE include link??? or put it in appendices????.
+Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome. This document can be found in the appendices.
 
 
 # 7. Process 
