@@ -107,6 +107,11 @@ These gameplay elements, alongside our use of machine vision to allow for a more
       <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
       <td>Device to invoke time reversal.</td>
     </tr>
+          <tr>
+      <td>Bomb</td>
+      <td><img src="Game/assets/Dynamic/bomb.png" alt="bomb" style="height: 100px;"></td>
+      <td>Bomb which kills the player when it explodes.</td>
+    </tr>
   </table>
 </div>
 
