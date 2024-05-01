@@ -292,7 +292,7 @@ The complex mechanics of time inversion in our platform-puzzle game necessitated
 
 <p align="center">
 <br><b>Figure 13</b></br>
-  <i>Updated Class Diagram to shop change from Figure 11.</i>
+  <i>Updated Class Diagram to show change from the beginning of the project (Figure 12).</i>
   <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
 </p>
 
