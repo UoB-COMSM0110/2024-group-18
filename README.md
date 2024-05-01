@@ -205,26 +205,25 @@ To better understand what features we should prioritise, we created user stories
 
 To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories (Figure 8-10). This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "What would Christina think?"
 
-<p align="center">
-  <b>Figure 8</b><br>
-  <i>User Story One.</i><br>
-  <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
-  <br>
-</p>
-
-<p align="center">
-  <b>Figure 9</b><br>
-  <i>User Story Two.</i><br>
-  <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
-  <br>
-</p>
-
-<p align="center">
-  <b>Figure 10</b><br>
-  <i>User Story Three.</i><br>
-  <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
-  <br>
-</p>
+<table align="center" width="100%">
+  <tr>
+    <td align="center">
+      <b>Figure 8</b><br>
+      <i>User Poster One.</i><br>
+      <img src="Assets_For_ReadMe/UserStory1.png" width="256">
+    </td>
+    <td align="center">
+      <b>Figure 9</b><br>
+      <i>User Poster Two.</i><br>
+      <img src="Assets_For_ReadMe/UserStory2.png" width="256" >
+    </td>
+    <td align="center">
+      <b>Figure 10</b><br>
+      <i>User Poster Three.</i><br>
+      <img src="Assets_For_ReadMe/UserStory3.png" width="256" >
+    </td>
+  </tr>
+</table>
 
 
 ### Use-Cases Breakdown 
