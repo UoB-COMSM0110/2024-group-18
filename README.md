@@ -486,8 +486,7 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 **Description of how code was tested**
 
 As our game grew in complexity and scope, we adopted a multifaceted approach to testing.
-Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome. This document can be found in the appendices.
-
+Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification (see Appendix 3) which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome.
 
 # 7. Process 
 ## Collaboration
@@ -652,6 +651,13 @@ Virtanen, K., Mansikka, H., Kontio, H., & Harris, D. (2021). Weight Watchers: NA
   <i>Alternative Level 2 and Boss Arena Map Concepts</i><br>
   <img src="Assets_For_ReadMe/appendix-levels.png" width="75%">
 </p>
+
+<p align="center">
+  <br><b>Appendix 3</b><br>
+  <i>Testing Specification Depicting Actions, Outocmes, and Expected Visual Display</i><br>
+  <img src="Assets_For_ReadMe/testSpec.png" width="75%">
+</p>
+
 
 
 
