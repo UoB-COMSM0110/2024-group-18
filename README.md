@@ -350,7 +350,7 @@ The bomb was even more complex. We created explode and implode animations, and w
 </p>
 <p align="center">
   <b>Figure 17</b><br>
-  <i>Playtesting.</i><br>
+  <i>The level, as designed in Figure 16.</i><br>
     <img src="https://i.imgur.com/Suklhby.png" width="500" >
 </p>
     
