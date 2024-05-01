@@ -83,7 +83,7 @@ When designing our game, we set out to make a simple to learn, hard to master pl
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 
-In Oiram (the title itself being a twist on one of our inspirations) you control a spaceman who must figure out how to escape through a gate using only a button and a mysterious machine. Players will initially be confused as they realise that the button requires you to stand on it for the door to open, indicating that another player or object is required to keep the door open. This is another twist we incorporated, a reimagining of the traditional multiplayer experience. Using the machine allows you to invert time and send a past version of yourself back through the level. You must then coordinate with your past movements and reach the door when your past self presses the button. Additionally, you must avoid your previous self to avoid a “Time Paradox”. As the levels increase in complexity there are other obstacles you must avoid and interact with, such as falling bombs, moving platforms, and deadly drops. You are not the only thing that is reversed when you use the time machine, thus requiring careful tracking of where bombs fell, as implosions are as deadly as explosions.
+In Oiram, you control a spaceman who must figure out how to escape through a gate using only a button and a mysterious machine. Players will initially be confused as they realise that the button requires you to stand on it for the door to open, indicating that another player or object is required to keep the door open. This is another twist we incorporated, a reimagining of the traditional multiplayer experience. Using the machine allows you to invert time and send a past version of yourself back through the level. You must then coordinate with your past movements and reach the door when your past self presses the button. Additionally, you must avoid your previous self to avoid a “Time Paradox”. As the levels increase in complexity there are other obstacles you must avoid and interact with, such as falling bombs, moving platforms, and deadly drops. You are not the only thing that is reversed when you use the time machine, thus requiring careful tracking of where bombs fell, as implosions are as deadly as explosions.
 
 These gameplay elements, alongside our use of machine vision to allow for a more accessible user experience, has allowed us to design a truly innovative game. Offering a unique sci-fi twist on the Super Mario style platforming genre, and a reimagining of the traditional multiplayer experience.
 
@@ -114,6 +114,11 @@ These gameplay elements, alongside our use of machine vision to allow for a more
       <td>Tardis</td>
       <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
       <td>Device to invoke time reversal.</td>
+    </tr>
+          <tr>
+      <td>Bomb</td>
+      <td><img src="Game/assets/Dynamic/bomb.png" alt="bomb" style="height: 100px;"></td>
+      <td>Bomb which kills the player when it explodes.</td>
     </tr>
   </table>
 </div>
@@ -208,26 +213,25 @@ To better understand what features we should prioritise, we created user stories
 
 To personalise and keep these user stories in mind, we created several posters with characters to represent these user stories (Figure 8-10). This kept them at the forefront of our minds and provided an easy shorthand to reference in meetings: "What would Christina think?"
 
-<p align="center">
-  <b>Figure 8</b><br>
-  <i>User Story One.</i><br>
-  <img src="Assets_For_ReadMe/UserStory1.png" width="512" height="384">
-  <br>
-</p>
-
-<p align="center">
-  <b>Figure 9</b><br>
-  <i>User Story Two.</i><br>
-  <img src="Assets_For_ReadMe/UserStory2.png" width="512" height="384">
-  <br>
-</p>
-
-<p align="center">
-  <b>Figure 10</b><br>
-  <i>User Story Three.</i><br>
-  <img src="Assets_For_ReadMe/UserStory3.png" width="512" height="384">
-  <br>
-</p>
+<table align="center" width="100%">
+  <tr>
+    <td align="center">
+      <b>Figure 8</b><br>
+      <i>User Poster One.</i><br>
+      <img src="Assets_For_ReadMe/UserStory1.png" width="256">
+    </td>
+    <td align="center">
+      <b>Figure 9</b><br>
+      <i>User Poster Two.</i><br>
+      <img src="Assets_For_ReadMe/UserStory2.png" width="256" >
+    </td>
+    <td align="center">
+      <b>Figure 10</b><br>
+      <i>User Poster Three.</i><br>
+      <img src="Assets_For_ReadMe/UserStory3.png" width="256" >
+    </td>
+  </tr>
+</table>
 
 
 ### Use-Cases Breakdown 
@@ -384,7 +388,7 @@ Clicking the accessibility button on Linux causes an error message to show up (F
 
 # 6. Evaluation 
 
-During the development process, it was essential to understand whether the game's fundamental mechanics, namely the movement physics and the time inversion, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by qualitative data. 
+During the development process, it was essential to understand whether the game's fundamental mechanics and map design, offered fun gameplay while also presenting a satisfying challenge. To do this, we utilised a mixed-methods approach using inferential statistics enriched by qualitative data. 
 
 **Qualitative Evaluation**
 
@@ -452,7 +456,7 @@ We decided to implement visual hints on screen which offered clues as to how to 
 
 #### Quantitative Analysis
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each partiocipant filled out a TLX upon completion of each level (see Table 5).
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Each participant filled out a TLX upon completion of each level (see Table 5).
 
 <p align="center">
   <br><b>Table 5</b><br>
@@ -481,7 +485,7 @@ The data was analysed using R*Studio (RStudio Team, 2020). We expected each part
 **Description of how code was tested**
 
 As our game grew in complexity and scope, we adopted a multifaceted approach to testing.
-Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome. This document can be found HERE include link??? or put it in appendices????.
+Whitebox tests were conducted by writing a series of assertions kept inside a class called “Test”. This class was used to simulate various gameplay scenarios. For example, we checked for correct object initialisation, and that variables held their expected states. Moreover, that the various gameplay scenarios resulted in the correct outcome, such as player death, or animations being triggered at the correct times. Much of our testing was also achieved through backbox methods, utilising play testing from users during evaluation, and regular playtests from each team member to help identify bugs. In addition to this, we created a testing specification which detailed various gameplay scenarios and their intended outcome. After each major change to the source code, one of our team would work through this document and trigger each scenario to observe the outcome. This document can be found in the appendices.
 
 
 # 7. Process 
