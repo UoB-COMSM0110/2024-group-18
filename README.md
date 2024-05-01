@@ -175,7 +175,7 @@ As none of us had experience in Processing, we conducted a series of feasibility
 Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a>, we determined that users would be better able to understand with minimal hints.
 
 <p>
-  For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with a Tenet-style narrative twist. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
+  For the game genre, our group gravitated towards platforms (similar to Mario) and puzzle problem-solving genres, creating a consensus for a game that marries these genres with some form of time manipulation. During week 3 of designing paper prototypes of the ideas, Dr. Bennett provided feedback and observed similarities between our concept and the Steam game 
     <a href="https://store.steampowered.com/app/1416720/Brain_Games/" target="_blank">Braid</a>.
     This further fueled this idea, which intrigued us with its potential for innovative gameplay mechanics. 
 </p>
