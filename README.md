@@ -26,6 +26,16 @@ To play our game, you must first ensure Processing is installed and updated, and
 4. **Learn More**: For additional guidance on installing libraries, check out [this tutorial](https://processing.org/tutorials/video).
 
 Once you've installed Processing and the required libraries, you're all set to run the game!
+### Important Note for Linux Users
+
+<div style="padding: 10px; border-left: 5px solid #a00019;">
+    <strong>Please note:</strong> Due to potential misalignments with the following packages, Linux users may experience issues with the Accessibility Feature. 
+Our team is actively working to resolve these issues. We appreciate your patience and understanding as we strive to enhance compatibility and functionality across all platforms.
+</div>
+
+
+If you encounter any further issues or have suggestions, please feel free to reach out to us by opening an Issue above. Your feedback is invaluable as we continue to improve.
+
 
 # Video Demonstration
 <div align="center">
@@ -33,6 +43,16 @@ Once you've installed Processing and the required libraries, you're all set to r
         <img src="Assets_For_ReadMe/videoBackground.gif" alt="Oiram Tutorial Video" width="500">
     </a>
 </div>
+
+# Video Demonstration
+
+<div align="center">
+    <p>Click here to watch a game demonstration of <strong>Oiram</strong>, providing a brief overview of the gameplay mechanics and features. This video will give you a sneak peek into the exciting challenges and fun that await!</p>
+    <a href="https://www.youtube.com/watch?v=e0jlz4I9GUk" title="Watch the Game Demonstration">
+        <img src="Assets_For_ReadMe/videoBackground.gif" alt="Watch Oiram Game Tutorial" width="500">
+    </a>
+</div>
+
 
 # Table of Contents
 - [1. Development Team](https://github.com/UoB-COMSM0110/2024-group-18?tab=readme-ov-file#1-development-team)
@@ -312,16 +332,10 @@ Before starting any of our challenges, we needed to create a basic platformer. F
 
 While not one of our official challenges, we found that programming collisions and basic movement were initially quite tricky. For example, our initial approach to jumping caused an issue where users could jump infinitely by holding down the button. Our eventual implementation involved a variable within the `Player` set when they were on the ground. We also included velocity and acceleration variables. For collisions, initially, we had an approach involving an ENUM, several for loops, and several if statements. This approach was verbose and unreliable (occasionally players would fall through the floor!) Our final approach was much simpler and involved using the height and width of the game object, with the conditional collisions logic (for example, pressing the button opens the door) stored inside the `interactDynamicItems` method.
 
-The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing video library doesn't work on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
-
-Clicking the accessibility button on Linux causes an error message to show up.
+Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
 
 
-<p align="center">
-  <b>Figure 14</b><br>
-  <i>Example of Error.</i><br>
-<img src="Game/assets/Background/LinuxErr.png">
-</p>
+In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
 ### Challenges
 
@@ -337,7 +351,7 @@ Clicking the accessibility button on Linux causes an error message to show up.
 
 The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
-3. **Level Design and balance**
+2. **Level Design and balance**
 
    We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 16). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
 
@@ -354,9 +368,9 @@ The bomb was even more complex. We created explode and implode animations, and w
     
    This level designer was very helpful when in playtesting. For example, one user found the jump in the tutorial level too challenging to complete, but with a few keystrokes, we were able to change it and immediately gather feedback that the same user found it easier.
    
-4. **Accessibility**
+3.1 **Accessibility:** *Performance Challenges*
 
-   Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. Players can lean left and right and make a noise to jump. This was implemented through a machine vision and audio library. Input from the webcam is taken and if the user's head is detected on one side of the screen, the character moves that way. The main challenge of this was efficiency, the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character.
+   Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. When planning this feature, we researched that this can be achieved where users with accessibility needs could lean left and right for player movement, and make a noise for the player to jump. To program this, we used the `Machine Vision` and `Audio` libraries, where input from the webcam is taken, and if the user's head is detected on one side of the screen, the character moves that way. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character. We found that the main challenge of this was efficiency affecting game performance, as the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. 
 
 <p align="center">
   <b>Figure 19</b><br>
@@ -364,12 +378,19 @@ The bomb was even more complex. We created explode and implode animations, and w
   <img src="Assets_For_ReadMe/Game_Video_V5.gif">
 </p>
 
-   One other issue we encountered whilst testing this was that the Processing video library isn't supported on Linux machines. To fix this, if the user is on Linux, we  show an error message if they attempt to load accessibility mode. Since loading the libraries takes 5-10 seconds, we needed to implement an additional loading screen to provide adequate visibility of system status.
+3.2 **Accessibility:** *Linux Issues*
+
+The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing `Video` library experiences issues on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
+
+Clicking the accessibility button on Linux causes an error message to show up (Figure X).
+
+
+<p align="center">
+  <b>Figure 14</b><br>
+  <i>Example of Error.</i><br>
+<img src="Game/assets/Background/LinuxErr.png">
+</p>
    
-   Whilst the `AlternativeController` class contains about 100 lines of code, it required us to add only a few lines to the rest of the game (from the perspective of the player controller, it is just a few more variables that it handles in the same way as a button press.) This shows that many games that use simple keyboard inputs could have accessibility modes like this one.
-
-
-   In playtesting, some non-disabled players preferred controlling the character this way. This is known as the curb-cut effect; a feature originally built for accessibility can be useful for other players. (Heydarian, 2020)
 
 
 # 6. Evaluation 
