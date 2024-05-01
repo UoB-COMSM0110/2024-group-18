@@ -155,16 +155,6 @@ Workshop Three allowed us to expand these ideas by developing Paper Prototypes o
   <br>
 </p>
 
-One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing. This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
-
-<p align="center" style="margin: 0; padding: 0;">
-  <b>Figure X</b><br>
-  <i>Feasibility Study: Test of skipping backwards</i><br>
-  <img src="https://i.imgur.com/VjS6xbM.gif" width="375" alt="Paper Prototype">
-</p>
-
-Unfortunately, users found it to be "complicated" and "hard to understand what to do." We discussed various ways to mitigate this with User Interface design. Eventually, we took a vote and made the difficult decision to pivot to a new version of the time travel concept, which, based on user testing of our <a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">paper prototype</a>, we determined that users would be better able to understand with minimal hints.
-
 ### Feasibility Studies
 As none of us had experience in Processing, we conducted a series of feasibility studies. This helped us be confident that certain ideas were possible (for example, collisions or controlling the character with webcam input). One of these feasibility studies evolved into a playable prototype, and we were able to perform user testing (Figure 6). This was a game where a user could "skip back" in time at will - allowing themselves to repair damage or avoid death. 
 
