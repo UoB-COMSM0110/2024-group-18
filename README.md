@@ -411,7 +411,7 @@ Much of the data we gathered related to the movement and overall performance of 
  <li>Gave a “Space like” floaty feeling</li>
 </ul>
 
-Whilst not being our original setting for the game, this feedback inspired us to set the game in space we also fit with our sci-fi twist (see Figure 21). To address performance criticism, we incorporated the Java FX framework. This drastically improved performance, allowing for more responsive movement. This provided a faster paced, and more exciting gameplay experience. 
+Whilst not being our original setting, this feedback inspired us to set the game in space which fit with our sci-fi twist (see Figure 21). To address performance criticism, we incorporated the Java FX framework. This drastically improved performance, allowing for more responsive movement. This provided a faster paced, and more exciting gameplay experience. 
 
 
 <p align="center">
