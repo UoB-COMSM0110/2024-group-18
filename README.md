@@ -339,6 +339,12 @@ In playtesting, some non-disabled players preferred controlling the character th
 
 The bomb was even more complex. We created explode and implode animations, and we also overrode the `checkCollisions` function to have a broader blast radius.
 
+<p align="center">
+  <b>Figure XXXX</b><br>
+  <i>Bombs and moving platforms</i><br>
+  <img src="Assets_For_ReadMe/level3.gif">
+</p>
+
 2. **Level Design and balance**
 
    We realised early on that we wanted to build the level map in an extensible way, so the `Map` class contains a function that reads a text file representing the map (Figure 16). This allowed maximal flexibility whilst developing our maps, especially as core game mechanics like jump height were being changed. We opted not to use procedural generation, as we felt control was important given the puzzle-solving nature of the game. This is because we found that many decisions, like where a button is located, can profoundly affect a player's ability to complete a particular puzzle.
