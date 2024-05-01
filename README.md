@@ -457,7 +457,7 @@ We decided to implement visual hints on screen which offered clues as to how to 
 
 #### Quantitative Analysis
 
-After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, (Alexander et al., 2013), it was important we were able to create a game which increased in difficulty each level. To measure whether our levels scaled in difficulty, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Eleven participants were again recruited via conveniance sampling, each being administered with a TLX upon completion of every level (see Table 5).
+After examining our own video game preferences alongside findings from previous studies suggesting that game difficulty can improve a player's enjoyment when it is challenging yet not overly frustrating, it was important we were able to create a game which increased in difficulty with each level (Alexander et al., 2013). To assess this, data was gathered using the NASA Task Load Index (TLX) which has been shown to be highly reliable in many areas of Human Computer Interaction (HCI) including video game difficulty assessment (Hart & Staveland, 1988; Ramkumar et al., 2016; Seyderhelm & Blackmore, 2023). Eleven participants were again recruited via conveniance sampling, each being administered with a TLX upon completion of every level (see Table 5).
 
 <p align="center">
   <br><b>Table 5</b><br>
