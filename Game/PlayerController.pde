@@ -279,6 +279,8 @@ class PlayerController {
     }
     if (shadowAndPlayerCollide()) {
       deadByHitPreviousPlayer=true;
+      player.velocity.set(0,0);
+      player.acceleration.set(0,0);
       return true;
     }
     if (level==2||level==3) {
