@@ -136,13 +136,13 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
     In our ideation phase, we used 
     <a href="https://miro.com/app/board/uXjVNv7hy3o=/?share_link_id=24285523794" target="_blank">Miro</a> 
     (Figure 3) and 
-    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing"Docs target="_blank">Docs</a>
-    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element. 
+    <a href="https://docs.google.com/document/d/1oLEtyGP2DT71ntCW57uqrKU6U0Af0hguWeTmZLABD5E/edit?usp=sharing" target="_blank">Google Docs</a>
+    to brainstorm two initial game ideas. We were fairly confident that we wanted to include some sort of time travel element after realising a shared passion for Christopher Nolan's movies, in particular Tenet. 
 </p>
 <p align="center">
   <b>Figure 3</b><br>
   <i>Week 2 Brainstorm several game ideas.</i><br>
-  <img src="Assets_For_ReadMe/SEBrainstorm.png" width="50%" >
+  <img src="Assets_For_ReadMe/SEBrainstorm.png" width="30%" >
   <br>
 </p>
 
@@ -151,7 +151,7 @@ Requirements Engineering (RE) is a communication mechanism that ensures that cli
   <b>Figure 4</b><br>
   <i><a href="https://www.youtube.com/watch?v=U_D2pebtMJo" target="_blank">Paper Prototype</a></i> developed during Workshop Three
   <br><br>
-  <img src="Assets_For_ReadMe/prototype.gif" width="35%" alt="Paper Prototype for Group 18 CS Bristol">
+  <img src="Assets_For_ReadMe/prototype.gif" width="50%" alt="Paper Prototype for Group 18 CS Bristol">
 </p>
 
 Workshop Three allowed us to expand these ideas by developing Paper Prototypes of our initial ideas (Figure 4). The prototype was especially helpful due to the complexity of the game concept. Communication within the team became more transparent when Tom expanded the tool by generating Paper-Prototype style animations using his IPad (Figure 5), which became a familiar tool as we progressed through the project.
