@@ -6,7 +6,7 @@ TODO: search for any remaining TODOs or XXX in the readme.
 
 
 <p align="center">
-  <img src="Assets_For_ReadMe/Banner.png" alt="header.jpg" style="width:100%"/>
+  <img src="Assets_For_ReadMe/updated_banner.png" alt="header.jpg" style="width:100%"/>
     <br>
   </a>
 </p>
