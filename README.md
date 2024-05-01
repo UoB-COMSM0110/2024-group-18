@@ -13,19 +13,16 @@ TODO: search for any remaining TODOs or XXX in the readme.
 
 # Game Setup Instructions
 
-To play our game, you must install Processing and the following libraries: "Video", "JavaFX",  "Deep Vision", and "Sound". Here's how to do it:
-1. **Open Processing**: Launch the Processing application on your computer.
-
-2. **Library Manager**: Open the Library Manager by selecting “Import Library...” from the “Sketch” menu, then choose “Add Library...”.
-
+To play our game, you must first ensure Processing is installed and updated, and then install and load libraries. Here's how to do it:
+1. **Open Processing**: Once Processing is installed and updated to the latest version (see [here](https://processing.org/download)), launch the application.
+2. **Open Library Manager**: Select **Import Library** from the **Sketch** menu, then choose **Manage Libraries** option.
 3. **Install Libraries**:
-   - Use the search bar to find each of the following libraries:
-      - "Video"
-      - "Deep Vision"
-      - "Sound"
-      - "JavaFX"
-   - Click "Install" for each library.
-
+    - Use the **Search Bar** to find each of the following libraries and click **Install**:
+        - <code>Video</code>
+        - <code>Deep Vision</code>
+        - <code>Sound</code>
+        - <code>JavaFX</code>
+   - Click "Install" for each library. If already installed, ensure updated by navigating to **Updates** in **Library Manager**. 
 4. **Learn More**: For additional guidance on installing libraries, check out [this tutorial](https://processing.org/tutorials/video).
 
 Once you've installed Processing and the required libraries, you're all set to run the game!
