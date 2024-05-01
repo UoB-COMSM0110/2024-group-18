@@ -1,8 +1,3 @@
-TODO: update figure numbers
-
-TODO: add GIFS
-
-TODO: search for any remaining TODOs or XXX in the readme.
 
 
 <p align="center">
@@ -246,7 +241,7 @@ As our user stories include casual gamers, we understood early on in the game de
 
 Below is our initial interpretation of this, where we posited the idea that the accessibility mode would be made easier on other dimensions. Eventually, we moved away from this idea, as we felt that it was important to our disabled player user story that they were able to play the same game as their friends.
 <p align="center">
-  <b>Figure 10</b><br>
+  <b>Figure 11</b><br>
   <i>Use Case Diagram.</i><br>
   <img src="Assets_For_ReadMe/newucdiag.png" width="75%">
   <br>
@@ -296,19 +291,19 @@ The complex mechanics of time inversion in our platform-puzzle game necessitated
 - **Main Class**: Manages the game loop, flags for method calls, and oversees the creation of Player Controller and Map Controller instances. These controllers maintain method control flags and item lists.
 
 <p align="center">
-<br><b>Figure 11</b></br>
+<br><b>Figure 12</b></br>
   <i>Class Diagram Generated Workshop Five.</i>
   <img src="Assets_For_ReadMe/classdiag.jpeg" width="75%">
   <br>
 </p>
 
 <p align="center">
-<br><b>Figure 12</b></br>
+<br><b>Figure 13</b></br>
   <i>Updated Class Diagram to shop change from Figure 11.</i>
   <img src="Assets_For_ReadMe/Classiagram.JPG" width="75%">
 </p>
 
-Figures 11 and 12 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
+Figures 12 and 13 indicate how our Class Diagram changed over time. Collisions were an initial difficulty area, our process of which is further described below.
 
 ### Behavioural diagrams
 Following the Class Diagram, we worked on forming a **Sequence Diagram**, which would indicate the order of objects working together. This is particularly significant in Game Development, where, after evaluating many classes in our system, the sequence would allow for easy debugging, especially since the Processing IDE has poor debugging facilities. 
@@ -318,7 +313,7 @@ Based on the requirements specification, we developed a system architecture that
 
 
 <p align="center">
-<b>Figure 13</b>
+<b>Figure 14</b>
   <br><i>Sequence Diagram.</i></br>
   <img src="Assets_For_ReadMe/SeqDiagram.JPG" width="75%">
 </p>
@@ -361,7 +356,7 @@ The bomb was even more complex. We created explode and implode animations, and w
     <img src="https://i.imgur.com/0kD1yRU.png" width="500" >
 </p>
 <p align="center">
-  <b>Figure 18</b><br>
+  <b>Figure 17</b><br>
   <i>Playtesting.</i><br>
     <img src="https://i.imgur.com/Suklhby.png" width="500" >
 </p>
@@ -370,25 +365,25 @@ The bomb was even more complex. We created explode and implode animations, and w
    
 3.1 **Accessibility:** *Performance Challenges*
 
-   Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input. When planning this feature, we researched that this can be achieved where users with accessibility needs could lean left and right for player movement, and make a noise for the player to jump. To program this, we used the `Machine Vision` and `Audio` libraries, where input from the webcam is taken, and if the user's head is detected on one side of the screen, the character moves that way. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character. We found that the main challenge of this was efficiency affecting game performance, as the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. 
-
 <p align="center">
-  <b>Figure 19</b><br>
+  <b>Figure 18</b><br>
   <i>Demonstration of Accessibility Use-Case.</i><br>
   <img src="Assets_For_ReadMe/Game_Video_V5.gif">
 </p>
+   Accessibility was a really important aspect for us, as we have team members with personal experience of their disability locking them out of games. So, we built a way to play the game without keyboard input (Figure 18). When planning this feature, we researched that this can be achieved where users with accessibility needs could lean left and right for player movement, and make a noise for the player to jump. To program this, we used the `Machine Vision` and `Audio` libraries, where input from the webcam is taken, and if the user's head is detected on one side of the screen, the character moves that way. Audio input was taken using Processing’s sound library, and if it spikes over a certain level a jump signal is sent to the player character. We found that the main challenge of this was efficiency affecting game performance, as the first library we used was too slow, as it was doing pose detection. We switched to just detecting the head position, and the game worked. 
+
 
 3.2 **Accessibility:** *Linux Issues*
 
 The other element of the game that evolved significantly was the interface for selecting disability mode. Through user testing, we discovered that the Processing `Video` library experiences issues on Linux. Rather than have an unplayable game on Linux, we load the library when the accessibility button is clicked. Our heuristic evaluation required us to include a dynamic loading screen (visibility of system status) since the library takes several seconds to initialise.
 
-Clicking the accessibility button on Linux causes an error message to show up (Figure X).
+Clicking the accessibility button on Linux causes an error message to show up (Figure 19).
 
 
 <p align="center">
-  <b>Figure 14</b><br>
+  <b>Figure 19</b><br>
   <i>Example of Error.</i><br>
-<img src="Game/assets/Background/LinuxErr.png">
+<img src="Game/assets/Background/LinuxErr.png" width="75%">
 </p>
    
 
@@ -407,7 +402,7 @@ Seventeen participants were collected through convenience sampling. Due to easy 
 <p align="center">
   <b>Figure 20</b><br>
   <i>Thematic Map of Think Aloud Data.</i><br>
-  <img src="Assets_For_ReadMe/thematicmap.png">
+  <img src="Assets_For_ReadMe/thematicmap.png" width="75%">
 </p>
 
 
