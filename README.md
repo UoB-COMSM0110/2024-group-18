@@ -345,7 +345,7 @@ The bomb was even more complex. We created explode and implode animations, and w
 
 <p align="center">
   <b>Figure 16</b><br>
-  <i>Snippet of Button Debugging.</i><br>
+  <i>The level designer</i><br>
     <img src="https://i.imgur.com/0kD1yRU.png" width="500" >
 </p>
 <p align="center">
