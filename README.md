@@ -24,13 +24,8 @@ Once you've installed Processing and the required libraries, you're all set to r
 ### Important Note for Linux Users
 
 <div style="padding: 10px; border-left: 5px solid #a00019;">
-    <strong>Please note:</strong> Due to potential misalignments with the following packages, Linux users may experience issues with the Accessibility Feature. 
-Our team is actively working to resolve these issues. We appreciate your patience and understanding as we strive to enhance compatibility and functionality across all platforms.
+    <strong>Please note:</strong> The Processing video library is not supported on Linux. Therefore, we cannot provide Accessibility mode on that platform. 
 </div>
-
-
-If you encounter any further issues or have suggestions, please feel free to reach out to us by opening an Issue above. Your feedback is invaluable as we continue to improve.
-
 
 
 # Video Demonstration
